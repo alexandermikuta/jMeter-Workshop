@@ -297,7 +297,9 @@ Usage:
 
 <!-- section 51 -->
 
-# Vagrant
+# Vagrant + Ansible
+
+Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
 <!-- section 52 -->
 
