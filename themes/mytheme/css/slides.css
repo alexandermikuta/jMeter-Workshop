@@ -36,9 +36,9 @@
 p {
   text-align: left; }
 
-ul {
-  display: block;
-  margin: 0; }
+.reveal ul {
+  display: block !important;
+  margin: 0 !important; }
 
 code {
   display: block !important;

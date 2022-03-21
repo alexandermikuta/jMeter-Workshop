@@ -67,7 +67,7 @@ https://jmeter.apache.org/usermanual/jmeter\_tutorial.html
 
 **Eigenes Repository hinzufügen:**
 
-**jMeter-Property setzen:**
+jMeter-Property setzen:
 
 `jpgc.repo.address=https://jmeter-plugins.org/repo/;http://my.intranet.site/plugins-repo.json`
 
