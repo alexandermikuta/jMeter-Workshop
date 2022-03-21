@@ -81,7 +81,8 @@ Das Repository-JSON muss folgendes Format erfüllen: <https://jmeter-plugins.org
 
 **Nützliche Plugins:**
 
--   Custom Thread Groups
+-   Ultimate Thread Group
+-   Concurrency Thread Group
 -   jpgc-perfmon
 -   jpgc-dummy
 -   jpgc-plancheck
@@ -89,47 +90,63 @@ Das Repository-JSON muss folgendes Format erfüllen: <https://jmeter-plugins.org
 
 <!-- section 8 -->
 
-# Strukturierung von Testplänen {#strukturierung-von-testplänen .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# jMeter Plugin-Manager
+
+## Ultimate Thread Group
+
+![https://jmeter-plugins.org/wiki/UltimateThreadGroup/](assets/ultimate_thread_group1.png){height="50%" width="50%"}
 
 <!-- section 9 -->
 
-# Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# jMeter Plugin-Manager
+
+## Concurrency Thread Group
+
+![https://jmeter-plugins.org/wiki/ConcurrencyThreadGroup/](assets/ConcurrencyThreadGroup.png){height="50%" width="50%"}
 
 <!-- section 10 -->
 
-# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Strukturierung von Testplänen {#strukturierung-von-testplänen .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 11 -->
 
-# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 12 -->
 
-# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 13 -->
 
-# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 14 -->
 
-# Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 15 -->
 
-# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 16 -->
 
-# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 17 -->
+
+# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 18 -->
+
+# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 19 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 ![](fab%20fa-docker)
 
-<!-- section 18 -->
+<!-- section 20 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
@@ -142,6 +159,6 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 19 -->
+<!-- section 21 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
