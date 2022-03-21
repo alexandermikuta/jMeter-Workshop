@@ -30,9 +30,10 @@ Agenda:
 
 **Installation:**
 
-Lade https://jmeter-plugins.org/get/ herunter und kopiere in das jMeter-Verzeichnis `lib/ext`
+-   lade https://jmeter-plugins.org/get/ herunter
+-   kopiere jar in das jMeter-Verzeichnis `lib/ext`
 
-![[Plugin Manager](https://jmeter-plugins.org/wiki/PluginsManager/)](assets/pmgr_menu_item.png)
+![https://jmeter-plugins.org/wiki/PluginsManager/](assets/pmgr_menu_item.png)
 
 <!-- section 4 -->
 
@@ -42,13 +43,21 @@ Lade https://jmeter-plugins.org/get/ herunter und kopiere in das jMeter-Verzeich
 
 https://jmeter-plugins.org/wiki/PluginsManagerAutomated/
 
-`PluginsManagerCMD <command> [<params>]` z.B. `PluginsManagerCMD install jpgc-fifo,jpgc-json=2.2`
+`PluginsManagerCMD <command> [<params>]`
+
+z.B.
+
+`PluginsManagerCMD install jpgc-fifo,jpgc-json=2.2`
+
+<!-- section 5 -->
+
+# jMeter Plugin-Manager
 
 **Falls man hinter einem Proxy ist:**
 
 `JVM_ARGS="-Dhttps.proxyHost=myproxy.com -Dhttps.proxyPort=8080 -Dhttp.proxyUser=john -Dhttp.proxyPass=***" PluginsManagerCMD status`
 
-<!-- section 5 -->
+<!-- section 6 -->
 
 # jMeter Plugin-Manager
 
@@ -64,7 +73,7 @@ https://jmeter.apache.org/usermanual/jmeter\_tutorial.html
 
 Das Repository-JSON muss folgendes Format erfüllen: https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/
 
-<!-- section 6 -->
+<!-- section 7 -->
 
 # jMeter Plugin-Manager
 
@@ -76,50 +85,50 @@ Das Repository-JSON muss folgendes Format erfüllen: https://jmeter-plugins.org/
 -   jpgc-plancheck
 -   JMXMon
 
-<!-- section 7 -->
+<!-- section 8 -->
 
 # Strukturierung von Testplänen {#strukturierung-von-testplänen .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 8 -->
+<!-- section 9 -->
 
 # Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 9 -->
+<!-- section 10 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 10 -->
+<!-- section 11 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 11 -->
+<!-- section 12 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 12 -->
+<!-- section 13 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 13 -->
+<!-- section 14 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 14 -->
+<!-- section 15 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 15 -->
+<!-- section 16 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 16 -->
+<!-- section 17 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 17 -->
+<!-- section 18 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 18 -->
+<!-- section 19 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

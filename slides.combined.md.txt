@@ -30,9 +30,10 @@ Agenda:
 
 **Installation:**
 
-Lade https://jmeter-plugins.org/get/ herunter und kopiere in das jMeter-Verzeichnis `lib/ext`
+- lade https://jmeter-plugins.org/get/ herunter
+- kopiere jar in das jMeter-Verzeichnis `lib/ext`
 
-![[Plugin Manager](https://jmeter-plugins.org/wiki/PluginsManager/)](assets/pmgr_menu_item.png)
+![https://jmeter-plugins.org/wiki/PluginsManager/](assets/pmgr_menu_item.png)
 
 # jMeter Plugin-Manager
 
@@ -40,7 +41,13 @@ Lade https://jmeter-plugins.org/get/ herunter und kopiere in das jMeter-Verzeich
 
 https://jmeter-plugins.org/wiki/PluginsManagerAutomated/
 
-`PluginsManagerCMD <command> [<params>]` z.B. `PluginsManagerCMD install jpgc-fifo,jpgc-json=2.2`
+`PluginsManagerCMD <command> [<params>]`
+
+z.B.
+
+`PluginsManagerCMD install jpgc-fifo,jpgc-json=2.2`
+
+# jMeter Plugin-Manager
 
 **Falls man hinter einem Proxy ist:**
 
