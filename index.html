@@ -52,6 +52,10 @@
 <figure>
 <img src="assets/jmeter.jpg" style="width:20.0%;height:20.0%" alt="" /><figcaption>performance testing with jMeter</figcaption>
 </figure>
+</section>
+<section id="jmeter-workshop-1" class="level1">
+<h1>jMeter Workshop</h1>
+<p>Agenda:</p>
 <table>
 <thead>
 <tr class="header">
@@ -96,10 +100,39 @@
 </section>
 <section id="jmeter-plugin-manager-1" class="level1">
 <h1>jMeter Plugin-Manager</h1>
-<p>https://jmeter-plugins.org/wiki/PluginsManager/</p>
+<p><strong>Installation:</strong></p>
+<p>Lade https://jmeter-plugins.org/get/ herunter und kopiere in das jMeter-Verzeichnis <code>lib/ext</code></p>
 <figure>
-<img src="assets/pmgr_menu_item.png" alt="" /><figcaption>Plugin Manager</figcaption>
+<img src="assets/pmgr_menu_item.png" alt="" /><figcaption><a href="https://jmeter-plugins.org/wiki/PluginsManager/">Plugin Manager</a></figcaption>
 </figure>
+</section>
+<section id="jmeter-plugin-manager-2" class="level1">
+<h1>jMeter Plugin-Manager</h1>
+<p><strong>Ausführung über die Kommandozeile:</strong></p>
+<p>https://jmeter-plugins.org/wiki/PluginsManagerAutomated/</p>
+<p><code>PluginsManagerCMD &lt;command&gt; [&lt;params&gt;]</code> z.B. <code>PluginsManagerCMD install jpgc-fifo,jpgc-json=2.2</code></p>
+<p><strong>Falls man hinter einem Proxy ist:</strong></p>
+<p><code>JVM_ARGS="-Dhttps.proxyHost=myproxy.com -Dhttps.proxyPort=8080 -Dhttp.proxyUser=john -Dhttp.proxyPass=***" PluginsManagerCMD status</code></p>
+</section>
+<section id="jmeter-plugin-manager-3" class="level1">
+<h1>jMeter Plugin-Manager</h1>
+<p><strong>Eigenes Plugin schreiben:</strong></p>
+<p>https://jmeter.apache.org/usermanual/jmeter_tutorial.html</p>
+<p><strong>Eigenes Repository hinzufügen:</strong></p>
+<p><strong>jMeter-Property setzen:</strong></p>
+<p><code>jpgc.repo.address=https://jmeter-plugins.org/repo/;http://my.intranet.site/plugins-repo.json</code></p>
+<p>Das Repository-JSON muss folgendes Format erfüllen: https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/</p>
+</section>
+<section id="jmeter-plugin-manager-4" class="level1">
+<h1>jMeter Plugin-Manager</h1>
+<p><strong>Nützliche Plugins:</strong></p>
+<ul>
+<li>Custom Thread Groups</li>
+<li>jpgc-perfmon</li>
+<li>jpgc-dummy</li>
+<li>jpgc-plancheck</li>
+<li>JMXMon</li>
+</ul>
 </section>
 <section id="strukturierung-von-testplänen" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Strukturierung von Testplänen</h1>

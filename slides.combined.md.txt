@@ -10,6 +10,10 @@ width: 1280
 
 ![performance testing with jMeter](assets/jmeter.jpg){ height=20% width=20% }
 
+# jMeter Workshop
+
+Agenda:
+
 | Tag 1                         | Tag 2                        |
 | ----------------------------- | ---------------------------- |
 | jMeter Plugin-Manager         | Verteiltes Testen mit jMeter |
@@ -24,9 +28,47 @@ width: 1280
 
 # jMeter Plugin-Manager
 
-https://jmeter-plugins.org/wiki/PluginsManager/
+**Installation:**
 
-![Plugin Manager](assets/pmgr_menu_item.png)
+Lade https://jmeter-plugins.org/get/ herunter und kopiere in das jMeter-Verzeichnis `lib/ext`
+
+![[Plugin Manager](https://jmeter-plugins.org/wiki/PluginsManager/)](assets/pmgr_menu_item.png)
+
+# jMeter Plugin-Manager
+
+**Ausführung über die Kommandozeile:**
+
+https://jmeter-plugins.org/wiki/PluginsManagerAutomated/
+
+`PluginsManagerCMD <command> [<params>]` z.B. `PluginsManagerCMD install jpgc-fifo,jpgc-json=2.2`
+
+**Falls man hinter einem Proxy ist:**
+
+`JVM_ARGS="-Dhttps.proxyHost=myproxy.com -Dhttps.proxyPort=8080 -Dhttp.proxyUser=john -Dhttp.proxyPass=***" PluginsManagerCMD status`
+
+# jMeter Plugin-Manager
+
+**Eigenes Plugin schreiben:**
+
+https://jmeter.apache.org/usermanual/jmeter_tutorial.html
+
+**Eigenes Repository hinzufügen:**
+
+**jMeter-Property setzen:**
+
+`jpgc.repo.address=https://jmeter-plugins.org/repo/;http://my.intranet.site/plugins-repo.json`
+
+Das Repository-JSON muss folgendes Format erfüllen: https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/
+
+# jMeter Plugin-Manager
+
+**Nützliche Plugins:**
+
+- Custom Thread Groups
+- jpgc-perfmon
+- jpgc-dummy
+- jpgc-plancheck
+- JMXMon
 
 # Strukturierung von Testplänen {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
