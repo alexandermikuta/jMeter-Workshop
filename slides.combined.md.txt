@@ -3,7 +3,7 @@ title: jMeter-Workshop
 highlight_style: github-gist
 #themes: mytheme
 theme: moon
-width: 1280
+#width: 1280
 ---
 
 # jMeter Workshop {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
