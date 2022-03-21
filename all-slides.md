@@ -30,8 +30,8 @@ Agenda:
 
 **Installation:**
 
--   lade https://jmeter-plugins.org/get/ herunter
--   kopiere jar in das jMeter-Verzeichnis `lib/ext`
+-   lade **https://jmeter-plugins.org/get/** herunter
+-   kopiere **jar** in das jMeter-Verzeichnis **lib/ext\`**
 
 ![https://jmeter-plugins.org/wiki/PluginsManager/](assets/pmgr_menu_item.png)
 
