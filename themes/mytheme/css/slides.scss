@@ -1,5 +1,9 @@
 @import "common";
 
+.reveal .slides {
+  text-align: left !important;
+}
+
 .reveal {
   h1,
   h2,
@@ -39,7 +43,6 @@ code {
 }
 
 .reveal .slides section .fragment.fade-in-otherwise-semi-out {
-  text-align: left !important;
   opacity: 0.4;
   visibility: inherit;
 

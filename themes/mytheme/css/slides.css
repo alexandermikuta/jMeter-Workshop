@@ -16,6 +16,9 @@
   font-weight: 400;
   src: url("fonts/Raleway-Regular.ttf") format("truetype"); }
 
+.reveal .slides {
+  text-align: left !important; }
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -39,7 +42,6 @@ code {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .reveal .slides section .fragment.fade-in-otherwise-semi-out {
-  text-align: left !important;
   opacity: 0.4;
   visibility: inherit; }
   .reveal .slides section .fragment.fade-in-otherwise-semi-out.current-visible {
