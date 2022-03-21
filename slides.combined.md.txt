@@ -29,18 +29,20 @@ Agenda:
 
 # jMeter Plugin-Manager
 
+[https://jmeter-plugins.org/wiki/PluginsManager/](https://jmeter-plugins.org/wiki/PluginsManager/)
+
+![](assets/pmgr_menu_item.png)
+
 **Installation:**
 
-- lade **https://jmeter-plugins.org/get/** herunter
-- kopiere **jar** in das jMeter-Verzeichnis **lib/ext`**
-
-![https://jmeter-plugins.org/wiki/PluginsManager/](assets/pmgr_menu_item.png)
+- lade **[https://jmeter-plugins.org/get/](https://jmeter-plugins.org/get/)** herunter
+- kopiere **jar** in das jMeter-Verzeichnis **lib/ext**
 
 # jMeter Plugin-Manager
 
 **Ausführung über die Kommandozeile:**
 
-https://jmeter-plugins.org/wiki/PluginsManagerAutomated/
+[https://jmeter-plugins.org/wiki/PluginsManagerAutomated/](https://jmeter-plugins.org/wiki/PluginsManagerAutomated/)
 
 `PluginsManagerCMD <command> [<params>]`
 
@@ -58,7 +60,7 @@ z.B.
 
 **Eigenes Plugin schreiben:**
 
-https://jmeter.apache.org/usermanual/jmeter_tutorial.html
+[https://jmeter.apache.org/usermanual/jmeter_tutorial.html](https://jmeter.apache.org/usermanual/jmeter_tutorial.html)
 
 **Eigenes Repository hinzufügen:**
 
@@ -66,7 +68,7 @@ jMeter-Property setzen:
 
 `jpgc.repo.address=https://jmeter-plugins.org/repo/;http://my.intranet.site/plugins-repo.json`
 
-Das Repository-JSON muss folgendes Format erfüllen: https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/
+Das Repository-JSON muss folgendes Format erfüllen: [https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/](https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/)
 
 # jMeter Plugin-Manager
 
