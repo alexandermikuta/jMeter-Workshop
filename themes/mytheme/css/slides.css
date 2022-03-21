@@ -41,7 +41,7 @@ ul {
   margin: 0; }
 
 code {
-  display: block;
+  display: block !important;
   font-family: "Inconsolata";
   background: #333;
   color: #ddd;
