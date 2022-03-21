@@ -92,17 +92,17 @@ Das Repository-JSON muss folgendes Format erfüllen: <https://jmeter-plugins.org
 
 # jMeter Plugin-Manager
 
-## Ultimate Thread Group
+**Ultimate Thread Group**
 
-![https://jmeter-plugins.org/wiki/UltimateThreadGroup/](assets/ultimate_thread_group1.png){height="50%" width="50%"}
+![https://jmeter-plugins.org/wiki/UltimateThreadGroup/](assets/ultimate_thread_group1.png){height="40%" width="40%"}
 
 <!-- section 9 -->
 
 # jMeter Plugin-Manager
 
-## Concurrency Thread Group
+**Concurrency Thread Group**
 
-![https://jmeter-plugins.org/wiki/ConcurrencyThreadGroup/](assets/ConcurrencyThreadGroup.png){height="50%" width="50%"}
+![https://jmeter-plugins.org/wiki/ConcurrencyThreadGroup/](assets/ConcurrencyThreadGroup.png){height="40%" width="40%"}
 
 <!-- section 10 -->
 
