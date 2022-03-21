@@ -39,7 +39,7 @@ code {
 }
 
 .reveal .slides section .fragment.fade-in-otherwise-semi-out {
-  text-align: left;
+  text-align: left !important;
   opacity: 0.4;
   visibility: inherit;
 
