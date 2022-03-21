@@ -49,7 +49,7 @@ body.impress-enabled {
     color: #fff; }
   body.impress-enabled #impress .step {
     font-family: "Raleway", sans-serif;
-    text-align: left; }
+    text-align: center; }
     body.impress-enabled #impress .step .line-block {
       font-family: "Raleway", sans-serif; }
     body.impress-enabled #impress .step h1,
