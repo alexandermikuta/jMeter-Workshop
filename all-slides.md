@@ -146,47 +146,174 @@ Usage:
 
 <!-- section 15 -->
 
-# Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Thread Groups, Sampler und Controller
 
 <!-- section 16 -->
 
-# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Timers
 
 <!-- section 17 -->
 
-# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Assertions und Listener
 
 <!-- section 18 -->
 
-# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Pre- und Post-Prozessoren
 
 <!-- section 19 -->
 
-# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Config-Elemente, Cookie-Manager, Header-Manager
 
 <!-- section 20 -->
 
-# Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# User-definierte Variable
 
 <!-- section 21 -->
 
-# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 22 -->
 
-# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Zeitliche Verteilung der Last
 
 <!-- section 23 -->
 
-# Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
-
-![](fab%20fa-docker)
+# Erkennen der Last-Grenzen / Server-Bedarfs
 
 <!-- section 24 -->
 
+# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 25 -->
+
+# BeanShell
+
+<!-- section 26 -->
+
+# JSR223
+
+<!-- section 27 -->
+
+# RegEx-Extractor
+
+<!-- section 28 -->
+
+# Arbeiten mit JARs
+
+<!-- section 29 -->
+
+# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 30 -->
+
+# Arten von Reporting
+
+<!-- section 31 -->
+
+# Ergebnis-Analyse
+
+<!-- section 32 -->
+
+# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 33 -->
+
+# Testdaten in .json-Datei / .csv-Datei
+
+<!-- section 34 -->
+
+# jMeter-Funktionen zur Datengenerierung
+
+<!-- section 35 -->
+
+# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 36 -->
+
+# Nutzung des Test-Rekorders
+
+<!-- section 37 -->
+
+# Testen mit "Http-Request"
+
+<!-- section 38 -->
+
+# Umgang mit Sessions/Authentification
+
+<!-- section 39 -->
+
+# Umgang mit dynamischen Daten
+
+<!-- section 40 -->
+
+# Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 41 -->
+
+# Master-Slave-Setup
+
+<!-- section 42 -->
+
+# Testausführung über CLI
+
+<!-- section 43 -->
+
+# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 44 -->
+
+# Diskussion: aktueller verwendeter RMI-Sampler
+
+<!-- section 45 -->
+
+# Vergleich mit existierende RMI-Samplern auf Github
+
+<!-- section 46 -->
+
+# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 47 -->
+
+# Prometheus / Grafana
+
+<!-- section 48 -->
+
+# YourKit-Profiler
+
+<!-- section 49 -->
+
+# Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 50 -->
+
+# IaC: Infrastructure as a Code
+
+> Mit IaC (Infrastructure as Code) wird die Infrastruktur durch Code -- und nicht durch manuelle Prozesse -- verwaltet und provisioniert.
+
+> Mit IaC werden Konfigurationsdateien erstellt, die Ihre gesamten Infrastrukturspezifikationen enthalten, wodurch Sie Konfigurationen einfacher bearbeiten und verteilen können.
+> Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
+
+> Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
+
+<!-- section 51 -->
+
+# Vagrant
+
+<!-- section 52 -->
+
+# Docker / Docker-Compose
+
+<!-- section 53 -->
+
+# Kubernetes
+
+<!-- section 54 -->
+
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-Github Actions:
+<!-- section 55 -->
+
+# Github Actions
 
 https://github.com/marketplace/actions/setup-jmeter
 https://github.com/marketplace/actions/apache-jmeter
@@ -195,6 +322,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 25 -->
+<!-- section 56 -->
+
+# jMeter in einer Github-Actions Pipeline
+
+<!-- section 57 -->
+
+# JMeter in einer Jenkins-Pipeline
+
+<!-- section 58 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
