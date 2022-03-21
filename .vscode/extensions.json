@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "rsh.roadrunner",
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "stylelint.vscode-stylelint",
+    "igorsbitnev.error-gutters",
+    "abierbaum.vscode-file-peek",
+    "file-icons.file-icons",
+    "kisstkondoros.vscode-gutter-preview",
+    "fivepointseven.node-version",
+    "leizongmin.node-module-intellisense",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "hbenl.vscode-test-explorer",
+    "wayou.vscode-todo-highlight",
+    "minhthai.vscode-todo-parser",
+    "shardulm94.trailing-spaces",
+    "ms-vsliveshare.vsliveshare-pack",
+    "redhat.vscode-yaml",
+    "cschleiden.vscode-github-actions",
+    "evilz.vscode-reveal"
+  ]
+}

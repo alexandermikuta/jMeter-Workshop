@@ -1,0 +1,28 @@
+name: publish-slides
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  built-slides:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: |
+          cd slides #Folder where your main slides are
+          curl -LO https://raw.githubusercontent.com/arnehilmann/markdeck/master/markdeck
+          chmod a+x markdeck
+          ./markdeck once
+          cp -R assets deck/assets
+          cp -R themes deck/themes
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: slides/deck # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
