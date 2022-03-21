@@ -36,12 +36,17 @@
 p {
   text-align: left; }
 
+ul {
+  display: block;
+  margin: 0; }
+
 code {
+  display: block;
   font-family: "Inconsolata";
   background: #333;
   color: #ddd;
   border-radius: 5px;
-  padding: 5px; }
+  padding: 15px; }
 
 .reveal .slides section .fragment.fade-in-otherwise-semi-out {
   opacity: 0.4;
