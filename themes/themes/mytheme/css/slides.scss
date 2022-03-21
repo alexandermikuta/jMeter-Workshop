@@ -1,9 +1,5 @@
 @import "common";
 
-.reveal .slides {
-  text-align: left !important;
-}
-
 .reveal {
   h1,
   h2,
@@ -36,10 +32,16 @@
   }
 }
 
+p {
+  text-align: left;
+}
+
 code {
   font-family: "Inconsolata";
-  line-height: 80%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: #333;
+  color: #ddd;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .reveal .slides section .fragment.fade-in-otherwise-semi-out {
