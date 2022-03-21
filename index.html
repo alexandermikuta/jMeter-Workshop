@@ -18,7 +18,8 @@
 
         <link rel="stylesheet" type="text/css" href="assets/3rdparty/asciinema-player.css" />
     
-            
+            <link rel="stylesheet" href="themes/mytheme/css/slides.css" />
+        
     <link rel="stylesheet" href="assets/markdeck/css/markdeck.revealjs.css" />
     <link rel="stylesheet" href="assets/css/slides.css" />
 
@@ -31,6 +32,7 @@
 
     <link href="assets/css/rerendering.css" rel="stylesheet"></link>
 
+<link rel="stylesheet" href="themes/example/css/slides.css" />
 
 </head>
 <body>
@@ -191,7 +193,7 @@
         window.Reveal = deck;
 
         deck.initialize({
-            width: 960,
+            width: 1280,
             height: 740,
             margin: 0.1,
             minScale: 0.2,
@@ -234,7 +236,7 @@
             parallaxBackgroundHorizontal: (null != null && Number(null) >= 0) ? Number(null) : null,
             parallaxBackgroundVertical: (null != null && Number(null) >= 0) ? Number(null) : null,
 
-            theme: 'moon',
+            theme: '',
 
             plugins: [ Markdown, Notes ]
         });
@@ -310,7 +312,7 @@
             document.body.className += " notes";
         }
 
-        document.body.className += " ";
+        document.body.className += " mytheme";
     </script>
 
 
