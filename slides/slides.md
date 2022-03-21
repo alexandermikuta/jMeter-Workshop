@@ -1,8 +1,8 @@
 ---
-title: Github-Workshop
+title: jMeter-Workshop
 highlight_style: github-gist
-themes: mytheme
-theme: mono
+#themes: mytheme
+theme: moon
 width: 1280
 ---
 
