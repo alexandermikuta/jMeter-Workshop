@@ -74,11 +74,24 @@ Das Repository-JSON muss folgendes Format erfüllen: [https://jmeter-plugins.org
 
 **Nützliche Plugins:**
 
-- Custom Thread Groups
+- Ultimate Thread Group
+- Concurrency Thread Group
 - jpgc-perfmon
 - jpgc-dummy
 - jpgc-plancheck
 - JMXMon
+
+# jMeter Plugin-Manager
+
+## Ultimate Thread Group
+
+![https://jmeter-plugins.org/wiki/UltimateThreadGroup/](assets/ultimate_thread_group1.png){ height=50% width=50% }
+
+# jMeter Plugin-Manager
+
+## Concurrency Thread Group
+
+![https://jmeter-plugins.org/wiki/ConcurrencyThreadGroup/](assets/ConcurrencyThreadGroup.png){ height=50% width=50% }
 
 # Strukturierung von Testplänen {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
