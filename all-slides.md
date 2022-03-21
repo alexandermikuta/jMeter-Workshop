@@ -125,9 +125,20 @@ Das Repository-JSON muss folgendes Format erfüllen: https://jmeter-plugins.org/
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
+![](fab%20fa-docker)
+
 <!-- section 18 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+Github Actions:
+
+https://github.com/marketplace/actions/setup-jmeter
+https://github.com/marketplace/actions/apache-jmeter
+https://github.com/marketplace/actions/perfaction-for-jmeter
+https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
+https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
+https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
 <!-- section 19 -->
 
