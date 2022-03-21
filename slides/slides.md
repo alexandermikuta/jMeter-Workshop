@@ -1,6 +1,6 @@
 ---
 title: jMeter-Workshop
-variant: impress
+variant: reveal
 highlight_style: github-gist
 themes: mytheme
 width: 1280
@@ -97,6 +97,17 @@ Das Repository-JSON muss folgendes Format erfüllen: https://jmeter-plugins.org/
 
 # Containerisierung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
+![](fab fa-docker)
+
 # CI/CD-Pipeline {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+Github Actions:
+
+https://github.com/marketplace/actions/setup-jmeter
+https://github.com/marketplace/actions/apache-jmeter
+https://github.com/marketplace/actions/perfaction-for-jmeter
+https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
+https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
+https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
 # Klärung offener Punkt {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
