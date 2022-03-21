@@ -76,10 +76,10 @@ Das Repository-JSON muss folgendes Format erfüllen: [https://jmeter-plugins.org
 
 - Ultimate Thread Group
 - Concurrency Thread Group
-- jpgc-perfmon
-- jpgc-dummy
-- jpgc-plancheck
-- JMXMon
+- JMXMon Sample Collector
+- jp@gc - PerfMon
+- jp@gc - Dummy Sampler
+- jp@gc - PlanCheck
 
 # jMeter Plugin-Manager
 
@@ -92,6 +92,34 @@ Das Repository-JSON muss folgendes Format erfüllen: [https://jmeter-plugins.org
 **Concurrency Thread Group**
 
 ![[https://jmeter-plugins.org/wiki/ConcurrencyThreadGroup/](https://jmeter-plugins.org/wiki/ConcurrencyThreadGroup/)](assets/ConcurrencyThreadGroup.png){ height=40% width=40% }
+
+# jMeter Plugin-Manager
+
+**jp@gc - PerfMon**
+
+![[https://jmeter-plugins.org/wiki/PerfMon/](https://jmeter-plugins.org/wiki/PerfMon/)](assets/servers_performance_monitoring.png){ height=40% width=40% }
+
+# jMeter Plugin-Manager
+
+**jp@gc - Dummy Sampler**
+
+![[https://jmeter-plugins.org/wiki/DummySampler/](https://jmeter-plugins.org/wiki/DummySampler/)](assets/dummy_sampler.png){ height=40% width=40% }
+
+# jMeter Plugin-Manager
+
+**jp@gc - PlanCheck**
+
+[https://jmeter-plugins.org/wiki/TestPlanCheckTool/](https://jmeter-plugins.org/wiki/TestPlanCheckTool/)
+
+Usage:
+
+`jmeter/lib/ext/TestPlanCheck.sh --jmx MyTestPlan.jmx --stats --tree-dump`
+
+# jMeter Plugin-Manager
+
+**JMXMon Sample Collector**
+
+![[https://jmeter-plugins.org/wiki/JMXMon/](https://jmeter-plugins.org/wiki/JMXMon/)](assets/jmxmon_samples_collector.png){ height=40% width=40% }
 
 # Strukturierung von Testplänen {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
