@@ -2,7 +2,7 @@
 
 # jMeter Workshop {#jmeter-workshop .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-![performance testing with jMeter](assets/jmeter.jpg){height="70%" width="70%"}
+![performance testing with jMeter](assets/jmeter.jpg){height="20%" width="20%"}
 
   Tag 1                           Tag 2
   ------------------------------- ------------------------------
