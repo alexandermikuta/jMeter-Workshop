@@ -123,29 +123,94 @@ Usage:
 
 # Strukturierung von Testplänen {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
+# Thread Groups, Sampler und Controller
+
+# Timers
+
+# Assertions und Listener
+
+# Pre- und Post-Prozessoren
+
+# Config-Elemente, Cookie-Manager, Header-Manager
+
+# User-definierte Variable
+
 # Workload Design {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# Zeitliche Verteilung der Last
+
+# Erkennen der Last-Grenzen / Server-Bedarfs
 
 # Scripting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
+# BeanShell
+
+# JSR223
+
+# RegEx-Extractor
+
+# Arbeiten mit JARs
+
 # Reporting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# Arten von Reporting
+
+# Ergebnis-Analyse
 
 # Testdatenverwaltung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
+# Testdaten in .json-Datei / .csv-Datei
+
+# jMeter-Funktionen zur Datengenerierung
+
 # REST-APIs {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# Nutzung des Test-Rekorders
+
+# Testen mit "Http-Request"
+
+# Umgang mit Sessions/Authentification
+
+# Umgang mit dynamischen Daten
 
 # Verteiltes Testen mit jMeter {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
+# Master-Slave-Setup
+
+# Testausführung über CLI
+
 # RMI {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# Diskussion: aktueller verwendeter RMI-Sampler
+
+# Vergleich mit existierende RMI-Samplern auf Github
 
 # Monitoring {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
+# Prometheus / Grafana
+
+# YourKit-Profiler
+
 # Containerisierung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
-![](fab fa-docker)
+# IaC: Infrastructure as a Code
+
+> Mit IaC (Infrastructure as Code) wird die Infrastruktur durch Code – und nicht durch manuelle Prozesse – verwaltet und provisioniert.
+
+> Mit IaC werden Konfigurationsdateien erstellt, die Ihre gesamten Infrastrukturspezifikationen enthalten, wodurch Sie Konfigurationen einfacher bearbeiten und verteilen können.
+> Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
+
+> Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
+
+# Vagrant
+
+# Docker / Docker-Compose
+
+# Kubernetes
 
 # CI/CD-Pipeline {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
-Github Actions:
+# Github Actions
 
 https://github.com/marketplace/actions/setup-jmeter
 https://github.com/marketplace/actions/apache-jmeter
@@ -153,5 +218,9 @@ https://github.com/marketplace/actions/perfaction-for-jmeter
 https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
+
+# jMeter in einer Github-Actions Pipeline
+
+# JMeter in einer Jenkins-Pipeline
 
 # Klärung offener Punkt {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
