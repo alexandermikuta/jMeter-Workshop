@@ -45,7 +45,7 @@ code {
   background: #333;
   color: #ddd;
   border-radius: 5px;
-  padding: 15px; }
+  padding: 5px 15px; }
 
 .reveal .slides section .fragment.fade-in-otherwise-semi-out {
   opacity: 0.4;
