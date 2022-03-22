@@ -2,7 +2,16 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "codeup/Ubuntu-20.04-GUI"
+  config.vm.box = "dajonaga/focaldesktop"
+  #config.vm.box = "emoloukanoff/ubuntu-20.04-minimal"
+  #config.vm.box = "mhc-cs/Ubuntu-20-04-Xfce"
+  #config.vm.box = "mjacobus/ubuntu-20.04-gui"
+
+  # config.vm.provider :virtualbox do |vb|
+  #   vb.customize ["modifyvm", :id, "--usb", "on"]
+  #   vb.customize ["modifyvm", :id, "--usbehci", "off"]
+  #   vb.customize ["modifyvm", :id, "--usbxhci", "off"]
+  # end
 
   # NOTE: This will enable public access to the opened port
   # config.vm.network "forwarded_port", guest: 80, host: 8080
