@@ -81,8 +81,7 @@ Das Repository-JSON muss folgendes Format erfüllen: <https://jmeter-plugins.org
 
 **Nützliche Plugins:**
 
--   Ultimate Thread Group
--   Concurrency Thread Group
+-   Custom Thread Groups
 -   JMXMon Sample Collector
 -   jp\@gc - PerfMon
 -   jp\@gc - Dummy Sampler
@@ -174,117 +173,242 @@ Usage:
 
 <!-- section 22 -->
 
-# Zeitliche Verteilung der Last
+# Worload
+
+> The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services
 
 <!-- section 23 -->
 
-# Erkennen der Last-Grenzen / Server-Bedarfs
+# Prinicples
+
+-   Vorhersagbarkeit
+
+-   Wiederholbarkeit
+
+-   Skalierbarkeit
 
 <!-- section 24 -->
 
-# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Vorhersagbarkeit
+
+> Das Verhalten des Systems (z.B. Prozessanfragen, Datenzugriffe, ...) sollte während die Workload läuft vorhersehbar sein.
+
+![](assets/predictable.png)
 
 <!-- section 25 -->
 
-# BeanShell
+# Wiederholbarkeit
+
+> Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.
 
 <!-- section 26 -->
 
-# JSR223
+# Skalierbarkeit
+
+> Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.
 
 <!-- section 27 -->
 
-# RegEx-Extractor
+# Workload Design Steps
+
+-   Design der Applikation
+
+-   Definieren der Metriken
+
+-   Design der Load
+
+-   Definieren der Skalierungsregeln
+
+-   Design des Load-Generators
 
 <!-- section 28 -->
 
-# Arbeiten mit JARs
+# Design der Applikation
+
+-   Definieren der Aktoren und Use-Cases → Hilft die Operationen der Workload zu definieren
+
+-   Definieren der Operationen
+
+    -   Im einfachsten Fall mappt jeder User-Case auf eine Operation
+    -   Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) → Ansonsten schwer zu managen und verstehen
 
 <!-- section 29 -->
 
-# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Definieren der Metriken
+
+Typische Metriken sind:
+
+-   **Durchsatz:** Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden
+
+-   **Anwortzeiten:** Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt
+
+-   **Anzahl Benutzer:** Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt
 
 <!-- section 30 -->
 
-# Arten von Reporting
+# Design der Load
+
+-   der wichtigste Schritt im Workload Design!
+
+-   die Relevanz der Workload hängt davon ab wie genau sie die die reale Produktionslast emuliert
+
+-   gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert
 
 <!-- section 31 -->
 
-# Ergebnis-Analyse
+# Design der Load
+
+-   **Arrival Rates:** Die Rate mit der Requests an das SUT gestellt werden
+
+-   **Think Times:** Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion → Bei großen Datenmenge steigt diese Zeit
+
+-   **Operation Mix:** Festlegung in welcher Frequenz welche Operation durchgeführt wird
+
+-   **Operation Data:**
+
+-   **Uniform Random:**
+
+-   **Non-Uniform Random:**
+
+## Definieren der Skalierungsregeln
 
 <!-- section 32 -->
 
-# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Workload Design
+
+-   Baseline Test
+-   Identifikation der Test Szenarien
+-   Preprocessors und Timer ()
+-   Konfigurationen und Vorbedingungen
+-   Testergebnisse, Fehler und Logs
+-   Assertions und Post-Processors
+-   Adding load to mimic users action
 
 <!-- section 33 -->
 
-# Testdaten in .json-Datei / .csv-Datei
+# Baseline Test
+
+> "A Baseline is the process of capturing performance metric data for the sole purpose of evaluating the efficacy of successive changes to the system or application. It is important that all characteristics and configurations, except those specifically being varied for comparison, remain the same in order to make effective comparisons as to which change (or series of changes) is driving results toward the targeted goal. Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not." Some considerations when generating baselines include the following:\"
+
+https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
 
 <!-- section 34 -->
 
-# jMeter-Funktionen zur Datengenerierung
+# Identifikation der Test Szenarien
 
 <!-- section 35 -->
 
-# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Zeitliche Verteilung der Last
 
 <!-- section 36 -->
 
-# Nutzung des Test-Rekorders
+# Erkennen der Last-Grenzen / Server-Bedarfs
 
 <!-- section 37 -->
 
-# Testen mit "Http-Request"
+# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 38 -->
 
-# Umgang mit Sessions/Authentification
+# BeanShell
 
 <!-- section 39 -->
 
-# Umgang mit dynamischen Daten
+# JSR223
 
 <!-- section 40 -->
 
-# Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# RegEx-Extractor
 
 <!-- section 41 -->
 
-# Master-Slave-Setup
+# Arbeiten mit JARs
 
 <!-- section 42 -->
 
-# Testausführung über CLI
+# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 43 -->
 
-# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Arten von Reporting
 
 <!-- section 44 -->
 
-# Diskussion: aktueller verwendeter RMI-Sampler
+# Ergebnis-Analyse
 
 <!-- section 45 -->
 
-# Vergleich mit existierende RMI-Samplern auf Github
+# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 46 -->
 
-# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Testdaten in .json-Datei / .csv-Datei
 
 <!-- section 47 -->
 
-# Prometheus / Grafana
+# jMeter-Funktionen zur Datengenerierung
 
 <!-- section 48 -->
 
-# YourKit-Profiler
+# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 49 -->
 
-# Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Nutzung des Test-Rekorders
 
 <!-- section 50 -->
+
+# Testen mit "Http-Request"
+
+<!-- section 51 -->
+
+# Umgang mit Sessions/Authentification
+
+<!-- section 52 -->
+
+# Umgang mit dynamischen Daten
+
+<!-- section 53 -->
+
+# Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 54 -->
+
+# Master-Slave-Setup
+
+<!-- section 55 -->
+
+# Testausführung über CLI
+
+<!-- section 56 -->
+
+# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 57 -->
+
+# Diskussion: aktueller verwendeter RMI-Sampler
+
+<!-- section 58 -->
+
+# Vergleich mit existierende RMI-Samplern auf Github
+
+<!-- section 59 -->
+
+# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 60 -->
+
+# Prometheus / Grafana
+
+<!-- section 61 -->
+
+# YourKit-Profiler
+
+<!-- section 62 -->
+
+# Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 63 -->
 
 # IaC: Infrastructure as a Code
 
@@ -295,25 +419,25 @@ Usage:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 51 -->
+<!-- section 64 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 52 -->
+<!-- section 65 -->
 
 # Docker / Docker-Compose
 
-<!-- section 53 -->
+<!-- section 66 -->
 
 # Kubernetes
 
-<!-- section 54 -->
+<!-- section 67 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 55 -->
+<!-- section 68 -->
 
 # Github Actions
 
@@ -324,14 +448,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 56 -->
+<!-- section 69 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 57 -->
+<!-- section 70 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 58 -->
+<!-- section 71 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

@@ -74,8 +74,7 @@ Das Repository-JSON muss folgendes Format erfüllen: [https://jmeter-plugins.org
 
 **Nützliche Plugins:**
 
-- Ultimate Thread Group
-- Concurrency Thread Group
+- Custom Thread Groups
 - JMXMon Sample Collector
 - jp@gc - PerfMon
 - jp@gc - Dummy Sampler
@@ -136,6 +135,104 @@ Usage:
 # User-definierte Variable
 
 # Workload Design {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# Worload
+
+> The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services
+
+# Prinicples
+
+- Vorhersagbarkeit
+
+- Wiederholbarkeit
+
+- Skalierbarkeit
+
+# Vorhersagbarkeit
+
+> Das Verhalten des Systems (z.B. Prozessanfragen, Datenzugriffe, ...) sollte während die Workload läuft vorhersehbar sein.
+
+![](assets/predictable.png)
+
+# Wiederholbarkeit
+
+> Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.
+
+# Skalierbarkeit
+
+> Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.
+
+# Workload Design Steps
+
+- Design der Applikation
+
+- Definieren der Metriken
+
+- Design der Load
+
+- Definieren der Skalierungsregeln
+
+- Design des Load-Generators
+
+# Design der Applikation
+
+- Definieren der Aktoren und Use-Cases &rarr; Hilft die Operationen der Workload zu definieren
+
+- Definieren der Operationen
+  - Im einfachsten Fall mappt jeder User-Case auf eine Operation
+  - Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) &rarr; Ansonsten schwer zu managen und verstehen
+
+# Definieren der Metriken
+
+Typische Metriken sind:
+
+- **Durchsatz:** Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden
+
+- **Anwortzeiten:** Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT &rarr; Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt
+
+- **Anzahl Benutzer:** Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt
+
+# Design der Load
+
+- der wichtigste Schritt im Workload Design!
+
+- die Relevanz der Workload hängt davon ab wie genau sie die die reale Produktionslast emuliert
+
+- gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren &rarr; Ansonsten wird es zu kompliziert
+
+# Design der Load
+
+- **Arrival Rates:** Die Rate mit der Requests an das SUT gestellt werden
+
+- **Think Times:** Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion &rarr; Bei großen Datenmenge steigt diese Zeit
+
+- **Operation Mix:** Festlegung in welcher Frequenz welche Operation durchgeführt wird
+
+- **Operation Data:**
+
+- **Uniform Random:**
+
+- **Non-Uniform Random:**
+
+## Definieren der Skalierungsregeln
+
+# Workload Design
+
+- Baseline Test
+- Identifikation der Test Szenarien
+- Preprocessors und Timer ()
+- Konfigurationen und Vorbedingungen
+- Testergebnisse, Fehler und Logs
+- Assertions und Post-Processors
+- Adding load to mimic users action
+
+# Baseline Test
+
+> "A Baseline is the process of capturing performance metric data for the sole purpose of evaluating the efficacy of successive changes to the system or application. It is important that all characteristics and configurations, except those specifically being varied for comparison, remain the same in order to make effective comparisons as to which change (or series of changes) is driving results toward the targeted goal. Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not." Some considerations when generating baselines include the following:"
+
+https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
+
+# Identifikation der Test Szenarien
 
 # Zeitliche Verteilung der Last
 

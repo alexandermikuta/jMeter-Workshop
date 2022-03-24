@@ -133,8 +133,7 @@
 <h1>jMeter Plugin-Manager</h1>
 <p><strong>Nützliche Plugins:</strong></p>
 <ul>
-<li>Ultimate Thread Group</li>
-<li>Concurrency Thread Group</li>
+<li>Custom Thread Groups</li>
 <li>JMXMon Sample Collector</li>
 <li>jp@gc - PerfMon</li>
 <li>jp@gc - Dummy Sampler</li>
@@ -206,6 +205,113 @@
 </section>
 <section id="workload-design" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Workload Design</h1>
+</section>
+<section id="worload" class="level1">
+<h1>Worload</h1>
+<blockquote>
+<p>The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services</p>
+</blockquote>
+</section>
+<section id="prinicples" class="level1">
+<h1>Prinicples</h1>
+<ul>
+<li><p>Vorhersagbarkeit</p></li>
+<li><p>Wiederholbarkeit</p></li>
+<li><p>Skalierbarkeit</p></li>
+</ul>
+</section>
+<section id="vorhersagbarkeit" class="level1">
+<h1>Vorhersagbarkeit</h1>
+<blockquote>
+<p>Das Verhalten des Systems (z.B. Prozessanfragen, Datenzugriffe, …) sollte während die Workload läuft vorhersehbar sein.</p>
+</blockquote>
+<p><img src="assets/predictable.png" /></p>
+</section>
+<section id="wiederholbarkeit" class="level1">
+<h1>Wiederholbarkeit</h1>
+<blockquote>
+<p>Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.</p>
+</blockquote>
+</section>
+<section id="skalierbarkeit" class="level1">
+<h1>Skalierbarkeit</h1>
+<blockquote>
+<p>Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.</p>
+</blockquote>
+</section>
+<section id="workload-design-steps" class="level1">
+<h1>Workload Design Steps</h1>
+<ul>
+<li><p>Design der Applikation</p></li>
+<li><p>Definieren der Metriken</p></li>
+<li><p>Design der Load</p></li>
+<li><p>Definieren der Skalierungsregeln</p></li>
+<li><p>Design des Load-Generators</p></li>
+</ul>
+</section>
+<section id="design-der-applikation" class="level1">
+<h1>Design der Applikation</h1>
+<ul>
+<li><p>Definieren der Aktoren und Use-Cases → Hilft die Operationen der Workload zu definieren</p></li>
+<li><p>Definieren der Operationen</p>
+<ul>
+<li>Im einfachsten Fall mappt jeder User-Case auf eine Operation</li>
+<li>Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) → Ansonsten schwer zu managen und verstehen</li>
+</ul></li>
+</ul>
+</section>
+<section id="definieren-der-metriken" class="level1">
+<h1>Definieren der Metriken</h1>
+<p>Typische Metriken sind:</p>
+<ul>
+<li><p><strong>Durchsatz:</strong> Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden</p></li>
+<li><p><strong>Anwortzeiten:</strong> Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt</p></li>
+<li><p><strong>Anzahl Benutzer:</strong> Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt</p></li>
+</ul>
+</section>
+<section id="design-der-load" class="level1">
+<h1>Design der Load</h1>
+<ul>
+<li><p>der wichtigste Schritt im Workload Design!</p></li>
+<li><p>die Relevanz der Workload hängt davon ab wie genau sie die die reale Produktionslast emuliert</p></li>
+<li><p>gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert</p></li>
+</ul>
+</section>
+<section id="design-der-load-1" class="level1">
+<h1>Design der Load</h1>
+<ul>
+<li><p><strong>Arrival Rates:</strong> Die Rate mit der Requests an das SUT gestellt werden</p></li>
+<li><p><strong>Think Times:</strong> Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion → Bei großen Datenmenge steigt diese Zeit</p></li>
+<li><p><strong>Operation Mix:</strong> Festlegung in welcher Frequenz welche Operation durchgeführt wird</p></li>
+<li><p><strong>Operation Data:</strong></p></li>
+<li><p><strong>Uniform Random:</strong></p></li>
+<li><p><strong>Non-Uniform Random:</strong></p></li>
+</ul>
+<section id="definieren-der-skalierungsregeln" class="level2">
+<h2>Definieren der Skalierungsregeln</h2>
+</section>
+</section>
+<section id="workload-design-1" class="level1">
+<h1>Workload Design</h1>
+<ul>
+<li>Baseline Test</li>
+<li>Identifikation der Test Szenarien</li>
+<li>Preprocessors und Timer ()</li>
+<li>Konfigurationen und Vorbedingungen</li>
+<li>Testergebnisse, Fehler und Logs</li>
+<li>Assertions und Post-Processors</li>
+<li>Adding load to mimic users action</li>
+</ul>
+</section>
+<section id="baseline-test" class="level1">
+<h1>Baseline Test</h1>
+<blockquote>
+<p>“A Baseline is the process of capturing performance metric data for the sole purpose of evaluating the efficacy of successive changes to the system or application. It is important that all characteristics and configurations, except those specifically being varied for comparison, remain the same in order to make effective comparisons as to which change (or series of changes) is driving results toward the targeted goal. Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not.” Some considerations when generating baselines include the following:"</p>
+</blockquote>
+<p>https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml</p>
+</section>
+<section id="identifikation-der-test-szenarien" class="level1">
+<h1>Identifikation der Test Szenarien</h1>
 </section>
 <section id="zeitliche-verteilung-der-last" class="level1">
 <h1>Zeitliche Verteilung der Last</h1>
