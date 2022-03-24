@@ -165,13 +165,10 @@ Usage:
 # Workload Design Steps
 
 - Design der Applikation
-
+- Key-Szenarios identifizieren
 - Definieren der Metriken
-
 - Design der Load
-
 - Definieren der Skalierungsregeln
-
 - Design des Load-Generators
 
 # Design der Applikation
@@ -182,6 +179,23 @@ Usage:
   - Im einfachsten Fall mappt jeder User-Case auf eine Operation
   - Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) &rarr; Ansonsten schwer zu managen und verstehen
 
+# Key-Szenarios identifizieren
+
+- Messbares Szenario: Ein User-Szenario das Performance-getestet werden soll, sollte vollständig messbar sein
+- Meistbenutzte Szenarios
+- Business-kritische Szenarios
+- Ressourcen-intensive Szenarios
+- Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon
+- Stakeholder-relevante Szenarien
+
+Beispiel für eine E-Commerce-Applikation:
+
+- Browsen des Produktkatalogs
+- Benutzeraccount anlegen
+- Nach einem Produkt suchen
+- Login
+- Bestellung abschicken
+
 # Definieren der Metriken
 
 Typische Metriken sind:
@@ -190,7 +204,9 @@ Typische Metriken sind:
 
 - **Anwortzeiten:** Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT &rarr; Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt
 
-- **Anzahl Benutzer:** Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt
+- **Ressourcenverbrauch:** z.B. alle Ressourcen (IO, Memory, ...) sollten nicht mehr als 70% der max. Auslastung haben
+
+- **Anzahl maximaler Benutzer:** Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt
 
 # Design der Load
 

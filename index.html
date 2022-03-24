@@ -242,11 +242,12 @@
 <section id="workload-design-steps" class="level1">
 <h1>Workload Design Steps</h1>
 <ul>
-<li><p>Design der Applikation</p></li>
-<li><p>Definieren der Metriken</p></li>
-<li><p>Design der Load</p></li>
-<li><p>Definieren der Skalierungsregeln</p></li>
-<li><p>Design des Load-Generators</p></li>
+<li>Design der Applikation</li>
+<li>Key-Szenarios identifizieren</li>
+<li>Definieren der Metriken</li>
+<li>Design der Load</li>
+<li>Definieren der Skalierungsregeln</li>
+<li>Design des Load-Generators</li>
 </ul>
 </section>
 <section id="design-der-applikation" class="level1">
@@ -260,13 +261,33 @@
 </ul></li>
 </ul>
 </section>
+<section id="key-szenarios-identifizieren" class="level1">
+<h1>Key-Szenarios identifizieren</h1>
+<ul>
+<li>Messbares Szenario: Ein User-Szenario das Performance-getestet werden soll, sollte vollständig messbar sein</li>
+<li>Meistbenutzte Szenarios</li>
+<li>Business-kritische Szenarios</li>
+<li>Ressourcen-intensive Szenarios</li>
+<li>Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon</li>
+<li>Stakeholder-relevante Szenarien</li>
+</ul>
+<p>Beispiel für eine E-Commerce-Applikation:</p>
+<ul>
+<li>Browsen des Produktkatalogs</li>
+<li>Benutzeraccount anlegen</li>
+<li>Nach einem Produkt suchen</li>
+<li>Login</li>
+<li>Bestellung abschicken</li>
+</ul>
+</section>
 <section id="definieren-der-metriken" class="level1">
 <h1>Definieren der Metriken</h1>
 <p>Typische Metriken sind:</p>
 <ul>
 <li><p><strong>Durchsatz:</strong> Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden</p></li>
 <li><p><strong>Anwortzeiten:</strong> Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt</p></li>
-<li><p><strong>Anzahl Benutzer:</strong> Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt</p></li>
+<li><p><strong>Ressourcenverbrauch:</strong> z.B. alle Ressourcen (IO, Memory, …) sollten nicht mehr als 70% der max. Auslastung haben</p></li>
+<li><p><strong>Anzahl maximaler Benutzer:</strong> Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt</p></li>
 </ul>
 </section>
 <section id="design-der-load" class="level1">

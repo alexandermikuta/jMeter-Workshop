@@ -212,13 +212,10 @@ Usage:
 # Workload Design Steps
 
 -   Design der Applikation
-
+-   Key-Szenarios identifizieren
 -   Definieren der Metriken
-
 -   Design der Load
-
 -   Definieren der Skalierungsregeln
-
 -   Design des Load-Generators
 
 <!-- section 28 -->
@@ -234,6 +231,25 @@ Usage:
 
 <!-- section 29 -->
 
+# Key-Szenarios identifizieren
+
+-   Messbares Szenario: Ein User-Szenario das Performance-getestet werden soll, sollte vollständig messbar sein
+-   Meistbenutzte Szenarios
+-   Business-kritische Szenarios
+-   Ressourcen-intensive Szenarios
+-   Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon
+-   Stakeholder-relevante Szenarien
+
+Beispiel für eine E-Commerce-Applikation:
+
+-   Browsen des Produktkatalogs
+-   Benutzeraccount anlegen
+-   Nach einem Produkt suchen
+-   Login
+-   Bestellung abschicken
+
+<!-- section 30 -->
+
 # Definieren der Metriken
 
 Typische Metriken sind:
@@ -242,9 +258,11 @@ Typische Metriken sind:
 
 -   **Anwortzeiten:** Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt
 
--   **Anzahl Benutzer:** Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt
+-   **Ressourcenverbrauch:** z.B. alle Ressourcen (IO, Memory, ...) sollten nicht mehr als 70% der max. Auslastung haben
 
-<!-- section 30 -->
+-   **Anzahl maximaler Benutzer:** Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt
+
+<!-- section 31 -->
 
 # Design der Load
 
@@ -254,7 +272,7 @@ Typische Metriken sind:
 
 -   gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert
 
-<!-- section 31 -->
+<!-- section 32 -->
 
 # Design der Load
 
@@ -297,7 +315,7 @@ Beispiel-Workload als Matrix-Mix:
         -   Uniform Random: Generierung von gleichverteilten Zufallsdaten
         -   Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
 
-<!-- section 32 -->
+<!-- section 33 -->
 
 # Definieren der Skalierungsregeln
 
@@ -313,7 +331,7 @@ Oft werden aber weitreichendere Lösungen benötigt
     -   Anwendungen skalieren oft nicht linear
     -   z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
 
-<!-- section 33 -->
+<!-- section 34 -->
 
 # Design des Load-Generators
 
@@ -325,7 +343,7 @@ Dabei sollte beachtet werden:
 
 -   Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen "Random number generator" (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen
 
-<!-- section 34 -->
+<!-- section 35 -->
 
 # Workload Design
 
@@ -337,7 +355,7 @@ Dabei sollte beachtet werden:
 -   Assertions und Post-Processors
 -   Adding load to mimic users action
 
-<!-- section 35 -->
+<!-- section 36 -->
 
 # Baseline Test
 
@@ -345,123 +363,123 @@ Dabei sollte beachtet werden:
 
 https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
 
-<!-- section 36 -->
+<!-- section 37 -->
 
 # Identifikation der Test Szenarien
 
-<!-- section 37 -->
+<!-- section 38 -->
 
 # Zeitliche Verteilung der Last
 
-<!-- section 38 -->
+<!-- section 39 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
-<!-- section 39 -->
+<!-- section 40 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 40 -->
+<!-- section 41 -->
 
 # BeanShell
 
-<!-- section 41 -->
+<!-- section 42 -->
 
 # JSR223
 
-<!-- section 42 -->
+<!-- section 43 -->
 
 # RegEx-Extractor
 
-<!-- section 43 -->
+<!-- section 44 -->
 
 # Arbeiten mit JARs
 
-<!-- section 44 -->
+<!-- section 45 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 45 -->
+<!-- section 46 -->
 
 # Arten von Reporting
 
-<!-- section 46 -->
+<!-- section 47 -->
 
 # Ergebnis-Analyse
 
-<!-- section 47 -->
+<!-- section 48 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 48 -->
+<!-- section 49 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
-<!-- section 49 -->
+<!-- section 50 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 50 -->
+<!-- section 51 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 51 -->
+<!-- section 52 -->
 
 # Nutzung des Test-Rekorders
 
-<!-- section 52 -->
+<!-- section 53 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 53 -->
+<!-- section 54 -->
 
 # Umgang mit Sessions/Authentification
 
-<!-- section 54 -->
+<!-- section 55 -->
 
 # Umgang mit dynamischen Daten
 
-<!-- section 55 -->
+<!-- section 56 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 56 -->
+<!-- section 57 -->
 
 # Master-Slave-Setup
 
-<!-- section 57 -->
+<!-- section 58 -->
 
 # Testausführung über CLI
 
-<!-- section 58 -->
+<!-- section 59 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 59 -->
+<!-- section 60 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 60 -->
+<!-- section 61 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 61 -->
+<!-- section 62 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 62 -->
+<!-- section 63 -->
 
 # Prometheus / Grafana
 
-<!-- section 63 -->
+<!-- section 64 -->
 
 # YourKit-Profiler
 
-<!-- section 64 -->
+<!-- section 65 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 65 -->
+<!-- section 66 -->
 
 # IaC: Infrastructure as a Code
 
@@ -472,25 +490,25 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 66 -->
+<!-- section 67 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 67 -->
+<!-- section 68 -->
 
 # Docker / Docker-Compose
 
-<!-- section 68 -->
+<!-- section 69 -->
 
 # Kubernetes
 
-<!-- section 69 -->
+<!-- section 70 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 70 -->
+<!-- section 71 -->
 
 # Github Actions
 
@@ -501,14 +519,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 71 -->
+<!-- section 72 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 72 -->
+<!-- section 73 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 73 -->
+<!-- section 74 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
