@@ -230,11 +230,39 @@ Beispiel-Workload als Matrix-Mix:
 
 - **Operation Data:**
 
-- **Uniform Random:**
+  - Abhängig von der Operation müssen für den Request diverse Input-Daten generiert werden
 
-- **Non-Uniform Random:**
+  - Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden &rarr; Bei 100 Items sollten nicht immer fix 5 selektiert werden
 
-## Definieren der Skalierungsregeln
+  - Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken
+
+  - Genieren "echter" Daten kann bei großen Daten problematisch werden &rarr; Workload Entwickler müsste all Möglichen Values kennen
+    - Uniform Random: Generierung von gleichverteilten Zufallsdaten
+    - Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! &rarr; Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
+
+# Definieren der Skalierungsregeln
+
+Häufig wird skaliert indem man die Anzahl der emulierten Benutzer erhöht
+
+Oft werden aber weitreichendere Lösungen benötigt
+
+- Linear Scaling
+  - alles wird über einen einzigen Skalierungsfaktor skaliert
+  - z.B. Workload führt Datenzugriffe eines Benutzers aus &rarr; Anzahl Benutzer & Anzahl Datenzugriffe werden beide skaliert
+  - Häufig nützlich für "Sizing"-Zwecke
+- Non-linear Scaling:
+  - Anwendungen skalieren oft nicht linear
+  - z.B. Anwendung erlaubt Tagging durch Benutzer &rarr; mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
+
+# Design des Load-Generators
+
+- Implementiert die Workload
+
+Dabei sollte beachtet werden:
+
+- Zum simulieren mehrerer Benutzer-Connections sollte **kein** connection-pooling verwendet werden
+
+- Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen "Random number generator" (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen
 
 # Workload Design
 
