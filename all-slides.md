@@ -262,7 +262,27 @@ Typische Metriken sind:
 
 -   **Think Times:** Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion → Bei großen Datenmenge steigt diese Zeit
 
--   **Operation Mix:** Festlegung in welcher Frequenz welche Operation durchgeführt wird
+-   **Operation Mix:** Festlegung in welcher Frequenz welche Operation durchgeführt wird → oft prozentual je Operation was sich zu 100% summiert
+
+    -   Flat Mix:
+        -   Einfachste Möglichkeit
+        -   wird verwendet wenn Operation unabhängig sind und die gleiche Wahrscheinlichkeit haben
+        -   → Der Mix wählt eine Operation zufällig
+    -   Flat Sequence Mix:
+        -   Spezifiziert ein Set von Operations-Sequenzen
+        -   z.B. Set1=Op1,Op2 und Set2=Op1,Op3
+        -   jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt
+    -   Matrix Mix (Transition Mix):
+        -   Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
+        -   wird häufig bei Web-Apps verwendet
+
+Beispiel-Workload als Matrix-Mix:
+
+  From     To Page 1   To Page 2   To Page 2
+  -------- ----------- ----------- -----------
+  Page 1   0,00 %      80,00%      20,00%
+  Page 2   20,00%      39,00%      41,00%
+  Page 3   60,00%      19,00%      21,00%
 
 -   **Operation Data:**
 

@@ -282,7 +282,59 @@
 <ul>
 <li><p><strong>Arrival Rates:</strong> Die Rate mit der Requests an das SUT gestellt werden</p></li>
 <li><p><strong>Think Times:</strong> Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion → Bei großen Datenmenge steigt diese Zeit</p></li>
-<li><p><strong>Operation Mix:</strong> Festlegung in welcher Frequenz welche Operation durchgeführt wird</p></li>
+<li><p><strong>Operation Mix:</strong> Festlegung in welcher Frequenz welche Operation durchgeführt wird → oft prozentual je Operation was sich zu 100% summiert</p>
+<ul>
+<li>Flat Mix:
+<ul>
+<li>Einfachste Möglichkeit</li>
+<li>wird verwendet wenn Operation unabhängig sind und die gleiche Wahrscheinlichkeit haben</li>
+<li>→ Der Mix wählt eine Operation zufällig</li>
+</ul></li>
+<li>Flat Sequence Mix:
+<ul>
+<li>Spezifiziert ein Set von Operations-Sequenzen</li>
+<li>z.B. Set1=Op1,Op2 und Set2=Op1,Op3</li>
+<li>jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt</li>
+</ul></li>
+<li>Matrix Mix (Transition Mix):
+<ul>
+<li>Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell</li>
+<li>wird häufig bei Web-Apps verwendet</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Beispiel-Workload als Matrix-Mix:</p>
+<table>
+<thead>
+<tr class="header">
+<th>From</th>
+<th>To Page 1</th>
+<th>To Page 2</th>
+<th>To Page 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Page 1</td>
+<td>0,00 %</td>
+<td>80,00%</td>
+<td>20,00%</td>
+</tr>
+<tr class="even">
+<td>Page 2</td>
+<td>20,00%</td>
+<td>39,00%</td>
+<td>41,00%</td>
+</tr>
+<tr class="odd">
+<td>Page 3</td>
+<td>60,00%</td>
+<td>19,00%</td>
+<td>21,00%</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p><strong>Operation Data:</strong></p></li>
 <li><p><strong>Uniform Random:</strong></p></li>
 <li><p><strong>Non-Uniform Random:</strong></p></li>
