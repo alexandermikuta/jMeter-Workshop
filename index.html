@@ -335,13 +335,47 @@
 </tbody>
 </table>
 <ul>
-<li><p><strong>Operation Data:</strong></p></li>
-<li><p><strong>Uniform Random:</strong></p></li>
-<li><p><strong>Non-Uniform Random:</strong></p></li>
+<li><p><strong>Operation Data:</strong></p>
+<ul>
+<li><p>Abhängig von der Operation müssen für den Request diverse Input-Daten generiert werden</p></li>
+<li><p>Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden → Bei 100 Items sollten nicht immer fix 5 selektiert werden</p></li>
+<li><p>Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken</p></li>
+<li><p>Genieren “echter” Daten kann bei großen Daten problematisch werden → Workload Entwickler müsste all Möglichen Values kennen</p>
+<ul>
+<li>Uniform Random: Generierung von gleichverteilten Zufallsdaten</li>
+<li>Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen</li>
+</ul></li>
+</ul></li>
 </ul>
-<section id="definieren-der-skalierungsregeln" class="level2">
-<h2>Definieren der Skalierungsregeln</h2>
 </section>
+<section id="definieren-der-skalierungsregeln" class="level1">
+<h1>Definieren der Skalierungsregeln</h1>
+<p>Häufig wird skaliert indem man die Anzahl der emulierten Benutzer erhöht</p>
+<p>Oft werden aber weitreichendere Lösungen benötigt</p>
+<ul>
+<li>Linear Scaling
+<ul>
+<li>alles wird über einen einzigen Skalierungsfaktor skaliert</li>
+<li>z.B. Workload führt Datenzugriffe eines Benutzers aus → Anzahl Benutzer &amp; Anzahl Datenzugriffe werden beide skaliert</li>
+<li>Häufig nützlich für “Sizing”-Zwecke</li>
+</ul></li>
+<li>Non-linear Scaling:
+<ul>
+<li>Anwendungen skalieren oft nicht linear</li>
+<li>z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags</li>
+</ul></li>
+</ul>
+</section>
+<section id="design-des-load-generators" class="level1">
+<h1>Design des Load-Generators</h1>
+<ul>
+<li>Implementiert die Workload</li>
+</ul>
+<p>Dabei sollte beachtet werden:</p>
+<ul>
+<li><p>Zum simulieren mehrerer Benutzer-Connections sollte <strong>kein</strong> connection-pooling verwendet werden</p></li>
+<li><p>Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen “Random number generator” (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen</p></li>
+</ul>
 </section>
 <section id="workload-design-1" class="level1">
 <h1>Workload Design</h1>

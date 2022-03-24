@@ -286,13 +286,46 @@ Beispiel-Workload als Matrix-Mix:
 
 -   **Operation Data:**
 
--   **Uniform Random:**
+    -   Abhängig von der Operation müssen für den Request diverse Input-Daten generiert werden
 
--   **Non-Uniform Random:**
+    -   Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden → Bei 100 Items sollten nicht immer fix 5 selektiert werden
 
-## Definieren der Skalierungsregeln
+    -   Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken
+
+    -   Genieren "echter" Daten kann bei großen Daten problematisch werden → Workload Entwickler müsste all Möglichen Values kennen
+
+        -   Uniform Random: Generierung von gleichverteilten Zufallsdaten
+        -   Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
 
 <!-- section 32 -->
+
+# Definieren der Skalierungsregeln
+
+Häufig wird skaliert indem man die Anzahl der emulierten Benutzer erhöht
+
+Oft werden aber weitreichendere Lösungen benötigt
+
+-   Linear Scaling
+    -   alles wird über einen einzigen Skalierungsfaktor skaliert
+    -   z.B. Workload führt Datenzugriffe eines Benutzers aus → Anzahl Benutzer & Anzahl Datenzugriffe werden beide skaliert
+    -   Häufig nützlich für "Sizing"-Zwecke
+-   Non-linear Scaling:
+    -   Anwendungen skalieren oft nicht linear
+    -   z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
+
+<!-- section 33 -->
+
+# Design des Load-Generators
+
+-   Implementiert die Workload
+
+Dabei sollte beachtet werden:
+
+-   Zum simulieren mehrerer Benutzer-Connections sollte **kein** connection-pooling verwendet werden
+
+-   Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen "Random number generator" (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen
+
+<!-- section 34 -->
 
 # Workload Design
 
@@ -304,7 +337,7 @@ Beispiel-Workload als Matrix-Mix:
 -   Assertions und Post-Processors
 -   Adding load to mimic users action
 
-<!-- section 33 -->
+<!-- section 35 -->
 
 # Baseline Test
 
@@ -312,123 +345,123 @@ Beispiel-Workload als Matrix-Mix:
 
 https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
 
-<!-- section 34 -->
+<!-- section 36 -->
 
 # Identifikation der Test Szenarien
 
-<!-- section 35 -->
+<!-- section 37 -->
 
 # Zeitliche Verteilung der Last
 
-<!-- section 36 -->
+<!-- section 38 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
-<!-- section 37 -->
+<!-- section 39 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 38 -->
+<!-- section 40 -->
 
 # BeanShell
 
-<!-- section 39 -->
+<!-- section 41 -->
 
 # JSR223
 
-<!-- section 40 -->
+<!-- section 42 -->
 
 # RegEx-Extractor
 
-<!-- section 41 -->
+<!-- section 43 -->
 
 # Arbeiten mit JARs
 
-<!-- section 42 -->
+<!-- section 44 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 43 -->
+<!-- section 45 -->
 
 # Arten von Reporting
 
-<!-- section 44 -->
+<!-- section 46 -->
 
 # Ergebnis-Analyse
 
-<!-- section 45 -->
+<!-- section 47 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 46 -->
+<!-- section 48 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
-<!-- section 47 -->
+<!-- section 49 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 48 -->
+<!-- section 50 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 49 -->
+<!-- section 51 -->
 
 # Nutzung des Test-Rekorders
 
-<!-- section 50 -->
+<!-- section 52 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 51 -->
+<!-- section 53 -->
 
 # Umgang mit Sessions/Authentification
 
-<!-- section 52 -->
+<!-- section 54 -->
 
 # Umgang mit dynamischen Daten
 
-<!-- section 53 -->
+<!-- section 55 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 54 -->
+<!-- section 56 -->
 
 # Master-Slave-Setup
 
-<!-- section 55 -->
+<!-- section 57 -->
 
 # Testausführung über CLI
 
-<!-- section 56 -->
+<!-- section 58 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 57 -->
+<!-- section 59 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 58 -->
+<!-- section 60 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 59 -->
+<!-- section 61 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 60 -->
+<!-- section 62 -->
 
 # Prometheus / Grafana
 
-<!-- section 61 -->
+<!-- section 63 -->
 
 # YourKit-Profiler
 
-<!-- section 62 -->
+<!-- section 64 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 63 -->
+<!-- section 65 -->
 
 # IaC: Infrastructure as a Code
 
@@ -439,25 +472,25 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 64 -->
+<!-- section 66 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 65 -->
+<!-- section 67 -->
 
 # Docker / Docker-Compose
 
-<!-- section 66 -->
+<!-- section 68 -->
 
 # Kubernetes
 
-<!-- section 67 -->
+<!-- section 69 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 68 -->
+<!-- section 70 -->
 
 # Github Actions
 
@@ -468,14 +501,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 69 -->
+<!-- section 71 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 70 -->
+<!-- section 72 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 71 -->
+<!-- section 73 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
