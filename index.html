@@ -208,9 +208,19 @@
 <blockquote>
 <p>A Thread Group in JMeter represents a pool of virtual users performing a set of operations</p>
 </blockquote>
-<p><img src="assets/threadGroup.webp" /></p>
+<p><img src="assets/2.Thread_Group_User.png" /></p>
 </section>
 <section id="thread-groups-1" class="level1">
+<h1>Thread Groups</h1>
+<p><img src="assets/threadGroup.webp" /></p>
+<p>Wichtigste Einstellungen:</p>
+<ul>
+<li>Anzahl Threads</li>
+<li>Anzahl der Wiederholungen</li>
+<li>Ramp-Up-Zeit einstellen (wichtig z.B. für Spike-Testing bei Ticketverkauf!)</li>
+</ul>
+</section>
+<section id="thread-groups-2" class="level1">
 <h1>Thread Groups</h1>
 <p><strong>Beispiel: Google-Suche</strong></p>
 <ul>
@@ -218,6 +228,70 @@
 <li><p>Hierfür kann man verschieden Thread-Gruppen mit unterschiedlichem Thread-Count anlegen</p></li>
 <li><p>In diesen Thread-Gruppen werden diverse Sampler (z.B. Http-Requests) hinzugefügt um die Benutzer-Requests zu simulieren</p></li>
 </ul>
+</section>
+<section id="thread-groups-3" class="level1">
+<h1>Thread Groups</h1>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 60%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Use-Cases</th>
+<th>Besonderheiten</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Thread Group (classic)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Arrivals Thread Group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Free Form Arrivals Thread Group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Concurrency Thread Group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Stepping Thread Group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Ultimate Thread Group</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>——————————-</td>
+<td>———————————————————————</td>
+<td>————–</td>
+</tr>
+<tr class="even">
+<td>setUp Thread Group</td>
+<td>Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>tearDown Thread Group</td>
+<td>Aufräumen der Testumgebung</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="sampler" class="level1">
 <h1>Sampler</h1>
@@ -633,6 +707,10 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 </section>
 <section id="klärung-offener-punkt" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Klärung offener Punkt</h1>
+<p>TODO:</p>
+<ul>
+<li>Spike-Testing: z.B. SChneller anstieg der Load -&gt; Ticketverkauf</li>
+</ul>
 </section>
 
         </div>
