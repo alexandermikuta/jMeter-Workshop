@@ -198,7 +198,7 @@
 <li>Configuration Elements</li>
 <li>Cookie-Manager</li>
 <li>Header-Manager</li>
-<li>User-definierte Variablen</li>
+<li>Variablen / Properties</li>
 <li>Testfragment</li>
 <li>Templates</li>
 <li>Ausführungsreihenfolge</li>
@@ -407,8 +407,77 @@ Sampler legen die Art des Requests fest!</p>
 <section id="header-manager" class="level1">
 <h1>Header-Manager</h1>
 </section>
-<section id="user-definierte-variablen" class="level1">
-<h1>User-definierte Variablen</h1>
+<section id="variablen-properties" class="level1">
+<h1>Variablen / Properties</h1>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p>sind global in jMeter</p></li>
+<li><p>wird meistens für jMeter Default-Werte genutzt → Beispiel: remote_hosts</p></li>
+<li><p><a href="https://jmeter.apache.org/usermanual/functions.html#__property">können in Testplänen referenziert werden</a></p></li>
+<li><p>setProperty kann genutzt werden um eine jMeter-Property zu definieren → Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!</p></li>
+</ul>
+</section>
+<section id="variablen-properties-1" class="level1">
+<h1>Variablen / Properties</h1>
+<p><strong>Variablen:</strong></p>
+<ul>
+<li><p>lokal für jeden Thread</p></li>
+<li><p>Wird eine Variable in einem Thread upgedated wird nur die Thread-Kopie der Variable verändert!</p></li>
+<li><p>Durch den Testplan definierte Variablen und “User Defined Variables” werden zum Start innerhalb des Testplans verfügbar gemacht</p></li>
+<li><p>Bei mehrfach-Definition gewinnt die letzte Definition!</p></li>
+<li><p>Nützlich um Tests zu parametrisieren → Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!</p></li>
+</ul>
+</section>
+<section id="variablen-properties-2" class="level1">
+<h1>Variablen / Properties</h1>
+<p>Beispielparametrisierung:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Wert</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HOST</td>
+<td>www.example.com</td>
+</tr>
+<tr class="even">
+<td>THREADS</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>LOOPS</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p>wird zu</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Wert</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HOST</td>
+<td>${__P(host,www.example.com)}</td>
+</tr>
+<tr class="even">
+<td>THREADS</td>
+<td>${__P(threads,10)}</td>
+</tr>
+<tr class="odd">
+<td>LOOPS</td>
+<td>${__P(loops,20)}</td>
+</tr>
+</tbody>
+</table>
+<p>Aufruf: <code>jmeter … -Jhost=www3.example.org -Jloops=13</code></p>
+<p>Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}</p>
 </section>
 <section id="testfragment" class="level1">
 <h1>Testfragment</h1>
@@ -854,6 +923,14 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 <ul>
 <li>Spike-Testing: z.B. SChneller anstieg der Load -&gt; Ticketverkauf</li>
 </ul>
+<pre><code>
+```
+
+```
+
+```
+
+```</code></pre>
 </section>
 
         </div>
