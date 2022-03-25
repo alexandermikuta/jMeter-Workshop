@@ -142,7 +142,17 @@ Usage:
 
 > A Thread Group in JMeter represents a pool of virtual users performing a set of operations
 
+![](assets/2.Thread_Group_User.png)
+
+# Thread Groups
+
 ![](assets/threadGroup.webp)
+
+Wichtigste Einstellungen:
+
+- Anzahl Threads
+- Anzahl der Wiederholungen
+- Ramp-Up-Zeit einstellen (wichtig z.B. für Spike-Testing bei Ticketverkauf!)
 
 # Thread Groups
 
@@ -153,6 +163,20 @@ Usage:
 - Hierfür kann man verschieden Thread-Gruppen mit unterschiedlichem Thread-Count anlegen
 
 - In diesen Thread-Gruppen werden diverse Sampler (z.B. Http-Requests) hinzugefügt um die Benutzer-Requests zu simulieren
+
+# Thread Groups
+
+| Name                            | Use-Cases                                                             | Besonderheiten |
+| ------------------------------- | --------------------------------------------------------------------- | -------------- |
+| Thread Group (classic)          |                                                                       |                |
+| Arrivals Thread Group           |                                                                       |                |
+| Free Form Arrivals Thread Group |                                                                       |                |
+| Concurrency Thread Group        |                                                                       |                |
+| Stepping Thread Group           |                                                                       |                |
+| Ultimate Thread Group           |                                                                       |                |
+| ------------------------------- | --------------------------------------------------------------------- | -------------- |
+| setUp Thread Group              | Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen) |                |
+| tearDown Thread Group           | Aufräumen der Testumgebung                                            |                |
 
 # Sampler
 
@@ -460,3 +484,7 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 # JMeter in einer Jenkins-Pipeline
 
 # Klärung offener Punkt {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+TODO:
+
+- Spike-Testing: z.B. SChneller anstieg der Load -> Ticketverkauf
