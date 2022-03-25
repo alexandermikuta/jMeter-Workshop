@@ -131,12 +131,13 @@ Usage:
 - Assertions
 - Listener
 - Pre-/Post-Prozessoren
-- Config-Elemente
+- Configuration Elements
 - Cookie-Manager
 - Header-Manager
 - User-definierte Variablen
 - Testfragment
 - Templates
+- Ausführungsreihenfolge
 
 # Thread Groups
 
@@ -180,17 +181,92 @@ Wichtigste Einstellungen:
 
 # Sampler
 
+![](assets/Samplers.webp)
+
+> Durch Threadgruppen werden Benutzer-Anfragen an den Server simuliert.
+> Sampler legen die Art des Requests fest!
+
+# Sampler
+
+- FTP Request
+- HTTP Request (can be used for SOAP or REST Webservice also)
+- JDBC Request
+- Java object request
+- JMS request
+- JUnit Test request
+- LDAP Request
+- Mail request
+- OS Process request
+- TCP request
+
+# Sampler
+
+Falls man mehrere Requests des gleichen Type versendet &rarr; Überlegen of _Defaults Configuration Element_ nützlich sein könnte
+
 # Controller
+
+> Logische Controller legen fest wann/welche Sampler verwendet werden, z.B. Interleave Controller wechselt zwischen zwei HTTP-Request-Samplern
 
 # Timers
 
+> Durch Timer läßt sich in jMeter ein Delay zwischen den Sampler definieren
+
+- Ohne delay könnten zu viele Requests in kurzer Zeit den Server überlasten
+
+- Fügt man mehr als einen Timer zur Thread-Gruppe summiert jMeter die Timer-Zeit und pausiert so lange
+
+- Um Pause an einer bestimmten Stelle im Test Plan zu machen &rarr; Flow Control Action Sampler
+
 # Assertions
+
+> Über Assertions läßt sich prüfen ob sich die Applikation unter Last wie erwartet verhält
+
+- Beispiel: Response enthält bestimmten Text?
+
+- Um Assertion-Ergebnisse anzuzeigen muss man einen Assertion Listener zur Thread-Gruppe hinzufügen
 
 # Listener
 
+![](assets/Listners.webp)
+
+> Zeigen die Ergebnisse der Testdurchführung
+
+- Sammeln Ergebnisse von Elementen auf gleichem Level oder darunter
+
+- Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
+
 # Pre- und Post-Prozessoren
 
-# Config-Elemente
+> Pre-/Post-Prozessoren werden vor/nach Sampler-Request ausgeführt
+
+- Ist ein Pre-/Post-Prozessor direkt an einen Sampler angehängt wird er direkt vor/nach diesem Sampler ausgeführt
+
+- Häufigste Use-Cases:
+  - Pre-Prozessor:
+    - Settings eines Requests direkt bevor er läuft verändern
+    - Variablen Updaten die nicht aus dem Response-Text extrahiert werden.
+  - Post-Prozessor:
+    - Verarbeiten der Response Daten, z.B extrahieren von Daten
+
+# Configuarion Elementes
+
+![](assets/ConfigurationElements.webp)
+
+> Arbeiten eng mit Samplern zusammen. Kann zwar keine Requests senden, diese aber verändern
+
+Beispiel: Setzen von Defaults und Variablen die später von Samplern verwendet werden können
+
+- Zugriff nur innerhalb des Zweiges in dem das Element hinzugefügt wurde
+
+- Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum vorrang haben.
+  - Ausnahme: _User Defined Variables_ werden unabhängig von der Position zu Beginn des Test verarbeitet
+  - &rarr; Empfehlung daher: _User Defined Variables_ sollten am Start der Thread-Gruppe positioniert werden
+
+Header Manager, Cookie Manager und Authorization Manager stellen einen weitern Sonderfall dar:
+
+- Setting werden nicht gemerged
+
+- Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!
 
 # Cookie-Manager
 
@@ -200,7 +276,59 @@ Wichtigste Einstellungen:
 
 # Testfragment
 
+> Testfragmente sind eine spezielle Art von Controller auf Ebene des Thread Group Elements.
+
+- wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller refereniert wird.
+
+- Dient der Code-Wiederverwendung innerhalb von Testplänen
+
 # Templates
+
+# Ausführungsreihenfolge
+
+- Configuration Elements
+- Pre-Processors
+- Timers
+- Sampler
+- Post-Processors
+- Assertions
+- Listeners
+
+# Ausführungsreihenfolge
+
+- Timers, Assertions, Pre-/Post-Processors werden nur ausgeführt, wenn es einen Sampler gibt auf den sie sich beziehen können!
+- Logic-Controller und Sampler werden in der Reihenfolge in der sie im Baum stehen ausgeführt
+- Andere Testelemente werden entsprechend ihres Scopes ausgeführt
+
+Beispiel-Testplan:
+
+- Controller
+  - Post-Processor 1
+  - Sampler 1
+  - Sampler 2
+  - Timer 1
+  - Assertion 1
+  - Pre-Processor 1
+  - Timer 2
+  - Post-Processor 2
+
+Ausführungsreihenfolge:
+
+Pre-Processor 1
+Timer 1
+Timer 2
+Sampler 1
+Post-Processor 1
+Post-Processor 2
+Assertion 1
+
+Pre-Processor 1
+Timer 1
+Timer 2
+Sampler 2
+Post-Processor 1
+Post-Processor 2
+Assertion 1
 
 # Workload Design {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
