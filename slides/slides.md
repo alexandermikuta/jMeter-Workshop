@@ -134,7 +134,7 @@ Usage:
 - Configuration Elements
 - Cookie-Manager
 - Header-Manager
-- User-definierte Variablen
+- Variablen / Properties
 - Testfragment
 - Templates
 - Ausführungsreihenfolge
@@ -272,7 +272,53 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 # Header-Manager
 
-# User-definierte Variablen
+# Variablen / Properties
+
+**Properties:**
+
+- sind global in jMeter
+
+- wird meistens für jMeter Default-Werte genutzt &rarr; Beispiel: remote_hosts
+
+- [können in Testplänen referenziert werden](https://jmeter.apache.org/usermanual/functions.html#__property)
+
+- setProperty kann genutzt werden um eine jMeter-Property zu definieren &rarr; Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!
+
+# Variablen / Properties
+
+**Variablen:**
+
+- lokal für jeden Thread
+
+- Wird eine Variable in einem Thread upgedated wird nur die Thread-Kopie der Variable verändert!
+
+- Durch den Testplan definierte Variablen und "User Defined Variables" werden zum Start innerhalb des Testplans verfügbar gemacht
+
+- Bei mehrfach-Definition gewinnt die letzte Definition!
+
+- Nützlich um Tests zu parametrisieren &rarr; Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!
+
+# Variablen / Properties
+
+Beispielparametrisierung:
+
+| Variable | Wert            |
+| -------- | --------------- |
+| HOST     | www.example.com |
+| THREADS  | 10              |
+| LOOPS    | 20              |
+
+wird zu
+
+| Variable | Wert                           |
+| -------- | ------------------------------ |
+| HOST     | ${\_\_P(host,www.example.com)} |
+| THREADS  | ${\_\_P(threads,10)}           |
+| LOOPS    | ${\_\_P(loops,20)}             |
+
+Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13`
+
+Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}
 
 # Testfragment
 
@@ -616,3 +662,14 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 TODO:
 
 - Spike-Testing: z.B. SChneller anstieg der Load -> Ticketverkauf
+
+````
+
+```
+
+```
+
+```
+
+```
+````
