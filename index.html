@@ -182,38 +182,91 @@
 <img src="assets/jmxmon_samples_collector.png" style="width:40.0%;height:40.0%" alt="" /><figcaption><a href="https://jmeter-plugins.org/wiki/JMXMon/">https://jmeter-plugins.org/wiki/JMXMon/</a></figcaption>
 </figure>
 </section>
-<section id="strukturierung-von-testplänen" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
-<h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Strukturierung von Testplänen</h1>
+<section id="elementestrukturierung-von-testplänen" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
+<h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Elemente/Strukturierung von Testplänen</h1>
 </section>
-<section id="thread-groups-sampler-und-controller" class="level1">
-<h1>Thread Groups, Sampler und Controller</h1>
+<section id="elementestrukturierung-von-testplänen-1" class="level1">
+<h1>Elemente/Strukturierung von Testplänen</h1>
+<ul>
+<li>Thread Groups</li>
+<li>Sampler</li>
+<li>Controller</li>
+<li>Timers</li>
+<li>Assertions</li>
+<li>Listener</li>
+<li>Pre-/Post-Prozessoren</li>
+<li>Config-Elemente</li>
+<li>Cookie-Manager</li>
+<li>Header-Manager</li>
+<li>User-definierte Variablen</li>
+<li>Testfragment</li>
+<li>Templates</li>
+</ul>
+</section>
+<section id="thread-groups" class="level1">
+<h1>Thread Groups</h1>
+<blockquote>
+<p>A Thread Group in JMeter represents a pool of virtual users performing a set of operations</p>
+</blockquote>
+<p><img src="assets/threadGroup.webp" /></p>
+</section>
+<section id="thread-groups-1" class="level1">
+<h1>Thread Groups</h1>
+<p><strong>Beispiel: Google-Suche</strong></p>
+<ul>
+<li><p>Ein Teil der Nutzer verwendet die Text-Suche, andere die News- oder Bilder-Suche</p></li>
+<li><p>Hierfür kann man verschieden Thread-Gruppen mit unterschiedlichem Thread-Count anlegen</p></li>
+<li><p>In diesen Thread-Gruppen werden diverse Sampler (z.B. Http-Requests) hinzugefügt um die Benutzer-Requests zu simulieren</p></li>
+</ul>
+</section>
+<section id="sampler" class="level1">
+<h1>Sampler</h1>
+</section>
+<section id="controller" class="level1">
+<h1>Controller</h1>
 </section>
 <section id="timers" class="level1">
 <h1>Timers</h1>
 </section>
-<section id="assertions-und-listener" class="level1">
-<h1>Assertions und Listener</h1>
+<section id="assertions" class="level1">
+<h1>Assertions</h1>
+</section>
+<section id="listener" class="level1">
+<h1>Listener</h1>
 </section>
 <section id="pre--und-post-prozessoren" class="level1">
 <h1>Pre- und Post-Prozessoren</h1>
 </section>
-<section id="config-elemente-cookie-manager-header-manager" class="level1">
-<h1>Config-Elemente, Cookie-Manager, Header-Manager</h1>
+<section id="config-elemente" class="level1">
+<h1>Config-Elemente</h1>
 </section>
-<section id="user-definierte-variable" class="level1">
-<h1>User-definierte Variable</h1>
+<section id="cookie-manager" class="level1">
+<h1>Cookie-Manager</h1>
+</section>
+<section id="header-manager" class="level1">
+<h1>Header-Manager</h1>
+</section>
+<section id="user-definierte-variablen" class="level1">
+<h1>User-definierte Variablen</h1>
+</section>
+<section id="testfragment" class="level1">
+<h1>Testfragment</h1>
+</section>
+<section id="templates" class="level1">
+<h1>Templates</h1>
 </section>
 <section id="workload-design" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Workload Design</h1>
 </section>
-<section id="worload" class="level1">
-<h1>Worload</h1>
+<section id="workload" class="level1">
+<h1>Workload</h1>
+<p>Definition:</p>
 <blockquote>
 <p>The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services</p>
 </blockquote>
 </section>
-<section id="prinicples" class="level1">
-<h1>Prinicples</h1>
+<section id="prinzipien" class="level1">
+<h1>Prinzipien</h1>
 <ul>
 <li><p>Vorhersagbarkeit</p></li>
 <li><p>Wiederholbarkeit</p></li>
@@ -248,6 +301,7 @@
 <li>Design der Load</li>
 <li>Definieren der Skalierungsregeln</li>
 <li>Design des Load-Generators</li>
+<li>Festlegung einer Baseline</li>
 </ul>
 </section>
 <section id="design-der-applikation" class="level1">
@@ -271,6 +325,9 @@
 <li>Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon</li>
 <li>Stakeholder-relevante Szenarien</li>
 </ul>
+</section>
+<section id="key-szenarios-identifizieren-1" class="level1">
+<h1>Key-Szenarios identifizieren</h1>
 <p>Beispiel für eine E-Commerce-Applikation:</p>
 <ul>
 <li>Browsen des Produktkatalogs</li>
@@ -278,6 +335,11 @@
 <li>Nach einem Produkt suchen</li>
 <li>Login</li>
 <li>Bestellung abschicken</li>
+</ul>
+<p>Navigationspfade der Key-Szenarios untersuchen</p>
+<ul>
+<li>Auf welche Arten kann ich z.B. eine Bestellung abschicken</li>
+<li>Wie häufig wird welcher Weg genutzt? → Logfiles oder Analysetools (z.B Matomo)</li>
 </ul>
 </section>
 <section id="definieren-der-metriken" class="level1">
@@ -287,7 +349,7 @@
 <li><p><strong>Durchsatz:</strong> Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden</p></li>
 <li><p><strong>Anwortzeiten:</strong> Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt</p></li>
 <li><p><strong>Ressourcenverbrauch:</strong> z.B. alle Ressourcen (IO, Memory, …) sollten nicht mehr als 70% der max. Auslastung haben</p></li>
-<li><p><strong>Anzahl maximaler Benutzer:</strong> Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt</p></li>
+<li><p><strong>Anzahl maximaler Benutzer:</strong> Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten</p></li>
 </ul>
 </section>
 <section id="design-der-load" class="level1">
@@ -303,6 +365,13 @@
 <ul>
 <li><p><strong>Arrival Rates:</strong> Die Rate mit der Requests an das SUT gestellt werden</p></li>
 <li><p><strong>Think Times:</strong> Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion → Bei großen Datenmenge steigt diese Zeit</p></li>
+<li><p><strong>Browser Mix:</strong> Welche Browser sollen im Test verwendet werden? Chrome, Firefox, …</p></li>
+<li><p><strong>Network Mix:</strong> Welche Netzwerkgeschwindigkeiten sollen im Test verwendet werden? z.B. 3G</p></li>
+</ul>
+</section>
+<section id="design-der-load-2" class="level1">
+<h1>Design der Load</h1>
+<ul>
 <li><p><strong>Operation Mix:</strong> Festlegung in welcher Frequenz welche Operation durchgeführt wird → oft prozentual je Operation was sich zu 100% summiert</p>
 <ul>
 <li>Flat Mix:
@@ -324,6 +393,9 @@
 </ul></li>
 </ul></li>
 </ul>
+</section>
+<section id="design-der-load-3" class="level1">
+<h1>Design der Load</h1>
 <p>Beispiel-Workload als Matrix-Mix:</p>
 <table>
 <thead>
@@ -355,6 +427,9 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="design-der-load-4" class="level1">
+<h1>Design der Load</h1>
 <ul>
 <li><p><strong>Operation Data:</strong></p>
 <ul>
@@ -363,7 +438,7 @@
 <li><p>Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken</p></li>
 <li><p>Genieren “echter” Daten kann bei großen Daten problematisch werden → Workload Entwickler müsste all Möglichen Values kennen</p>
 <ul>
-<li>Uniform Random: Generierung von gleichverteilten Zufallsdaten</li>
+<li>Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items</li>
 <li>Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen</li>
 </ul></li>
 </ul></li>
@@ -371,54 +446,34 @@
 </section>
 <section id="definieren-der-skalierungsregeln" class="level1">
 <h1>Definieren der Skalierungsregeln</h1>
-<p>Häufig wird skaliert indem man die Anzahl der emulierten Benutzer erhöht</p>
-<p>Oft werden aber weitreichendere Lösungen benötigt</p>
-<ul>
-<li>Linear Scaling
+<p>Häufig skaliert man durch Erhöhung der emulierten Benutzer. Weiter Möglichkeiten sind:</p>
+<p>Linear Scaling</p>
 <ul>
 <li>alles wird über einen einzigen Skalierungsfaktor skaliert</li>
 <li>z.B. Workload führt Datenzugriffe eines Benutzers aus → Anzahl Benutzer &amp; Anzahl Datenzugriffe werden beide skaliert</li>
 <li>Häufig nützlich für “Sizing”-Zwecke</li>
-</ul></li>
-<li>Non-linear Scaling:
+</ul>
+<p>Non-linear Scaling:</p>
 <ul>
 <li>Anwendungen skalieren oft nicht linear</li>
 <li>z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags</li>
-</ul></li>
 </ul>
 </section>
 <section id="design-des-load-generators" class="level1">
 <h1>Design des Load-Generators</h1>
-<ul>
-<li>Implementiert die Workload</li>
-</ul>
+<p>Der Load-Generator implementiert die Workload</p>
 <p>Dabei sollte beachtet werden:</p>
 <ul>
 <li><p>Zum simulieren mehrerer Benutzer-Connections sollte <strong>kein</strong> connection-pooling verwendet werden</p></li>
 <li><p>Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen “Random number generator” (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen</p></li>
 </ul>
 </section>
-<section id="workload-design-1" class="level1">
-<h1>Workload Design</h1>
-<ul>
-<li>Baseline Test</li>
-<li>Identifikation der Test Szenarien</li>
-<li>Preprocessors und Timer ()</li>
-<li>Konfigurationen und Vorbedingungen</li>
-<li>Testergebnisse, Fehler und Logs</li>
-<li>Assertions und Post-Processors</li>
-<li>Adding load to mimic users action</li>
-</ul>
-</section>
-<section id="baseline-test" class="level1">
-<h1>Baseline Test</h1>
+<section id="festlegung-einer-baseline" class="level1">
+<h1>Festlegung einer Baseline</h1>
 <blockquote>
 <p>“A Baseline is the process of capturing performance metric data for the sole purpose of evaluating the efficacy of successive changes to the system or application. It is important that all characteristics and configurations, except those specifically being varied for comparison, remain the same in order to make effective comparisons as to which change (or series of changes) is driving results toward the targeted goal. Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not.” Some considerations when generating baselines include the following:"</p>
 </blockquote>
 <p>https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml</p>
-</section>
-<section id="identifikation-der-test-szenarien" class="level1">
-<h1>Identifikation der Test Szenarien</h1>
 </section>
 <section id="zeitliche-verteilung-der-last" class="level1">
 <h1>Zeitliche Verteilung der Last</h1>
@@ -479,6 +534,37 @@
 </section>
 <section id="master-slave-setup" class="level1">
 <h1>Master-Slave-Setup</h1>
+<p><img src="distributed_jmeter.webp" /></p>
+</section>
+<section id="master-slave-setup-1" class="level1">
+<h1>Master-Slave-Setup</h1>
+<ul>
+<li>setup multiple computers/vms/containers</li>
+<li>auf jedem slave: run jmeter-server: <strong>bin/jmeter-server.bat</strong></li>
+<li>auf dem master:
+<ul>
+<li>edit <strong>bin/jmeter.properties</strong>: füge alle IPs der slave-systeme komma-separiert unter remote_hosts hinzu (master/slaves müssen im selben Subnetz sein!)</li>
+</ul></li>
+<li>run test
+<ul>
+<li>via GUI</li>
+<li>non-GUI
+<ul>
+<li><code>jmeter -n -t script.jmx -r</code></li>
+<li><code>jmeter -n -t script.jmx -R server1,server2,...</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="master-slave-setup-2" class="level1">
+<h1>Master-Slave-Setup</h1>
+<ul>
+<li>Jedes Slave-System führt die im Master definierten Dinge aus
+<ul>
+<li>wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!</li>
+</ul></li>
+<li>Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen</li>
+</ul>
 </section>
 <section id="testausführung-über-cli" class="level1">
 <h1>Testausführung über CLI</h1>

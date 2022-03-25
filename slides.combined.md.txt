@@ -120,27 +120,73 @@ Usage:
 
 ![[https://jmeter-plugins.org/wiki/JMXMon/](https://jmeter-plugins.org/wiki/JMXMon/)](assets/jmxmon_samples_collector.png){ height=40% width=40% }
 
-# Strukturierung von Testplänen {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+# Elemente/Strukturierung von Testplänen {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
-# Thread Groups, Sampler und Controller
+# Elemente/Strukturierung von Testplänen
+
+- Thread Groups
+- Sampler
+- Controller
+- Timers
+- Assertions
+- Listener
+- Pre-/Post-Prozessoren
+- Config-Elemente
+- Cookie-Manager
+- Header-Manager
+- User-definierte Variablen
+- Testfragment
+- Templates
+
+# Thread Groups
+
+> A Thread Group in JMeter represents a pool of virtual users performing a set of operations
+
+![](assets/threadGroup.webp)
+
+# Thread Groups
+
+**Beispiel: Google-Suche**
+
+- Ein Teil der Nutzer verwendet die Text-Suche, andere die News- oder Bilder-Suche
+
+- Hierfür kann man verschieden Thread-Gruppen mit unterschiedlichem Thread-Count anlegen
+
+- In diesen Thread-Gruppen werden diverse Sampler (z.B. Http-Requests) hinzugefügt um die Benutzer-Requests zu simulieren
+
+# Sampler
+
+# Controller
 
 # Timers
 
-# Assertions und Listener
+# Assertions
+
+# Listener
 
 # Pre- und Post-Prozessoren
 
-# Config-Elemente, Cookie-Manager, Header-Manager
+# Config-Elemente
 
-# User-definierte Variable
+# Cookie-Manager
+
+# Header-Manager
+
+# User-definierte Variablen
+
+# Testfragment
+
+# Templates
 
 # Workload Design {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
-# Worload
+# Workload
+
+Definition:
 
 > The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services
 
-# Prinicples
+# Prinzipien
 
 - Vorhersagbarkeit
 
@@ -170,6 +216,7 @@ Usage:
 - Design der Load
 - Definieren der Skalierungsregeln
 - Design des Load-Generators
+- Festlegung einer Baseline
 
 # Design der Applikation
 
@@ -188,6 +235,8 @@ Usage:
 - Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon
 - Stakeholder-relevante Szenarien
 
+# Key-Szenarios identifizieren
+
 Beispiel für eine E-Commerce-Applikation:
 
 - Browsen des Produktkatalogs
@@ -195,6 +244,11 @@ Beispiel für eine E-Commerce-Applikation:
 - Nach einem Produkt suchen
 - Login
 - Bestellung abschicken
+
+Navigationspfade der Key-Szenarios untersuchen
+
+- Auf welche Arten kann ich z.B. eine Bestellung abschicken
+- Wie häufig wird welcher Weg genutzt? &rarr; Logfiles oder Analysetools (z.B Matomo)
 
 # Definieren der Metriken
 
@@ -206,7 +260,7 @@ Typische Metriken sind:
 
 - **Ressourcenverbrauch:** z.B. alle Ressourcen (IO, Memory, ...) sollten nicht mehr als 70% der max. Auslastung haben
 
-- **Anzahl maximaler Benutzer:** Wie viele Benutzer können gleichzeitig auf dem SUT arbeiten ohne das es zu Probleme kommt
+- **Anzahl maximaler Benutzer:** Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten
 
 # Design der Load
 
@@ -222,6 +276,12 @@ Typische Metriken sind:
 
 - **Think Times:** Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion &rarr; Bei großen Datenmenge steigt diese Zeit
 
+- **Browser Mix:** Welche Browser sollen im Test verwendet werden? Chrome, Firefox, ...
+
+- **Network Mix:** Welche Netzwerkgeschwindigkeiten sollen im Test verwendet werden? z.B. 3G
+
+# Design der Load
+
 - **Operation Mix:** Festlegung in welcher Frequenz welche Operation durchgeführt wird &rarr; oft prozentual je Operation was sich zu 100% summiert
 
   - Flat Mix:
@@ -236,6 +296,8 @@ Typische Metriken sind:
     - Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
     - wird häufig bei Web-Apps verwendet
 
+# Design der Load
+
 Beispiel-Workload als Matrix-Mix:
 
 | From   | To Page 1 | To Page 2 | To Page 2 |
@@ -243,6 +305,8 @@ Beispiel-Workload als Matrix-Mix:
 | Page 1 | 0,00 %    | 80,00%    | 20,00%    |
 | Page 2 | 20,00%    | 39,00%    | 41,00%    |
 | Page 3 | 60,00%    | 19,00%    | 21,00%    |
+
+# Design der Load
 
 - **Operation Data:**
 
@@ -253,26 +317,27 @@ Beispiel-Workload als Matrix-Mix:
   - Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken
 
   - Genieren "echter" Daten kann bei großen Daten problematisch werden &rarr; Workload Entwickler müsste all Möglichen Values kennen
-    - Uniform Random: Generierung von gleichverteilten Zufallsdaten
+    - Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items
     - Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! &rarr; Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
 
 # Definieren der Skalierungsregeln
 
-Häufig wird skaliert indem man die Anzahl der emulierten Benutzer erhöht
+Häufig skaliert man durch Erhöhung der emulierten Benutzer. Weiter Möglichkeiten sind:
 
-Oft werden aber weitreichendere Lösungen benötigt
+Linear Scaling
 
-- Linear Scaling
-  - alles wird über einen einzigen Skalierungsfaktor skaliert
-  - z.B. Workload führt Datenzugriffe eines Benutzers aus &rarr; Anzahl Benutzer & Anzahl Datenzugriffe werden beide skaliert
-  - Häufig nützlich für "Sizing"-Zwecke
-- Non-linear Scaling:
-  - Anwendungen skalieren oft nicht linear
-  - z.B. Anwendung erlaubt Tagging durch Benutzer &rarr; mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
+- alles wird über einen einzigen Skalierungsfaktor skaliert
+- z.B. Workload führt Datenzugriffe eines Benutzers aus &rarr; Anzahl Benutzer & Anzahl Datenzugriffe werden beide skaliert
+- Häufig nützlich für "Sizing"-Zwecke
+
+Non-linear Scaling:
+
+- Anwendungen skalieren oft nicht linear
+- z.B. Anwendung erlaubt Tagging durch Benutzer &rarr; mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
 
 # Design des Load-Generators
 
-- Implementiert die Workload
+Der Load-Generator implementiert die Workload
 
 Dabei sollte beachtet werden:
 
@@ -280,23 +345,11 @@ Dabei sollte beachtet werden:
 
 - Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen "Random number generator" (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen
 
-# Workload Design
-
-- Baseline Test
-- Identifikation der Test Szenarien
-- Preprocessors und Timer ()
-- Konfigurationen und Vorbedingungen
-- Testergebnisse, Fehler und Logs
-- Assertions und Post-Processors
-- Adding load to mimic users action
-
-# Baseline Test
+# Festlegung einer Baseline
 
 > "A Baseline is the process of capturing performance metric data for the sole purpose of evaluating the efficacy of successive changes to the system or application. It is important that all characteristics and configurations, except those specifically being varied for comparison, remain the same in order to make effective comparisons as to which change (or series of changes) is driving results toward the targeted goal. Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not." Some considerations when generating baselines include the following:"
 
 https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
-
-# Identifikation der Test Szenarien
 
 # Zeitliche Verteilung der Last
 
@@ -337,6 +390,26 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
 # Verteiltes Testen mit jMeter {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
 # Master-Slave-Setup
+
+![](distributed_jmeter.webp)
+
+# Master-Slave-Setup
+
+- setup multiple computers/vms/containers
+- auf jedem slave: run jmeter-server: **bin/jmeter-server.bat**
+- auf dem master:
+  - edit **bin/jmeter.properties**: füge alle IPs der slave-systeme komma-separiert unter remote_hosts hinzu (master/slaves müssen im selben Subnetz sein!)
+- run test
+  - via GUI
+  - non-GUI
+    - `jmeter -n -t script.jmx -r`
+    - `jmeter -n -t script.jmx -R server1,server2,...`
+
+# Master-Slave-Setup
+
+- Jedes Slave-System führt die im Master definierten Dinge aus
+  - wollen wir für 10000 Nutzer testen und haben 10 Slaves &rarr; Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
+- Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
 # Testausführung über CLI
 
