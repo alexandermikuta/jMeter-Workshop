@@ -485,9 +485,24 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 <blockquote>
 <p>Zeigen die Ergebnisse der Testdurchführung</p>
 </blockquote>
+</section>
+<section id="listener-1" class="level1">
+<h1>Listener</h1>
+<figure>
+<img src="assets/Jmeter-Listeners-3.png" alt="" /><figcaption>Arten von Listenern</figcaption>
+</figure>
+</section>
+<section id="listener-2" class="level1">
+<h1>Listener</h1>
 <ul>
 <li><p>Sammeln Ergebnisse von Elementen auf gleichem Level oder darunter</p></li>
-<li><p>Listener können sehr Ressourcenintensiv sein, wenn es viel Samples gibt!</p></li>
+<li><p>Listener können sehr Ressourcenintensiv sein, wenn es viel Samples gibt!</p>
+<ul>
+<li>Nicht bei Load-/Stress-Tests verwendet werden sollten:</li>
+<li>Assertion Results</li>
+<li>View Results in Table</li>
+<li>View Results Tree</li>
+</ul></li>
 <li><p>Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden</p>
 <ul>
 <li>Der Default der zu speichernden Werte kann in jmeter.properties bzw. user.properties definiert werden</li>
@@ -495,13 +510,21 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 </ul></li>
 </ul>
 </section>
-<section id="listener-1" class="level1">
+<section id="listener-3" class="level1">
 <h1>Listener</h1>
 <p><strong>CLI-Modus:</strong> mit dem <em>-l Flag can ein Top-Level listener benutzt werden zusätzlich zu den im Testplan definierten Listenern</em></p>
 <p><code>jmeter -n -t testplan.jmx -l testplan_01.jtl -j testplan_01.log</code></p>
+<p>Generieren eines HTML-Reports aus .jtl-Dateien:</p>
+<p>´./bin/jmeter -g JTL_FILE -o OUTPUT_FOLDER`</p>
+</section>
+<section id="listener-4" class="level1">
+<h1>Listener</h1>
+<figure>
+<img src="assets/jmeter-html-report-summary.png" alt="" /><figcaption>Beispiel HTML-Dashboard</figcaption>
+</figure>
 <p><strong>Real-Time-Results:</strong> seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: → <embed src="https://jmeter.apache.org/usermanual/realtime-results.html" /></p>
 </section>
-<section id="listener-2" class="level1">
+<section id="listener-5" class="level1">
 <h1>Listener</h1>
 <figure>
 <img src="assets/grafana_dashboard.png" alt="" /><figcaption>Grafana-Beispielboard</figcaption>
@@ -523,13 +546,13 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 </ul></li>
 <li>Post-Prozessor:
 <ul>
-<li>Verarbeiten der Response Daten, z.B extrahieren von Daten</li>
+<li>Verarbeiten der Response Daten, z.B extrahieren von Daten (Regex, Json, …)</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="configuarion-elementes" class="level1">
-<h1>Configuarion Elementes</h1>
+<section id="configuration-elements" class="level1">
+<h1>Configuration Elements</h1>
 <p><img src="assets/ConfigurationElements.webp" /></p>
 <blockquote>
 <p>Arbeiten eng mit Samplern zusammen. Kann zwar keine Requests senden, diese aber verändern</p>
@@ -549,14 +572,16 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 <li><p>Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!</p></li>
 </ul>
 </section>
-<section id="cookie-manager" class="level1">
-<h1>Cookie-Manager</h1>
+<section id="configuration-elements-1" class="level1">
+<h1>Configuration Elements</h1>
+<ul>
+<li><p><strong>Cache-Manager:</strong>: Falls man Last-Tests mit Cache durchführen möchte, z.B. für Web-Apps</p></li>
+<li><p><strong>Cookie-Manager:</strong> Falls man Anwendung mit Cookies testen möchten, z.B. Auth bei Web-Apps</p></li>
+<li><p><strong>Header-Manager:</strong> Kann HTTP Request-Header überschreiben, z.B. Authorization-Header für JWTs bei Web-Apps</p></li>
+</ul>
 </section>
-<section id="header-manager" class="level1">
-<h1>Header-Manager</h1>
-</section>
-<section id="variablen-properties" class="level1">
-<h1>Variablen / Properties</h1>
+<section id="properties-variablen" class="level1">
+<h1>Properties / Variablen</h1>
 <p><strong>Properties:</strong></p>
 <ul>
 <li><p>sind global in jMeter</p></li>
@@ -565,8 +590,8 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 <li><p>setProperty kann genutzt werden um eine jMeter-Property zu definieren → Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!</p></li>
 </ul>
 </section>
-<section id="variablen-properties-1" class="level1">
-<h1>Variablen / Properties</h1>
+<section id="properties-variablen-1" class="level1">
+<h1>Properties / Variablen</h1>
 <p><strong>Variablen:</strong></p>
 <ul>
 <li><p>lokal für jeden Thread</p></li>
@@ -576,8 +601,8 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 <li><p>Nützlich um Tests zu parametrisieren → Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!</p></li>
 </ul>
 </section>
-<section id="variablen-properties-2" class="level1">
-<h1>Variablen / Properties</h1>
+<section id="configuration-elements-2" class="level1">
+<h1>Configuration Elements</h1>
 <p>Beispielparametrisierung:</p>
 <table>
 <thead>
