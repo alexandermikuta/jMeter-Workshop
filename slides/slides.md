@@ -261,7 +261,13 @@ Weiter wichtige Controller:
 
 - Beispiel: Response enthält bestimmten Text?
 
-- Um Assertion-Ergebnisse anzuzeigen muss man einen Assertion Listener zur Thread-Gruppe hinzufügen
+- Um Assertion-Ergebnisse anzuzeigen muss man einen entsprechenden Listener zur Thread-Gruppe hinzufügen
+
+# Assertions
+
+> Scope beachten!
+
+![](assets/Screen Shot 2021-06-19 at 9.06.28.png)
 
 # Listener
 
