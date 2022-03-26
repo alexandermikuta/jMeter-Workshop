@@ -269,6 +269,45 @@ Weiter wichtige Controller:
 
 ![](assets/Screen Shot 2021-06-19 at 9.06.28.png)
 
+# Assertions
+
+> Performance beachten!
+
+| Assertion            | CPU/Memory usage | Info                               |
+| -------------------- | ---------------- | ---------------------------------- |
+| Response Assertion   | moderat          | Regular Expressions                |
+| Duration Assertion   | gering           |                                    |
+| Size Assertion       | gering           |                                    |
+| XML Assertion        | hoch             | Builds XML DOM Documents           |
+| Beanshell Assertion  | Variable         | Depends on the script logic        |
+| MD5Hex Assertion     | gering           |                                    |
+| HTML Assertion       | hoch             | Parses the HTML Response           |
+| XPath Assertion      | hoch             | Builds XML DOM Documents           |
+| XML Schema Assertion | hoch             | Builds XML DOM Documents           |
+| JSR223 Assertion     | Variable         | Depends on the script logic        |
+| Compare Assertion    | hoch             | Parses responses and compares them |
+| SMIME Assertion      | moderat          |                                    |
+| Json Assertion       | hoch             | Parses the Json document           |
+
+**gering:** Kann ohne Probleme genutzt werden
+**moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
+**hoch:** größtenteils nur für funktionales Testen oder leichte Last (<10 concurrent Usern) passend
+
+# Assertions
+
+Beispiel: Eigene JSR223 Assertion um Durations zu prüfen
+
+`
+def response_time = prev.getTime().toInteger();
+
+def expected_response_time = 0;
+
+if (response_time > expected_response_time) {
+AssertionResult.setFailure(true);
+AssertionResult.setFailureMessage("The expected response time is : " + expected_response_time + "ms but it took: " + response_time + "ms");
+}
+`
+
 # Listener
 
 ![](assets/Listners.webp)
@@ -277,7 +316,24 @@ Weiter wichtige Controller:
 
 - Sammeln Ergebnisse von Elementen auf gleichem Level oder darunter
 
+- Listener können sehr Ressourcenintensiv sein, wenn es viel Samples gibt!
+
 - Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
+
+  - Der Default der zu speichernden Werte kann in jmeter.properties bzw. user.properties definiert werden
+  - für mehr Details siehe: &rarr; ![https://jmeter.apache.org/usermanual/listeners.html](https://jmeter.apache.org/usermanual/listeners.html)
+
+# Listener
+
+**CLI-Modus:** mit dem _-l Flag can ein Top-Level listener benutzt werden zusätzlich zu den im Testplan definierten Listenern_
+
+`jmeter -n -t testplan.jmx -l testplan_01.jtl -j testplan_01.log`
+
+**Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: &rarr; ![https://jmeter.apache.org/usermanual/realtime-results.html](https://jmeter.apache.org/usermanual/realtime-results.html)
+
+# Listener
+
+![Grafana-Beispielboard](assets/grafana_dashboard.png)
 
 # Pre- und Post-Prozessoren
 
@@ -702,4 +758,8 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 # JMeter in einer Jenkins-Pipeline
 
 # Klärung offener Punkt {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+```
+
+```
 

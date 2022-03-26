@@ -382,6 +382,103 @@ Sampler legen die Art des Requests fest!</p>
 </blockquote>
 <p><img src="assets/Screen%20Shot%202021-06-19%20at%209.06.28.png" /></p>
 </section>
+<section id="assertions-2" class="level1">
+<h1>Assertions</h1>
+<blockquote>
+<p>Performance beachten!</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Assertion</th>
+<th>CPU/Memory usage</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Response Assertion</td>
+<td>moderat</td>
+<td>Regular Expressions</td>
+</tr>
+<tr class="even">
+<td>Duration Assertion</td>
+<td>gering</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Size Assertion</td>
+<td>gering</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>XML Assertion</td>
+<td>hoch</td>
+<td>Builds XML DOM Documents</td>
+</tr>
+<tr class="odd">
+<td>Beanshell Assertion</td>
+<td>Variable</td>
+<td>Depends on the script logic</td>
+</tr>
+<tr class="even">
+<td>MD5Hex Assertion</td>
+<td>gering</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>HTML Assertion</td>
+<td>hoch</td>
+<td>Parses the HTML Response</td>
+</tr>
+<tr class="even">
+<td>XPath Assertion</td>
+<td>hoch</td>
+<td>Builds XML DOM Documents</td>
+</tr>
+<tr class="odd">
+<td>XML Schema Assertion</td>
+<td>hoch</td>
+<td>Builds XML DOM Documents</td>
+</tr>
+<tr class="even">
+<td>JSR223 Assertion</td>
+<td>Variable</td>
+<td>Depends on the script logic</td>
+</tr>
+<tr class="odd">
+<td>Compare Assertion</td>
+<td>hoch</td>
+<td>Parses responses and compares them</td>
+</tr>
+<tr class="even">
+<td>SMIME Assertion</td>
+<td>moderat</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Json Assertion</td>
+<td>hoch</td>
+<td>Parses the Json document</td>
+</tr>
+</tbody>
+</table>
+<p><strong>gering:</strong> Kann ohne Probleme genutzt werden
+<strong>moderat:</strong> Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
+<strong>hoch:</strong> größtenteils nur für funktionales Testen oder leichte Last (&lt;10 concurrent Usern) passend</p>
+</section>
+<section id="assertions-3" class="level1">
+<h1>Assertions</h1>
+<p>Beispiel: Eigene JSR223 Assertion um Durations zu prüfen</p>
+<p>`
+def response_time = prev.getTime().toInteger();</p>
+<p>def expected_response_time = 0;</p>
+<p>if (response_time &gt; expected_response_time) {
+AssertionResult.setFailure(true);
+AssertionResult.setFailureMessage(“The expected response time is :” + expected_response_time + “ms but it took:” + response_time + “ms”);
+}
+`</p>
+</section>
 <section id="listener" class="level1">
 <h1>Listener</h1>
 <p><img src="assets/Listners.webp" /></p>
@@ -390,8 +487,25 @@ Sampler legen die Art des Requests fest!</p>
 </blockquote>
 <ul>
 <li><p>Sammeln Ergebnisse von Elementen auf gleichem Level oder darunter</p></li>
-<li><p>Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden</p></li>
+<li><p>Listener können sehr Ressourcenintensiv sein, wenn es viel Samples gibt!</p></li>
+<li><p>Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden</p>
+<ul>
+<li>Der Default der zu speichernden Werte kann in jmeter.properties bzw. user.properties definiert werden</li>
+<li>für mehr Details siehe: → <embed src="https://jmeter.apache.org/usermanual/listeners.html" /></li>
+</ul></li>
 </ul>
+</section>
+<section id="listener-1" class="level1">
+<h1>Listener</h1>
+<p><strong>CLI-Modus:</strong> mit dem <em>-l Flag can ein Top-Level listener benutzt werden zusätzlich zu den im Testplan definierten Listenern</em></p>
+<p><code>jmeter -n -t testplan.jmx -l testplan_01.jtl -j testplan_01.log</code></p>
+<p><strong>Real-Time-Results:</strong> seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: → <embed src="https://jmeter.apache.org/usermanual/realtime-results.html" /></p>
+</section>
+<section id="listener-2" class="level1">
+<h1>Listener</h1>
+<figure>
+<img src="assets/grafana_dashboard.png" alt="" /><figcaption>Grafana-Beispielboard</figcaption>
+</figure>
 </section>
 <section id="pre--und-post-prozessoren" class="level1">
 <h1>Pre- und Post-Prozessoren</h1>
@@ -953,6 +1067,7 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 </section>
 <section id="klärung-offener-punkt" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Klärung offener Punkt</h1>
+<pre><code></code></pre>
 </section>
 
         </div>
