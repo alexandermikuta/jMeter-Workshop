@@ -532,7 +532,7 @@ wird zu
   THREADS    \${\_\_P(threads,10)}
   LOOPS      \${\_\_P(loops,20)}
 
-Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13`
+Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13` (Alternativ: entsprechende user.properties setzen)
 
 Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
@@ -540,17 +540,46 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 # Testfragment
 
-> Testfragmente sind eine spezielle Art von Controller auf Ebene des Thread Group Elements.
+> Testfragmente sind eine spezielle Art von Controller auf Ebene des Thread Group Elements. Man unterscheidet zwischen *Test Fragment Nodes* und *test Fragment Files*. *Test Fragment Nodes* lassen sich nicht in *Test Fragment\_Files* inkludieren!
 
 -   wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller refereniert wird.
 
--   Dient der Code-Wiederverwendung innerhalb von Testplänen
+    -   → Ermöglicht gleichzeitges Arbeiten an modulen in separaten Files
+
+-   Dient der Code-Wiederverwendung innerhalb von Testplänen und hilft sehr große Testpläne wartbar zu machen
+
+-   Details: → ![](https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments)
 
 <!-- section 46 -->
 
-# Templates
+# Testfragment
+
+> Hilft unterschiedliche Workflows zu unterstützen
+
+  Funktionalitäten einer Beispielapp
+  ----------------------------------------------
+  Login
+  Logout
+  User Registration
+  Search for Product
+  Select Product
+  Order Product with different payment methods
+  Edit Order
+  Cancel Order
+  Search for User Profile
+
+-   Workflow 1: User Registration -\> Search for Product -\> Select Product -\> Order Product -\> Logout
+-   Workflow 2: Login -\> Search for Product -\> Select Product -\> Order Product -\> Logout
+-   Workflow 3: Login -\> Search for User -\> Cancel Order -\> Logout
+-   Workflow 4: Login -\> Search for Product
+
+![Workflow 4](assets/include-controller.png)
 
 <!-- section 47 -->
+
+# Templates
+
+<!-- section 48 -->
 
 # Ausführungsreihenfolge
 
@@ -562,7 +591,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 -   Assertions
 -   Listeners
 
-<!-- section 48 -->
+<!-- section 49 -->
 
 # Ausführungsreihenfolge
 
@@ -600,11 +629,11 @@ Post-Processor 1
 Post-Processor 2
 Assertion 1
 
-<!-- section 49 -->
+<!-- section 50 -->
 
 # Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 50 -->
+<!-- section 51 -->
 
 # Workload
 
@@ -612,7 +641,7 @@ Definition:
 
 > The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services
 
-<!-- section 51 -->
+<!-- section 52 -->
 
 # Prinzipien
 
@@ -622,7 +651,7 @@ Definition:
 
 -   Skalierbarkeit
 
-<!-- section 52 -->
+<!-- section 53 -->
 
 # Vorhersagbarkeit
 
@@ -630,19 +659,19 @@ Definition:
 
 ![](assets/predictable.png)
 
-<!-- section 53 -->
+<!-- section 54 -->
 
 # Wiederholbarkeit
 
 > Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.
 
-<!-- section 54 -->
+<!-- section 55 -->
 
 # Skalierbarkeit
 
 > Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.
 
-<!-- section 55 -->
+<!-- section 56 -->
 
 # Workload Design Steps
 
@@ -654,7 +683,7 @@ Definition:
 -   Design des Load-Generators
 -   Festlegung einer Baseline
 
-<!-- section 56 -->
+<!-- section 57 -->
 
 # Design der Applikation
 
@@ -665,7 +694,7 @@ Definition:
     -   Im einfachsten Fall mappt jeder User-Case auf eine Operation
     -   Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) → Ansonsten schwer zu managen und verstehen
 
-<!-- section 57 -->
+<!-- section 58 -->
 
 # Key-Szenarios identifizieren
 
@@ -676,7 +705,7 @@ Definition:
 -   Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon
 -   Stakeholder-relevante Szenarien
 
-<!-- section 58 -->
+<!-- section 59 -->
 
 # Key-Szenarios identifizieren
 
@@ -693,7 +722,7 @@ Navigationspfade der Key-Szenarios untersuchen
 -   Auf welche Arten kann ich z.B. eine Bestellung abschicken
 -   Wie häufig wird welcher Weg genutzt? → Logfiles oder Analysetools (z.B Matomo)
 
-<!-- section 59 -->
+<!-- section 60 -->
 
 # Definieren der Metriken
 
@@ -707,7 +736,7 @@ Typische Metriken sind:
 
 -   **Anzahl maximaler Benutzer:** Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten
 
-<!-- section 60 -->
+<!-- section 61 -->
 
 # Design der Load
 
@@ -717,7 +746,7 @@ Typische Metriken sind:
 
 -   gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert
 
-<!-- section 61 -->
+<!-- section 62 -->
 
 # Design der Load
 
@@ -729,7 +758,7 @@ Typische Metriken sind:
 
 -   **Network Mix:** Welche Netzwerkgeschwindigkeiten sollen im Test verwendet werden? z.B. 3G
 
-<!-- section 62 -->
+<!-- section 63 -->
 
 # Design der Load
 
@@ -747,7 +776,7 @@ Typische Metriken sind:
         -   Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
         -   wird häufig bei Web-Apps verwendet
 
-<!-- section 63 -->
+<!-- section 64 -->
 
 # Design der Load
 
@@ -759,7 +788,7 @@ Beispiel-Workload als Matrix-Mix:
   Page 2   20,00%      39,00%      41,00%
   Page 3   60,00%      19,00%      21,00%
 
-<!-- section 64 -->
+<!-- section 65 -->
 
 # Design der Load
 
@@ -776,7 +805,7 @@ Beispiel-Workload als Matrix-Mix:
         -   Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items
         -   Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
 
-<!-- section 65 -->
+<!-- section 66 -->
 
 # Definieren der Skalierungsregeln
 
@@ -793,7 +822,7 @@ Non-linear Scaling:
 -   Anwendungen skalieren oft nicht linear
 -   z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
 
-<!-- section 66 -->
+<!-- section 67 -->
 
 # Design des Load-Generators
 
@@ -805,7 +834,7 @@ Dabei sollte beachtet werden:
 
 -   Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen "Random number generator" (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen
 
-<!-- section 67 -->
+<!-- section 68 -->
 
 # Festlegung einer Baseline
 
@@ -813,89 +842,89 @@ Dabei sollte beachtet werden:
 
 https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
 
-<!-- section 68 -->
+<!-- section 69 -->
 
 # Zeitliche Verteilung der Last
 
-<!-- section 69 -->
+<!-- section 70 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
-<!-- section 70 -->
+<!-- section 71 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 71 -->
+<!-- section 72 -->
 
 # BeanShell
 
-<!-- section 72 -->
+<!-- section 73 -->
 
 # JSR223
 
-<!-- section 73 -->
+<!-- section 74 -->
 
 # RegEx-Extractor
 
-<!-- section 74 -->
+<!-- section 75 -->
 
 # Arbeiten mit JARs
 
-<!-- section 75 -->
+<!-- section 76 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 76 -->
+<!-- section 77 -->
 
 # Arten von Reporting
 
-<!-- section 77 -->
+<!-- section 78 -->
 
 # Ergebnis-Analyse
 
-<!-- section 78 -->
+<!-- section 79 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 79 -->
+<!-- section 80 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
-<!-- section 80 -->
+<!-- section 81 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 81 -->
+<!-- section 82 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 82 -->
+<!-- section 83 -->
 
 # Nutzung des Test-Rekorders
 
-<!-- section 83 -->
+<!-- section 84 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 84 -->
+<!-- section 85 -->
 
 # Umgang mit Sessions/Authentification
 
-<!-- section 85 -->
+<!-- section 86 -->
 
 # Umgang mit dynamischen Daten
 
-<!-- section 86 -->
+<!-- section 87 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 87 -->
+<!-- section 88 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 88 -->
+<!-- section 89 -->
 
 # Master-Slave-Setup
 
@@ -909,7 +938,7 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 89 -->
+<!-- section 90 -->
 
 # Master-Slave-Setup
 
@@ -917,39 +946,39 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 90 -->
+<!-- section 91 -->
 
 # Testausführung über CLI
 
-<!-- section 91 -->
+<!-- section 92 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 92 -->
+<!-- section 93 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 93 -->
+<!-- section 94 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 94 -->
+<!-- section 95 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 95 -->
+<!-- section 96 -->
 
 # Prometheus / Grafana
 
-<!-- section 96 -->
+<!-- section 97 -->
 
 # YourKit-Profiler
 
-<!-- section 97 -->
+<!-- section 98 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 98 -->
+<!-- section 99 -->
 
 # IaC: Infrastructure as a Code
 
@@ -960,25 +989,25 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 99 -->
+<!-- section 100 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 100 -->
+<!-- section 101 -->
 
 # Docker / Docker-Compose
 
-<!-- section 101 -->
+<!-- section 102 -->
 
 # Kubernetes
 
-<!-- section 102 -->
+<!-- section 103 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 103 -->
+<!-- section 104 -->
 
 # Github Actions
 
@@ -989,14 +1018,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 104 -->
+<!-- section 105 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 105 -->
+<!-- section 106 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 106 -->
+<!-- section 107 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

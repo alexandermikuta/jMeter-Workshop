@@ -439,17 +439,44 @@ wird zu
 | THREADS  | ${\_\_P(threads,10)}           |
 | LOOPS    | ${\_\_P(loops,20)}             |
 
-Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13`
+Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13` (Alternativ: entsprechende user.properties setzen)
 
 Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}
 
 # Testfragment
 
-> Testfragmente sind eine spezielle Art von Controller auf Ebene des Thread Group Elements.
+> Testfragmente sind eine spezielle Art von Controller auf Ebene des Thread Group Elements. Man unterscheidet zwischen _Test Fragment Nodes_ und _test Fragment Files_. _Test Fragment Nodes_ lassen sich nicht in _Test Fragment_Files_ inkludieren!
 
 - wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller refereniert wird.
 
-- Dient der Code-Wiederverwendung innerhalb von Testplänen
+  - &rarr; Ermöglicht gleichzeitges Arbeiten an modulen in separaten Files
+
+- Dient der Code-Wiederverwendung innerhalb von Testplänen und hilft sehr große Testpläne wartbar zu machen
+
+- Details: &rarr; ![https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments](https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments)
+
+# Testfragment
+
+> Hilft unterschiedliche Workflows zu unterstützen
+
+| Funktionalitäten einer Beispielapp           |
+| -------------------------------------------- |
+| Login                                        |
+| Logout                                       |
+| User Registration                            |
+| Search for Product                           |
+| Select Product                               |
+| Order Product with different payment methods |
+| Edit Order                                   |
+| Cancel Order                                 |
+| Search for User Profile                      |
+
+- Workflow 1: User Registration -> Search for Product -> Select Product -> Order Product -> Logout
+- Workflow 2: Login -> Search for Product -> Select Product -> Order Product -> Logout
+- Workflow 3: Login -> Search for User -> Cancel Order -> Logout
+- Workflow 4: Login -> Search for Product
+
+![Workflow 4](assets/include-controller.png)
 
 # Templates
 

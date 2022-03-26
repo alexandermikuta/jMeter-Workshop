@@ -649,18 +649,73 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 </tr>
 </tbody>
 </table>
-<p>Aufruf: <code>jmeter … -Jhost=www3.example.org -Jloops=13</code></p>
+<p>Aufruf: <code>jmeter … -Jhost=www3.example.org -Jloops=13</code> (Alternativ: entsprechende user.properties setzen)</p>
 <p>Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}</p>
 </section>
 <section id="testfragment" class="level1">
 <h1>Testfragment</h1>
 <blockquote>
-<p>Testfragmente sind eine spezielle Art von Controller auf Ebene des Thread Group Elements.</p>
+<p>Testfragmente sind eine spezielle Art von Controller auf Ebene des Thread Group Elements. Man unterscheidet zwischen <em>Test Fragment Nodes</em> und <em>test Fragment Files</em>. <em>Test Fragment Nodes</em> lassen sich nicht in <em>Test Fragment_Files</em> inkludieren!</p>
 </blockquote>
 <ul>
-<li><p>wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller refereniert wird.</p></li>
-<li><p>Dient der Code-Wiederverwendung innerhalb von Testplänen</p></li>
+<li><p>wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller refereniert wird.</p>
+<ul>
+<li>→ Ermöglicht gleichzeitges Arbeiten an modulen in separaten Files</li>
+</ul></li>
+<li><p>Dient der Code-Wiederverwendung innerhalb von Testplänen und hilft sehr große Testpläne wartbar zu machen</p></li>
+<li><p>Details: → <img src="https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments" alt="https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments" /></p></li>
 </ul>
+</section>
+<section id="testfragment-1" class="level1">
+<h1>Testfragment</h1>
+<blockquote>
+<p>Hilft unterschiedliche Workflows zu unterstützen</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Funktionalitäten einer Beispielapp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Login</td>
+</tr>
+<tr class="even">
+<td>Logout</td>
+</tr>
+<tr class="odd">
+<td>User Registration</td>
+</tr>
+<tr class="even">
+<td>Search for Product</td>
+</tr>
+<tr class="odd">
+<td>Select Product</td>
+</tr>
+<tr class="even">
+<td>Order Product with different payment methods</td>
+</tr>
+<tr class="odd">
+<td>Edit Order</td>
+</tr>
+<tr class="even">
+<td>Cancel Order</td>
+</tr>
+<tr class="odd">
+<td>Search for User Profile</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Workflow 1: User Registration -&gt; Search for Product -&gt; Select Product -&gt; Order Product -&gt; Logout</li>
+<li>Workflow 2: Login -&gt; Search for Product -&gt; Select Product -&gt; Order Product -&gt; Logout</li>
+<li>Workflow 3: Login -&gt; Search for User -&gt; Cancel Order -&gt; Logout</li>
+<li>Workflow 4: Login -&gt; Search for Product</li>
+</ul>
+<figure>
+<img src="assets/include-controller.png" alt="" /><figcaption>Workflow 4</figcaption>
+</figure>
 </section>
 <section id="templates" class="level1">
 <h1>Templates</h1>
