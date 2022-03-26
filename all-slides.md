@@ -922,6 +922,15 @@ TODO
 
 # Nutzung des Test-Rekorders
 
+-   Test Plan → Add → Non-Test Elements → HTTP(S) Test Script Recorder
+-   Einstellungen → Port festlegen
+-   Thread Group → Add → Logic Controllers → Recording Controller (Alternativ: später manuell vom Skript-Rekorder kopieren)
+-   Im Browser Proxy auf gleichen Port wie Skript-Rekorder stellen
+-   jMeter-Zertifikat (jMeter/bin/ApacheJMeterTemporaryRootCA.crt) im Browser importieren
+    -   in Firefox: options → search for 'certificate' → view certificates
+    -   Haken bei "Trust Website" setzen
+-   Test aufzeichnen
+
 <!-- section 84 -->
 
 # Testen mit "Http-Request"
