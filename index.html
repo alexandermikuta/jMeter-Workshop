@@ -232,64 +232,57 @@
 </section>
 <section id="thread-groups-3" class="level1">
 <h1>Thread Groups</h1>
+<p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung
+<strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten
+<strong>Soak Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
+<strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p>
 <table>
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 60%" />
-<col style="width: 12%" />
+<col style="width: 28%" />
+<col style="width: 71%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
 <th>Use-Cases</th>
-<th>Besonderheiten</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Thread Group (classic)</td>
-<td></td>
-<td></td>
+<td>Einfache Szenarios, Stress Testing, Soak Testing</td>
 </tr>
 <tr class="even">
 <td>Arrivals Thread Group</td>
-<td></td>
-<td></td>
+<td>Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen</td>
 </tr>
 <tr class="odd">
 <td>Free Form Arrivals Thread Group</td>
-<td></td>
-<td></td>
+<td>Use-Cases vergleichbar mit Arrival Thread Group</td>
 </tr>
 <tr class="even">
 <td>Concurrency Thread Group</td>
-<td></td>
-<td></td>
+<td>Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf</td>
 </tr>
 <tr class="odd">
 <td>Stepping Thread Group</td>
-<td></td>
-<td></td>
+<td>Ältere Version der Threadgroup mit mehr Konfigurationsaufwand</td>
 </tr>
 <tr class="even">
 <td>Ultimate Thread Group</td>
-<td></td>
-<td></td>
+<td>Komplexe Spike Testing Szenarios</td>
 </tr>
 <tr class="odd">
 <td>——————————-</td>
 <td>———————————————————————</td>
-<td>————–</td>
 </tr>
 <tr class="even">
 <td>setUp Thread Group</td>
 <td>Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen)</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>tearDown Thread Group</td>
 <td>Aufräumen der Testumgebung</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -319,13 +312,47 @@ Sampler legen die Art des Requests fest!</p>
 </section>
 <section id="sampler-2" class="level1">
 <h1>Sampler</h1>
-<p>Falls man mehrere Requests des gleichen Type versendet → Überlegen of <em>Defaults Configuration Element</em> nützlich sein könnte</p>
+<ul>
+<li><p>Falls man mehrere Requests des gleichen Type versendet → Überlegen of <em>Defaults Configuration Element</em> nützlich sein könnte</p></li>
+<li><p>OS Process request: Häufig nützlich in setUp/tearDown-Szenarien</p></li>
+<li><p>Sollte man auch bei den Plugins keinen passen Sampler finden → Es lassen sich auch eigene Sampler schreiben. Häufig findet sich auch auf Github etwas!</p></li>
+</ul>
 </section>
 <section id="controller" class="level1">
 <h1>Controller</h1>
 <blockquote>
-<p>Logische Controller legen fest wann/welche Sampler verwendet werden, z.B. Interleave Controller wechselt zwischen zwei HTTP-Request-Samplern</p>
+<p>Logische Controller legen fest wann/welche Sampler verwendet werden</p>
 </blockquote>
+<p><img src="assets/LogicControllerClassification.png" /></p>
+</section>
+<section id="controller-1" class="level1">
+<h1>Controller</h1>
+<blockquote>
+<p>Ziel des Module Controllers ist es Modularität zu jMeter hinzuzufügen, z.B. bei Webapps (Login, Suche, …)</p>
+</blockquote>
+<p><img src="assets/ModuleControllerJMeter.png" /></p>
+</section>
+<section id="controller-2" class="level1">
+<h1>Controller</h1>
+<p>Beispiel: 100 Benutzer loggen sich ein, 30 Benutzer suchen auf google und 50 Benutzer loggen sich aus</p>
+<figure>
+<img src="assets/TestNewPlanJMeterController.png" alt="" /><figcaption>Simple Controller ist nur ein Container für Requests</figcaption>
+</figure>
+</section>
+<section id="controller-3" class="level1">
+<h1>Controller</h1>
+<p>Der Module-Controller kontrolliert welches Modul laufen soll</p>
+<p><img src="assets/RunLoginModuleJMeter.png" /></p>
+</section>
+<section id="controller-4" class="level1">
+<h1>Controller</h1>
+<p>Weiter wichtige Controller:</p>
+<ul>
+<li><strong>Interleave Controller:</strong> wählt Request und führt diesen einaml in jedem Loop des Threads durch</li>
+<li><strong>Runtime Controller:</strong> kontrolliert wie lange seine Kinder laufen dürfen</li>
+<li><strong>Transaction Controller:</strong> Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins</li>
+<li><strong>Include Controller:</strong> Hierdurch lassen sich externe Testpläne nutzen</li>
+</ul>
 </section>
 <section id="timers" class="level1">
 <h1>Timers</h1>
@@ -919,18 +946,6 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 </section>
 <section id="klärung-offener-punkt" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Klärung offener Punkt</h1>
-<p>TODO:</p>
-<ul>
-<li>Spike-Testing: z.B. SChneller anstieg der Load -&gt; Ticketverkauf</li>
-</ul>
-<pre><code>
-```
-
-```
-
-```
-
-```</code></pre>
 </section>
 
         </div>

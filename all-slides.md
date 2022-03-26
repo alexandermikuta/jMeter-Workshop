@@ -198,27 +198,32 @@ Wichtigste Einstellungen:
 
 # Thread Groups
 
-  --------------------------------------------------------------------------------------------------------------------------
-  Name                              Use-Cases                                                               Besonderheiten
-  --------------------------------- ----------------------------------------------------------------------- ----------------
-  Thread Group (classic)                                                                                    
+**Load Testing:** Modeliert die erwartete Benutzung
+**Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
+**Soak Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
+**Spike Testing:** testen von schnellem Anstieg/Abfall der Load -\> z.B. Ticketverkauf
 
-  Arrivals Thread Group                                                                                     
+  ----------------------------------------------------------------------------------------------------------------
+  Name                              Use-Cases
+  --------------------------------- ------------------------------------------------------------------------------
+  Thread Group (classic)            Einfache Szenarios, Stress Testing, Soak Testing
 
-  Free Form Arrivals Thread Group                                                                           
+  Arrivals Thread Group             Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen
 
-  Concurrency Thread Group                                                                                  
+  Free Form Arrivals Thread Group   Use-Cases vergleichbar mit Arrival Thread Group
 
-  Stepping Thread Group                                                                                     
+  Concurrency Thread Group          Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf
 
-  Ultimate Thread Group                                                                                     
+  Stepping Thread Group             Ältere Version der Threadgroup mit mehr Konfigurationsaufwand
 
-  -------------------------------   ---------------------------------------------------------------------   --------------
+  Ultimate Thread Group             Komplexe Spike Testing Szenarios
 
-  setUp Thread Group                Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen)   
+  -------------------------------   ---------------------------------------------------------------------
 
-  tearDown Thread Group             Aufräumen der Testumgebung                                              
-  --------------------------------------------------------------------------------------------------------------------------
+  setUp Thread Group                Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen)
+
+  tearDown Thread Group             Aufräumen der Testumgebung
+  ----------------------------------------------------------------------------------------------------------------
 
 <!-- section 20 -->
 
@@ -248,15 +253,56 @@ Wichtigste Einstellungen:
 
 # Sampler
 
-Falls man mehrere Requests des gleichen Type versendet → Überlegen of *Defaults Configuration Element* nützlich sein könnte
+-   Falls man mehrere Requests des gleichen Type versendet → Überlegen of *Defaults Configuration Element* nützlich sein könnte
+
+-   OS Process request: Häufig nützlich in setUp/tearDown-Szenarien
+
+-   Sollte man auch bei den Plugins keinen passen Sampler finden → Es lassen sich auch eigene Sampler schreiben. Häufig findet sich auch auf Github etwas!
 
 <!-- section 23 -->
 
 # Controller
 
-> Logische Controller legen fest wann/welche Sampler verwendet werden, z.B. Interleave Controller wechselt zwischen zwei HTTP-Request-Samplern
+> Logische Controller legen fest wann/welche Sampler verwendet werden
+
+![](assets/LogicControllerClassification.png)
 
 <!-- section 24 -->
+
+# Controller
+
+> Ziel des Module Controllers ist es Modularität zu jMeter hinzuzufügen, z.B. bei Webapps (Login, Suche, ...)
+
+![](assets/ModuleControllerJMeter.png)
+
+<!-- section 25 -->
+
+# Controller
+
+Beispiel: 100 Benutzer loggen sich ein, 30 Benutzer suchen auf google und 50 Benutzer loggen sich aus
+
+![Simple Controller ist nur ein Container für Requests](assets/TestNewPlanJMeterController.png)
+
+<!-- section 26 -->
+
+# Controller
+
+Der Module-Controller kontrolliert welches Modul laufen soll
+
+![](assets/RunLoginModuleJMeter.png)
+
+<!-- section 27 -->
+
+# Controller
+
+Weiter wichtige Controller:
+
+-   **Interleave Controller:** wählt Request und führt diesen einaml in jedem Loop des Threads durch
+-   **Runtime Controller:** kontrolliert wie lange seine Kinder laufen dürfen
+-   **Transaction Controller:** Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins
+-   **Include Controller:** Hierdurch lassen sich externe Testpläne nutzen
+
+<!-- section 28 -->
 
 # Timers
 
@@ -268,7 +314,7 @@ Falls man mehrere Requests des gleichen Type versendet → Überlegen of *Defaul
 
 -   Um Pause an einer bestimmten Stelle im Test Plan zu machen → Flow Control Action Sampler
 
-<!-- section 25 -->
+<!-- section 29 -->
 
 # Assertions
 
@@ -278,7 +324,7 @@ Falls man mehrere Requests des gleichen Type versendet → Überlegen of *Defaul
 
 -   Um Assertion-Ergebnisse anzuzeigen muss man einen Assertion Listener zur Thread-Gruppe hinzufügen
 
-<!-- section 26 -->
+<!-- section 30 -->
 
 # Listener
 
@@ -290,7 +336,7 @@ Falls man mehrere Requests des gleichen Type versendet → Überlegen of *Defaul
 
 -   Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
 
-<!-- section 27 -->
+<!-- section 31 -->
 
 # Pre- und Post-Prozessoren
 
@@ -306,7 +352,7 @@ Falls man mehrere Requests des gleichen Type versendet → Überlegen of *Defaul
     -   Post-Prozessor:
         -   Verarbeiten der Response Daten, z.B extrahieren von Daten
 
-<!-- section 28 -->
+<!-- section 32 -->
 
 # Configuarion Elementes
 
@@ -329,15 +375,15 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!
 
-<!-- section 29 -->
+<!-- section 33 -->
 
 # Cookie-Manager
 
-<!-- section 30 -->
+<!-- section 34 -->
 
 # Header-Manager
 
-<!-- section 31 -->
+<!-- section 35 -->
 
 # Variablen / Properties
 
@@ -351,7 +397,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   setProperty kann genutzt werden um eine jMeter-Property zu definieren → Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!
 
-<!-- section 32 -->
+<!-- section 36 -->
 
 # Variablen / Properties
 
@@ -367,7 +413,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Nützlich um Tests zu parametrisieren → Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!
 
-<!-- section 33 -->
+<!-- section 37 -->
 
 # Variablen / Properties
 
@@ -391,7 +437,7 @@ Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13`
 
 Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
-<!-- section 34 -->
+<!-- section 38 -->
 
 # Testfragment
 
@@ -401,11 +447,11 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 -   Dient der Code-Wiederverwendung innerhalb von Testplänen
 
-<!-- section 35 -->
+<!-- section 39 -->
 
 # Templates
 
-<!-- section 36 -->
+<!-- section 40 -->
 
 # Ausführungsreihenfolge
 
@@ -417,7 +463,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 -   Assertions
 -   Listeners
 
-<!-- section 37 -->
+<!-- section 41 -->
 
 # Ausführungsreihenfolge
 
@@ -455,11 +501,11 @@ Post-Processor 1
 Post-Processor 2
 Assertion 1
 
-<!-- section 38 -->
+<!-- section 42 -->
 
 # Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 39 -->
+<!-- section 43 -->
 
 # Workload
 
@@ -467,7 +513,7 @@ Definition:
 
 > The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services
 
-<!-- section 40 -->
+<!-- section 44 -->
 
 # Prinzipien
 
@@ -477,7 +523,7 @@ Definition:
 
 -   Skalierbarkeit
 
-<!-- section 41 -->
+<!-- section 45 -->
 
 # Vorhersagbarkeit
 
@@ -485,19 +531,19 @@ Definition:
 
 ![](assets/predictable.png)
 
-<!-- section 42 -->
+<!-- section 46 -->
 
 # Wiederholbarkeit
 
 > Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.
 
-<!-- section 43 -->
+<!-- section 47 -->
 
 # Skalierbarkeit
 
 > Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.
 
-<!-- section 44 -->
+<!-- section 48 -->
 
 # Workload Design Steps
 
@@ -509,7 +555,7 @@ Definition:
 -   Design des Load-Generators
 -   Festlegung einer Baseline
 
-<!-- section 45 -->
+<!-- section 49 -->
 
 # Design der Applikation
 
@@ -520,7 +566,7 @@ Definition:
     -   Im einfachsten Fall mappt jeder User-Case auf eine Operation
     -   Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) → Ansonsten schwer zu managen und verstehen
 
-<!-- section 46 -->
+<!-- section 50 -->
 
 # Key-Szenarios identifizieren
 
@@ -531,7 +577,7 @@ Definition:
 -   Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon
 -   Stakeholder-relevante Szenarien
 
-<!-- section 47 -->
+<!-- section 51 -->
 
 # Key-Szenarios identifizieren
 
@@ -548,7 +594,7 @@ Navigationspfade der Key-Szenarios untersuchen
 -   Auf welche Arten kann ich z.B. eine Bestellung abschicken
 -   Wie häufig wird welcher Weg genutzt? → Logfiles oder Analysetools (z.B Matomo)
 
-<!-- section 48 -->
+<!-- section 52 -->
 
 # Definieren der Metriken
 
@@ -562,7 +608,7 @@ Typische Metriken sind:
 
 -   **Anzahl maximaler Benutzer:** Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten
 
-<!-- section 49 -->
+<!-- section 53 -->
 
 # Design der Load
 
@@ -572,7 +618,7 @@ Typische Metriken sind:
 
 -   gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert
 
-<!-- section 50 -->
+<!-- section 54 -->
 
 # Design der Load
 
@@ -584,7 +630,7 @@ Typische Metriken sind:
 
 -   **Network Mix:** Welche Netzwerkgeschwindigkeiten sollen im Test verwendet werden? z.B. 3G
 
-<!-- section 51 -->
+<!-- section 55 -->
 
 # Design der Load
 
@@ -602,7 +648,7 @@ Typische Metriken sind:
         -   Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
         -   wird häufig bei Web-Apps verwendet
 
-<!-- section 52 -->
+<!-- section 56 -->
 
 # Design der Load
 
@@ -614,7 +660,7 @@ Beispiel-Workload als Matrix-Mix:
   Page 2   20,00%      39,00%      41,00%
   Page 3   60,00%      19,00%      21,00%
 
-<!-- section 53 -->
+<!-- section 57 -->
 
 # Design der Load
 
@@ -631,7 +677,7 @@ Beispiel-Workload als Matrix-Mix:
         -   Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items
         -   Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
 
-<!-- section 54 -->
+<!-- section 58 -->
 
 # Definieren der Skalierungsregeln
 
@@ -648,7 +694,7 @@ Non-linear Scaling:
 -   Anwendungen skalieren oft nicht linear
 -   z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
 
-<!-- section 55 -->
+<!-- section 59 -->
 
 # Design des Load-Generators
 
@@ -660,7 +706,7 @@ Dabei sollte beachtet werden:
 
 -   Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen "Random number generator" (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen
 
-<!-- section 56 -->
+<!-- section 60 -->
 
 # Festlegung einer Baseline
 
@@ -668,89 +714,89 @@ Dabei sollte beachtet werden:
 
 https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
 
-<!-- section 57 -->
+<!-- section 61 -->
 
 # Zeitliche Verteilung der Last
 
-<!-- section 58 -->
+<!-- section 62 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
-<!-- section 59 -->
+<!-- section 63 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 60 -->
+<!-- section 64 -->
 
 # BeanShell
 
-<!-- section 61 -->
+<!-- section 65 -->
 
 # JSR223
 
-<!-- section 62 -->
+<!-- section 66 -->
 
 # RegEx-Extractor
 
-<!-- section 63 -->
+<!-- section 67 -->
 
 # Arbeiten mit JARs
 
-<!-- section 64 -->
+<!-- section 68 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 65 -->
+<!-- section 69 -->
 
 # Arten von Reporting
 
-<!-- section 66 -->
+<!-- section 70 -->
 
 # Ergebnis-Analyse
 
-<!-- section 67 -->
+<!-- section 71 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 68 -->
+<!-- section 72 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
-<!-- section 69 -->
+<!-- section 73 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 70 -->
+<!-- section 74 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 71 -->
+<!-- section 75 -->
 
 # Nutzung des Test-Rekorders
 
-<!-- section 72 -->
+<!-- section 76 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 73 -->
+<!-- section 77 -->
 
 # Umgang mit Sessions/Authentification
 
-<!-- section 74 -->
+<!-- section 78 -->
 
 # Umgang mit dynamischen Daten
 
-<!-- section 75 -->
+<!-- section 79 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 76 -->
+<!-- section 80 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 77 -->
+<!-- section 81 -->
 
 # Master-Slave-Setup
 
@@ -764,7 +810,7 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 78 -->
+<!-- section 82 -->
 
 # Master-Slave-Setup
 
@@ -772,39 +818,39 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 79 -->
+<!-- section 83 -->
 
 # Testausführung über CLI
 
-<!-- section 80 -->
+<!-- section 84 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 81 -->
+<!-- section 85 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 82 -->
+<!-- section 86 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 83 -->
+<!-- section 87 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 84 -->
+<!-- section 88 -->
 
 # Prometheus / Grafana
 
-<!-- section 85 -->
+<!-- section 89 -->
 
 # YourKit-Profiler
 
-<!-- section 86 -->
+<!-- section 90 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 87 -->
+<!-- section 91 -->
 
 # IaC: Infrastructure as a Code
 
@@ -815,25 +861,25 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 88 -->
+<!-- section 92 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 89 -->
+<!-- section 93 -->
 
 # Docker / Docker-Compose
 
-<!-- section 90 -->
+<!-- section 94 -->
 
 # Kubernetes
 
-<!-- section 91 -->
+<!-- section 95 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 92 -->
+<!-- section 96 -->
 
 # Github Actions
 
@@ -844,30 +890,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 93 -->
+<!-- section 97 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 94 -->
+<!-- section 98 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 95 -->
+<!-- section 99 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
-
-TODO:
-
--   Spike-Testing: z.B. SChneller anstieg der Load -\> Ticketverkauf
-
-```{=html}
-<!-- -->
-```
-
-    ```
-
-    ```
-
-    ```
-
-    ```
