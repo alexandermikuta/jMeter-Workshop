@@ -15,15 +15,15 @@ asciinema: false
 
 Agenda:
 
-| Tag 1                         | Tag 2                        |
-| ----------------------------- | ---------------------------- |
-| jMeter Plugin-Manager         | Verteiltes Testen mit jMeter |
-| Strukturierung von Testplänen | RMI                          |
-| Workload Design               | Monitoring                   |
-| Scripting                     | Containerisierung            |
-| Reporting                     | CI/CD-Pipeline               |
-| Testdatenverwaltung           | Klärung offener Punkte       |
-| REST-APIs                     |                              |
+| Tag 1                             | Tag 2                            |
+| --------------------------------- | -------------------------------- |
+| (3) jMeter Plugin-Manager         | (3) Verteiltes Testen mit jMeter |
+| (2) Strukturierung von Testplänen | (3) RMI                          |
+| (3) Workload Design               | (2) Monitoring                   |
+| (2) Scripting                     | (1) Containerisierung            |
+| (2) Reporting                     | (1) CI/CD-Pipeline               |
+| (1) Testdatenverwaltung           | Klärung offener Punkte           |
+| (1) REST-APIs                     |                                  |
 
 # jMeter Plugin-Manager {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
@@ -480,6 +480,20 @@ Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}
 
 # Templates
 
+> Skeleton Script die wiederverwendbar sind um mit einem Projekt zu starten
+
+Erzeugung eines Templates:
+
+- .jmx-File in /templates abspeichern
+
+- Template.xml öffnen und Daten für eigenes Template ergänzen
+
+- Nach jMeter-Neustart kann Template ausgewählt werden
+
+- Es existier etliche Templates auf Github, z.B. zum Testen von Wordpress-Apps &rarr; ![https://github.com/jmeter-templates/wordpress](https://github.com/jmeter-templates/wordpress)
+
+> Tipp: Aufbau der Beispiel-Templates studieren!
+
 # Ausführungsreihenfolge
 
 - Configuration Elements
@@ -701,7 +715,13 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
 
 # Zeitliche Verteilung der Last
 
+TODO
+
 # Erkennen der Last-Grenzen / Server-Bedarfs
+
+> Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.
+
+TODO
 
 # Scripting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 

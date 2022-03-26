@@ -64,31 +64,31 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td>jMeter Plugin-Manager</td>
-<td>Verteiltes Testen mit jMeter</td>
+<td>(3) jMeter Plugin-Manager</td>
+<td>(3) Verteiltes Testen mit jMeter</td>
 </tr>
 <tr class="even">
-<td>Strukturierung von Testplänen</td>
-<td>RMI</td>
+<td>(2) Strukturierung von Testplänen</td>
+<td>(3) RMI</td>
 </tr>
 <tr class="odd">
-<td>Workload Design</td>
-<td>Monitoring</td>
+<td>(3) Workload Design</td>
+<td>(2) Monitoring</td>
 </tr>
 <tr class="even">
-<td>Scripting</td>
-<td>Containerisierung</td>
+<td>(2) Scripting</td>
+<td>(1) Containerisierung</td>
 </tr>
 <tr class="odd">
-<td>Reporting</td>
-<td>CI/CD-Pipeline</td>
+<td>(2) Reporting</td>
+<td>(1) CI/CD-Pipeline</td>
 </tr>
 <tr class="even">
-<td>Testdatenverwaltung</td>
+<td>(1) Testdatenverwaltung</td>
 <td>Klärung offener Punkte</td>
 </tr>
 <tr class="odd">
-<td>REST-APIs</td>
+<td>(1) REST-APIs</td>
 <td></td>
 </tr>
 </tbody>
@@ -719,6 +719,19 @@ AssertionResult.setFailureMessage(“The expected response time is :” + expect
 </section>
 <section id="templates" class="level1">
 <h1>Templates</h1>
+<blockquote>
+<p>Skeleton Script die wiederverwendbar sind um mit einem Projekt zu starten</p>
+</blockquote>
+<p>Erzeugung eines Templates:</p>
+<ul>
+<li><p>.jmx-File in /templates abspeichern</p></li>
+<li><p>Template.xml öffnen und Daten für eigenes Template ergänzen</p></li>
+<li><p>Nach jMeter-Neustart kann Template ausgewählt werden</p></li>
+<li><p>Es existier etliche Templates auf Github, z.B. zum Testen von Wordpress-Apps → <img src="https://github.com/jmeter-templates/wordpress" alt="https://github.com/jmeter-templates/wordpress" /></p></li>
+</ul>
+<blockquote>
+<p>Tipp: Aufbau der Beispiel-Templates studieren!</p>
+</blockquote>
 </section>
 <section id="ausführungsreihenfolge" class="level1">
 <h1>Ausführungsreihenfolge</h1>
@@ -991,9 +1004,14 @@ Assertion 1</p>
 </section>
 <section id="zeitliche-verteilung-der-last" class="level1">
 <h1>Zeitliche Verteilung der Last</h1>
+<p>TODO</p>
 </section>
 <section id="erkennen-der-last-grenzen-server-bedarfs" class="level1">
 <h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<blockquote>
+<p>Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.</p>
+</blockquote>
+<p>TODO</p>
 </section>
 <section id="scripting" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Scripting</h1>
