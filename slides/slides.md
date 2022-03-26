@@ -762,6 +762,14 @@ TODO
 
 # Umgang mit Sessions/Authentification
 
+- JWT-Token erhalten
+  - Bei Cookies: in **jmeter.properties** folgendes setzen: **CookieManager.save.cookies=true** &rarr; macht Cookies als Variablen verfügbar
+  - Bei Localstorage: jMeter-Integration mit Selenium nutzen
+  - JWT mittels Regex aus Login-Response extrahieren
+- setzen des Authorization-Headers mittels **HTTP Header Manager**: z.B. auf ${COOKIE_Authorization} falls die Cookie-Variable _Authorization_ heißt
+
+![HTTP Header Manager-Beispiel](cookie-session.png)
+
 # Umgang mit dynamischen Daten
 
 # Verteiltes Testen mit jMeter {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
