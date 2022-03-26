@@ -314,9 +314,20 @@ AssertionResult.setFailureMessage("The expected response time is : " + expected_
 
 > Zeigen die Ergebnisse der Testdurchführung
 
+# Listener
+
+![Arten von Listenern](assets/Jmeter-Listeners-3.png)
+
+# Listener
+
 - Sammeln Ergebnisse von Elementen auf gleichem Level oder darunter
 
 - Listener können sehr Ressourcenintensiv sein, wenn es viel Samples gibt!
+
+  - Nicht bei Load-/Stress-Tests verwendet werden sollten:
+  - Assertion Results
+  - View Results in Table
+  - View Results Tree
 
 - Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
 
@@ -328,6 +339,14 @@ AssertionResult.setFailureMessage("The expected response time is : " + expected_
 **CLI-Modus:** mit dem _-l Flag can ein Top-Level listener benutzt werden zusätzlich zu den im Testplan definierten Listenern_
 
 `jmeter -n -t testplan.jmx -l testplan_01.jtl -j testplan_01.log`
+
+Generieren eines HTML-Reports aus .jtl-Dateien:
+
+´./bin/jmeter -g JTL_FILE -o OUTPUT_FOLDER`
+
+# Listener
+
+![Beispiel HTML-Dashboard](assets/jmeter-html-report-summary.png)
 
 **Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: &rarr; ![https://jmeter.apache.org/usermanual/realtime-results.html](https://jmeter.apache.org/usermanual/realtime-results.html)
 
@@ -346,9 +365,9 @@ AssertionResult.setFailureMessage("The expected response time is : " + expected_
     - Settings eines Requests direkt bevor er läuft verändern
     - Variablen Updaten die nicht aus dem Response-Text extrahiert werden.
   - Post-Prozessor:
-    - Verarbeiten der Response Daten, z.B extrahieren von Daten
+    - Verarbeiten der Response Daten, z.B extrahieren von Daten (Regex, Json, ...)
 
-# Configuarion Elementes
+# Configuration Elements
 
 ![](assets/ConfigurationElements.webp)
 
@@ -368,11 +387,15 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 - Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!
 
-# Cookie-Manager
+# Configuration Elements
 
-# Header-Manager
+- **Cache-Manager:**: Falls man Last-Tests mit Cache durchführen möchte, z.B. für Web-Apps
 
-# Variablen / Properties
+- **Cookie-Manager:** Falls man Anwendung mit Cookies testen möchten, z.B. Auth bei Web-Apps
+
+- **Header-Manager:** Kann HTTP Request-Header überschreiben, z.B. Authorization-Header für JWTs bei Web-Apps
+
+# Properties / Variablen
 
 **Properties:**
 
@@ -384,7 +407,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 - setProperty kann genutzt werden um eine jMeter-Property zu definieren &rarr; Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!
 
-# Variablen / Properties
+# Properties / Variablen
 
 **Variablen:**
 
@@ -398,7 +421,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 - Nützlich um Tests zu parametrisieren &rarr; Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!
 
-# Variablen / Properties
+# Configuration Elements
 
 Beispielparametrisierung:
 
