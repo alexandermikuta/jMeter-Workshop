@@ -1076,7 +1076,7 @@ Assertion 1</p>
 <li>Bei Localstorage: jMeter-Integration mit Selenium nutzen</li>
 <li>JWT mittels Regex aus Login-Response extrahieren</li>
 </ul></li>
-<li>setzen des Authorization-Headers mittels <strong>HTTP Header Manager</strong>: z.B. auf ${COOKIE_Authorization} falls die Cookie-Variable <em>Authorization</em> heißt</li>
+<li>setzen des Authorization-Headers mittels <strong>HTTP Header Manager</strong>: z.B. auf ${COOKIE<em>Authorization} falls die Cookie-Variable _Authorization</em> heißt</li>
 </ul>
 <figure>
 <img src="cookie-session.png" alt="" /><figcaption>HTTP Header Manager-Beispiel</figcaption>
@@ -1084,6 +1084,14 @@ Assertion 1</p>
 </section>
 <section id="umgang-mit-dynamischen-daten" class="level1">
 <h1>Umgang mit dynamischen Daten</h1>
+<p>Beispiel: Benutzer wird angelegt → Benutzerprofil aufrufen</p>
+<p>Die URL des Benutzerprofils könnte die Benutzer-ID in der URL enthalten, welch erst nach dem anlegen des Benutzer bekannt ist</p>
+<p>Lösung:</p>
+<ul>
+<li>Benutzer anlegen</li>
+<li>Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)</li>
+<li>Verwenden der Variable (z.B. ${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils</li>
+</ul>
 </section>
 <section id="verteiltes-testen-mit-jmeter" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Verteiltes Testen mit jMeter</h1>

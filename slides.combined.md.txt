@@ -766,11 +766,21 @@ TODO
   - Bei Cookies: in **jmeter.properties** folgendes setzen: **CookieManager.save.cookies=true** &rarr; macht Cookies als Variablen verfügbar
   - Bei Localstorage: jMeter-Integration mit Selenium nutzen
   - JWT mittels Regex aus Login-Response extrahieren
-- setzen des Authorization-Headers mittels **HTTP Header Manager**: z.B. auf ${COOKIE_Authorization} falls die Cookie-Variable _Authorization_ heißt
+- setzen des Authorization-Headers mittels **HTTP Header Manager**: z.B. auf ${COOKIE*Authorization} falls die Cookie-Variable \_Authorization* heißt
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
 # Umgang mit dynamischen Daten
+
+Beispiel: Benutzer wird angelegt &rarr; Benutzerprofil aufrufen
+
+Die URL des Benutzerprofils könnte die Benutzer-ID in der URL enthalten, welch erst nach dem anlegen des Benutzer bekannt ist
+
+Lösung:
+
+- Benutzer anlegen
+- Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
+- Verwenden der Variable (z.B. ${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
 # Verteiltes Testen mit jMeter {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
