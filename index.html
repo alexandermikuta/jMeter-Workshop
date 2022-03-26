@@ -1069,6 +1069,18 @@ Assertion 1</p>
 </section>
 <section id="umgang-mit-sessionsauthentification" class="level1">
 <h1>Umgang mit Sessions/Authentification</h1>
+<ul>
+<li>JWT-Token erhalten
+<ul>
+<li>Bei Cookies: in <strong>jmeter.properties</strong> folgendes setzen: <strong>CookieManager.save.cookies=true</strong> → macht Cookies als Variablen verfügbar</li>
+<li>Bei Localstorage: jMeter-Integration mit Selenium nutzen</li>
+<li>JWT mittels Regex aus Login-Response extrahieren</li>
+</ul></li>
+<li>setzen des Authorization-Headers mittels <strong>HTTP Header Manager</strong>: z.B. auf ${COOKIE_Authorization} falls die Cookie-Variable <em>Authorization</em> heißt</li>
+</ul>
+<figure>
+<img src="cookie-session.png" alt="" /><figcaption>HTTP Header Manager-Beispiel</figcaption>
+</figure>
 </section>
 <section id="umgang-mit-dynamischen-daten" class="level1">
 <h1>Umgang mit dynamischen Daten</h1>
