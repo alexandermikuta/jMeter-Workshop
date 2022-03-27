@@ -786,7 +786,58 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 
 # BeanShell
 
+- Eine der fortgeschrittensten Komponenten in JMeter
+
+- Hilfreich für sehr ungewöhnliche Testfälle die ansonsten schwer in jMeter umzusetzen wären
+
+- Hat Zugriff auf interne JMeter-APIs und jede externe Klasse die in den jMeter Classpath geladen wird
+  - jars nach /lib/ext kopieren
+  - jars müssen am Anfang des BeanShell-Script importiert werden
+
+# BeanShell
+
+Beispiel Use-Cases:
+
+- jMeter-Variablen verändern: `var.put("counter", "false");
+
+- jMeter-Variable in Property umwandeln `props.put("some_variable", var.get("some_variable"));
+
+- Cookies zwischen Thread-Groups übergeben: siehe [https://www.blazemeter.com/blog/how-use-beanshell-jmeters-favorite-built-component](https://www.blazemeter.com/blog/how-use-beanshell-jmeters-favorite-built-component)
+
+- Testfall im Fehlerfall stoppen
+
+- komplexe Assertions
+
+# BeanShell
+
+Vordefinierte Variablen:
+
+- SampleResult: Alle Felder/Methode von [https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) stehen zu verfügung
+- ResponseCode: Setzt den Sampler response code z.B.: ResponseCode = "200";
+- ResponseMessage
+- IsSuccess: Falls _true_ wird der Sampler als _passed_ betrachtet
+- Label: String der in the Test Ergebnisse aufgelistet wird
+- FileName
+- ctx: die mächtigste Variable gibt Zugriff auf org.apache.jmeter.threads.JMeterContext und gibt Zugriff auf die JMeter engine, Samplers und ihren Ergebnissen
+- vars: gibt Zugriff auf jMeter Variablen
+- props: gibt Zugriff auf jMeter Properties
+- log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
+
+# BeanShell
+
+Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead](https://www.blazemeter.com/blog/is-beanshell-dead)
+
+- langsamer und mehr Speicherverbrauch als JSR223+Groovy
+
+- Seit JMeter 3.1 ist Groovy die Default Scripting-Sprache für JSR223 Sampler
+
+- JMeter Contributor Philippe Mouawad: "avoid Beanshell in favor of JSR223 + Groovy because Beanshell is old, slow..."
+
+![](assets/beanshellgroovy3.png)
+
 # JSR223
+
+- zwar etwas langsamer als der _Java Request Sampler_, allerdings entfällt: recompile &rarr; zum Classpath hinzufügen &rarr; jMeter Neustart
 
 # RegEx-Extractor
 
