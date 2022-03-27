@@ -70,6 +70,8 @@ jMeter-Property setzen:
 
 Das Repository-JSON muss folgendes Format erfüllen: [https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/](https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/)
 
+Gute Anleitung: [https://www.blazemeter.com/blog/how-to-create-a-local-repository-of-jmeter-plugins](https://www.blazemeter.com/blog/how-to-create-a-local-repository-of-jmeter-plugins)
+
 # jMeter Plugin-Manager
 
 **Nützliche Plugins:**
@@ -762,7 +764,23 @@ Variante 3: Switch Controller - Random Weighted Values
 
 > Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.
 
-TODO
+Beispiel: Thread Group &rarr; HTTP Request &rarr; Response Assertion (Code 200) &rarr; View Results in Table
+
+![](assets/stress-testing.png)
+
+# Erkennen der Last-Grenzen / Server-Bedarfs
+
+Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlschlägt (z.B. Daten aus JMXMon, Logs der App, ...):
+
+- zu wenig Arbeitsspeicher?
+- IO zu langsam
+- Netzwerk zu langsam
+- Prozessor zu langsam
+- DB zu langsam
+- Load-Balancer überlastet?
+- Messaging-Queue als Bottleneck?
+
+> Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen
 
 # Scripting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 

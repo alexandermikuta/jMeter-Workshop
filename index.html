@@ -128,6 +128,7 @@
 <p>jMeter-Property setzen:</p>
 <p><code>jpgc.repo.address=https://jmeter-plugins.org/repo/;http://my.intranet.site/plugins-repo.json</code></p>
 <p>Das Repository-JSON muss folgendes Format erfüllen: <a href="https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/">https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/</a></p>
+<p>Gute Anleitung: <a href="https://www.blazemeter.com/blog/how-to-create-a-local-repository-of-jmeter-plugins">https://www.blazemeter.com/blog/how-to-create-a-local-repository-of-jmeter-plugins</a></p>
 </section>
 <section id="jmeter-plugin-manager-5" class="level1">
 <h1>jMeter Plugin-Manager</h1>
@@ -1055,7 +1056,24 @@ Assertion 1</p>
 <blockquote>
 <p>Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.</p>
 </blockquote>
-<p>TODO</p>
+<p>Beispiel: Thread Group → HTTP Request → Response Assertion (Code 200) → View Results in Table</p>
+<p><img src="assets/stress-testing.png" /></p>
+</section>
+<section id="erkennen-der-last-grenzen-server-bedarfs-1" class="level1">
+<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<p>Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlschlägt (z.B. Daten aus JMXMon, Logs der App, …):</p>
+<ul>
+<li>zu wenig Arbeitsspeicher?</li>
+<li>IO zu langsam</li>
+<li>Netzwerk zu langsam</li>
+<li>Prozessor zu langsam</li>
+<li>DB zu langsam</li>
+<li>Load-Balancer überlastet?</li>
+<li>Messaging-Queue als Bottleneck?</li>
+</ul>
+<blockquote>
+<p>Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen</p>
+</blockquote>
 </section>
 <section id="scripting" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Scripting</h1>

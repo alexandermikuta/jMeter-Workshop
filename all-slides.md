@@ -75,6 +75,8 @@ jMeter-Property setzen:
 
 Das Repository-JSON muss folgendes Format erfüllen: <https://jmeter-plugins.org/wiki/PluginRepositoryDescriptorFormat/>
 
+Gute Anleitung: <https://www.blazemeter.com/blog/how-to-create-a-local-repository-of-jmeter-plugins>
+
 <!-- section 7 -->
 
 # jMeter Plugin-Manager
@@ -917,57 +919,75 @@ Variante 3: Switch Controller - Random Weighted Values
 
 > Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.
 
-TODO
+Beispiel: Thread Group → HTTP Request → Response Assertion (Code 200) → View Results in Table
+
+![](assets/stress-testing.png)
 
 <!-- section 75 -->
 
-# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Erkennen der Last-Grenzen / Server-Bedarfs
+
+Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlschlägt (z.B. Daten aus JMXMon, Logs der App, ...):
+
+-   zu wenig Arbeitsspeicher?
+-   IO zu langsam
+-   Netzwerk zu langsam
+-   Prozessor zu langsam
+-   DB zu langsam
+-   Load-Balancer überlastet?
+-   Messaging-Queue als Bottleneck?
+
+> Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen
 
 <!-- section 76 -->
 
-# BeanShell
+# Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 77 -->
 
-# JSR223
+# BeanShell
 
 <!-- section 78 -->
 
-# RegEx-Extractor
+# JSR223
 
 <!-- section 79 -->
 
-# Arbeiten mit JARs
+# RegEx-Extractor
 
 <!-- section 80 -->
 
-# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Arbeiten mit JARs
 
 <!-- section 81 -->
 
-# Arten von Reporting
+# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 82 -->
 
-# Ergebnis-Analyse
+# Arten von Reporting
 
 <!-- section 83 -->
 
-# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Ergebnis-Analyse
 
 <!-- section 84 -->
 
-# Testdaten in .json-Datei / .csv-Datei
+# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 85 -->
 
-# jMeter-Funktionen zur Datengenerierung
+# Testdaten in .json-Datei / .csv-Datei
 
 <!-- section 86 -->
 
-# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# jMeter-Funktionen zur Datengenerierung
 
 <!-- section 87 -->
+
+# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 88 -->
 
 # Nutzung des Test-Rekorders
 
@@ -980,11 +1000,11 @@ TODO
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 88 -->
+<!-- section 89 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 89 -->
+<!-- section 90 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -996,7 +1016,7 @@ TODO
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 90 -->
+<!-- section 91 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1010,17 +1030,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 91 -->
+<!-- section 92 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 92 -->
+<!-- section 93 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 93 -->
+<!-- section 94 -->
 
 # Master-Slave-Setup
 
@@ -1034,7 +1054,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 94 -->
+<!-- section 95 -->
 
 # Master-Slave-Setup
 
@@ -1042,39 +1062,39 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 95 -->
+<!-- section 96 -->
 
 # Testausführung über CLI
 
-<!-- section 96 -->
+<!-- section 97 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 97 -->
+<!-- section 98 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 98 -->
+<!-- section 99 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 99 -->
+<!-- section 100 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 100 -->
+<!-- section 101 -->
 
 # Prometheus / Grafana
 
-<!-- section 101 -->
+<!-- section 102 -->
 
 # YourKit-Profiler
 
-<!-- section 102 -->
+<!-- section 103 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 103 -->
+<!-- section 104 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1085,25 +1105,25 @@ Lösung:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 104 -->
+<!-- section 105 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 105 -->
+<!-- section 106 -->
 
 # Docker / Docker-Compose
 
-<!-- section 106 -->
+<!-- section 107 -->
 
 # Kubernetes
 
-<!-- section 107 -->
+<!-- section 108 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 108 -->
+<!-- section 109 -->
 
 # Github Actions
 
@@ -1114,14 +1134,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 109 -->
+<!-- section 110 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 110 -->
+<!-- section 111 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 111 -->
+<!-- section 112 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
