@@ -858,11 +858,60 @@ https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67
 
 <!-- section 69 -->
 
-# Zeitliche Verteilung der Last
+# Praxisbeispiel
 
-TODO
+Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, soll gezeigt werden wie so etwas in jMeter umgesetzt werden kann.
+
+Beispiel:
+
+-   40% anonyme Benutzer browsen auf der Webseite
+-   30% authentifizierte Benutzer browsen auf der Webseit
+-   20% führen eine Suche durch
+-   10% bearbeiten ihren Shopping-Cart
 
 <!-- section 70 -->
+
+# Praxisbeispiel
+
+Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es im Prinzip 3 Möglichkeiten:
+
+-   Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads
+-   Throughput Controller
+-   Switch Controller
+
+<!-- section 71 -->
+
+# Praxisbeispiel
+
+Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads
+
+-   Thread Group mit 40 Benutzern
+-   Thread Group mit 30 Benutzern
+-   Thread Group mit 20 Benutzern
+-   Thread Group mit 10 Benutzern
+
+Wichtig: Checkbox "Run Thread Groups consecutevly" sollte dem gewünschten Test-Flow entsprechen
+
+<!-- section 72 -->
+
+# Praxisbeispiel
+
+Variante 2: Throughput Controller mit unterschiedlichen "Execution Percentages"
+
+-   Throughput Controller (Percent Execution, 40.0) → some sampler
+-   Throughput Controller (Percent Execution, 30.0) → some sampler
+-   Throughput Controller (Percent Execution, 20.0) → some sampler
+-   Throughput Controller (Percent Execution, 10.0) → some sampler
+
+<!-- section 73 -->
+
+# Praxisbeispiel
+
+Variante 3: Switch Controller - Random Weighted Values
+
+![Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3](assets/switch_controller.png)
+
+<!-- section 74 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
@@ -870,55 +919,55 @@ TODO
 
 TODO
 
-<!-- section 71 -->
+<!-- section 75 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 72 -->
+<!-- section 76 -->
 
 # BeanShell
 
-<!-- section 73 -->
+<!-- section 77 -->
 
 # JSR223
 
-<!-- section 74 -->
+<!-- section 78 -->
 
 # RegEx-Extractor
 
-<!-- section 75 -->
+<!-- section 79 -->
 
 # Arbeiten mit JARs
 
-<!-- section 76 -->
+<!-- section 80 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 77 -->
+<!-- section 81 -->
 
 # Arten von Reporting
 
-<!-- section 78 -->
+<!-- section 82 -->
 
 # Ergebnis-Analyse
 
-<!-- section 79 -->
+<!-- section 83 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 80 -->
+<!-- section 84 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
-<!-- section 81 -->
+<!-- section 85 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 82 -->
+<!-- section 86 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 83 -->
+<!-- section 87 -->
 
 # Nutzung des Test-Rekorders
 
@@ -931,11 +980,11 @@ TODO
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 84 -->
+<!-- section 88 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 85 -->
+<!-- section 89 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -947,7 +996,7 @@ TODO
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 86 -->
+<!-- section 90 -->
 
 # Umgang mit dynamischen Daten
 
@@ -961,17 +1010,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 87 -->
+<!-- section 91 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 88 -->
+<!-- section 92 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 89 -->
+<!-- section 93 -->
 
 # Master-Slave-Setup
 
@@ -985,7 +1034,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 90 -->
+<!-- section 94 -->
 
 # Master-Slave-Setup
 
@@ -993,39 +1042,39 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 91 -->
+<!-- section 95 -->
 
 # Testausführung über CLI
 
-<!-- section 92 -->
+<!-- section 96 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 93 -->
+<!-- section 97 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 94 -->
+<!-- section 98 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 95 -->
+<!-- section 99 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 96 -->
+<!-- section 100 -->
 
 # Prometheus / Grafana
 
-<!-- section 97 -->
+<!-- section 101 -->
 
 # YourKit-Profiler
 
-<!-- section 98 -->
+<!-- section 102 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 99 -->
+<!-- section 103 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1036,25 +1085,25 @@ Lösung:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 100 -->
+<!-- section 104 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 101 -->
+<!-- section 105 -->
 
 # Docker / Docker-Compose
 
-<!-- section 102 -->
+<!-- section 106 -->
 
 # Kubernetes
 
-<!-- section 103 -->
+<!-- section 107 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 104 -->
+<!-- section 108 -->
 
 # Github Actions
 
@@ -1065,14 +1114,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 105 -->
+<!-- section 109 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 106 -->
+<!-- section 110 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 107 -->
+<!-- section 111 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

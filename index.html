@@ -1002,9 +1002,53 @@ Assertion 1</p>
 </blockquote>
 <p>https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml</p>
 </section>
-<section id="zeitliche-verteilung-der-last" class="level1">
-<h1>Zeitliche Verteilung der Last</h1>
-<p>TODO</p>
+<section id="praxisbeispiel" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, soll gezeigt werden wie so etwas in jMeter umgesetzt werden kann.</p>
+<p>Beispiel:</p>
+<ul>
+<li>40% anonyme Benutzer browsen auf der Webseite</li>
+<li>30% authentifizierte Benutzer browsen auf der Webseit</li>
+<li>20% führen eine Suche durch</li>
+<li>10% bearbeiten ihren Shopping-Cart</li>
+</ul>
+</section>
+<section id="praxisbeispiel-1" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es im Prinzip 3 Möglichkeiten:</p>
+<ul>
+<li>Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</li>
+<li>Throughput Controller</li>
+<li>Switch Controller</li>
+</ul>
+</section>
+<section id="praxisbeispiel-2" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</p>
+<ul>
+<li>Thread Group mit 40 Benutzern</li>
+<li>Thread Group mit 30 Benutzern</li>
+<li>Thread Group mit 20 Benutzern</li>
+<li>Thread Group mit 10 Benutzern</li>
+</ul>
+<p>Wichtig: Checkbox “Run Thread Groups consecutevly” sollte dem gewünschten Test-Flow entsprechen</p>
+</section>
+<section id="praxisbeispiel-3" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Variante 2: Throughput Controller mit unterschiedlichen “Execution Percentages”</p>
+<ul>
+<li>Throughput Controller (Percent Execution, 40.0) → some sampler</li>
+<li>Throughput Controller (Percent Execution, 30.0) → some sampler</li>
+<li>Throughput Controller (Percent Execution, 20.0) → some sampler</li>
+<li>Throughput Controller (Percent Execution, 10.0) → some sampler</li>
+</ul>
+</section>
+<section id="praxisbeispiel-4" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Variante 3: Switch Controller - Random Weighted Values</p>
+<figure>
+<img src="assets/switch_controller.png" alt="" /><figcaption>Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3</figcaption>
+</figure>
 </section>
 <section id="erkennen-der-last-grenzen-server-bedarfs" class="level1">
 <h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
