@@ -1046,6 +1046,13 @@ Assertion 1</p>
 </section>
 <section id="praxisbeispiel-4" class="level1">
 <h1>Praxisbeispiel</h1>
+<p>Komplexeres Beispiel für Variante 2:</p>
+<figure>
+<img src="assets/throughput_controller.png" alt="" /><figcaption>https://www.blazemeter.com/blog/load-testing-for-your-black-friday</figcaption>
+</figure>
+</section>
+<section id="praxisbeispiel-5" class="level1">
+<h1>Praxisbeispiel</h1>
 <p>Variante 3: Switch Controller - Random Weighted Values</p>
 <figure>
 <img src="assets/switch_controller.png" alt="" /><figcaption>Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3</figcaption>
@@ -1138,6 +1145,13 @@ Assertion 1</p>
 </section>
 <section id="arbeiten-mit-jars" class="level1">
 <h1>Arbeiten mit JARs</h1>
+<p>Use-Cases für Jars:</p>
+<ul>
+<li>Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten alle 20 Tests angepasst werden
+<ul>
+<li>→ besser den Code als jar bereitstellen (jmeter/lib) und dann im JSR223-Sampler verwenden</li>
+</ul></li>
+</ul>
 </section>
 <section id="reporting" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Reporting</h1>
@@ -1153,6 +1167,10 @@ Assertion 1</p>
 </section>
 <section id="testdaten-in-.json-datei-.csv-datei" class="level1">
 <h1>Testdaten in .json-Datei / .csv-Datei</h1>
+<ul>
+<li><p>Testdaten werden aus .csv gelesen → Tipp: mit dem Random CSV Data Set plugin können die Daten in zufälliger Reihenfolge gelesen werden</p></li>
+<li><p>Alternativ können auch ander Formate implementiert werden, z.B. Excel: <a href="https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test">https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test</a></p></li>
+</ul>
 </section>
 <section id="jmeter-funktionen-zur-datengenerierung" class="level1">
 <h1>jMeter-Funktionen zur Datengenerierung</h1>

@@ -909,11 +909,19 @@ Variante 2: Throughput Controller mit unterschiedlichen "Execution Percentages"
 
 # Praxisbeispiel
 
+Komplexeres Beispiel für Variante 2:
+
+![https://www.blazemeter.com/blog/load-testing-for-your-black-friday](assets/throughput_controller.png)
+
+<!-- section 74 -->
+
+# Praxisbeispiel
+
 Variante 3: Switch Controller - Random Weighted Values
 
 ![Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3](assets/switch_controller.png)
 
-<!-- section 74 -->
+<!-- section 75 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
@@ -923,7 +931,7 @@ Beispiel: Thread Group → HTTP Request → Response Assertion (Code 200) → Vi
 
 ![](assets/stress-testing.png)
 
-<!-- section 75 -->
+<!-- section 76 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
@@ -939,11 +947,11 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 
 > Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen
 
-<!-- section 76 -->
+<!-- section 77 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 77 -->
+<!-- section 78 -->
 
 # BeanShell
 
@@ -956,7 +964,7 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
     -   jars nach /lib/ext kopieren
     -   jars müssen am Anfang des BeanShell-Script importiert werden
 
-<!-- section 78 -->
+<!-- section 79 -->
 
 # BeanShell
 
@@ -972,7 +980,7 @@ Beispiel Use-Cases:
 
 -   komplexe Assertions
 
-<!-- section 79 -->
+<!-- section 80 -->
 
 # BeanShell
 
@@ -989,7 +997,7 @@ Vordefinierte Variablen:
 -   props: gibt Zugriff auf jMeter Properties
 -   log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
 
-<!-- section 80 -->
+<!-- section 81 -->
 
 # BeanShell
 
@@ -1003,49 +1011,58 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 ![](assets/beanshellgroovy3.png)
 
-<!-- section 81 -->
+<!-- section 82 -->
 
 # JSR223
 
 -   zwar etwas langsamer als der *Java Request Sampler*, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart
 
-<!-- section 82 -->
+<!-- section 83 -->
 
 # RegEx-Extractor
 
-<!-- section 83 -->
+<!-- section 84 -->
 
 # Arbeiten mit JARs
 
-<!-- section 84 -->
+Use-Cases für Jars:
 
-# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+-   Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten alle 20 Tests angepasst werden
+    -   → besser den Code als jar bereitstellen (jmeter/lib) und dann im JSR223-Sampler verwenden
 
 <!-- section 85 -->
 
-# Arten von Reporting
+# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 86 -->
 
-# Ergebnis-Analyse
+# Arten von Reporting
 
 <!-- section 87 -->
 
-# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Ergebnis-Analyse
 
 <!-- section 88 -->
 
-# Testdaten in .json-Datei / .csv-Datei
+# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 89 -->
 
-# jMeter-Funktionen zur Datengenerierung
+# Testdaten in .json-Datei / .csv-Datei
+
+-   Testdaten werden aus .csv gelesen → Tipp: mit dem Random CSV Data Set plugin können die Daten in zufälliger Reihenfolge gelesen werden
+
+-   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
 <!-- section 90 -->
 
-# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# jMeter-Funktionen zur Datengenerierung
 
 <!-- section 91 -->
+
+# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 92 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1058,11 +1075,11 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 92 -->
+<!-- section 93 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 93 -->
+<!-- section 94 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1074,7 +1091,7 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 94 -->
+<!-- section 95 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1088,17 +1105,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 95 -->
+<!-- section 96 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 96 -->
+<!-- section 97 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 97 -->
+<!-- section 98 -->
 
 # Master-Slave-Setup
 
@@ -1112,7 +1129,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 98 -->
+<!-- section 99 -->
 
 # Master-Slave-Setup
 
@@ -1120,39 +1137,39 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 99 -->
+<!-- section 100 -->
 
 # Testausführung über CLI
 
-<!-- section 100 -->
+<!-- section 101 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 101 -->
+<!-- section 102 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 102 -->
+<!-- section 103 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 103 -->
+<!-- section 104 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 104 -->
+<!-- section 105 -->
 
 # Prometheus / Grafana
 
-<!-- section 105 -->
+<!-- section 106 -->
 
 # YourKit-Profiler
 
-<!-- section 106 -->
+<!-- section 107 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 107 -->
+<!-- section 108 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1163,25 +1180,25 @@ Lösung:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 108 -->
+<!-- section 109 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 109 -->
+<!-- section 110 -->
 
 # Docker / Docker-Compose
 
-<!-- section 110 -->
+<!-- section 111 -->
 
 # Kubernetes
 
-<!-- section 111 -->
+<!-- section 112 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 112 -->
+<!-- section 113 -->
 
 # Github Actions
 
@@ -1192,14 +1209,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 113 -->
+<!-- section 114 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 114 -->
+<!-- section 115 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 115 -->
+<!-- section 116 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

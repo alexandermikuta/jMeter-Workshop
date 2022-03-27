@@ -756,6 +756,12 @@ Variante 2: Throughput Controller mit unterschiedlichen "Execution Percentages"
 
 # Praxisbeispiel
 
+Komplexeres Beispiel für Variante 2:
+
+![https://www.blazemeter.com/blog/load-testing-for-your-black-friday](assets/throughput_controller.png)
+
+# Praxisbeispiel
+
 Variante 3: Switch Controller - Random Weighted Values
 
 ![Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3](assets/switch_controller.png)
@@ -843,6 +849,11 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 
 # Arbeiten mit JARs
 
+Use-Cases für Jars:
+
+- Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten alle 20 Tests angepasst werden
+  - &rarr; besser den Code als jar bereitstellen (jmeter/lib) und dann im JSR223-Sampler verwenden
+
 # Reporting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
 # Arten von Reporting
@@ -852,6 +863,10 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 # Testdatenverwaltung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
 # Testdaten in .json-Datei / .csv-Datei
+
+- Testdaten werden aus .csv gelesen &rarr; Tipp: mit dem Random CSV Data Set plugin können die Daten in zufälliger Reihenfolge gelesen werden
+
+- Alternativ können auch ander Formate implementiert werden, z.B. Excel: [https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test](https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test)
 
 # jMeter-Funktionen zur Datengenerierung
 
