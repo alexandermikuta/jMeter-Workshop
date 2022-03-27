@@ -947,47 +947,105 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 
 # BeanShell
 
+-   Eine der fortgeschrittensten Komponenten in JMeter
+
+-   Hilfreich für sehr ungewöhnliche Testfälle die ansonsten schwer in jMeter umzusetzen wären
+
+-   Hat Zugriff auf interne JMeter-APIs und jede externe Klasse die in den jMeter Classpath geladen wird
+
+    -   jars nach /lib/ext kopieren
+    -   jars müssen am Anfang des BeanShell-Script importiert werden
+
 <!-- section 78 -->
 
-# JSR223
+# BeanShell
+
+Beispiel Use-Cases:
+
+-   jMeter-Variablen verändern: \`var.put("counter", "false");
+
+-   jMeter-Variable in Property umwandeln \`props.put("some\_variable", var.get("some\_variable"));
+
+-   Cookies zwischen Thread-Groups übergeben: siehe <https://www.blazemeter.com/blog/how-use-beanshell-jmeters-favorite-built-component>
+
+-   Testfall im Fehlerfall stoppen
+
+-   komplexe Assertions
 
 <!-- section 79 -->
 
-# RegEx-Extractor
+# BeanShell
+
+Vordefinierte Variablen:
+
+-   SampleResult: Alle Felder/Methode von <https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html> stehen zu verfügung
+-   ResponseCode: Setzt den Sampler response code z.B.: ResponseCode = "200";
+-   ResponseMessage
+-   IsSuccess: Falls *true* wird der Sampler als *passed* betrachtet
+-   Label: String der in the Test Ergebnisse aufgelistet wird
+-   FileName
+-   ctx: die mächtigste Variable gibt Zugriff auf org.apache.jmeter.threads.JMeterContext und gibt Zugriff auf die JMeter engine, Samplers und ihren Ergebnissen
+-   vars: gibt Zugriff auf jMeter Variablen
+-   props: gibt Zugriff auf jMeter Properties
+-   log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
 
 <!-- section 80 -->
 
-# Arbeiten mit JARs
+# BeanShell
+
+Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
+
+-   langsamer und mehr Speicherverbrauch als JSR223+Groovy
+
+-   Seit JMeter 3.1 ist Groovy die Default Scripting-Sprache für JSR223 Sampler
+
+-   JMeter Contributor Philippe Mouawad: "avoid Beanshell in favor of JSR223 + Groovy because Beanshell is old, slow..."
+
+![](assets/beanshellgroovy3.png)
 
 <!-- section 81 -->
 
-# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# JSR223
+
+-   zwar etwas langsamer als der *Java Request Sampler*, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart
 
 <!-- section 82 -->
 
-# Arten von Reporting
+# RegEx-Extractor
 
 <!-- section 83 -->
 
-# Ergebnis-Analyse
+# Arbeiten mit JARs
 
 <!-- section 84 -->
 
-# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 85 -->
 
-# Testdaten in .json-Datei / .csv-Datei
+# Arten von Reporting
 
 <!-- section 86 -->
 
-# jMeter-Funktionen zur Datengenerierung
+# Ergebnis-Analyse
 
 <!-- section 87 -->
 
-# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 88 -->
+
+# Testdaten in .json-Datei / .csv-Datei
+
+<!-- section 89 -->
+
+# jMeter-Funktionen zur Datengenerierung
+
+<!-- section 90 -->
+
+# REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 91 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1000,11 +1058,11 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 89 -->
+<!-- section 92 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 90 -->
+<!-- section 93 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1016,7 +1074,7 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 91 -->
+<!-- section 94 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1030,17 +1088,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 92 -->
+<!-- section 95 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 93 -->
+<!-- section 96 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 94 -->
+<!-- section 97 -->
 
 # Master-Slave-Setup
 
@@ -1054,7 +1112,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 95 -->
+<!-- section 98 -->
 
 # Master-Slave-Setup
 
@@ -1062,39 +1120,39 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 96 -->
+<!-- section 99 -->
 
 # Testausführung über CLI
 
-<!-- section 97 -->
+<!-- section 100 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 98 -->
+<!-- section 101 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 99 -->
+<!-- section 102 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 100 -->
+<!-- section 103 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 101 -->
+<!-- section 104 -->
 
 # Prometheus / Grafana
 
-<!-- section 102 -->
+<!-- section 105 -->
 
 # YourKit-Profiler
 
-<!-- section 103 -->
+<!-- section 106 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 104 -->
+<!-- section 107 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1105,25 +1163,25 @@ Lösung:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 105 -->
+<!-- section 108 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 106 -->
+<!-- section 109 -->
 
 # Docker / Docker-Compose
 
-<!-- section 107 -->
+<!-- section 110 -->
 
 # Kubernetes
 
-<!-- section 108 -->
+<!-- section 111 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 109 -->
+<!-- section 112 -->
 
 # Github Actions
 
@@ -1134,14 +1192,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 110 -->
+<!-- section 113 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 111 -->
+<!-- section 114 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 112 -->
+<!-- section 115 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

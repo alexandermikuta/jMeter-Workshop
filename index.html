@@ -1080,9 +1080,58 @@ Assertion 1</p>
 </section>
 <section id="beanshell" class="level1">
 <h1>BeanShell</h1>
+<ul>
+<li><p>Eine der fortgeschrittensten Komponenten in JMeter</p></li>
+<li><p>Hilfreich für sehr ungewöhnliche Testfälle die ansonsten schwer in jMeter umzusetzen wären</p></li>
+<li><p>Hat Zugriff auf interne JMeter-APIs und jede externe Klasse die in den jMeter Classpath geladen wird</p>
+<ul>
+<li>jars nach /lib/ext kopieren</li>
+<li>jars müssen am Anfang des BeanShell-Script importiert werden</li>
+</ul></li>
+</ul>
+</section>
+<section id="beanshell-1" class="level1">
+<h1>BeanShell</h1>
+<p>Beispiel Use-Cases:</p>
+<ul>
+<li><p>jMeter-Variablen verändern: `var.put(“counter”, “false”);</p></li>
+<li><p>jMeter-Variable in Property umwandeln `props.put(“some_variable”, var.get(“some_variable”));</p></li>
+<li><p>Cookies zwischen Thread-Groups übergeben: siehe <a href="https://www.blazemeter.com/blog/how-use-beanshell-jmeters-favorite-built-component">https://www.blazemeter.com/blog/how-use-beanshell-jmeters-favorite-built-component</a></p></li>
+<li><p>Testfall im Fehlerfall stoppen</p></li>
+<li><p>komplexe Assertions</p></li>
+</ul>
+</section>
+<section id="beanshell-2" class="level1">
+<h1>BeanShell</h1>
+<p>Vordefinierte Variablen:</p>
+<ul>
+<li>SampleResult: Alle Felder/Methode von <a href="https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html">https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html</a> stehen zu verfügung</li>
+<li>ResponseCode: Setzt den Sampler response code z.B.: ResponseCode = “200”;</li>
+<li>ResponseMessage</li>
+<li>IsSuccess: Falls <em>true</em> wird der Sampler als <em>passed</em> betrachtet</li>
+<li>Label: String der in the Test Ergebnisse aufgelistet wird</li>
+<li>FileName</li>
+<li>ctx: die mächtigste Variable gibt Zugriff auf org.apache.jmeter.threads.JMeterContext und gibt Zugriff auf die JMeter engine, Samplers und ihren Ergebnissen</li>
+<li>vars: gibt Zugriff auf jMeter Variablen</li>
+<li>props: gibt Zugriff auf jMeter Properties</li>
+<li>log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info(“Test Info Message”);</li>
+</ul>
+</section>
+<section id="beanshell-3" class="level1">
+<h1>BeanShell</h1>
+<p>Ist die BeanShell Tot? → <a href="https://www.blazemeter.com/blog/is-beanshell-dead">https://www.blazemeter.com/blog/is-beanshell-dead</a></p>
+<ul>
+<li><p>langsamer und mehr Speicherverbrauch als JSR223+Groovy</p></li>
+<li><p>Seit JMeter 3.1 ist Groovy die Default Scripting-Sprache für JSR223 Sampler</p></li>
+<li><p>JMeter Contributor Philippe Mouawad: “avoid Beanshell in favor of JSR223 + Groovy because Beanshell is old, slow…”</p></li>
+</ul>
+<p><img src="assets/beanshellgroovy3.png" /></p>
 </section>
 <section id="jsr223" class="level1">
 <h1>JSR223</h1>
+<ul>
+<li>zwar etwas langsamer als der <em>Java Request Sampler</em>, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart</li>
+</ul>
 </section>
 <section id="regex-extractor" class="level1">
 <h1>RegEx-Extractor</h1>
