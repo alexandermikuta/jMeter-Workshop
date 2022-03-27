@@ -713,9 +713,50 @@ Dabei sollte beachtet werden:
 
 https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
 
-# Zeitliche Verteilung der Last
+# Praxisbeispiel
 
-TODO
+Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, soll gezeigt werden wie so etwas in jMeter umgesetzt werden kann.
+
+Beispiel:
+
+- 40% anonyme Benutzer browsen auf der Webseite
+- 30% authentifizierte Benutzer browsen auf der Webseit
+- 20% führen eine Suche durch
+- 10% bearbeiten ihren Shopping-Cart
+
+# Praxisbeispiel
+
+Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es im Prinzip 3 Möglichkeiten:
+
+- Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads
+- Throughput Controller
+- Switch Controller
+
+# Praxisbeispiel
+
+Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads
+
+- Thread Group mit 40 Benutzern
+- Thread Group mit 30 Benutzern
+- Thread Group mit 20 Benutzern
+- Thread Group mit 10 Benutzern
+
+Wichtig: Checkbox "Run Thread Groups consecutevly" sollte dem gewünschten Test-Flow entsprechen
+
+# Praxisbeispiel
+
+Variante 2: Throughput Controller mit unterschiedlichen "Execution Percentages"
+
+- Throughput Controller (Percent Execution, 40.0) &rarr; some sampler
+- Throughput Controller (Percent Execution, 30.0) &rarr; some sampler
+- Throughput Controller (Percent Execution, 20.0) &rarr; some sampler
+- Throughput Controller (Percent Execution, 10.0) &rarr; some sampler
+
+# Praxisbeispiel
+
+Variante 3: Switch Controller - Random Weighted Values
+
+![Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3](assets/switch_controller.png)
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
