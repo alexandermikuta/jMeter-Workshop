@@ -369,6 +369,8 @@ Variante 3: Switch Controller - Random Weighted Values
 
 Beispiel: Thread Group &rarr; HTTP Request &rarr; Response Assertion (Code 200) &rarr; View Results in Table
 
+# Erkennen der Last-Grenzen / Server-Bedarfs
+
 ![](assets/stress-testing.png)
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
