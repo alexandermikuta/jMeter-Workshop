@@ -1268,6 +1268,12 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 
 # jMeter-Funktionen zur Datengenerierung
 
+-   **JSR223:** z.B. Aufruf einer Library wie <https://ngneat.github.io/falso/>
+
+-   **BSF-PreProcessor:** <https://blog.mayflower.de/566-Pseudodynamic-data-generation-in-JMeter.html>
+
+-   **Random Testdata:** <https://www.logic2020.com/insight/tactical/generate-random-test-data-run-time-jmeter>
+
 <!-- section 119 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
