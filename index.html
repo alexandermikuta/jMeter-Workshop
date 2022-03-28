@@ -68,11 +68,11 @@
 <td>(3) Verteiltes Testen mit jMeter</td>
 </tr>
 <tr class="even">
-<td>(2) Strukturierung von Testplänen</td>
+<td>(3) Workload Design</td>
 <td>(3) RMI</td>
 </tr>
 <tr class="odd">
-<td>(3) Workload Design</td>
+<td>(2) Strukturierung von Testplänen</td>
 <td>(2) Monitoring</td>
 </tr>
 <tr class="even">
@@ -183,6 +183,320 @@
 <img src="assets/jmxmon_samples_collector.png" style="width:40.0%;height:40.0%" alt="" /><figcaption><a href="https://jmeter-plugins.org/wiki/JMXMon/">https://jmeter-plugins.org/wiki/JMXMon/</a></figcaption>
 </figure>
 </section>
+<section id="workload-design" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
+<h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Workload Design</h1>
+</section>
+<section id="workload" class="level1">
+<h1>Workload</h1>
+<p>Definition:</p>
+<blockquote>
+<p>The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services</p>
+</blockquote>
+</section>
+<section id="prinzipien" class="level1">
+<h1>Prinzipien</h1>
+<ul>
+<li><p>Vorhersagbarkeit</p></li>
+<li><p>Wiederholbarkeit</p></li>
+<li><p>Skalierbarkeit</p></li>
+</ul>
+</section>
+<section id="vorhersagbarkeit" class="level1">
+<h1>Vorhersagbarkeit</h1>
+<blockquote>
+<p>Das Verhalten des Systems (z.B. Prozessanfragen, Datenzugriffe, …) sollte während die Workload läuft vorhersehbar sein.</p>
+</blockquote>
+<p><img src="assets/predictable.png" /></p>
+</section>
+<section id="wiederholbarkeit" class="level1">
+<h1>Wiederholbarkeit</h1>
+<blockquote>
+<p>Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.</p>
+</blockquote>
+</section>
+<section id="skalierbarkeit" class="level1">
+<h1>Skalierbarkeit</h1>
+<blockquote>
+<p>Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.</p>
+</blockquote>
+</section>
+<section id="workload-design-steps" class="level1">
+<h1>Workload Design Steps</h1>
+<ul>
+<li>Design der Applikation</li>
+<li>Key-Szenarios identifizieren</li>
+<li>Definieren der Metriken</li>
+<li>Design der Load</li>
+<li>Definieren der Skalierungsregeln</li>
+<li>Design des Load-Generators</li>
+<li>Festlegung einer Baseline</li>
+</ul>
+</section>
+<section id="design-der-applikation" class="level1">
+<h1>Design der Applikation</h1>
+<ul>
+<li><p>Definieren der Aktoren und Use-Cases → Hilft die Operationen der Workload zu definieren</p></li>
+<li><p>Definieren der Operationen</p>
+<ul>
+<li>Im einfachsten Fall mappt jeder User-Case auf eine Operation</li>
+<li>Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) → Ansonsten schwer zu managen und verstehen</li>
+</ul></li>
+</ul>
+</section>
+<section id="key-szenarios-identifizieren" class="level1">
+<h1>Key-Szenarios identifizieren</h1>
+<ul>
+<li>Messbares Szenario: Ein User-Szenario das Performance-getestet werden soll, sollte vollständig messbar sein</li>
+<li>Meistbenutzte Szenarios</li>
+<li>Business-kritische Szenarios</li>
+<li>Ressourcen-intensive Szenarios</li>
+<li>Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon</li>
+<li>Stakeholder-relevante Szenarien</li>
+</ul>
+</section>
+<section id="key-szenarios-identifizieren-1" class="level1">
+<h1>Key-Szenarios identifizieren</h1>
+<p>Beispiel für eine E-Commerce-Applikation:</p>
+<ul>
+<li>Browsen des Produktkatalogs</li>
+<li>Benutzeraccount anlegen</li>
+<li>Nach einem Produkt suchen</li>
+<li>Login</li>
+<li>Bestellung abschicken</li>
+</ul>
+<p>Navigationspfade der Key-Szenarios untersuchen</p>
+<ul>
+<li>Auf welche Arten kann ich z.B. eine Bestellung abschicken</li>
+<li>Wie häufig wird welcher Weg genutzt? → Logfiles oder Analysetools (z.B Matomo)</li>
+</ul>
+</section>
+<section id="definieren-der-metriken" class="level1">
+<h1>Definieren der Metriken</h1>
+<p>Typische Metriken sind:</p>
+<ul>
+<li><p><strong>Durchsatz:</strong> Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden</p></li>
+<li><p><strong>Anwortzeiten:</strong> Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt</p></li>
+<li><p><strong>Ressourcenverbrauch:</strong> z.B. alle Ressourcen (IO, Memory, …) sollten nicht mehr als 70% der max. Auslastung haben</p></li>
+<li><p><strong>Anzahl maximaler Benutzer:</strong> Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten</p></li>
+</ul>
+</section>
+<section id="design-der-load" class="level1">
+<h1>Design der Load</h1>
+<ul>
+<li><p>der wichtigste Schritt im Workload Design!</p></li>
+<li><p>die Relevanz der Workload hängt davon ab wie genau sie die die reale Produktionslast emuliert</p></li>
+<li><p>gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert</p></li>
+</ul>
+</section>
+<section id="design-der-load-1" class="level1">
+<h1>Design der Load</h1>
+<ul>
+<li><p><strong>Arrival Rates:</strong> Die Rate mit der Requests an das SUT gestellt werden</p></li>
+<li><p><strong>Think Times:</strong> Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion → Bei großen Datenmenge steigt diese Zeit</p></li>
+<li><p><strong>Browser Mix:</strong> Welche Browser sollen im Test verwendet werden? Chrome, Firefox, …</p></li>
+<li><p><strong>Network Mix:</strong> Welche Netzwerkgeschwindigkeiten sollen im Test verwendet werden? z.B. 3G</p></li>
+</ul>
+</section>
+<section id="design-der-load-2" class="level1">
+<h1>Design der Load</h1>
+<ul>
+<li><p><strong>Operation Mix:</strong> Festlegung in welcher Frequenz welche Operation durchgeführt wird → oft prozentual je Operation was sich zu 100% summiert</p>
+<ul>
+<li>Flat Mix:
+<ul>
+<li>Einfachste Möglichkeit</li>
+<li>wird verwendet wenn Operation unabhängig sind und die gleiche Wahrscheinlichkeit haben</li>
+<li>→ Der Mix wählt eine Operation zufällig</li>
+</ul></li>
+<li>Flat Sequence Mix:
+<ul>
+<li>Spezifiziert ein Set von Operations-Sequenzen</li>
+<li>z.B. Set1=Op1,Op2 und Set2=Op1,Op3</li>
+<li>jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt</li>
+</ul></li>
+<li>Matrix Mix (Transition Mix):
+<ul>
+<li>Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell</li>
+<li>wird häufig bei Web-Apps verwendet</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="design-der-load-3" class="level1">
+<h1>Design der Load</h1>
+<p>Beispiel-Workload als Matrix-Mix:</p>
+<table>
+<thead>
+<tr class="header">
+<th>From</th>
+<th>To Page 1</th>
+<th>To Page 2</th>
+<th>To Page 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Page 1</td>
+<td>0,00 %</td>
+<td>80,00%</td>
+<td>20,00%</td>
+</tr>
+<tr class="even">
+<td>Page 2</td>
+<td>20,00%</td>
+<td>39,00%</td>
+<td>41,00%</td>
+</tr>
+<tr class="odd">
+<td>Page 3</td>
+<td>60,00%</td>
+<td>19,00%</td>
+<td>21,00%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="design-der-load-4" class="level1">
+<h1>Design der Load</h1>
+<ul>
+<li><p><strong>Operation Data:</strong></p>
+<ul>
+<li><p>Abhängig von der Operation müssen für den Request diverse Input-Daten generiert werden</p></li>
+<li><p>Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden → Bei 100 Items sollten nicht immer fix 5 selektiert werden</p></li>
+<li><p>Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken</p></li>
+<li><p>Genieren “echter” Daten kann bei großen Daten problematisch werden → Workload Entwickler müsste all Möglichen Values kennen</p>
+<ul>
+<li>Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items</li>
+<li>Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="definieren-der-skalierungsregeln" class="level1">
+<h1>Definieren der Skalierungsregeln</h1>
+<p>Häufig skaliert man durch Erhöhung der emulierten Benutzer. Weiter Möglichkeiten sind:</p>
+<p>Linear Scaling</p>
+<ul>
+<li>alles wird über einen einzigen Skalierungsfaktor skaliert</li>
+<li>z.B. Workload führt Datenzugriffe eines Benutzers aus → Anzahl Benutzer &amp; Anzahl Datenzugriffe werden beide skaliert</li>
+<li>Häufig nützlich für “Sizing”-Zwecke</li>
+</ul>
+<p>Non-linear Scaling:</p>
+<ul>
+<li>Anwendungen skalieren oft nicht linear</li>
+<li>z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags</li>
+</ul>
+</section>
+<section id="design-des-load-generators" class="level1">
+<h1>Design des Load-Generators</h1>
+<p>Der Load-Generator implementiert die Workload</p>
+<p>Dabei sollte beachtet werden:</p>
+<ul>
+<li><p>Zum simulieren mehrerer Benutzer-Connections sollte <strong>kein</strong> connection-pooling verwendet werden</p></li>
+<li><p>Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen “Random number generator” (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen</p></li>
+</ul>
+</section>
+<section id="festlegung-einer-baseline" class="level1">
+<h1>Festlegung einer Baseline</h1>
+<blockquote>
+<p>“A Baseline is the process of capturing performance metric data for the sole purpose of evaluating the efficacy of successive changes to the system or application. It is important that all characteristics and configurations, except those specifically being varied for comparison, remain the same in order to make effective comparisons as to which change (or series of changes) is driving results toward the targeted goal. Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not.” Some considerations when generating baselines include the following:"</p>
+</blockquote>
+<p>https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml</p>
+</section>
+<section id="praxisbeispiel" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, soll gezeigt werden wie so etwas in jMeter umgesetzt werden kann.</p>
+<p>Beispiel:</p>
+<ul>
+<li>40% anonyme Benutzer browsen auf der Webseite</li>
+<li>30% authentifizierte Benutzer browsen auf der Webseit</li>
+<li>20% führen eine Suche durch</li>
+<li>10% bearbeiten ihren Shopping-Cart</li>
+</ul>
+</section>
+<section id="praxisbeispiel-1" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es im Prinzip 3 Möglichkeiten:</p>
+<ul>
+<li>Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</li>
+<li>Throughput Controller</li>
+<li>Switch Controller</li>
+</ul>
+</section>
+<section id="praxisbeispiel-2" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</p>
+<ul>
+<li>Thread Group mit 40 Benutzern</li>
+<li>Thread Group mit 30 Benutzern</li>
+<li>Thread Group mit 20 Benutzern</li>
+<li>Thread Group mit 10 Benutzern</li>
+</ul>
+<p>Wichtig: Checkbox “Run Thread Groups consecutevly” sollte dem gewünschten Test-Flow entsprechen</p>
+</section>
+<section id="praxisbeispiel-3" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Variante 2: Throughput Controller mit unterschiedlichen “Execution Percentages”</p>
+<ul>
+<li>Throughput Controller (Percent Execution, 40.0) → some sampler</li>
+<li>Throughput Controller (Percent Execution, 30.0) → some sampler</li>
+<li>Throughput Controller (Percent Execution, 20.0) → some sampler</li>
+<li>Throughput Controller (Percent Execution, 10.0) → some sampler</li>
+</ul>
+</section>
+<section id="praxisbeispiel-4" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Komplexeres Beispiel für Variante 2:</p>
+<figure>
+<img src="assets/throughput_controller.png" alt="" /><figcaption>https://www.blazemeter.com/blog/load-testing-for-your-black-friday</figcaption>
+</figure>
+</section>
+<section id="praxisbeispiel-5" class="level1">
+<h1>Praxisbeispiel</h1>
+<p>Variante 3: Switch Controller - Random Weighted Values</p>
+<figure>
+<img src="assets/switch_controller.png" alt="" /><figcaption>Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3</figcaption>
+</figure>
+</section>
+<section id="erkennen-der-last-grenzen-server-bedarfs" class="level1">
+<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<figure>
+<img src="assets/performance-testing-types-1-300x284.png%5D" alt="" /><figcaption>Performance Test-Arten</figcaption>
+</figure>
+</section>
+<section id="erkennen-der-last-grenzen-server-bedarfs-1" class="level1">
+<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<ul>
+<li><p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung</p></li>
+<li><p><strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten</p></li>
+<li><p><strong>Soak Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird</p></li>
+<li><p><strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p></li>
+</ul>
+</section>
+<section id="erkennen-der-last-grenzen-server-bedarfs-2" class="level1">
+<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<blockquote>
+<p>Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.</p>
+</blockquote>
+<p>Beispiel: Thread Group → HTTP Request → Response Assertion (Code 200) → View Results in Table</p>
+<p><img src="assets/stress-testing.png" /></p>
+</section>
+<section id="erkennen-der-last-grenzen-server-bedarfs-3" class="level1">
+<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<p>Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlschlägt (z.B. Daten aus JMXMon, Logs der App, …):</p>
+<ul>
+<li>zu wenig Arbeitsspeicher?</li>
+<li>IO zu langsam</li>
+<li>Netzwerk zu langsam</li>
+<li>Prozessor zu langsam</li>
+<li>DB zu langsam</li>
+<li>Load-Balancer überlastet?</li>
+<li>Messaging-Queue als Bottleneck?</li>
+</ul>
+<blockquote>
+<p>Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen</p>
+</blockquote>
+</section>
 <section id="elementestrukturierung-von-testplänen" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Elemente/Strukturierung von Testplänen</h1>
 </section>
@@ -245,7 +559,7 @@
 <tbody>
 <tr class="odd">
 <td>Thread Group (classic)</td>
-<td>Einfache Szenarios, Stress Testing, Soak Testing</td>
+<td>Einfache Szenarios, Stress Test, Soak Test</td>
 </tr>
 <tr class="even">
 <td>Arrivals Thread Group</td>
@@ -776,320 +1090,6 @@ Sampler 2
 Post-Processor 1
 Post-Processor 2
 Assertion 1</p>
-</section>
-<section id="workload-design" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
-<h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Workload Design</h1>
-</section>
-<section id="workload" class="level1">
-<h1>Workload</h1>
-<p>Definition:</p>
-<blockquote>
-<p>The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services</p>
-</blockquote>
-</section>
-<section id="prinzipien" class="level1">
-<h1>Prinzipien</h1>
-<ul>
-<li><p>Vorhersagbarkeit</p></li>
-<li><p>Wiederholbarkeit</p></li>
-<li><p>Skalierbarkeit</p></li>
-</ul>
-</section>
-<section id="vorhersagbarkeit" class="level1">
-<h1>Vorhersagbarkeit</h1>
-<blockquote>
-<p>Das Verhalten des Systems (z.B. Prozessanfragen, Datenzugriffe, …) sollte während die Workload läuft vorhersehbar sein.</p>
-</blockquote>
-<p><img src="assets/predictable.png" /></p>
-</section>
-<section id="wiederholbarkeit" class="level1">
-<h1>Wiederholbarkeit</h1>
-<blockquote>
-<p>Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.</p>
-</blockquote>
-</section>
-<section id="skalierbarkeit" class="level1">
-<h1>Skalierbarkeit</h1>
-<blockquote>
-<p>Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.</p>
-</blockquote>
-</section>
-<section id="workload-design-steps" class="level1">
-<h1>Workload Design Steps</h1>
-<ul>
-<li>Design der Applikation</li>
-<li>Key-Szenarios identifizieren</li>
-<li>Definieren der Metriken</li>
-<li>Design der Load</li>
-<li>Definieren der Skalierungsregeln</li>
-<li>Design des Load-Generators</li>
-<li>Festlegung einer Baseline</li>
-</ul>
-</section>
-<section id="design-der-applikation" class="level1">
-<h1>Design der Applikation</h1>
-<ul>
-<li><p>Definieren der Aktoren und Use-Cases → Hilft die Operationen der Workload zu definieren</p></li>
-<li><p>Definieren der Operationen</p>
-<ul>
-<li>Im einfachsten Fall mappt jeder User-Case auf eine Operation</li>
-<li>Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) → Ansonsten schwer zu managen und verstehen</li>
-</ul></li>
-</ul>
-</section>
-<section id="key-szenarios-identifizieren" class="level1">
-<h1>Key-Szenarios identifizieren</h1>
-<ul>
-<li>Messbares Szenario: Ein User-Szenario das Performance-getestet werden soll, sollte vollständig messbar sein</li>
-<li>Meistbenutzte Szenarios</li>
-<li>Business-kritische Szenarios</li>
-<li>Ressourcen-intensive Szenarios</li>
-<li>Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon</li>
-<li>Stakeholder-relevante Szenarien</li>
-</ul>
-</section>
-<section id="key-szenarios-identifizieren-1" class="level1">
-<h1>Key-Szenarios identifizieren</h1>
-<p>Beispiel für eine E-Commerce-Applikation:</p>
-<ul>
-<li>Browsen des Produktkatalogs</li>
-<li>Benutzeraccount anlegen</li>
-<li>Nach einem Produkt suchen</li>
-<li>Login</li>
-<li>Bestellung abschicken</li>
-</ul>
-<p>Navigationspfade der Key-Szenarios untersuchen</p>
-<ul>
-<li>Auf welche Arten kann ich z.B. eine Bestellung abschicken</li>
-<li>Wie häufig wird welcher Weg genutzt? → Logfiles oder Analysetools (z.B Matomo)</li>
-</ul>
-</section>
-<section id="definieren-der-metriken" class="level1">
-<h1>Definieren der Metriken</h1>
-<p>Typische Metriken sind:</p>
-<ul>
-<li><p><strong>Durchsatz:</strong> Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden</p></li>
-<li><p><strong>Anwortzeiten:</strong> Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt</p></li>
-<li><p><strong>Ressourcenverbrauch:</strong> z.B. alle Ressourcen (IO, Memory, …) sollten nicht mehr als 70% der max. Auslastung haben</p></li>
-<li><p><strong>Anzahl maximaler Benutzer:</strong> Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten</p></li>
-</ul>
-</section>
-<section id="design-der-load" class="level1">
-<h1>Design der Load</h1>
-<ul>
-<li><p>der wichtigste Schritt im Workload Design!</p></li>
-<li><p>die Relevanz der Workload hängt davon ab wie genau sie die die reale Produktionslast emuliert</p></li>
-<li><p>gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert</p></li>
-</ul>
-</section>
-<section id="design-der-load-1" class="level1">
-<h1>Design der Load</h1>
-<ul>
-<li><p><strong>Arrival Rates:</strong> Die Rate mit der Requests an das SUT gestellt werden</p></li>
-<li><p><strong>Think Times:</strong> Zeit zwischen Anzeige der Daten beim Benutzer und seiner nächsten Interaktion → Bei großen Datenmenge steigt diese Zeit</p></li>
-<li><p><strong>Browser Mix:</strong> Welche Browser sollen im Test verwendet werden? Chrome, Firefox, …</p></li>
-<li><p><strong>Network Mix:</strong> Welche Netzwerkgeschwindigkeiten sollen im Test verwendet werden? z.B. 3G</p></li>
-</ul>
-</section>
-<section id="design-der-load-2" class="level1">
-<h1>Design der Load</h1>
-<ul>
-<li><p><strong>Operation Mix:</strong> Festlegung in welcher Frequenz welche Operation durchgeführt wird → oft prozentual je Operation was sich zu 100% summiert</p>
-<ul>
-<li>Flat Mix:
-<ul>
-<li>Einfachste Möglichkeit</li>
-<li>wird verwendet wenn Operation unabhängig sind und die gleiche Wahrscheinlichkeit haben</li>
-<li>→ Der Mix wählt eine Operation zufällig</li>
-</ul></li>
-<li>Flat Sequence Mix:
-<ul>
-<li>Spezifiziert ein Set von Operations-Sequenzen</li>
-<li>z.B. Set1=Op1,Op2 und Set2=Op1,Op3</li>
-<li>jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt</li>
-</ul></li>
-<li>Matrix Mix (Transition Mix):
-<ul>
-<li>Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell</li>
-<li>wird häufig bei Web-Apps verwendet</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="design-der-load-3" class="level1">
-<h1>Design der Load</h1>
-<p>Beispiel-Workload als Matrix-Mix:</p>
-<table>
-<thead>
-<tr class="header">
-<th>From</th>
-<th>To Page 1</th>
-<th>To Page 2</th>
-<th>To Page 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Page 1</td>
-<td>0,00 %</td>
-<td>80,00%</td>
-<td>20,00%</td>
-</tr>
-<tr class="even">
-<td>Page 2</td>
-<td>20,00%</td>
-<td>39,00%</td>
-<td>41,00%</td>
-</tr>
-<tr class="odd">
-<td>Page 3</td>
-<td>60,00%</td>
-<td>19,00%</td>
-<td>21,00%</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="design-der-load-4" class="level1">
-<h1>Design der Load</h1>
-<ul>
-<li><p><strong>Operation Data:</strong></p>
-<ul>
-<li><p>Abhängig von der Operation müssen für den Request diverse Input-Daten generiert werden</p></li>
-<li><p>Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden → Bei 100 Items sollten nicht immer fix 5 selektiert werden</p></li>
-<li><p>Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken</p></li>
-<li><p>Genieren “echter” Daten kann bei großen Daten problematisch werden → Workload Entwickler müsste all Möglichen Values kennen</p>
-<ul>
-<li>Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items</li>
-<li>Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="definieren-der-skalierungsregeln" class="level1">
-<h1>Definieren der Skalierungsregeln</h1>
-<p>Häufig skaliert man durch Erhöhung der emulierten Benutzer. Weiter Möglichkeiten sind:</p>
-<p>Linear Scaling</p>
-<ul>
-<li>alles wird über einen einzigen Skalierungsfaktor skaliert</li>
-<li>z.B. Workload führt Datenzugriffe eines Benutzers aus → Anzahl Benutzer &amp; Anzahl Datenzugriffe werden beide skaliert</li>
-<li>Häufig nützlich für “Sizing”-Zwecke</li>
-</ul>
-<p>Non-linear Scaling:</p>
-<ul>
-<li>Anwendungen skalieren oft nicht linear</li>
-<li>z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags</li>
-</ul>
-</section>
-<section id="design-des-load-generators" class="level1">
-<h1>Design des Load-Generators</h1>
-<p>Der Load-Generator implementiert die Workload</p>
-<p>Dabei sollte beachtet werden:</p>
-<ul>
-<li><p>Zum simulieren mehrerer Benutzer-Connections sollte <strong>kein</strong> connection-pooling verwendet werden</p></li>
-<li><p>Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen “Random number generator” (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen</p></li>
-</ul>
-</section>
-<section id="festlegung-einer-baseline" class="level1">
-<h1>Festlegung einer Baseline</h1>
-<blockquote>
-<p>“A Baseline is the process of capturing performance metric data for the sole purpose of evaluating the efficacy of successive changes to the system or application. It is important that all characteristics and configurations, except those specifically being varied for comparison, remain the same in order to make effective comparisons as to which change (or series of changes) is driving results toward the targeted goal. Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not.” Some considerations when generating baselines include the following:"</p>
-</blockquote>
-<p>https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml</p>
-</section>
-<section id="praxisbeispiel" class="level1">
-<h1>Praxisbeispiel</h1>
-<p>Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, soll gezeigt werden wie so etwas in jMeter umgesetzt werden kann.</p>
-<p>Beispiel:</p>
-<ul>
-<li>40% anonyme Benutzer browsen auf der Webseite</li>
-<li>30% authentifizierte Benutzer browsen auf der Webseit</li>
-<li>20% führen eine Suche durch</li>
-<li>10% bearbeiten ihren Shopping-Cart</li>
-</ul>
-</section>
-<section id="praxisbeispiel-1" class="level1">
-<h1>Praxisbeispiel</h1>
-<p>Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es im Prinzip 3 Möglichkeiten:</p>
-<ul>
-<li>Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</li>
-<li>Throughput Controller</li>
-<li>Switch Controller</li>
-</ul>
-</section>
-<section id="praxisbeispiel-2" class="level1">
-<h1>Praxisbeispiel</h1>
-<p>Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</p>
-<ul>
-<li>Thread Group mit 40 Benutzern</li>
-<li>Thread Group mit 30 Benutzern</li>
-<li>Thread Group mit 20 Benutzern</li>
-<li>Thread Group mit 10 Benutzern</li>
-</ul>
-<p>Wichtig: Checkbox “Run Thread Groups consecutevly” sollte dem gewünschten Test-Flow entsprechen</p>
-</section>
-<section id="praxisbeispiel-3" class="level1">
-<h1>Praxisbeispiel</h1>
-<p>Variante 2: Throughput Controller mit unterschiedlichen “Execution Percentages”</p>
-<ul>
-<li>Throughput Controller (Percent Execution, 40.0) → some sampler</li>
-<li>Throughput Controller (Percent Execution, 30.0) → some sampler</li>
-<li>Throughput Controller (Percent Execution, 20.0) → some sampler</li>
-<li>Throughput Controller (Percent Execution, 10.0) → some sampler</li>
-</ul>
-</section>
-<section id="praxisbeispiel-4" class="level1">
-<h1>Praxisbeispiel</h1>
-<p>Komplexeres Beispiel für Variante 2:</p>
-<figure>
-<img src="assets/throughput_controller.png" alt="" /><figcaption>https://www.blazemeter.com/blog/load-testing-for-your-black-friday</figcaption>
-</figure>
-</section>
-<section id="praxisbeispiel-5" class="level1">
-<h1>Praxisbeispiel</h1>
-<p>Variante 3: Switch Controller - Random Weighted Values</p>
-<figure>
-<img src="assets/switch_controller.png" alt="" /><figcaption>Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3</figcaption>
-</figure>
-</section>
-<section id="erkennen-der-last-grenzen-server-bedarfs" class="level1">
-<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
-<figure>
-<img src="assets/performance-testing-types-1-300x284.png%5D" alt="" /><figcaption>Performance Test-Arten</figcaption>
-</figure>
-</section>
-<section id="erkennen-der-last-grenzen-server-bedarfs-1" class="level1">
-<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
-<ul>
-<li><p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung</p></li>
-<li><p><strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten</p></li>
-<li><p><strong>Soak Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird</p></li>
-<li><p><strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p></li>
-</ul>
-</section>
-<section id="erkennen-der-last-grenzen-server-bedarfs-2" class="level1">
-<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
-<blockquote>
-<p>Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.</p>
-</blockquote>
-<p>Beispiel: Thread Group → HTTP Request → Response Assertion (Code 200) → View Results in Table</p>
-<p><img src="assets/stress-testing.png" /></p>
-</section>
-<section id="erkennen-der-last-grenzen-server-bedarfs-3" class="level1">
-<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
-<p>Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlschlägt (z.B. Daten aus JMXMon, Logs der App, …):</p>
-<ul>
-<li>zu wenig Arbeitsspeicher?</li>
-<li>IO zu langsam</li>
-<li>Netzwerk zu langsam</li>
-<li>Prozessor zu langsam</li>
-<li>DB zu langsam</li>
-<li>Load-Balancer überlastet?</li>
-<li>Messaging-Queue als Bottleneck?</li>
-</ul>
-<blockquote>
-<p>Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen</p>
-</blockquote>
 </section>
 <section id="scripting" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Scripting</h1>
