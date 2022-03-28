@@ -1361,7 +1361,7 @@ Assertion 1</p>
 <li>Im Browser Proxy auf gleichen Port wie Skript-Rekorder stellen</li>
 <li>Zertifikat (jMeter/bin/ApacheJMeterTemporaryRootCA.crt) im Browser importieren
 <ul>
-<li>Firefox: options → search for ‘certificate’ → view certificates</li>
+<li><strong>Firefox:</strong> options → search for ‘certificate’ → view certificates</li>
 <li>Haken bei “Trust Website” setzen</li>
 </ul></li>
 <li>Test aufzeichnen</li>
@@ -1372,11 +1372,11 @@ Assertion 1</p>
 <ul>
 <li>JWT-Token erhalten
 <ul>
-<li>Bei Cookies: in <strong>jmeter.properties</strong> folgendes setzen: <strong>CookieManager.save.cookies=true</strong> → macht Cookies als Variablen verfügbar</li>
-<li>Bei Localstorage: jMeter-Integration mit Selenium nutzen</li>
+<li><strong>Bei Cookies:</strong> in <strong>jmeter.properties</strong> folgendes setzen: <strong>CookieManager.save.cookies=true</strong> → macht Cookies als Variablen verfügbar</li>
+<li><strong>Bei Localstorage:</strong> jMeter-Integration mit Selenium nutzen</li>
 <li>JWT mittels Regex aus Login-Response extrahieren</li>
 </ul></li>
-<li>setzen des Authorization-Headers mittels <strong>HTTP Header Manager</strong>: z.B. auf ${COOKIE<em>Authorization} falls die Cookie-Variable _Authorization</em> heißt</li>
+<li>setzen des Authorization-Headers mittels <strong>HTTP Header Manager</strong>: z.B. auf ${COOKIE_Authorization}</li>
 </ul>
 <figure>
 <img src="cookie-session.png" alt="" /><figcaption>HTTP Header Manager-Beispiel</figcaption>

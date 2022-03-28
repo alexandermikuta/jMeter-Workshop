@@ -1289,7 +1289,7 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 -   Thread Group → Add → Logic Controllers → Recording Controller
 -   Im Browser Proxy auf gleichen Port wie Skript-Rekorder stellen
 -   Zertifikat (jMeter/bin/ApacheJMeterTemporaryRootCA.crt) im Browser importieren
-    -   Firefox: options → search for 'certificate' → view certificates
+    -   **Firefox:** options → search for 'certificate' → view certificates
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
@@ -1298,10 +1298,10 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 # Umgang mit Sessions/Authentification
 
 -   JWT-Token erhalten
-    -   Bei Cookies: in **jmeter.properties** folgendes setzen: **CookieManager.save.cookies=true** → macht Cookies als Variablen verfügbar
-    -   Bei Localstorage: jMeter-Integration mit Selenium nutzen
+    -   **Bei Cookies:** in **jmeter.properties** folgendes setzen: **CookieManager.save.cookies=true** → macht Cookies als Variablen verfügbar
+    -   **Bei Localstorage:** jMeter-Integration mit Selenium nutzen
     -   JWT mittels Regex aus Login-Response extrahieren
--   setzen des Authorization-Headers mittels **HTTP Header Manager**: z.B. auf \${COOKIE*Authorization} falls die Cookie-Variable \_Authorization* heißt
+-   setzen des Authorization-Headers mittels **HTTP Header Manager**: z.B. auf \${COOKIE\_Authorization}
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
