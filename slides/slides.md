@@ -654,15 +654,19 @@ Häufigste Use-Cases:
 
 ![](assets/ConfigurationElements.webp)
 
-> Arbeiten eng mit Samplern zusammen. Kann zwar keine Requests senden, diese aber verändern
+# Configuration Elements
 
-Beispiel: Setzen von Defaults und Variablen die später von Samplern verwendet werden können
+> Können keine Requests senden, diese aber verändern
+
+**Beispiel:** Setzen von Defaults und Variablen für Nutzung in Samplern
 
 - Zugriff nur innerhalb des Zweiges in dem das Element hinzugefügt wurde
 
 - Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum vorrang haben.
-  - Ausnahme: _User Defined Variables_ werden unabhängig von der Position zu Beginn des Test verarbeitet
-  - &rarr; Empfehlung daher: _User Defined Variables_ sollten am Start der Thread-Gruppe positioniert werden
+  - **Ausnahme:** _User Defined Variables_ werden unabhängig von der Position zu Beginn des Test verarbeitet
+  - **Empfehlung:** _User Defined Variables_ sollten am Start der Thread-Gruppe positioniert werden
+
+# Configuration Elements
 
 Header Manager, Cookie Manager und Authorization Manager stellen einen weitern Sonderfall dar:
 
