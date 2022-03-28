@@ -779,15 +779,15 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 # Listener
 
-![Beispiel HTML-Dashboard](assets/jmeter-html-report-summary.png)
-
-**Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: → ![](https://jmeter.apache.org/usermanual/realtime-results.html)
+![Beispiel HTML-Dashboard](assets/jmeter-html-report-summary.png){height="70%" width="70%"}
 
 <!-- section 74 -->
 
 # Listener
 
-![Grafana-Beispielboard](assets/grafana_dashboard.png)
+**Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: → ![](https://jmeter.apache.org/usermanual/realtime-results.html)
+
+![Grafana-Beispielboard](assets/grafana_dashboard.png){height="70%" width="70%"}
 
 <!-- section 75 -->
 
