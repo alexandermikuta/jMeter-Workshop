@@ -793,17 +793,15 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 # Pre- und Post-Prozessoren
 
-> Pre-/Post-Prozessoren werden vor/nach Sampler-Request ausgeführt
+Ist ein Pre-/Post-Prozessor direkt an einen Sampler angehängt wird er direkt vor/nach diesem Sampler ausgeführt
 
--   Ist ein Pre-/Post-Prozessor direkt an einen Sampler angehängt wird er direkt vor/nach diesem Sampler ausgeführt
+Häufigste Use-Cases:
 
--   Häufigste Use-Cases:
-
-    -   Pre-Prozessor:
-        -   Settings eines Requests direkt bevor er läuft verändern
-        -   Variablen Updaten die nicht aus dem Response-Text extrahiert werden.
-    -   Post-Prozessor:
-        -   Verarbeiten der Response Daten, z.B extrahieren von Daten (Regex, Json, ...)
+-   Pre-Prozessor:
+    -   Settings eines Requests direkt bevor er läuft verändern
+    -   Variablen Updaten die nicht aus dem Response-Text extrahiert werden.
+-   Post-Prozessor:
+    -   Verarbeiten der Response Daten, z.B extrahieren von Daten (Regex, Json, ...)
 
 <!-- section 76 -->
 
