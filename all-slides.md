@@ -198,10 +198,16 @@ Wichtigste Einstellungen:
 
 # Thread Groups
 
+![Performance Test-Arten](performance-testing-types-1-300x284.png%5D)
+
 **Load Testing:** Modeliert die erwartete Benutzung
 **Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
 **Soak Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
 **Spike Testing:** testen von schnellem Anstieg/Abfall der Load -\> z.B. Ticketverkauf
+
+<!-- section 20 -->
+
+# Thread Groups
 
   ----------------------------------------------------------------------------------------------------------------
   Name                              Use-Cases
@@ -225,7 +231,7 @@ Wichtigste Einstellungen:
   tearDown Thread Group             Aufräumen der Testumgebung
   ----------------------------------------------------------------------------------------------------------------
 
-<!-- section 20 -->
+<!-- section 21 -->
 
 # Sampler
 
@@ -234,7 +240,7 @@ Wichtigste Einstellungen:
 > Durch Threadgruppen werden Benutzer-Anfragen an den Server simuliert.
 > Sampler legen die Art des Requests fest!
 
-<!-- section 21 -->
+<!-- section 22 -->
 
 # Sampler
 
@@ -249,7 +255,7 @@ Wichtigste Einstellungen:
 -   OS Process request
 -   TCP request
 
-<!-- section 22 -->
+<!-- section 23 -->
 
 # Sampler
 
@@ -259,7 +265,7 @@ Wichtigste Einstellungen:
 
 -   Sollte man auch bei den Plugins keinen passen Sampler finden → Es lassen sich auch eigene Sampler schreiben. Häufig findet sich auch auf Github etwas!
 
-<!-- section 23 -->
+<!-- section 24 -->
 
 # Controller
 
@@ -267,7 +273,7 @@ Wichtigste Einstellungen:
 
 ![](assets/LogicControllerClassification.png)
 
-<!-- section 24 -->
+<!-- section 25 -->
 
 # Controller
 
@@ -275,7 +281,7 @@ Wichtigste Einstellungen:
 
 ![](assets/ModuleControllerJMeter.png)
 
-<!-- section 25 -->
+<!-- section 26 -->
 
 # Controller
 
@@ -283,7 +289,7 @@ Beispiel: 100 Benutzer loggen sich ein, 30 Benutzer suchen auf google und 50 Ben
 
 ![Simple Controller ist nur ein Container für Requests](assets/TestNewPlanJMeterController.png)
 
-<!-- section 26 -->
+<!-- section 27 -->
 
 # Controller
 
@@ -291,7 +297,7 @@ Der Module-Controller kontrolliert welches Modul laufen soll
 
 ![](assets/RunLoginModuleJMeter.png)
 
-<!-- section 27 -->
+<!-- section 28 -->
 
 # Controller
 
@@ -302,7 +308,7 @@ Weiter wichtige Controller:
 -   **Transaction Controller:** Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins
 -   **Include Controller:** Hierdurch lassen sich externe Testpläne nutzen
 
-<!-- section 28 -->
+<!-- section 29 -->
 
 # Timers
 
@@ -314,7 +320,7 @@ Weiter wichtige Controller:
 
 -   Um Pause an einer bestimmten Stelle im Test Plan zu machen → Flow Control Action Sampler
 
-<!-- section 29 -->
+<!-- section 30 -->
 
 # Assertions
 
@@ -324,7 +330,7 @@ Weiter wichtige Controller:
 
 -   Um Assertion-Ergebnisse anzuzeigen muss man einen entsprechenden Listener zur Thread-Gruppe hinzufügen
 
-<!-- section 30 -->
+<!-- section 31 -->
 
 # Assertions
 
@@ -332,7 +338,7 @@ Weiter wichtige Controller:
 
 ![](assets/Screen%20Shot%202021-06-19%20at%209.06.28.png)
 
-<!-- section 31 -->
+<!-- section 32 -->
 
 # Assertions
 
@@ -358,7 +364,7 @@ Weiter wichtige Controller:
 **moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
 **hoch:** größtenteils nur für funktionales Testen oder leichte Last (\<10 concurrent Usern) passend
 
-<!-- section 32 -->
+<!-- section 33 -->
 
 # Assertions
 
@@ -375,7 +381,7 @@ AssertionResult.setFailureMessage("The expected response time is :" + expected\_
 }
 \`
 
-<!-- section 33 -->
+<!-- section 34 -->
 
 # Listener
 
@@ -383,13 +389,13 @@ AssertionResult.setFailureMessage("The expected response time is :" + expected\_
 
 > Zeigen die Ergebnisse der Testdurchführung
 
-<!-- section 34 -->
+<!-- section 35 -->
 
 # Listener
 
 ![Arten von Listenern](assets/Jmeter-Listeners-3.png)
 
-<!-- section 35 -->
+<!-- section 36 -->
 
 # Listener
 
@@ -407,7 +413,7 @@ AssertionResult.setFailureMessage("The expected response time is :" + expected\_
     -   Der Default der zu speichernden Werte kann in jmeter.properties bzw. user.properties definiert werden
     -   für mehr Details siehe: → ![](https://jmeter.apache.org/usermanual/listeners.html)
 
-<!-- section 36 -->
+<!-- section 37 -->
 
 # Listener
 
@@ -419,7 +425,7 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 ´./bin/jmeter -g JTL\_FILE -o OUTPUT\_FOLDER\`
 
-<!-- section 37 -->
+<!-- section 38 -->
 
 # Listener
 
@@ -427,13 +433,13 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 **Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: → ![](https://jmeter.apache.org/usermanual/realtime-results.html)
 
-<!-- section 38 -->
+<!-- section 39 -->
 
 # Listener
 
 ![Grafana-Beispielboard](assets/grafana_dashboard.png)
 
-<!-- section 39 -->
+<!-- section 40 -->
 
 # Pre- und Post-Prozessoren
 
@@ -449,7 +455,7 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
     -   Post-Prozessor:
         -   Verarbeiten der Response Daten, z.B extrahieren von Daten (Regex, Json, ...)
 
-<!-- section 40 -->
+<!-- section 41 -->
 
 # Configuration Elements
 
@@ -472,7 +478,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!
 
-<!-- section 41 -->
+<!-- section 42 -->
 
 # Configuration Elements
 
@@ -482,7 +488,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   **Header-Manager:** Kann HTTP Request-Header überschreiben, z.B. Authorization-Header für JWTs bei Web-Apps
 
-<!-- section 42 -->
+<!-- section 43 -->
 
 # Properties / Variablen
 
@@ -496,7 +502,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   setProperty kann genutzt werden um eine jMeter-Property zu definieren → Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!
 
-<!-- section 43 -->
+<!-- section 44 -->
 
 # Properties / Variablen
 
@@ -512,7 +518,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Nützlich um Tests zu parametrisieren → Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!
 
-<!-- section 44 -->
+<!-- section 45 -->
 
 # Configuration Elements
 
@@ -536,7 +542,7 @@ Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13` (Alternativ: entsprechen
 
 Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
-<!-- section 45 -->
+<!-- section 46 -->
 
 # Testfragment
 
@@ -550,7 +556,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 -   Details: → ![](https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments)
 
-<!-- section 46 -->
+<!-- section 47 -->
 
 # Testfragment
 
@@ -575,7 +581,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 ![Workflow 4](assets/include-controller.png)
 
-<!-- section 47 -->
+<!-- section 48 -->
 
 # Templates
 
@@ -593,7 +599,7 @@ Erzeugung eines Templates:
 
 > Tipp: Aufbau der Beispiel-Templates studieren!
 
-<!-- section 48 -->
+<!-- section 49 -->
 
 # Ausführungsreihenfolge
 
@@ -605,7 +611,7 @@ Erzeugung eines Templates:
 -   Assertions
 -   Listeners
 
-<!-- section 49 -->
+<!-- section 50 -->
 
 # Ausführungsreihenfolge
 
@@ -643,11 +649,11 @@ Post-Processor 1
 Post-Processor 2
 Assertion 1
 
-<!-- section 50 -->
+<!-- section 51 -->
 
 # Workload Design {#workload-design .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 51 -->
+<!-- section 52 -->
 
 # Workload
 
@@ -655,7 +661,7 @@ Definition:
 
 > The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services
 
-<!-- section 52 -->
+<!-- section 53 -->
 
 # Prinzipien
 
@@ -665,7 +671,7 @@ Definition:
 
 -   Skalierbarkeit
 
-<!-- section 53 -->
+<!-- section 54 -->
 
 # Vorhersagbarkeit
 
@@ -673,19 +679,19 @@ Definition:
 
 ![](assets/predictable.png)
 
-<!-- section 54 -->
+<!-- section 55 -->
 
 # Wiederholbarkeit
 
 > Wenn eine Workload mehrere male auf identische Weise ausgeführt wird, sollte die Ergebnis nahezu identisch ausführen. Ansonsten wird eine Performance-Analyse sehr schwer.
 
-<!-- section 55 -->
+<!-- section 56 -->
 
 # Skalierbarkeit
 
 > Eine Workload solle mit unterschiedlichen Lasten ausgeführt werden können um die Skalierbarkeit der Anwendung testen zu können.
 
-<!-- section 56 -->
+<!-- section 57 -->
 
 # Workload Design Steps
 
@@ -697,7 +703,7 @@ Definition:
 -   Design des Load-Generators
 -   Festlegung einer Baseline
 
-<!-- section 57 -->
+<!-- section 58 -->
 
 # Design der Applikation
 
@@ -708,7 +714,7 @@ Definition:
     -   Im einfachsten Fall mappt jeder User-Case auf eine Operation
     -   Für sinnvolle Workloads solle die Zahl der benötigen Operation klein gehalten werden (6-8) → Ansonsten schwer zu managen und verstehen
 
-<!-- section 58 -->
+<!-- section 59 -->
 
 # Key-Szenarios identifizieren
 
@@ -719,7 +725,7 @@ Definition:
 -   Zeitabhängig häufig genutzte Szenarios: z.B. Weihnachts-Liste auf Amazon
 -   Stakeholder-relevante Szenarien
 
-<!-- section 59 -->
+<!-- section 60 -->
 
 # Key-Szenarios identifizieren
 
@@ -736,7 +742,7 @@ Navigationspfade der Key-Szenarios untersuchen
 -   Auf welche Arten kann ich z.B. eine Bestellung abschicken
 -   Wie häufig wird welcher Weg genutzt? → Logfiles oder Analysetools (z.B Matomo)
 
-<!-- section 60 -->
+<!-- section 61 -->
 
 # Definieren der Metriken
 
@@ -750,7 +756,7 @@ Typische Metriken sind:
 
 -   **Anzahl maximaler Benutzer:** Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten
 
-<!-- section 61 -->
+<!-- section 62 -->
 
 # Design der Load
 
@@ -760,7 +766,7 @@ Typische Metriken sind:
 
 -   gleichzeit wichtig: die Test-Workload solle sich auf die signifikanten Aspekte der Live-Load konzentrieren → Ansonsten wird es zu kompliziert
 
-<!-- section 62 -->
+<!-- section 63 -->
 
 # Design der Load
 
@@ -772,7 +778,7 @@ Typische Metriken sind:
 
 -   **Network Mix:** Welche Netzwerkgeschwindigkeiten sollen im Test verwendet werden? z.B. 3G
 
-<!-- section 63 -->
+<!-- section 64 -->
 
 # Design der Load
 
@@ -790,7 +796,7 @@ Typische Metriken sind:
         -   Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
         -   wird häufig bei Web-Apps verwendet
 
-<!-- section 64 -->
+<!-- section 65 -->
 
 # Design der Load
 
@@ -802,7 +808,7 @@ Beispiel-Workload als Matrix-Mix:
   Page 2   20,00%      39,00%      41,00%
   Page 3   60,00%      19,00%      21,00%
 
-<!-- section 65 -->
+<!-- section 66 -->
 
 # Design der Load
 
@@ -819,7 +825,7 @@ Beispiel-Workload als Matrix-Mix:
         -   Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items
         -   Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
 
-<!-- section 66 -->
+<!-- section 67 -->
 
 # Definieren der Skalierungsregeln
 
@@ -836,7 +842,7 @@ Non-linear Scaling:
 -   Anwendungen skalieren oft nicht linear
 -   z.B. Anwendung erlaubt Tagging durch Benutzer → mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
 
-<!-- section 67 -->
+<!-- section 68 -->
 
 # Design des Load-Generators
 
@@ -848,7 +854,7 @@ Dabei sollte beachtet werden:
 
 -   Jeder simulierte Nutzer sollte nach Möglichkeit seinen eigenen "Random number generator" (seeded mit unique value) verwenden um wirklich zufällige Daten zu bekommen
 
-<!-- section 68 -->
+<!-- section 69 -->
 
 # Festlegung einer Baseline
 
@@ -856,7 +862,7 @@ Dabei sollte beachtet werden:
 
 https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml
 
-<!-- section 69 -->
+<!-- section 70 -->
 
 # Praxisbeispiel
 
@@ -869,7 +875,7 @@ Beispiel:
 -   20% führen eine Suche durch
 -   10% bearbeiten ihren Shopping-Cart
 
-<!-- section 70 -->
+<!-- section 71 -->
 
 # Praxisbeispiel
 
@@ -879,7 +885,7 @@ Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende 
 -   Throughput Controller
 -   Switch Controller
 
-<!-- section 71 -->
+<!-- section 72 -->
 
 # Praxisbeispiel
 
@@ -892,7 +898,7 @@ Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threa
 
 Wichtig: Checkbox "Run Thread Groups consecutevly" sollte dem gewünschten Test-Flow entsprechen
 
-<!-- section 72 -->
+<!-- section 73 -->
 
 # Praxisbeispiel
 
@@ -903,7 +909,7 @@ Variante 2: Throughput Controller mit unterschiedlichen "Execution Percentages"
 -   Throughput Controller (Percent Execution, 20.0) → some sampler
 -   Throughput Controller (Percent Execution, 10.0) → some sampler
 
-<!-- section 73 -->
+<!-- section 74 -->
 
 # Praxisbeispiel
 
@@ -911,7 +917,7 @@ Komplexeres Beispiel für Variante 2:
 
 ![https://www.blazemeter.com/blog/load-testing-for-your-black-friday](assets/throughput_controller.png)
 
-<!-- section 74 -->
+<!-- section 75 -->
 
 # Praxisbeispiel
 
@@ -919,7 +925,7 @@ Variante 3: Switch Controller - Random Weighted Values
 
 ![Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3](assets/switch_controller.png)
 
-<!-- section 75 -->
+<!-- section 76 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
@@ -929,7 +935,7 @@ Beispiel: Thread Group → HTTP Request → Response Assertion (Code 200) → Vi
 
 ![](assets/stress-testing.png)
 
-<!-- section 76 -->
+<!-- section 77 -->
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
@@ -945,11 +951,11 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 
 > Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen
 
-<!-- section 77 -->
+<!-- section 78 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 78 -->
+<!-- section 79 -->
 
 # BeanShell
 
@@ -962,7 +968,7 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
     -   jars nach /lib/ext kopieren
     -   jars müssen am Anfang des BeanShell-Script importiert werden
 
-<!-- section 79 -->
+<!-- section 80 -->
 
 # BeanShell
 
@@ -978,7 +984,7 @@ Beispiel Use-Cases:
 
 -   komplexe Assertions
 
-<!-- section 80 -->
+<!-- section 81 -->
 
 # BeanShell
 
@@ -995,7 +1001,7 @@ Vordefinierte Variablen:
 -   props: gibt Zugriff auf jMeter Properties
 -   log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
 
-<!-- section 81 -->
+<!-- section 82 -->
 
 # BeanShell
 
@@ -1009,19 +1015,19 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 ![](assets/beanshellgroovy3.png)
 
-<!-- section 82 -->
+<!-- section 83 -->
 
 # JSR223
 
 -   zwar etwas langsamer als der *Java Request Sampler*, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart
 
-<!-- section 83 -->
+<!-- section 84 -->
 
 # RegEx-Extractor
 
 ![](assets/regex-extractor.png)
 
-<!-- section 84 -->
+<!-- section 85 -->
 
 # Arbeiten mit JARs
 
@@ -1033,23 +1039,23 @@ Use-Cases für Jars:
 
 -   Benutzung externe Bibliotheken (z.B. Apache POI)
 
-<!-- section 85 -->
+<!-- section 86 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 86 -->
+<!-- section 87 -->
 
 # Arten von Reporting
 
-<!-- section 87 -->
+<!-- section 88 -->
 
 # Ergebnis-Analyse
 
-<!-- section 88 -->
+<!-- section 89 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 89 -->
+<!-- section 90 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
@@ -1057,15 +1063,15 @@ Use-Cases für Jars:
 
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
-<!-- section 90 -->
+<!-- section 91 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 91 -->
+<!-- section 92 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 92 -->
+<!-- section 93 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1078,11 +1084,11 @@ Use-Cases für Jars:
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 93 -->
+<!-- section 94 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 94 -->
+<!-- section 95 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1094,7 +1100,7 @@ Use-Cases für Jars:
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 95 -->
+<!-- section 96 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1108,17 +1114,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 96 -->
+<!-- section 97 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 97 -->
+<!-- section 98 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 98 -->
+<!-- section 99 -->
 
 # Master-Slave-Setup
 
@@ -1132,7 +1138,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 99 -->
+<!-- section 100 -->
 
 # Master-Slave-Setup
 
@@ -1140,11 +1146,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 100 -->
+<!-- section 101 -->
 
 # Testausführung über CLI
 
-<!-- section 101 -->
+<!-- section 102 -->
 
 # Large-Scale
 
@@ -1170,39 +1176,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: ![](https://octoperf.com/blog/
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 102 -->
+<!-- section 103 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 103 -->
+<!-- section 104 -->
 
 # RMI
 
-<!-- section 104 -->
+<!-- section 105 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 105 -->
+<!-- section 106 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 106 -->
+<!-- section 107 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 107 -->
+<!-- section 108 -->
 
 # Prometheus / Grafana
 
-<!-- section 108 -->
+<!-- section 109 -->
 
 # YourKit-Profiler
 
-<!-- section 109 -->
+<!-- section 110 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 110 -->
+<!-- section 111 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1213,25 +1219,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: ![](https://octoperf.com/blog/
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 111 -->
+<!-- section 112 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 112 -->
+<!-- section 113 -->
 
 # Docker / Docker-Compose
 
-<!-- section 113 -->
+<!-- section 114 -->
 
 # Kubernetes
 
-<!-- section 114 -->
+<!-- section 115 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 115 -->
+<!-- section 116 -->
 
 # Github Actions
 
@@ -1242,14 +1248,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 116 -->
+<!-- section 117 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 117 -->
+<!-- section 118 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 118 -->
+<!-- section 119 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
