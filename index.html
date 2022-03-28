@@ -194,6 +194,23 @@
 <p>The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services</p>
 </blockquote>
 </section>
+<section id="performance-test-arten" class="level1">
+<h1>Performance Test-Arten</h1>
+<figure>
+<img src="assets/performance-testing-types-1-300x284.png" alt="" /><figcaption>Performance Test-Arten</figcaption>
+</figure>
+</section>
+<section id="performance-test-arten-1" class="level1">
+<h1>Performance Test-Arten</h1>
+<ul>
+<li><p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung</p></li>
+<li><p><strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten</p></li>
+<li><p><strong>Soak/Endurance Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird</p></li>
+<li><p><strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p></li>
+<li><p><strong>Volume Testing:</strong> Testen ob Applikation mit einem bestimmten Datenvolumen klar kommt</p></li>
+<li><p><strong>Scalability Testing:</strong> Testet die Fähigkeit einer Applikation hoch/runter zu skalieren</p></li>
+</ul>
+</section>
 <section id="prinzipien" class="level1">
 <h1>Prinzipien</h1>
 <ul>
@@ -378,6 +395,11 @@
 <ul>
 <li><p>Abhängig von der Operation müssen für den Request diverse Input-Daten generiert werden</p></li>
 <li><p>Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden → Bei 100 Items sollten nicht immer fix 5 selektiert werden</p></li>
+</ul>
+</section>
+<section id="design-der-load-8" class="level1">
+<h1>Design der Load</h1>
+<ul>
 <li><p>Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken</p></li>
 <li><p>Genieren “echter” Daten kann bei großen Daten problematisch werden → Workload Entwickler müsste all Möglichen Values kennen</p>
 <ul>
@@ -390,13 +412,13 @@
 <h1>Definieren der Skalierungsregeln</h1>
 <p>Häufig skaliert man durch Erhöhung der emulierten Benutzer.
 Weitere Möglichkeiten sind:</p>
-<p>Linear Scaling</p>
+<p><strong>Linear Scaling</strong></p>
 <ul>
 <li>alles wird über einen einzigen Skalierungsfaktor skaliert</li>
 <li>z.B. Workload führt Datenzugriffe eines Benutzers aus → Anzahl Benutzer &amp; Anzahl Datenzugriffe werden beide skaliert</li>
 <li>Häufig nützlich für “Sizing”-Zwecke</li>
 </ul>
-<p>Non-linear Scaling:</p>
+<p><strong>Non-linear Scaling</strong></p>
 <ul>
 <li>Anwendungen skalieren oft nicht linear</li>
 <li>z.B. Tagging durch Benutzer → mit steigender Anzahl steigt die Last je User mit an, z.B. bei der Anzeige der Tags</li>
@@ -422,12 +444,11 @@ Weitere Möglichkeiten sind:</p>
 <blockquote>
 <p>Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not."</p>
 </blockquote>
-<p>Some considerations when generating baselines: <a href="https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml">https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml</a></p>
 </section>
 <section id="praxisbeispiel" class="level1">
 <h1>Praxisbeispiel</h1>
 <p>Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, soll gezeigt werden wie so etwas in jMeter umgesetzt werden kann.</p>
-<p>Beispiel:</p>
+<p><strong>Beispiel:</strong></p>
 <ul>
 <li>40% anonyme Benutzer browsen auf der Webseite</li>
 <li>30% authentifizierte Benutzer browsen auf der Webseit</li>
@@ -437,7 +458,7 @@ Weitere Möglichkeiten sind:</p>
 </section>
 <section id="praxisbeispiel-1" class="level1">
 <h1>Praxisbeispiel</h1>
-<p>Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es im Prinzip 3 Möglichkeiten:</p>
+<p>Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es u.a. folgende Möglichkeiten:</p>
 <ul>
 <li>Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</li>
 <li>Throughput Controller</li>
@@ -446,18 +467,18 @@ Weitere Möglichkeiten sind:</p>
 </section>
 <section id="praxisbeispiel-2" class="level1">
 <h1>Praxisbeispiel</h1>
-<p>Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</p>
+<p><strong>Variante 1:</strong> Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads</p>
 <ul>
 <li>Thread Group mit 40 Benutzern</li>
 <li>Thread Group mit 30 Benutzern</li>
 <li>Thread Group mit 20 Benutzern</li>
 <li>Thread Group mit 10 Benutzern</li>
 </ul>
-<p>Wichtig: Checkbox “Run Thread Groups consecutevly” sollte dem gewünschten Test-Flow entsprechen</p>
+<p><strong>Wichtig:</strong> Checkbox “Run Thread Groups consecutevly” sollte dem gewünschten Test-Flow entsprechen</p>
 </section>
 <section id="praxisbeispiel-3" class="level1">
 <h1>Praxisbeispiel</h1>
-<p>Variante 2: Throughput Controller mit unterschiedlichen “Execution Percentages”</p>
+<p><strong>Variante 2:</strong> Throughput Controller mit unterschiedlichen “Execution Percentages”</p>
 <ul>
 <li>Throughput Controller (Percent Execution, 40.0) → some sampler</li>
 <li>Throughput Controller (Percent Execution, 30.0) → some sampler</li>
@@ -474,7 +495,7 @@ Weitere Möglichkeiten sind:</p>
 </section>
 <section id="praxisbeispiel-5" class="level1">
 <h1>Praxisbeispiel</h1>
-<p>Variante 3: Switch Controller - Random Weighted Values</p>
+<p><strong>Variante 3:</strong> Switch Controller - Random Weighted Values</p>
 <figure>
 <img src="assets/switch_controller.png" alt="" /><figcaption>Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3</figcaption>
 </figure>
@@ -557,63 +578,46 @@ Weitere Möglichkeiten sind:</p>
 </section>
 <section id="thread-groups-3" class="level1">
 <h1>Thread Groups</h1>
-<figure>
-<img src="assets/performance-testing-types-1-300x284.png" alt="" /><figcaption>Performance Test-Arten</figcaption>
-</figure>
-</section>
-<section id="thread-groups-4" class="level1">
-<h1>Thread Groups</h1>
-<ul>
-<li><p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung</p></li>
-<li><p><strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten</p></li>
-<li><p><strong>Soak/Endurance Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird</p></li>
-<li><p><strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p></li>
-<li><p><strong>Volume Testing:</strong> Testen ob Applikation mit einem bestimmten Datenvolumen klar kommt</p></li>
-<li><p><strong>Scalability Testing:</strong> Testet die Fähigkeit einer Applikation hoch/runter zu skalieren</p></li>
-</ul>
-</section>
-<section id="thread-groups-5" class="level1">
-<h1>Thread Groups</h1>
 <table>
 <colgroup>
-<col style="width: 28%" />
-<col style="width: 71%" />
+<col style="width: 19%" />
+<col style="width: 80%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
+<th>Thread Group</th>
 <th>Use-Cases</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Thread Group classic</td>
+<td>Classic</td>
 <td>Einfache Szenarios, Stress/Soak Testing</td>
 </tr>
 <tr class="even">
-<td>Arrivals Thread Group</td>
+<td>Arrivals</td>
 <td>Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen</td>
 </tr>
 <tr class="odd">
-<td>Free Form Arrivals Thread Group</td>
+<td>Free Form Arrivals</td>
 <td>Vergleichbar mit Arrival Thread Group</td>
 </tr>
 <tr class="even">
-<td>Concurrency Thread Group</td>
+<td>Concurrency</td>
 <td>Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf</td>
 </tr>
 <tr class="odd">
-<td>Stepping Thread Group</td>
+<td>Stepping</td>
 <td>Ältere Version der Threadgroup mit mehr Konfigurationsaufwand</td>
 </tr>
 <tr class="even">
-<td>Ultimate Thread Group</td>
+<td>Ultimate</td>
 <td>Komplexe Spike Testing Szenarios</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="thread-groups-6" class="level1">
+<section id="thread-groups-4" class="level1">
 <h1>Thread Groups</h1>
 <table>
 <colgroup>
