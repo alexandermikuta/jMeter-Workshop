@@ -749,19 +749,19 @@ Beispiel: Eigene JSR223 Assertion um Durations zu prüfen
 
 # Listener
 
--   Sammeln Ergebnisse auf gleichem Level oder darunter
+Sammeln Ergebnisse auf gleichem Level oder darunter
 
--   Listener können sehr Ressourcenintensiv sein!
+Listener können sehr Ressourcenintensiv sein!
 
-    -   Nicht bei Load-/Stress-Tests verwendet werden sollten:
+-   Nicht bei Load-/Stress-Tests verwendet werden sollten:
     -   Assertion Results
     -   View Results in Table
     -   View Results Tree
 
--   Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
+Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
 
-    -   Default konfigurierbar in jmeter.properties bzw. user.properties
-    -   mehr Details siehe: ![](https://jmeter.apache.org/usermanual/listeners.html)
+-   Default konfigurierbar in jmeter.properties bzw. user.properties
+-   mehr Details siehe: ![](https://jmeter.apache.org/usermanual/listeners.html)
 
 <!-- section 72 -->
 
