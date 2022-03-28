@@ -1262,6 +1262,8 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 
 -   Testdaten werden aus .csv gelesen → Tipp: mit dem Random CSV Data Set plugin können die Daten in zufälliger Reihenfolge gelesen werden
 
+-   Testdata-Partitioning: <https://guides.flood.io/scripting-and-tools/test-data>
+
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
 <!-- section 118 -->
