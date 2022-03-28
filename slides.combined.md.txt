@@ -879,7 +879,7 @@ Assertion 1
 
 Vordefinierte Variablen:
 
-- SampleResult: Alle Felder/Methoden von [https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) stehen zur Verfügung
+- SampleResult: Alle Felder/Methoden von [Sample-Result](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) stehen zur Verfügung
 - ResponseCode: Setzt den Sampler response code z.B.: ResponseCode = "200";
 - ResponseMessage
 - IsSuccess: Falls _true_ wird der Sampler als _passed_ betrachtet
