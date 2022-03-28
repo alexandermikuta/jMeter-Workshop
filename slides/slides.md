@@ -815,6 +815,8 @@ Erzeugung eines Templates:
 - Logic-Controller und Sampler werden in der Reihenfolge in der sie im Baum stehen ausgeführt
 - Andere Testelemente werden entsprechend ihres Scopes ausgeführt
 
+# Ausführungsreihenfolge
+
 Beispiel-Testplan:
 
 - Controller
@@ -826,6 +828,8 @@ Beispiel-Testplan:
   - Pre-Processor 1
   - Timer 2
   - Post-Processor 2
+
+# Ausführungsreihenfolge
 
 Ausführungsreihenfolge:
 
@@ -919,6 +923,15 @@ Use-Cases für Jars:
   - &rarr; besser den Code als jar bereitstellen (jmeter/lib bzw. jmeter/lib/ext) und dann im JSR223-Sampler verwenden
 
 - Benutzung externe Bibliotheken (z.B. [Apache POI](https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test))
+
+# Arbeiten mit JARs
+
+- Jars liegen normalerweise im Ordner _jmeter/lib_ oder _jmeter/lib/ext_
+
+- In _user.properties_ können folgende Pfade gesetzt werden:
+  - search_paths
+  - user.classpath
+  - plugin_dependency_paths
 
 # Reporting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
