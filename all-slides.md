@@ -1117,6 +1117,12 @@ Use-Cases für Jars:
 
 # Arten von Reporting
 
+Einige Best-Practices:
+
+<!-- section 99 -->
+
+# Arten von Reporting
+
 **Generierung von Bildern aus JTL-Files mittels:** [JMeterPluginsCMD Command Line Tool](https://jmeter-plugins.org/wiki/JMeterPluginsCMD/)
 
 Es existieren diverse Tools zur Anzeige von JTL-Reports:
@@ -1125,7 +1131,7 @@ Es existieren diverse Tools zur Anzeige von JTL-Reports:
 
 -   **JMeter-Logstash:** https://github.com/anasoid/jmeter-logstash
 
-<!-- section 99 -->
+<!-- section 100 -->
 
 # Ergebnis-Analyse
 
@@ -1139,7 +1145,7 @@ Beispiel mit jeweils gleichem Durchschnitt:
 ![](assets/B15339_12_15.jpg)
 ![](assets/B15339_12_16.jpg)
 
-<!-- section 100 -->
+<!-- section 101 -->
 
 # Ergebnis-Analyse
 
@@ -1153,7 +1159,7 @@ Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:
 
 ![](assets/B15339_12_21.jpg)
 
-<!-- section 101 -->
+<!-- section 102 -->
 
 # Ergebnis-Analyse
 
@@ -1162,11 +1168,11 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 ![gute Performance](assets/B15339_12_22.jpg)
 ![schlecht Performance](assets/B15339_12_23.jpg)
 
-<!-- section 102 -->
+<!-- section 103 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 103 -->
+<!-- section 104 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
@@ -1174,15 +1180,15 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
-<!-- section 104 -->
+<!-- section 105 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 105 -->
+<!-- section 106 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 106 -->
+<!-- section 107 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1195,11 +1201,11 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 107 -->
+<!-- section 108 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 108 -->
+<!-- section 109 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1211,7 +1217,7 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 109 -->
+<!-- section 110 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1225,17 +1231,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 110 -->
+<!-- section 111 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 111 -->
+<!-- section 112 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 112 -->
+<!-- section 113 -->
 
 # Master-Slave-Setup
 
@@ -1249,7 +1255,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 113 -->
+<!-- section 114 -->
 
 # Master-Slave-Setup
 
@@ -1257,11 +1263,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 114 -->
+<!-- section 115 -->
 
 # Testausführung über CLI
 
-<!-- section 115 -->
+<!-- section 116 -->
 
 # Large-Scale
 
@@ -1287,39 +1293,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 116 -->
+<!-- section 117 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 117 -->
+<!-- section 118 -->
 
 # RMI
 
-<!-- section 118 -->
+<!-- section 119 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 119 -->
+<!-- section 120 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 120 -->
+<!-- section 121 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 121 -->
+<!-- section 122 -->
 
 # Prometheus / Grafana
 
-<!-- section 122 -->
+<!-- section 123 -->
 
 # YourKit-Profiler
 
-<!-- section 123 -->
+<!-- section 124 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 124 -->
+<!-- section 125 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1330,25 +1336,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 125 -->
+<!-- section 126 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 126 -->
+<!-- section 127 -->
 
 # Docker / Docker-Compose
 
-<!-- section 127 -->
+<!-- section 128 -->
 
 # Kubernetes
 
-<!-- section 128 -->
+<!-- section 129 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 129 -->
+<!-- section 130 -->
 
 # Github Actions
 
@@ -1359,14 +1365,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 130 -->
+<!-- section 131 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 131 -->
+<!-- section 132 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 132 -->
+<!-- section 133 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

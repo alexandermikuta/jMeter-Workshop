@@ -916,6 +916,10 @@ Use-Cases für Jars:
 
 # Arten von Reporting
 
+Einige Best-Practices:
+
+# Arten von Reporting
+
 **Generierung von Bildern aus JTL-Files mittels:** [JMeterPluginsCMD Command Line Tool](https://jmeter-plugins.org/wiki/JMeterPluginsCMD/)
 
 Es existieren diverse Tools zur Anzeige von JTL-Reports:
