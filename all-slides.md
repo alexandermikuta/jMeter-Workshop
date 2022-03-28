@@ -611,7 +611,7 @@ Wichtigste Einstellungen:
 
 # Sampler
 
--   Falls man mehrere Requests des gleichen Type versendet → Überlegen of *Defaults Configuration Element* nützlich sein könnte
+-   Falls man mehrere Requests des gleichen Typs versendet → Überlegen of *Defaults Configuration Element* nützlich sein könnte
 
 -   OS Process request: Häufig nützlich in setUp/tearDown-Szenarien
 
@@ -629,7 +629,7 @@ Wichtigste Einstellungen:
 
 # Controller
 
-> Ziel des Module Controllers ist es Modularität zu jMeter hinzuzufügen, z.B. bei Webapps (Login, Suche, ...)
+> Ziel des **Module Controllers** ist es Modularität zu jMeter hinzuzufügen, z.B. bei Webapps (Login, Suche, ...)
 
 ![](assets/ModuleControllerJMeter.png)
 
@@ -653,12 +653,12 @@ Der Module-Controller kontrolliert welches Modul laufen soll
 
 # Controller
 
-Weiter wichtige Controller:
+Weitere wichtige Controller:
 
--   **Interleave Controller:** wählt Request und führt diesen einaml in jedem Loop des Threads durch
--   **Runtime Controller:** kontrolliert wie lange seine Kinder laufen dürfen
+-   **Interleave Controller:** wählt Request und führt diesen einmal in jedem Loop des Threads durch
+-   **Runtime Controller:** kontrolliert wie lange seine Kinder laufenn
 -   **Transaction Controller:** Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins
--   **Include Controller:** Hierdurch lassen sich externe Testpläne nutzen
+-   **Include Controller:** Nutzung externer Testpläne
 
 <!-- section 64 -->
 
@@ -696,21 +696,21 @@ Weiter wichtige Controller:
 
 > Performance beachten!
 
-  Assertion              CPU/Memory usage   Info
-  ---------------------- ------------------ ------------------------------------
-  Response Assertion     moderat            Regular Expressions
-  Duration Assertion     gering             
-  Size Assertion         gering             
-  XML Assertion          hoch               Builds XML DOM Documents
-  Beanshell Assertion    Variable           Depends on the script logic
-  MD5Hex Assertion       gering             
-  HTML Assertion         hoch               Parses the HTML Response
-  XPath Assertion        hoch               Builds XML DOM Documents
-  XML Schema Assertion   hoch               Builds XML DOM Documents
-  JSR223 Assertion       Variable           Depends on the script logic
-  Compare Assertion      hoch               Parses responses and compares them
-  SMIME Assertion        moderat            
-  Json Assertion         hoch               Parses the Json document
+  Assertion              CPU/Memory
+  ---------------------- ------------
+  Response Assertion     moderat
+  Duration Assertion     gering
+  Size Assertion         gering
+  XML Assertion          hoch
+  Beanshell Assertion    Variable
+  MD5Hex Assertion       gering
+  HTML Assertion         hoch
+  XPath Assertion        hoch
+  XML Schema Assertion   hoch
+  JSR223 Assertion       Variable
+  Compare Assertion      hoch
+  SMIME Assertion        moderat
+  Json Assertion         hoch
 
 **gering:** Kann ohne Probleme genutzt werden
 **moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)

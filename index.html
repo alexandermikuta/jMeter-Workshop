@@ -663,7 +663,7 @@ Sampler legen die Art des Requests fest!</p>
 <section id="sampler-2" class="level1">
 <h1>Sampler</h1>
 <ul>
-<li><p>Falls man mehrere Requests des gleichen Type versendet → Überlegen of <em>Defaults Configuration Element</em> nützlich sein könnte</p></li>
+<li><p>Falls man mehrere Requests des gleichen Typs versendet → Überlegen of <em>Defaults Configuration Element</em> nützlich sein könnte</p></li>
 <li><p>OS Process request: Häufig nützlich in setUp/tearDown-Szenarien</p></li>
 <li><p>Sollte man auch bei den Plugins keinen passen Sampler finden → Es lassen sich auch eigene Sampler schreiben. Häufig findet sich auch auf Github etwas!</p></li>
 </ul>
@@ -678,7 +678,7 @@ Sampler legen die Art des Requests fest!</p>
 <section id="controller-1" class="level1">
 <h1>Controller</h1>
 <blockquote>
-<p>Ziel des Module Controllers ist es Modularität zu jMeter hinzuzufügen, z.B. bei Webapps (Login, Suche, …)</p>
+<p>Ziel des <strong>Module Controllers</strong> ist es Modularität zu jMeter hinzuzufügen, z.B. bei Webapps (Login, Suche, …)</p>
 </blockquote>
 <p><img src="assets/ModuleControllerJMeter.png" /></p>
 </section>
@@ -696,12 +696,12 @@ Sampler legen die Art des Requests fest!</p>
 </section>
 <section id="controller-4" class="level1">
 <h1>Controller</h1>
-<p>Weiter wichtige Controller:</p>
+<p>Weitere wichtige Controller:</p>
 <ul>
-<li><strong>Interleave Controller:</strong> wählt Request und führt diesen einaml in jedem Loop des Threads durch</li>
-<li><strong>Runtime Controller:</strong> kontrolliert wie lange seine Kinder laufen dürfen</li>
+<li><strong>Interleave Controller:</strong> wählt Request und führt diesen einmal in jedem Loop des Threads durch</li>
+<li><strong>Runtime Controller:</strong> kontrolliert wie lange seine Kinder laufenn</li>
 <li><strong>Transaction Controller:</strong> Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins</li>
-<li><strong>Include Controller:</strong> Hierdurch lassen sich externe Testpläne nutzen</li>
+<li><strong>Include Controller:</strong> Nutzung externer Testpläne</li>
 </ul>
 </section>
 <section id="timers" class="level1">
@@ -741,75 +741,61 @@ Sampler legen die Art des Requests fest!</p>
 <thead>
 <tr class="header">
 <th>Assertion</th>
-<th>CPU/Memory usage</th>
-<th>Info</th>
+<th>CPU/Memory</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Response Assertion</td>
 <td>moderat</td>
-<td>Regular Expressions</td>
 </tr>
 <tr class="even">
 <td>Duration Assertion</td>
 <td>gering</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>Size Assertion</td>
 <td>gering</td>
-<td></td>
 </tr>
 <tr class="even">
 <td>XML Assertion</td>
 <td>hoch</td>
-<td>Builds XML DOM Documents</td>
 </tr>
 <tr class="odd">
 <td>Beanshell Assertion</td>
 <td>Variable</td>
-<td>Depends on the script logic</td>
 </tr>
 <tr class="even">
 <td>MD5Hex Assertion</td>
 <td>gering</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>HTML Assertion</td>
 <td>hoch</td>
-<td>Parses the HTML Response</td>
 </tr>
 <tr class="even">
 <td>XPath Assertion</td>
 <td>hoch</td>
-<td>Builds XML DOM Documents</td>
 </tr>
 <tr class="odd">
 <td>XML Schema Assertion</td>
 <td>hoch</td>
-<td>Builds XML DOM Documents</td>
 </tr>
 <tr class="even">
 <td>JSR223 Assertion</td>
 <td>Variable</td>
-<td>Depends on the script logic</td>
 </tr>
 <tr class="odd">
 <td>Compare Assertion</td>
 <td>hoch</td>
-<td>Parses responses and compares them</td>
 </tr>
 <tr class="even">
 <td>SMIME Assertion</td>
 <td>moderat</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td>Json Assertion</td>
 <td>hoch</td>
-<td>Parses the Json document</td>
 </tr>
 </tbody>
 </table>
