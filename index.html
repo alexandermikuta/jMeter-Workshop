@@ -375,8 +375,6 @@
 <section id="design-der-load-7" class="level1">
 <h1>Design der Load</h1>
 <ul>
-<li><p><strong>Operation Data:</strong></p>
-<ul>
 <li><p>Abhängig von der Operation müssen für den Request diverse Input-Daten generiert werden</p></li>
 <li><p>Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden → Bei 100 Items sollten nicht immer fix 5 selektiert werden</p></li>
 <li><p>Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken</p></li>
@@ -384,7 +382,6 @@
 <ul>
 <li>Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items</li>
 <li>Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen</li>
-</ul></li>
 </ul></li>
 </ul>
 </section>
