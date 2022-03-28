@@ -641,7 +641,7 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 # Listener
 
-![Beispiel HTML-Dashboard](assets/jmeter-html-report-summary.png){ height=70% width=70% }
+![Beispiel HTML-Dashboard](assets/jmeter-html-report-summary.png){ height=60% width=60% }
 
 # Listener
 
@@ -655,12 +655,12 @@ Details: [https://jmeter.apache.org/usermanual/realtime-results.html](https://jm
 
 Ist ein Pre-/Post-Prozessor direkt an einen Sampler angehängt wird er direkt vor/nach diesem Sampler ausgeführt
 
-Häufigste Use-Cases:
+**Häufigste Use-Cases:**
 
-- Pre-Prozessor:
+- **Pre-Prozessor:**
   - Settings eines Requests direkt bevor er läuft verändern
   - Variablen Updaten die nicht aus dem Response-Text extrahiert werden.
-- Post-Prozessor:
+- **Post-Prozessor:**
   - Verarbeiten der Response Daten, z.B extrahieren von Daten (Regex, Json, ...)
 
 # Configuration Elements
@@ -669,7 +669,7 @@ Häufigste Use-Cases:
 
 # Configuration Elements
 
-> Können keine Requests senden, diese aber verändern
+**Können keine Requests senden, diese aber verändern.**
 
 **Beispiel:** Setzen von Defaults und Variablen für Nutzung in Samplern
 
