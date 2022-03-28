@@ -918,7 +918,7 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 
 # Arbeiten mit JARs
 
-Use-Cases für Jars:
+**Use-Cases für Jars:**
 
 - Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten sonst alle 20 Tests angepasst werden.
 
@@ -949,17 +949,13 @@ Use-Cases für Jars:
 
 # Arten von Reporting
 
-Einige Best-Practices:
-
-# Arten von Reporting
-
 JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:
 
-| Pros                                                     | Cons                                                                                                                              |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| plain csv leicht zu lesen                                | Jeder Load-Generator schreibt seine eigenen JTLs &rarr; Bei Distributed Testing müssen diese zum Controller zurückgespielt werden |
-| einiges Web-Tools können Online-Reports aus JTL erzeugen | Können sehr groß werden (mehrere GB)                                                                                              |
-| Alle "Raw"-Ergebnisse werden bei JTL-Files gespeichert   | JTL muss Data-Mined werden um sinnvolle Metriken zu erhalten                                                                      |
+| Pros                                             | Cons                                                                                                                              |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| plain csv leicht zu lesen                        | Jeder Load-Generator schreibt seine eigenen JTLs &rarr; Bei Distributed Testing müssen diese zum Controller zurückgespielt werden |
+| einiges Web-Tools können JTL-Reports erzeugen    | Können sehr groß werden (mehrere GB)                                                                                              |
+| Alle Ergebnisse werden bei JTL-Files gespeichert | JTL muss Data-Mined werden um sinnvolle Metriken zu erhalten                                                                      |
 
 # Artem von Reporting
 
