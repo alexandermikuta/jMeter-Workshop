@@ -645,7 +645,9 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 # Listener
 
-**Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: &rarr; ![https://jmeter.apache.org/usermanual/realtime-results.html](https://jmeter.apache.org/usermanual/realtime-results.html)
+**Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana.
+
+Details: [https://jmeter.apache.org/usermanual/realtime-results.html](https://jmeter.apache.org/usermanual/realtime-results.html)
 
 ![Grafana-Beispielboard](assets/grafana_dashboard.png){ height=70% width=70% }
 
