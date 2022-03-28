@@ -132,6 +132,24 @@ Definition:
 
 > The amount of work a system has to perform in a given time. In the performance field, a workload usually refers to combined load placed on an application by the set of clients it services
 
+# Performance Test-Arten
+
+![Performance Test-Arten](assets/performance-testing-types-1-300x284.png)
+
+# Performance Test-Arten
+
+- **Load Testing:** Modeliert die erwartete Benutzung
+
+- **Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
+
+- **Soak/Endurance Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
+
+- **Spike Testing:** testen von schnellem Anstieg/Abfall der Load -> z.B. Ticketverkauf
+
+- **Volume Testing:** Testen ob Applikation mit einem bestimmten Datenvolumen klar kommt
+
+- **Scalability Testing:** Testet die Fähigkeit einer Applikation hoch/runter zu skalieren
+
 # Prinzipien
 
 - Vorhersagbarkeit
@@ -272,6 +290,8 @@ Beispiel-Workload als Matrix-Mix:
 
 - Um ein realistisches Szenario zu erhalten sollten die Daten variiert werden &rarr; Bei 100 Items sollten nicht immer fix 5 selektiert werden
 
+# Design der Load
+
 - Best-Practice: Eine klein Zahl an Fehlern durch invalide Daten einfügen um auch Probleme im Error-Handling aufzudecken
 
 - Genieren "echter" Daten kann bei großen Daten problematisch werden &rarr; Workload Entwickler müsste all Möglichen Values kennen
@@ -283,13 +303,13 @@ Beispiel-Workload als Matrix-Mix:
 Häufig skaliert man durch Erhöhung der emulierten Benutzer.
 Weitere Möglichkeiten sind:
 
-Linear Scaling
+**Linear Scaling**
 
 - alles wird über einen einzigen Skalierungsfaktor skaliert
 - z.B. Workload führt Datenzugriffe eines Benutzers aus &rarr; Anzahl Benutzer & Anzahl Datenzugriffe werden beide skaliert
 - Häufig nützlich für "Sizing"-Zwecke
 
-Non-linear Scaling:
+**Non-linear Scaling**
 
 - Anwendungen skalieren oft nicht linear
 - z.B. Tagging durch Benutzer &rarr; mit steigender Anzahl steigt die Last je User mit an, z.B. bei der Anzeige der Tags
@@ -312,13 +332,11 @@ Dabei sollte beachtet werden:
 
 > Armed with such baseline results, subsequent changes can be made to the system configuration or application and testing results can be compared to see whether such changes were relevant or not."
 
-Some considerations when generating baselines: [https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml](https://www.oreilly.com/library/view/performance-testing-with/9781787285774/8c67a2ab-7bda-4a64-bb90-6c0b8785ad60.xhtml)
-
 # Praxisbeispiel
 
 Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, soll gezeigt werden wie so etwas in jMeter umgesetzt werden kann.
 
-Beispiel:
+**Beispiel:**
 
 - 40% anonyme Benutzer browsen auf der Webseite
 - 30% authentifizierte Benutzer browsen auf der Webseit
@@ -327,7 +345,7 @@ Beispiel:
 
 # Praxisbeispiel
 
-Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es im Prinzip 3 Möglichkeiten:
+Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende Wahrscheinlichkeiten nachgebildet werden. Hierfür gibt es u.a. folgende Möglichkeiten:
 
 - Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads
 - Throughput Controller
@@ -335,18 +353,18 @@ Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende 
 
 # Praxisbeispiel
 
-Variante 1: Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads
+**Variante 1:** Unterschiedliche Thread-Groups mit unterschiedlicher Anzahl an Threads
 
 - Thread Group mit 40 Benutzern
 - Thread Group mit 30 Benutzern
 - Thread Group mit 20 Benutzern
 - Thread Group mit 10 Benutzern
 
-Wichtig: Checkbox "Run Thread Groups consecutevly" sollte dem gewünschten Test-Flow entsprechen
+**Wichtig:** Checkbox "Run Thread Groups consecutevly" sollte dem gewünschten Test-Flow entsprechen
 
 # Praxisbeispiel
 
-Variante 2: Throughput Controller mit unterschiedlichen "Execution Percentages"
+**Variante 2:** Throughput Controller mit unterschiedlichen "Execution Percentages"
 
 - Throughput Controller (Percent Execution, 40.0) &rarr; some sampler
 - Throughput Controller (Percent Execution, 30.0) &rarr; some sampler
@@ -361,7 +379,7 @@ Komplexeres Beispiel für Variante 2:
 
 # Praxisbeispiel
 
-Variante 3: Switch Controller - Random Weighted Values
+**Variante 3:** Switch Controller - Random Weighted Values
 
 ![Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3](assets/switch_controller.png)
 
@@ -436,32 +454,14 @@ Wichtigste Einstellungen:
 
 # Thread Groups
 
-![Performance Test-Arten](assets/performance-testing-types-1-300x284.png)
-
-# Thread Groups
-
-- **Load Testing:** Modeliert die erwartete Benutzung
-
-- **Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
-
-- **Soak/Endurance Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
-
-- **Spike Testing:** testen von schnellem Anstieg/Abfall der Load -> z.B. Ticketverkauf
-
-- **Volume Testing:** Testen ob Applikation mit einem bestimmten Datenvolumen klar kommt
-
-- **Scalability Testing:** Testet die Fähigkeit einer Applikation hoch/runter zu skalieren
-
-# Thread Groups
-
-| Name                            | Use-Cases                                                                    |
-| ------------------------------- | ---------------------------------------------------------------------------- |
-| Thread Group classic            | Einfache Szenarios, Stress/Soak Testing                                      |
-| Arrivals Thread Group           | Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen |
-| Free Form Arrivals Thread Group | Vergleichbar mit Arrival Thread Group                                        |
-| Concurrency Thread Group        | Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf         |
-| Stepping Thread Group           | Ältere Version der Threadgroup mit mehr Konfigurationsaufwand                |
-| Ultimate Thread Group           | Komplexe Spike Testing Szenarios                                             |
+| Thread Group       | Use-Cases                                                                    |
+| ------------------ | ---------------------------------------------------------------------------- |
+| Classic            | Einfache Szenarios, Stress/Soak Testing                                      |
+| Arrivals           | Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen |
+| Free Form Arrivals | Vergleichbar mit Arrival Thread Group                                        |
+| Concurrency        | Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf         |
+| Stepping           | Ältere Version der Threadgroup mit mehr Konfigurationsaufwand                |
+| Ultimate           | Komplexe Spike Testing Szenarios                                             |
 
 # Thread Groups
 
