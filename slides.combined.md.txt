@@ -557,11 +557,13 @@ Weitere wichtige Controller:
 
 # Assertions
 
-> Performance beachten!
+**Performance beachten!**
 
-**gering:** Kann ohne Probleme genutzt werden
-**moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
-**hoch:** größtenteils nur für funktionales Testen oder leichte Last (<10 concurrent Usern) passend
+- **gering:** Kann ohne Probleme genutzt werden
+
+- **moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
+
+- **hoch:** größtenteils nur für funktionales Testen oder leichte Last (<10 concurrent Usern) passend
 
 # Assertions
 
