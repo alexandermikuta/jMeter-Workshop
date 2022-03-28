@@ -884,6 +884,8 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 
 - zwar etwas langsamer als der _Java Request Sampler_, allerdings entfällt: recompile &rarr; zum Classpath hinzufügen &rarr; jMeter Neustart
 
+- Einige nützliche JSR223-Beispiele gibt es unter: [https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message](https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message)
+
 # RegEx-Extractor
 
 ![](assets/regex-extractor.png)
@@ -985,7 +987,7 @@ Lösung:
 
 # Large-Scale
 
-Zu beachten bei verteilten Large-Scale-Lösungen: ![https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/](https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/)
+Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/](https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/)
 
 - von Kommandozeile starten &rarr; UI verbraucht viel Memory
 
