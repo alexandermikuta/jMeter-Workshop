@@ -1084,16 +1084,16 @@ Assertion 1
 
 Vordefinierte Variablen:
 
--   SampleResult: Alle Felder/Methoden von [Sample-Result](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) stehen zur Verfügung
--   ResponseCode: Setzt den Sampler response code z.B.: ResponseCode = "200";
+-   SampleResult: Felder/Methoden von [Sample-Result](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) verfügbar
+-   ResponseCode: Setzt Sampler Response z.B.: ResponseCode = "200";
 -   ResponseMessage
 -   IsSuccess: Falls *true* wird der Sampler als *passed* betrachtet
 -   Label: String der in the Test Ergebnisse aufgelistet wird
 -   FileName
--   ctx: gibt Zugriff JMeterContext, Samplers, Ergebnissen
+-   ctx: gibt Zugriff JMeterContext, Sampler, Ergebnisse
 -   vars: gibt Zugriff auf jMeter Variablen
 -   props: gibt Zugriff auf jMeter Properties
--   log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
+-   log: schreiben in jmeter.log, z.B. log.info("Test");
 
 <!-- section 101 -->
 
