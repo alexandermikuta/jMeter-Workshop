@@ -1176,6 +1176,7 @@ Assertion 1</p>
 <ul>
 <li><p>zwar etwas langsamer als der <em>Java Request Sampler</em>, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart</p></li>
 <li><p>Einige nützliche JSR223-Beispiele gibt es unter: <a href="https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message">https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message</a></p></li>
+<li><p>Nützliche jMter-Funktionen sind hier zu finden: <a href="https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions">https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions</a></p></li>
 </ul>
 </section>
 <section id="regex-extractor" class="level1">
@@ -1188,24 +1189,59 @@ Assertion 1</p>
 <ul>
 <li><p>Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten sonst alle 20 Tests angepasst werden.</p>
 <ul>
-<li>→ besser den Code als jar bereitstellen (jmeter/lib) und dann im JSR223-Sampler verwenden</li>
+<li>→ besser den Code als jar bereitstellen (jmeter/lib bzw. jmeter/lib/ext) und dann im JSR223-Sampler verwenden</li>
 </ul></li>
-<li><p>Benutzung externe Bibliotheken (z.B. Apache POI)</p></li>
+<li><p>Benutzung externe Bibliotheken (z.B. <a href="https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test">Apache POI</a>)</p></li>
 </ul>
 </section>
 <section id="reporting" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Reporting</h1>
 </section>
-<section id="reporting-1" class="level1">
-<h1>Reporting</h1>
-<p>https://github.com/ludeknovy/jtl-reporter</p>
-<p>https://github.com/anasoid/jmeter-logstash</p>
-</section>
 <section id="arten-von-reporting" class="level1">
 <h1>Arten von Reporting</h1>
+<ul>
+<li><p>Reports innerhalb der jMeter-GUI, z.B. View Results Tree</p></li>
+<li><p>JTL-Files</p></li>
+<li><p>HTML-Report</p></li>
+<li><p>real-time Reports mittels Backend Listener, z.B. Grafana, ELK, Taurus, DB, JMS-Bus…</p></li>
+</ul>
+</section>
+<section id="arten-von-reporting-1" class="level1">
+<h1>Arten von Reporting</h1>
+<p><strong>Generierung von Bildern aus JTL-Files mittels:</strong> <a href="https://jmeter-plugins.org/wiki/JMeterPluginsCMD/">JMeterPluginsCMD Command Line Tool</a></p>
+<p>Es existieren diverse Tools zur Anzeige von JTL-Reports:</p>
+<ul>
+<li><p><strong>JTL-Reporter:</strong> https://github.com/ludeknovy/jtl-reporter</p></li>
+<li><p><strong>JMeter-Logstash:</strong> https://github.com/anasoid/jmeter-logstash</p></li>
+</ul>
 </section>
 <section id="ergebnis-analyse" class="level1">
 <h1>Ergebnis-Analyse</h1>
+<p>Bevorzuge <a href="https://en.wikipedia.org/wiki/Percentile">Perzentile</a> gegenüber Durchschnitten:</p>
+<ul>
+<li>Durchschnitte verstecken Ausreißer</li>
+<li>Geben keine Information über die Verteilung der Daten</li>
+</ul>
+<p>Beispiel mit jeweils gleichem Durchschnitt:</p>
+<p><img src="assets/B15339_12_15.jpg" />
+<img src="assets/B15339_12_16.jpg" /></p>
+</section>
+<section id="ergebnis-analyse-1" class="level1">
+<h1>Ergebnis-Analyse</h1>
+<p>Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:</p>
+<ul>
+<li>Caches werden noch gefüllt</li>
+<li>JIT warm up</li>
+<li>Autoscaling-Mechanismus wird evtl. noch initialisiert</li>
+</ul>
+<p>&amp;rarr&amp;; Applikation sollte warm up vor dem Test machen, außer man möchte das Verhalten nach einem restart testen</p>
+<p><img src="assets/B15339_12_21.jpg" /></p>
+</section>
+<section id="ergebnis-analyse-2" class="level1">
+<h1>Ergebnis-Analyse</h1>
+<p>Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wird ungefähr wie eine <a href="https://en.wikipedia.org/wiki/Half-normal_distribution">Halb-Normal-Verteilung</a> aussehen.</p>
+<p><img src="assets/B15339_12_22.jpg" alt="gute Performance" />
+<img src="assets/B15339_12_23.jpg" alt="schlecht Performance" /></p>
 </section>
 <section id="testdatenverwaltung" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Testdatenverwaltung</h1>

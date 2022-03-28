@@ -886,6 +886,8 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 
 - Einige nützliche JSR223-Beispiele gibt es unter: [https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message](https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message)
 
+- Nützliche jMter-Funktionen sind hier zu finden: [https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions](https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions)
+
 # RegEx-Extractor
 
 ![](assets/regex-extractor.png)
@@ -896,21 +898,62 @@ Use-Cases für Jars:
 
 - Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten sonst alle 20 Tests angepasst werden.
 
-  - &rarr; besser den Code als jar bereitstellen (jmeter/lib) und dann im JSR223-Sampler verwenden
+  - &rarr; besser den Code als jar bereitstellen (jmeter/lib bzw. jmeter/lib/ext) und dann im JSR223-Sampler verwenden
 
-- Benutzung externe Bibliotheken (z.B. Apache POI)
+- Benutzung externe Bibliotheken (z.B. [Apache POI](https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test))
 
 # Reporting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
-# Reporting
+# Arten von Reporting
 
-https://github.com/ludeknovy/jtl-reporter
+- Reports innerhalb der jMeter-GUI, z.B. View Results Tree
 
-https://github.com/anasoid/jmeter-logstash
+- JTL-Files
+
+- HTML-Report
+
+- real-time Reports mittels Backend Listener, z.B. Grafana, ELK, Taurus, DB, JMS-Bus...
 
 # Arten von Reporting
 
+**Generierung von Bildern aus JTL-Files mittels:** [JMeterPluginsCMD Command Line Tool](https://jmeter-plugins.org/wiki/JMeterPluginsCMD/)
+
+Es existieren diverse Tools zur Anzeige von JTL-Reports:
+
+- **JTL-Reporter:** https://github.com/ludeknovy/jtl-reporter
+
+- **JMeter-Logstash:** https://github.com/anasoid/jmeter-logstash
+
 # Ergebnis-Analyse
+
+Bevorzuge [Perzentile](https://en.wikipedia.org/wiki/Percentile) gegenüber Durchschnitten:
+
+- Durchschnitte verstecken Ausreißer
+- Geben keine Information über die Verteilung der Daten
+
+Beispiel mit jeweils gleichem Durchschnitt:
+
+![](assets/B15339_12_15.jpg)
+![](assets/B15339_12_16.jpg)
+
+# Ergebnis-Analyse
+
+Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:
+
+- Caches werden noch gefüllt
+- JIT warm up
+- Autoscaling-Mechanismus wird evtl. noch initialisiert
+
+&rarr&; Applikation sollte warm up vor dem Test machen, außer man möchte das Verhalten nach einem restart testen
+
+![](assets/B15339_12_21.jpg)
+
+# Ergebnis-Analyse
+
+Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wird ungefähr wie eine [Halb-Normal-Verteilung](https://en.wikipedia.org/wiki/Half-normal_distribution) aussehen.
+
+![gute Performance](assets/B15339_12_22.jpg)
+![schlecht Performance](assets/B15339_12_23.jpg)
 
 # Testdatenverwaltung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 

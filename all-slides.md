@@ -1077,6 +1077,8 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 -   Einige nützliche JSR223-Beispiele gibt es unter: <https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message>
 
+-   Nützliche jMter-Funktionen sind hier zu finden: <https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions>
+
 <!-- section 94 -->
 
 # RegEx-Extractor
@@ -1091,9 +1093,9 @@ Use-Cases für Jars:
 
 -   Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten sonst alle 20 Tests angepasst werden.
 
-    -   → besser den Code als jar bereitstellen (jmeter/lib) und dann im JSR223-Sampler verwenden
+    -   → besser den Code als jar bereitstellen (jmeter/lib bzw. jmeter/lib/ext) und dann im JSR223-Sampler verwenden
 
--   Benutzung externe Bibliotheken (z.B. Apache POI)
+-   Benutzung externe Bibliotheken (z.B. [Apache POI](https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test))
 
 <!-- section 96 -->
 
@@ -1101,25 +1103,70 @@ Use-Cases für Jars:
 
 <!-- section 97 -->
 
-# Reporting
+# Arten von Reporting
 
-https://github.com/ludeknovy/jtl-reporter
+-   Reports innerhalb der jMeter-GUI, z.B. View Results Tree
 
-https://github.com/anasoid/jmeter-logstash
+-   JTL-Files
+
+-   HTML-Report
+
+-   real-time Reports mittels Backend Listener, z.B. Grafana, ELK, Taurus, DB, JMS-Bus...
 
 <!-- section 98 -->
 
 # Arten von Reporting
 
+**Generierung von Bildern aus JTL-Files mittels:** [JMeterPluginsCMD Command Line Tool](https://jmeter-plugins.org/wiki/JMeterPluginsCMD/)
+
+Es existieren diverse Tools zur Anzeige von JTL-Reports:
+
+-   **JTL-Reporter:** https://github.com/ludeknovy/jtl-reporter
+
+-   **JMeter-Logstash:** https://github.com/anasoid/jmeter-logstash
+
 <!-- section 99 -->
 
 # Ergebnis-Analyse
 
+Bevorzuge [Perzentile](https://en.wikipedia.org/wiki/Percentile) gegenüber Durchschnitten:
+
+-   Durchschnitte verstecken Ausreißer
+-   Geben keine Information über die Verteilung der Daten
+
+Beispiel mit jeweils gleichem Durchschnitt:
+
+![](assets/B15339_12_15.jpg)
+![](assets/B15339_12_16.jpg)
+
 <!-- section 100 -->
+
+# Ergebnis-Analyse
+
+Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:
+
+-   Caches werden noch gefüllt
+-   JIT warm up
+-   Autoscaling-Mechanismus wird evtl. noch initialisiert
+
+&rarr&; Applikation sollte warm up vor dem Test machen, außer man möchte das Verhalten nach einem restart testen
+
+![](assets/B15339_12_21.jpg)
+
+<!-- section 101 -->
+
+# Ergebnis-Analyse
+
+Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wird ungefähr wie eine [Halb-Normal-Verteilung](https://en.wikipedia.org/wiki/Half-normal_distribution) aussehen.
+
+![gute Performance](assets/B15339_12_22.jpg)
+![schlecht Performance](assets/B15339_12_23.jpg)
+
+<!-- section 102 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 101 -->
+<!-- section 103 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
@@ -1127,15 +1174,15 @@ https://github.com/anasoid/jmeter-logstash
 
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
-<!-- section 102 -->
+<!-- section 104 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 103 -->
+<!-- section 105 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 104 -->
+<!-- section 106 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1148,11 +1195,11 @@ https://github.com/anasoid/jmeter-logstash
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 105 -->
+<!-- section 107 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 106 -->
+<!-- section 108 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1164,7 +1211,7 @@ https://github.com/anasoid/jmeter-logstash
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 107 -->
+<!-- section 109 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1178,17 +1225,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 108 -->
+<!-- section 110 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 109 -->
+<!-- section 111 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 110 -->
+<!-- section 112 -->
 
 # Master-Slave-Setup
 
@@ -1202,7 +1249,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 111 -->
+<!-- section 113 -->
 
 # Master-Slave-Setup
 
@@ -1210,11 +1257,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 112 -->
+<!-- section 114 -->
 
 # Testausführung über CLI
 
-<!-- section 113 -->
+<!-- section 115 -->
 
 # Large-Scale
 
@@ -1240,39 +1287,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 114 -->
+<!-- section 116 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 115 -->
+<!-- section 117 -->
 
 # RMI
 
-<!-- section 116 -->
+<!-- section 118 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 117 -->
+<!-- section 119 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 118 -->
+<!-- section 120 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 119 -->
+<!-- section 121 -->
 
 # Prometheus / Grafana
 
-<!-- section 120 -->
+<!-- section 122 -->
 
 # YourKit-Profiler
 
-<!-- section 121 -->
+<!-- section 123 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 122 -->
+<!-- section 124 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1283,25 +1330,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 123 -->
+<!-- section 125 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 124 -->
+<!-- section 126 -->
 
 # Docker / Docker-Compose
 
-<!-- section 125 -->
+<!-- section 127 -->
 
 # Kubernetes
 
-<!-- section 126 -->
+<!-- section 128 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 127 -->
+<!-- section 129 -->
 
 # Github Actions
 
@@ -1312,14 +1359,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 128 -->
+<!-- section 130 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 129 -->
+<!-- section 131 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 130 -->
+<!-- section 132 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
