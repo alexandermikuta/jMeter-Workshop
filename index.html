@@ -885,25 +885,31 @@ if (response_time &gt; expected_response_time) {
 <section id="configuration-elements" class="level1">
 <h1>Configuration Elements</h1>
 <p><img src="assets/ConfigurationElements.webp" /></p>
+</section>
+<section id="configuration-elements-1" class="level1">
+<h1>Configuration Elements</h1>
 <blockquote>
-<p>Arbeiten eng mit Samplern zusammen. Kann zwar keine Requests senden, diese aber verändern</p>
+<p>Können keine Requests senden, diese aber verändern</p>
 </blockquote>
-<p>Beispiel: Setzen von Defaults und Variablen die später von Samplern verwendet werden können</p>
+<p><strong>Beispiel:</strong> Setzen von Defaults und Variablen für Nutzung in Samplern</p>
 <ul>
 <li><p>Zugriff nur innerhalb des Zweiges in dem das Element hinzugefügt wurde</p></li>
 <li><p>Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum vorrang haben.</p>
 <ul>
-<li>Ausnahme: <em>User Defined Variables</em> werden unabhängig von der Position zu Beginn des Test verarbeitet</li>
-<li>→ Empfehlung daher: <em>User Defined Variables</em> sollten am Start der Thread-Gruppe positioniert werden</li>
+<li><strong>Ausnahme:</strong> <em>User Defined Variables</em> werden unabhängig von der Position zu Beginn des Test verarbeitet</li>
+<li><strong>Empfehlung:</strong> <em>User Defined Variables</em> sollten am Start der Thread-Gruppe positioniert werden</li>
 </ul></li>
 </ul>
+</section>
+<section id="configuration-elements-2" class="level1">
+<h1>Configuration Elements</h1>
 <p>Header Manager, Cookie Manager und Authorization Manager stellen einen weitern Sonderfall dar:</p>
 <ul>
 <li><p>Setting werden nicht gemerged</p></li>
 <li><p>Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!</p></li>
 </ul>
 </section>
-<section id="configuration-elements-1" class="level1">
+<section id="configuration-elements-3" class="level1">
 <h1>Configuration Elements</h1>
 <ul>
 <li><p><strong>Cache-Manager:</strong>: Falls man Last-Tests mit Cache durchführen möchte, z.B. für Web-Apps</p></li>
@@ -932,7 +938,7 @@ if (response_time &gt; expected_response_time) {
 <li><p>Nützlich um Tests zu parametrisieren → Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!</p></li>
 </ul>
 </section>
-<section id="configuration-elements-2" class="level1">
+<section id="configuration-elements-4" class="level1">
 <h1>Configuration Elements</h1>
 <p>Beispielparametrisierung:</p>
 <table>

@@ -809,16 +809,24 @@ Häufigste Use-Cases:
 
 ![](assets/ConfigurationElements.webp)
 
-> Arbeiten eng mit Samplern zusammen. Kann zwar keine Requests senden, diese aber verändern
+<!-- section 77 -->
 
-Beispiel: Setzen von Defaults und Variablen die später von Samplern verwendet werden können
+# Configuration Elements
+
+> Können keine Requests senden, diese aber verändern
+
+**Beispiel:** Setzen von Defaults und Variablen für Nutzung in Samplern
 
 -   Zugriff nur innerhalb des Zweiges in dem das Element hinzugefügt wurde
 
 -   Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum vorrang haben.
 
-    -   Ausnahme: *User Defined Variables* werden unabhängig von der Position zu Beginn des Test verarbeitet
-    -   → Empfehlung daher: *User Defined Variables* sollten am Start der Thread-Gruppe positioniert werden
+    -   **Ausnahme:** *User Defined Variables* werden unabhängig von der Position zu Beginn des Test verarbeitet
+    -   **Empfehlung:** *User Defined Variables* sollten am Start der Thread-Gruppe positioniert werden
+
+<!-- section 78 -->
+
+# Configuration Elements
 
 Header Manager, Cookie Manager und Authorization Manager stellen einen weitern Sonderfall dar:
 
@@ -826,7 +834,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!
 
-<!-- section 77 -->
+<!-- section 79 -->
 
 # Configuration Elements
 
@@ -836,7 +844,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   **Header-Manager:** Kann HTTP Request-Header überschreiben, z.B. Authorization-Header für JWTs bei Web-Apps
 
-<!-- section 78 -->
+<!-- section 80 -->
 
 # Properties / Variablen
 
@@ -850,7 +858,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   setProperty kann genutzt werden um eine jMeter-Property zu definieren → Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!
 
-<!-- section 79 -->
+<!-- section 81 -->
 
 # Properties / Variablen
 
@@ -866,7 +874,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Nützlich um Tests zu parametrisieren → Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!
 
-<!-- section 80 -->
+<!-- section 82 -->
 
 # Configuration Elements
 
@@ -890,7 +898,7 @@ Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13` (Alternativ: entsprechen
 
 Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
-<!-- section 81 -->
+<!-- section 83 -->
 
 # Testfragment
 
@@ -904,7 +912,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 -   Details: → ![](https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments)
 
-<!-- section 82 -->
+<!-- section 84 -->
 
 # Testfragment
 
@@ -929,7 +937,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 ![Workflow 4](assets/include-controller.png)
 
-<!-- section 83 -->
+<!-- section 85 -->
 
 # Templates
 
@@ -947,7 +955,7 @@ Erzeugung eines Templates:
 
 > Tipp: Aufbau der Beispiel-Templates studieren!
 
-<!-- section 84 -->
+<!-- section 86 -->
 
 # Ausführungsreihenfolge
 
@@ -959,7 +967,7 @@ Erzeugung eines Templates:
 -   Assertions
 -   Listeners
 
-<!-- section 85 -->
+<!-- section 87 -->
 
 # Ausführungsreihenfolge
 
@@ -997,11 +1005,11 @@ Post-Processor 1
 Post-Processor 2
 Assertion 1
 
-<!-- section 86 -->
+<!-- section 88 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 87 -->
+<!-- section 89 -->
 
 # BeanShell
 
@@ -1014,7 +1022,7 @@ Assertion 1
     -   jars nach /lib/ext kopieren
     -   jars müssen am Anfang des BeanShell-Script importiert werden
 
-<!-- section 88 -->
+<!-- section 90 -->
 
 # BeanShell
 
@@ -1030,7 +1038,7 @@ Beispiel Use-Cases:
 
 -   komplexe Assertions
 
-<!-- section 89 -->
+<!-- section 91 -->
 
 # BeanShell
 
@@ -1047,7 +1055,7 @@ Vordefinierte Variablen:
 -   props: gibt Zugriff auf jMeter Properties
 -   log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
 
-<!-- section 90 -->
+<!-- section 92 -->
 
 # BeanShell
 
@@ -1061,19 +1069,19 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 ![](assets/beanshellgroovy3.png)
 
-<!-- section 91 -->
+<!-- section 93 -->
 
 # JSR223
 
 -   zwar etwas langsamer als der *Java Request Sampler*, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart
 
-<!-- section 92 -->
+<!-- section 94 -->
 
 # RegEx-Extractor
 
 ![](assets/regex-extractor.png)
 
-<!-- section 93 -->
+<!-- section 95 -->
 
 # Arbeiten mit JARs
 
@@ -1085,11 +1093,11 @@ Use-Cases für Jars:
 
 -   Benutzung externe Bibliotheken (z.B. Apache POI)
 
-<!-- section 94 -->
+<!-- section 96 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 95 -->
+<!-- section 97 -->
 
 # Reporting
 
@@ -1097,19 +1105,19 @@ https://github.com/ludeknovy/jtl-reporter
 
 https://github.com/anasoid/jmeter-logstash
 
-<!-- section 96 -->
+<!-- section 98 -->
 
 # Arten von Reporting
 
-<!-- section 97 -->
+<!-- section 99 -->
 
 # Ergebnis-Analyse
 
-<!-- section 98 -->
+<!-- section 100 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 99 -->
+<!-- section 101 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
@@ -1117,15 +1125,15 @@ https://github.com/anasoid/jmeter-logstash
 
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
-<!-- section 100 -->
+<!-- section 102 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 101 -->
+<!-- section 103 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 102 -->
+<!-- section 104 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1138,11 +1146,11 @@ https://github.com/anasoid/jmeter-logstash
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 103 -->
+<!-- section 105 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 104 -->
+<!-- section 106 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1154,7 +1162,7 @@ https://github.com/anasoid/jmeter-logstash
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 105 -->
+<!-- section 107 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1168,17 +1176,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 106 -->
+<!-- section 108 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 107 -->
+<!-- section 109 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 108 -->
+<!-- section 110 -->
 
 # Master-Slave-Setup
 
@@ -1192,7 +1200,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 109 -->
+<!-- section 111 -->
 
 # Master-Slave-Setup
 
@@ -1200,11 +1208,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 110 -->
+<!-- section 112 -->
 
 # Testausführung über CLI
 
-<!-- section 111 -->
+<!-- section 113 -->
 
 # Large-Scale
 
@@ -1230,39 +1238,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: ![](https://octoperf.com/blog/
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 112 -->
+<!-- section 114 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 113 -->
+<!-- section 115 -->
 
 # RMI
 
-<!-- section 114 -->
+<!-- section 116 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 115 -->
+<!-- section 117 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 116 -->
+<!-- section 118 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 117 -->
+<!-- section 119 -->
 
 # Prometheus / Grafana
 
-<!-- section 118 -->
+<!-- section 120 -->
 
 # YourKit-Profiler
 
-<!-- section 119 -->
+<!-- section 121 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 120 -->
+<!-- section 122 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1273,25 +1281,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: ![](https://octoperf.com/blog/
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 121 -->
+<!-- section 123 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 122 -->
+<!-- section 124 -->
 
 # Docker / Docker-Compose
 
-<!-- section 123 -->
+<!-- section 125 -->
 
 # Kubernetes
 
-<!-- section 124 -->
+<!-- section 126 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 125 -->
+<!-- section 127 -->
 
 # Github Actions
 
@@ -1302,14 +1310,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 126 -->
+<!-- section 128 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 127 -->
+<!-- section 129 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 128 -->
+<!-- section 130 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
