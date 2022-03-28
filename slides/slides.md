@@ -134,11 +134,9 @@ Usage:
 - Listener
 - Pre-/Post-Prozessoren
 - Configuration Elements
-- Cookie-Manager
-- Header-Manager
+- Cookie-Manager / Header-Manager
 - Variablen / Properties
-- Testfragment
-- Templates
+- Testfragmente & Templates
 - Ausführungsreihenfolge
 
 # Thread Groups
@@ -847,12 +845,17 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 
 # RegEx-Extractor
 
+![](assets/regex-extractor.png)
+
 # Arbeiten mit JARs
 
 Use-Cases für Jars:
 
-- Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten alle 20 Tests angepasst werden
+- Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten sonst alle 20 Tests angepasst werden.
+
   - &rarr; besser den Code als jar bereitstellen (jmeter/lib) und dann im JSR223-Sampler verwenden
+
+- Benutzung externe Bibliotheken (z.B. Apache POI)
 
 # Reporting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
