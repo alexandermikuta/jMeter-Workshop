@@ -627,7 +627,7 @@ Listener können sehr Ressourcenintensiv sein!
 Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
 
 - Default konfigurierbar in jmeter.properties bzw. user.properties
-- mehr Details siehe: ![https://jmeter.apache.org/usermanual/listeners.html](https://jmeter.apache.org/usermanual/listeners.html)
+- mehr Details siehe: [https://jmeter.apache.org/usermanual/listeners.html](https://jmeter.apache.org/usermanual/listeners.html)
 
 # Listener
 
