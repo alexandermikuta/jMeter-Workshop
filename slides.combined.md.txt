@@ -936,7 +936,33 @@ Lösung:
 
 # Testausführung über CLI
 
+# Large-Scale
+
+Zu beachten bei verteilten Large-Scale-Lösungen: ![https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/](https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/)
+
+- von Kommandozeile starten &rarr; UI verbraucht viel Memory
+
+- Vermeide UI listener (z.B. Grahpen, Tabellen) &rarr; in ein JTL-File schreiben (z.B. mittels Simple data writer)
+
+- Genug Heap-Space bereitstellen, z.B. JVM_ARGS="-Xms1g -Xmx8g" jmeter.sh
+
+- Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
+
+- lieber mehr Durschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
+
+- Vermeide Beanshell-Skripte
+
+- Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
+
+  - Darüber hinaus lieber jede JMeter-Instanz einzeln starten
+  - das JMX vor dem Test-Start hinsenden
+  - nach dem Test das JTL-File holen
+
+- Verwende .csv-JTLs anstelle von XML
+
 # RMI {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# RMI
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 

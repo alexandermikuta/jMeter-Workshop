@@ -1262,8 +1262,30 @@ Assertion 1</p>
 <section id="testausführung-über-cli" class="level1">
 <h1>Testausführung über CLI</h1>
 </section>
+<section id="large-scale" class="level1">
+<h1>Large-Scale</h1>
+<p>Zu beachten bei verteilten Large-Scale-Lösungen: <img src="https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/" alt="https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/" /></p>
+<ul>
+<li><p>von Kommandozeile starten → UI verbraucht viel Memory</p></li>
+<li><p>Vermeide UI listener (z.B. Grahpen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)</p></li>
+<li><p>Genug Heap-Space bereitstellen, z.B. JVM_ARGS=“-Xms1g -Xmx8g” jmeter.sh</p></li>
+<li><p>Vermeide mehr als 1000 Benutzer/Maschine zu simulieren</p></li>
+<li><p>lieber mehr Durschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)</p></li>
+<li><p>Vermeide Beanshell-Skripte</p></li>
+<li><p>Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist</p>
+<ul>
+<li>Darüber hinaus lieber jede JMeter-Instanz einzeln starten</li>
+<li>das JMX vor dem Test-Start hinsenden</li>
+<li>nach dem Test das JTL-File holen</li>
+</ul></li>
+<li><p>Verwende .csv-JTLs anstelle von XML</p></li>
+</ul>
+</section>
 <section id="rmi" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">RMI</h1>
+</section>
+<section id="rmi-1" class="level1">
+<h1>RMI</h1>
 </section>
 <section id="diskussion-aktueller-verwendeter-rmi-sampler" class="level1">
 <h1>Diskussion: aktueller verwendeter RMI-Sampler</h1>

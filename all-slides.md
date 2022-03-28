@@ -1146,33 +1146,63 @@ Lösung:
 
 <!-- section 101 -->
 
-# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Large-Scale
+
+Zu beachten bei verteilten Large-Scale-Lösungen: ![](https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/)
+
+-   von Kommandozeile starten → UI verbraucht viel Memory
+
+-   Vermeide UI listener (z.B. Grahpen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)
+
+-   Genug Heap-Space bereitstellen, z.B. JVM\_ARGS="-Xms1g -Xmx8g" jmeter.sh
+
+-   Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
+
+-   lieber mehr Durschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
+
+-   Vermeide Beanshell-Skripte
+
+-   Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
+
+    -   Darüber hinaus lieber jede JMeter-Instanz einzeln starten
+    -   das JMX vor dem Test-Start hinsenden
+    -   nach dem Test das JTL-File holen
+
+-   Verwende .csv-JTLs anstelle von XML
 
 <!-- section 102 -->
 
-# Diskussion: aktueller verwendeter RMI-Sampler
+# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 103 -->
 
-# Vergleich mit existierende RMI-Samplern auf Github
+# RMI
 
 <!-- section 104 -->
 
-# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Diskussion: aktueller verwendeter RMI-Sampler
 
 <!-- section 105 -->
 
-# Prometheus / Grafana
+# Vergleich mit existierende RMI-Samplern auf Github
 
 <!-- section 106 -->
 
-# YourKit-Profiler
+# Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 107 -->
 
-# Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Prometheus / Grafana
 
 <!-- section 108 -->
+
+# YourKit-Profiler
+
+<!-- section 109 -->
+
+# Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 110 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1183,25 +1213,25 @@ Lösung:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 109 -->
+<!-- section 111 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 110 -->
+<!-- section 112 -->
 
 # Docker / Docker-Compose
 
-<!-- section 111 -->
+<!-- section 113 -->
 
 # Kubernetes
 
-<!-- section 112 -->
+<!-- section 114 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 113 -->
+<!-- section 115 -->
 
 # Github Actions
 
@@ -1212,14 +1242,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 114 -->
+<!-- section 116 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 115 -->
+<!-- section 117 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 116 -->
+<!-- section 118 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
