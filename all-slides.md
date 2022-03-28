@@ -1066,13 +1066,13 @@ Assertion 1
 
 # BeanShell
 
-Beispiel Use-Cases:
+**Beispiel Use-Cases:**
 
--   jMeter-Variablen verändern: \`var.put("counter", "false");
+-   **jMeter-Variablen verändern:** var.put("counter", "false");
 
--   jMeter-Variable in Property umwandeln \`props.put("some\_variable", var.get("some\_variable"));
+-   **jMeter-Variable in Property umwandeln:** props.put("some\_variable", var.get("some\_variable"));
 
--   Cookies zwischen Thread-Groups übergeben: siehe <https://www.blazemeter.com/blog/how-use-beanshell-jmeters-favorite-built-component>
+-   **Cookies zwischen Thread-Groups übergeben:** siehe <https://www.blazemeter.com/blog/how-use-beanshell-jmeters-favorite-built-component>
 
 -   Testfall im Fehlerfall stoppen
 
@@ -1084,13 +1084,13 @@ Beispiel Use-Cases:
 
 Vordefinierte Variablen:
 
--   SampleResult: Alle Felder/Methode von <https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html> stehen zu verfügung
+-   SampleResult: Alle Felder/Methoden von <https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html> stehen zur Verfügung
 -   ResponseCode: Setzt den Sampler response code z.B.: ResponseCode = "200";
 -   ResponseMessage
 -   IsSuccess: Falls *true* wird der Sampler als *passed* betrachtet
 -   Label: String der in the Test Ergebnisse aufgelistet wird
 -   FileName
--   ctx: die mächtigste Variable gibt Zugriff auf org.apache.jmeter.threads.JMeterContext und gibt Zugriff auf die JMeter engine, Samplers und ihren Ergebnissen
+-   ctx: gibt Zugriff JMeterContext, Samplers, Ergebnissen
 -   vars: gibt Zugriff auf jMeter Variablen
 -   props: gibt Zugriff auf jMeter Properties
 -   log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
