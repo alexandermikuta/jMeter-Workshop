@@ -1219,7 +1219,7 @@ Assertion 1</p>
 </section>
 <section id="arbeiten-mit-jars" class="level1">
 <h1>Arbeiten mit JARs</h1>
-<p>Use-Cases für Jars:</p>
+<p><strong>Use-Cases für Jars:</strong></p>
 <ul>
 <li><p>Wir haben 20 Tests mit dem selben Code-Stück. Bei Änderungen müssten sonst alle 20 Tests angepasst werden.</p>
 <ul>
@@ -1254,15 +1254,11 @@ Assertion 1</p>
 </section>
 <section id="arten-von-reporting-1" class="level1">
 <h1>Arten von Reporting</h1>
-<p>Einige Best-Practices:</p>
-</section>
-<section id="arten-von-reporting-2" class="level1">
-<h1>Arten von Reporting</h1>
 <p>JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:</p>
 <table>
 <colgroup>
-<col style="width: 30%" />
-<col style="width: 69%" />
+<col style="width: 27%" />
+<col style="width: 72%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1276,11 +1272,11 @@ Assertion 1</p>
 <td>Jeder Load-Generator schreibt seine eigenen JTLs → Bei Distributed Testing müssen diese zum Controller zurückgespielt werden</td>
 </tr>
 <tr class="even">
-<td>einiges Web-Tools können Online-Reports aus JTL erzeugen</td>
+<td>einiges Web-Tools können JTL-Reports erzeugen</td>
 <td>Können sehr groß werden (mehrere GB)</td>
 </tr>
 <tr class="odd">
-<td>Alle “Raw”-Ergebnisse werden bei JTL-Files gespeichert</td>
+<td>Alle Ergebnisse werden bei JTL-Files gespeichert</td>
 <td>JTL muss Data-Mined werden um sinnvolle Metriken zu erhalten</td>
 </tr>
 </tbody>
@@ -1295,7 +1291,7 @@ Assertion 1</p>
 <li><p><strong>JMeter-Logstash:</strong> https://github.com/anasoid/jmeter-logstash</p></li>
 </ul>
 </section>
-<section id="arten-von-reporting-3" class="level1">
+<section id="arten-von-reporting-2" class="level1">
 <h1>Arten von Reporting</h1>
 <p>Erzeugen eines HTML-Reports:</p>
 <p><code>jmeter -g &lt;outputfile.jtl/csv&gt; -o &lt;path to output folder for html report&gt;</code></p>
