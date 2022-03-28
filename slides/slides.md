@@ -776,10 +776,10 @@ Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}
 
 > Hilft unterschiedliche Workflows zu unterstützen
 
-- Workflow 1: User Registration -> Search for Product -> Select Product -> Order Product -> Logout
-- Workflow 2: Login -> Search for Product -> Select Product -> Order Product -> Logout
-- Workflow 3: Login -> Search for User -> Cancel Order -> Logout
-- Workflow 4: Login -> Search for Product
+- **Workflow 1:** User Registration -> Search for Product -> Select Product -> Order Product -> Logout
+- **Workflow 2:** Login -> Search for Product -> Select Product -> Order Product -> Logout
+- **Workflow 3:** Login -> Search for User -> Cancel Order -> Logout
+- **Workflow 4:** Login -> Search for Product
 
 # Testfragment
 
@@ -787,7 +787,8 @@ Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}
 
 # Templates
 
-> Skeleton Script die wiederverwendbar sind um mit einem Projekt zu starten
+**Skeleton Scripte die wiederverwendbar sind um mit einem Projekt zu starten**
+z.B. Github-Template zum Testen von Wordpress: [https://github.com/jmeter-templates/wordpress](https://github.com/jmeter-templates/wordpress)
 
 Erzeugung eines Templates:
 
@@ -796,10 +797,6 @@ Erzeugung eines Templates:
 - Template.xml öffnen und Daten für eigenes Template ergänzen
 
 - Nach jMeter-Neustart kann Template ausgewählt werden
-
-- Es existier etliche Templates auf Github, z.B. zum Testen von Wordpress-Apps &rarr; ![https://github.com/jmeter-templates/wordpress](https://github.com/jmeter-templates/wordpress)
-
-> Tipp: Aufbau der Beispiel-Templates studieren!
 
 # Ausführungsreihenfolge
 
