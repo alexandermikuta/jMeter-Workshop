@@ -900,6 +900,8 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 
 - JMeter Contributor Philippe Mouawad: "avoid Beanshell in favor of JSR223 + Groovy because Beanshell is old, slow..."
 
+# BeanShell
+
 ![](assets/beanshellgroovy3.png)
 
 # JSR223

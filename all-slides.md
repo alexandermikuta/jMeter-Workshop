@@ -1107,9 +1107,13 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 -   JMeter Contributor Philippe Mouawad: "avoid Beanshell in favor of JSR223 + Groovy because Beanshell is old, slow..."
 
+<!-- section 102 -->
+
+# BeanShell
+
 ![](assets/beanshellgroovy3.png)
 
-<!-- section 102 -->
+<!-- section 103 -->
 
 # JSR223
 
@@ -1119,13 +1123,13 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 -   Nützliche jMter-Funktionen sind hier zu finden: <https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions>
 
-<!-- section 103 -->
+<!-- section 104 -->
 
 # RegEx-Extractor
 
 ![](assets/regex-extractor.png)
 
-<!-- section 104 -->
+<!-- section 105 -->
 
 # Arbeiten mit JARs
 
@@ -1137,7 +1141,7 @@ Use-Cases für Jars:
 
 -   Benutzung externe Bibliotheken (z.B. [Apache POI](https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test))
 
-<!-- section 105 -->
+<!-- section 106 -->
 
 # Arbeiten mit JARs
 
@@ -1149,11 +1153,11 @@ Use-Cases für Jars:
     -   user.classpath
     -   plugin\_dependency\_paths
 
-<!-- section 106 -->
+<!-- section 107 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 107 -->
+<!-- section 108 -->
 
 # Arten von Reporting
 
@@ -1165,13 +1169,13 @@ Use-Cases für Jars:
 
 -   real-time Reports mittels Backend Listener, z.B. Grafana, ELK, Taurus, DB, JMS-Bus...
 
-<!-- section 108 -->
+<!-- section 109 -->
 
 # Arten von Reporting
 
 Einige Best-Practices:
 
-<!-- section 109 -->
+<!-- section 110 -->
 
 # Arten von Reporting
 
@@ -1187,7 +1191,7 @@ JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:
   Alle "Raw"-Ergebnisse werden bei JTL-Files gespeichert     JTL muss Data-Mined werden um sinnvolle Metriken zu erhalten
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 110 -->
+<!-- section 111 -->
 
 # Artem von Reporting
 
@@ -1199,7 +1203,7 @@ Es existieren diverse Tools zur Anzeige von JTL-Reports:
 
 -   **JMeter-Logstash:** https://github.com/anasoid/jmeter-logstash
 
-<!-- section 111 -->
+<!-- section 112 -->
 
 # Arten von Reporting
 
@@ -1213,7 +1217,7 @@ bzw.
 
 In der jMeter-UI auch möglich: Tools → Generate HTMl report
 
-<!-- section 112 -->
+<!-- section 113 -->
 
 # Ergebnis-Analyse
 
@@ -1227,7 +1231,7 @@ Beispiel mit jeweils gleichem Durchschnitt:
 ![](assets/B15339_12_15.jpg)
 ![](assets/B15339_12_16.jpg)
 
-<!-- section 113 -->
+<!-- section 114 -->
 
 # Ergebnis-Analyse
 
@@ -1241,7 +1245,7 @@ Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:
 
 ![](assets/B15339_12_21.jpg)
 
-<!-- section 114 -->
+<!-- section 115 -->
 
 # Ergebnis-Analyse
 
@@ -1250,17 +1254,17 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 ![gute Performance](assets/B15339_12_22.jpg)
 ![schlecht Performance](assets/B15339_12_23.jpg)
 
-<!-- section 115 -->
+<!-- section 116 -->
 
 # Ergebnis-Analyse
 
 Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-jmeter-results/#interpreting-jmeter-metrics>
 
-<!-- section 116 -->
+<!-- section 117 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 117 -->
+<!-- section 118 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
@@ -1268,15 +1272,15 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
-<!-- section 118 -->
+<!-- section 119 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 119 -->
+<!-- section 120 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 120 -->
+<!-- section 121 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1289,11 +1293,11 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 121 -->
+<!-- section 122 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 122 -->
+<!-- section 123 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1305,7 +1309,7 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 123 -->
+<!-- section 124 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1319,17 +1323,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 124 -->
+<!-- section 125 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 125 -->
+<!-- section 126 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 126 -->
+<!-- section 127 -->
 
 # Master-Slave-Setup
 
@@ -1343,7 +1347,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 127 -->
+<!-- section 128 -->
 
 # Master-Slave-Setup
 
@@ -1351,11 +1355,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 128 -->
+<!-- section 129 -->
 
 # Testausführung über CLI
 
-<!-- section 129 -->
+<!-- section 130 -->
 
 # Large-Scale
 
@@ -1381,39 +1385,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 130 -->
+<!-- section 131 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 131 -->
+<!-- section 132 -->
 
 # RMI
 
-<!-- section 132 -->
+<!-- section 133 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 133 -->
+<!-- section 134 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 134 -->
+<!-- section 135 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 135 -->
+<!-- section 136 -->
 
 # Prometheus / Grafana
 
-<!-- section 136 -->
+<!-- section 137 -->
 
 # YourKit-Profiler
 
-<!-- section 137 -->
+<!-- section 138 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 138 -->
+<!-- section 139 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1424,25 +1428,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 139 -->
+<!-- section 140 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 140 -->
+<!-- section 141 -->
 
 # Docker / Docker-Compose
 
-<!-- section 141 -->
+<!-- section 142 -->
 
 # Kubernetes
 
-<!-- section 142 -->
+<!-- section 143 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 143 -->
+<!-- section 144 -->
 
 # Github Actions
 
@@ -1453,14 +1457,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 144 -->
+<!-- section 145 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 145 -->
+<!-- section 146 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 146 -->
+<!-- section 147 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
