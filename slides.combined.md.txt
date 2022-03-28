@@ -228,17 +228,31 @@ Typische Metriken sind:
 
 - **Operation Mix:** Festlegung in welcher Frequenz welche Operation durchgeführt wird &rarr; oft prozentual je Operation was sich zu 100% summiert
 
-  - Flat Mix:
-    - Einfachste Möglichkeit
-    - wird verwendet wenn Operation unabhängig sind und die gleiche Wahrscheinlichkeit haben
-    - &rarr; Der Mix wählt eine Operation zufällig
-  - Flat Sequence Mix:
-    - Spezifiziert ein Set von Operations-Sequenzen
-    - z.B. Set1=Op1,Op2 und Set2=Op1,Op3
-    - jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt
-  - Matrix Mix (Transition Mix):
-    - Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
-    - wird häufig bei Web-Apps verwendet
+# Design der Load
+
+**Operation Mix:**
+
+- Flat Mix:
+  - Einfachste Möglichkeit
+  - wird verwendet wenn Operation unabhängig sind und die gleiche Wahrscheinlichkeit haben
+  - &rarr; Der Mix wählt eine Operation zufällig
+
+# Design der Load
+
+**Operation Mix:**
+
+- Flat Sequence Mix:
+  - Spezifiziert ein Set von Operations-Sequenzen
+  - z.B. Set1=Op1,Op2 und Set2=Op1,Op3
+  - jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt
+
+# Design der Load
+
+**Operation Mix:**
+
+- Matrix Mix (Transition Mix):
+  - Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
+  - wird häufig bei Web-Apps verwendet
 
 # Design der Load
 
@@ -865,6 +879,12 @@ Use-Cases für Jars:
 - Benutzung externe Bibliotheken (z.B. Apache POI)
 
 # Reporting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# Reporting
+
+https://github.com/ludeknovy/jtl-reporter
+
+https://github.com/anasoid/jmeter-logstash
 
 # Arten von Reporting
 
