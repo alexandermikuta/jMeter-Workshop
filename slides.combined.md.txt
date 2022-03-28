@@ -689,7 +689,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 # Configuration Elements
 
-- **Cache-Manager:**: Falls man Last-Tests mit Cache durchführen möchte, z.B. für Web-Apps
+- **Cache-Manager:** Falls man Last-Tests mit Cache durchführen möchte, z.B. für Web-Apps
 
 - **Cookie-Manager:** Falls man Anwendung mit Cookies testen möchten, z.B. Auth bei Web-Apps
 
@@ -723,7 +723,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 # Configuration Elements
 
-Beispielparametrisierung:
+Beispiel für Parametrisierung:
 
 | Variable | Wert            |
 | -------- | --------------- |
@@ -731,7 +731,9 @@ Beispielparametrisierung:
 | THREADS  | 10              |
 | LOOPS    | 20              |
 
-wird zu
+wird zu...
+
+# Configuration Elements
 
 | Variable | Wert                           |
 | -------- | ------------------------------ |
