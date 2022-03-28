@@ -817,7 +817,7 @@ Erzeugung eines Templates:
 
 # Ausführungsreihenfolge
 
-Beispiel-Testplan:
+**Beispiel-Testplan:**
 
 - Controller
   - Post-Processor 1
@@ -831,22 +831,22 @@ Beispiel-Testplan:
 
 # Ausführungsreihenfolge
 
-Ausführungsreihenfolge:
+**Ausführungsreihenfolge:**
 
-Pre-Processor 1
-Timer 1
-Timer 2
-Sampler 1
-Post-Processor 1
-Post-Processor 2
+Pre-Processor 1 &rarr;
+Timer 1 &rarr;
+Timer 2 &rarr;
+Sampler 1 &rarr;
+Post-Processor 1 &rarr;
+Post-Processor 2 &rarr;
 Assertion 1
 
-Pre-Processor 1
-Timer 1
-Timer 2
-Sampler 2
-Post-Processor 1
-Post-Processor 2
+Pre-Processor 1 &rarr;
+Timer 1 &rarr;
+Timer 2 &rarr;
+Sampler 2 &rarr;
+Post-Processor 1 &rarr;
+Post-Processor 2 &rarr;
 Assertion 1
 
 # Scripting {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
