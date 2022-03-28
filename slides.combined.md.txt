@@ -1051,7 +1051,9 @@ Sehr gute Zusammenfassung: [https://octoperf.com/blog/2017/10/19/how-to-analyze-
   - JWT mittels Regex aus Login-Response extrahieren
 - setzen des Authorization-Headers mittels **HTTP Header Manager**: z.B. auf ${COOKIE_Authorization}
 
-![HTTP Header Manager-Beispiel](cookie-session.png)
+# Umgang mit Sessions/Authentification
+
+![HTTP Header Manager-Beispiel](assets/cookie-session.png)
 
 # Umgang mit dynamischen Daten
 
