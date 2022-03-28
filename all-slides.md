@@ -421,7 +421,7 @@ Variante 3: Switch Controller - Random Weighted Values
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
-![Performance Test-Arten](assets/performance-testing-types-1-300x284.png%5D)
+![Performance Test-Arten](assets/performance-testing-types-1-300x284.png)
 
 <!-- section 40 -->
 
