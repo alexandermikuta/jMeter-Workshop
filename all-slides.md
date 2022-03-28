@@ -1082,18 +1082,18 @@ Assertion 1
 
 # BeanShell
 
-Vordefinierte Variablen:
+**Vordefinierte Variablen:**
 
--   SampleResult: Felder/Methoden von [Sample-Result](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) verfügbar
--   ResponseCode: Setzt Sampler Response z.B.: ResponseCode = "200";
--   ResponseMessage
--   IsSuccess: Falls *true* wird der Sampler als *passed* betrachtet
--   Label: String der in the Test Ergebnisse aufgelistet wird
--   FileName
--   ctx: gibt Zugriff JMeterContext, Sampler, Ergebnisse
--   vars: gibt Zugriff auf jMeter Variablen
--   props: gibt Zugriff auf jMeter Properties
--   log: schreiben in jmeter.log, z.B. log.info("Test");
+-   **SampleResult:** Felder/Methoden von [Sample-Result](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) verfügbar
+-   **ResponseCode:** Setzt Sampler Response z.B.: ResponseCode = "200";
+-   **ResponseMessage**
+-   **IsSuccess:** Falls *true* wird der Sampler als *passed* betrachtet
+-   **Label:** String der in the Test Ergebnisse aufgelistet wird
+-   **FileName**
+-   **ctx:** gibt Zugriff JMeterContext, Sampler, Ergebnisse
+-   **vars:** gibt Zugriff auf jMeter Variablen
+-   **props:** gibt Zugriff auf jMeter Properties
+-   **log:** schreiben in jmeter.log, z.B. log.info("Test");
 
 <!-- section 101 -->
 
@@ -1119,9 +1119,9 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 -   zwar etwas langsamer als der *Java Request Sampler*, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart
 
--   Einige nützliche JSR223-Beispiele gibt es unter: <https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message>
+-   Einige **nützliche JSR223-Beispiele** gibt es unter: <https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message>
 
--   Nützliche jMter-Funktionen sind hier zu finden: <https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions>
+-   **Nützliche jMeter-Funktionen** sind hier zu finden: <https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions>
 
 <!-- section 104 -->
 

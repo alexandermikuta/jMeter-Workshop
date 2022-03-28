@@ -877,18 +877,18 @@ Assertion 1
 
 # BeanShell
 
-Vordefinierte Variablen:
+**Vordefinierte Variablen:**
 
-- SampleResult: Felder/Methoden von [Sample-Result](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) verfügbar
-- ResponseCode: Setzt Sampler Response z.B.: ResponseCode = "200";
-- ResponseMessage
-- IsSuccess: Falls _true_ wird der Sampler als _passed_ betrachtet
-- Label: String der in the Test Ergebnisse aufgelistet wird
-- FileName
-- ctx: gibt Zugriff JMeterContext, Sampler, Ergebnisse
-- vars: gibt Zugriff auf jMeter Variablen
-- props: gibt Zugriff auf jMeter Properties
-- log: schreiben in jmeter.log, z.B. log.info("Test");
+- **SampleResult:** Felder/Methoden von [Sample-Result](https://jmeter.apache.org/api/org/apache/jmeter/samplers/SampleResult.html) verfügbar
+- **ResponseCode:** Setzt Sampler Response z.B.: ResponseCode = "200";
+- **ResponseMessage**
+- **IsSuccess:** Falls _true_ wird der Sampler als _passed_ betrachtet
+- **Label:** String der in the Test Ergebnisse aufgelistet wird
+- **FileName**
+- **ctx:** gibt Zugriff JMeterContext, Sampler, Ergebnisse
+- **vars:** gibt Zugriff auf jMeter Variablen
+- **props:** gibt Zugriff auf jMeter Properties
+- **log:** schreiben in jmeter.log, z.B. log.info("Test");
 
 # BeanShell
 
@@ -908,9 +908,9 @@ Ist die BeanShell Tot? &rarr; [https://www.blazemeter.com/blog/is-beanshell-dead
 
 - zwar etwas langsamer als der _Java Request Sampler_, allerdings entfällt: recompile &rarr; zum Classpath hinzufügen &rarr; jMeter Neustart
 
-- Einige nützliche JSR223-Beispiele gibt es unter: [https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message](https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message)
+- Einige **nützliche JSR223-Beispiele** gibt es unter: [https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message](https://octoperf.com/blog/2017/11/09/reusable-sample-jmeter-scripts/#log-a-message)
 
-- Nützliche jMter-Funktionen sind hier zu finden: [https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions](https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions)
+- **Nützliche jMeter-Funktionen** sind hier zu finden: [https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions](https://www.flood.io/blog/jmeter-tutorial-how-to-use-jmeter-functions)
 
 # RegEx-Extractor
 
