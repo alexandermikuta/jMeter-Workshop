@@ -1011,7 +1011,7 @@ Erzeugung eines Templates:
 
 # Ausführungsreihenfolge
 
-Beispiel-Testplan:
+**Beispiel-Testplan:**
 
 -   Controller
     -   Post-Processor 1
@@ -1027,22 +1027,22 @@ Beispiel-Testplan:
 
 # Ausführungsreihenfolge
 
-Ausführungsreihenfolge:
+**Ausführungsreihenfolge:**
 
-Pre-Processor 1
-Timer 1
-Timer 2
-Sampler 1
-Post-Processor 1
-Post-Processor 2
+Pre-Processor 1 →
+Timer 1 →
+Timer 2 →
+Sampler 1 →
+Post-Processor 1 →
+Post-Processor 2 →
 Assertion 1
 
-Pre-Processor 1
-Timer 1
-Timer 2
-Sampler 2
-Post-Processor 1
-Post-Processor 2
+Pre-Processor 1 →
+Timer 1 →
+Timer 2 →
+Sampler 2 →
+Post-Processor 1 →
+Post-Processor 2 →
 Assertion 1
 
 <!-- section 97 -->
