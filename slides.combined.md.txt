@@ -278,7 +278,8 @@ Beispiel-Workload als Matrix-Mix:
 
 # Definieren der Skalierungsregeln
 
-Häufig skaliert man durch Erhöhung der emulierten Benutzer. Weiter Möglichkeiten sind:
+Häufig skaliert man durch Erhöhung der emulierten Benutzer.
+Weitere Möglichkeiten sind:
 
 Linear Scaling
 
@@ -289,7 +290,7 @@ Linear Scaling
 Non-linear Scaling:
 
 - Anwendungen skalieren oft nicht linear
-- z.B. Anwendung erlaubt Tagging durch Benutzer &rarr; mit steigender Anzahl steigt auch die Last je User mit an, z.B. bei der Anzeige der Tags
+- z.B. Tagging durch Benutzer &rarr; mit steigender Anzahl steigt die Last je User mit an, z.B. bei der Anzeige der Tags
 
 # Design des Load-Generators
 
