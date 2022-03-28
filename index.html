@@ -140,6 +140,7 @@
 <li>jp@gc - Dummy Sampler</li>
 <li>jp@gc - PlanCheck</li>
 </ul>
+<p>Weitere nützliche Plugins: <a href="https://www.flood.io/blog/jmeter-plugins-the-top-10-plugins-and-how-they-help"></a></p>
 </section>
 <section id="jmeter-plugin-manager-6" class="level1">
 <h1>jMeter Plugin-Manager</h1>
@@ -1212,12 +1213,50 @@ Assertion 1</p>
 </section>
 <section id="arten-von-reporting-2" class="level1">
 <h1>Arten von Reporting</h1>
+<p>JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>plain csv leicht zu lesen</td>
+<td>Jeder Load-Generator schreibt seine eigenen JTLs → Bei Distributed Testing müssen diese zum Controller zurückgespielt werden</td>
+</tr>
+<tr class="even">
+<td>einiges Web-Tools können Online-Reports aus JTL erzeugen</td>
+<td>Können sehr groß werden (mehrere GB)</td>
+</tr>
+<tr class="odd">
+<td>Alle “Raw”-Ergebnisse werden bei JTL-Files gespeichert</td>
+<td>JTL muss Data-Mined werden um sinnvolle Metriken zu erhalten</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="artem-von-reporting" class="level1">
+<h1>Artem von Reporting</h1>
 <p><strong>Generierung von Bildern aus JTL-Files mittels:</strong> <a href="https://jmeter-plugins.org/wiki/JMeterPluginsCMD/">JMeterPluginsCMD Command Line Tool</a></p>
 <p>Es existieren diverse Tools zur Anzeige von JTL-Reports:</p>
 <ul>
 <li><p><strong>JTL-Reporter:</strong> https://github.com/ludeknovy/jtl-reporter</p></li>
 <li><p><strong>JMeter-Logstash:</strong> https://github.com/anasoid/jmeter-logstash</p></li>
 </ul>
+</section>
+<section id="arten-von-reporting-3" class="level1">
+<h1>Arten von Reporting</h1>
+<p>Erzeugen eines HTML-Reports:</p>
+<p><code>jmeter -g &lt;outputfile.jtl/csv&gt; -o &lt;path to output folder for html report&gt;</code></p>
+<p>bzw.</p>
+<p><code>jmeter -n -t &lt;test JMX file&gt; -l &lt;outputfile.jtl/csv&gt; -e -o &lt;Path to output folder&gt;</code></p>
+<p>In der jMeter-UI auch möglich: Tools → Generate HTMl report</p>
 </section>
 <section id="ergebnis-analyse" class="level1">
 <h1>Ergebnis-Analyse</h1>
@@ -1246,6 +1285,10 @@ Assertion 1</p>
 <p>Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wird ungefähr wie eine <a href="https://en.wikipedia.org/wiki/Half-normal_distribution">Halb-Normal-Verteilung</a> aussehen.</p>
 <p><img src="assets/B15339_12_22.jpg" alt="gute Performance" />
 <img src="assets/B15339_12_23.jpg" alt="schlecht Performance" /></p>
+</section>
+<section id="ergebnis-analyse-3" class="level1">
+<h1>Ergebnis-Analyse</h1>
+<p>Sehr gute Zusammenfassung: <a href="https://octoperf.com/blog/2017/10/19/how-to-analyze-jmeter-results/#interpreting-jmeter-metrics">https://octoperf.com/blog/2017/10/19/how-to-analyze-jmeter-results/#interpreting-jmeter-metrics</a></p>
 </section>
 <section id="testdatenverwaltung" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Testdatenverwaltung</h1>

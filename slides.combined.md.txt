@@ -82,6 +82,8 @@ Gute Anleitung: [https://www.blazemeter.com/blog/how-to-create-a-local-repositor
 - jp@gc - Dummy Sampler
 - jp@gc - PlanCheck
 
+Weitere nützliche Plugins: [](https://www.flood.io/blog/jmeter-plugins-the-top-10-plugins-and-how-they-help)
+
 # jMeter Plugin-Manager
 
 **Ultimate Thread Group**
@@ -920,6 +922,16 @@ Einige Best-Practices:
 
 # Arten von Reporting
 
+JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:
+
+| Pros                                                     | Cons                                                                                                                              |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| plain csv leicht zu lesen                                | Jeder Load-Generator schreibt seine eigenen JTLs &rarr; Bei Distributed Testing müssen diese zum Controller zurückgespielt werden |
+| einiges Web-Tools können Online-Reports aus JTL erzeugen | Können sehr groß werden (mehrere GB)                                                                                              |
+| Alle "Raw"-Ergebnisse werden bei JTL-Files gespeichert   | JTL muss Data-Mined werden um sinnvolle Metriken zu erhalten                                                                      |
+
+# Artem von Reporting
+
 **Generierung von Bildern aus JTL-Files mittels:** [JMeterPluginsCMD Command Line Tool](https://jmeter-plugins.org/wiki/JMeterPluginsCMD/)
 
 Es existieren diverse Tools zur Anzeige von JTL-Reports:
@@ -927,6 +939,18 @@ Es existieren diverse Tools zur Anzeige von JTL-Reports:
 - **JTL-Reporter:** https://github.com/ludeknovy/jtl-reporter
 
 - **JMeter-Logstash:** https://github.com/anasoid/jmeter-logstash
+
+# Arten von Reporting
+
+Erzeugen eines HTML-Reports:
+
+`jmeter -g <outputfile.jtl/csv> -o <path to output folder for html report>`
+
+bzw.
+
+`jmeter -n -t <test JMX file> -l <outputfile.jtl/csv> -e -o <Path to output folder>`
+
+In der jMeter-UI auch möglich: Tools &rarr; Generate HTMl report
 
 # Ergebnis-Analyse
 
@@ -958,6 +982,10 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 
 ![gute Performance](assets/B15339_12_22.jpg)
 ![schlecht Performance](assets/B15339_12_23.jpg)
+
+# Ergebnis-Analyse
+
+Sehr gute Zusammenfassung: [https://octoperf.com/blog/2017/10/19/how-to-analyze-jmeter-results/#interpreting-jmeter-metrics](https://octoperf.com/blog/2017/10/19/how-to-analyze-jmeter-results/#interpreting-jmeter-metrics)
 
 # Testdatenverwaltung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 

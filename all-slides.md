@@ -89,6 +89,8 @@ Gute Anleitung: <https://www.blazemeter.com/blog/how-to-create-a-local-repositor
 -   jp\@gc - Dummy Sampler
 -   jp\@gc - PlanCheck
 
+Weitere nützliche Plugins: [](https://www.flood.io/blog/jmeter-plugins-the-top-10-plugins-and-how-they-help)
+
 <!-- section 8 -->
 
 # jMeter Plugin-Manager
@@ -1123,6 +1125,22 @@ Einige Best-Practices:
 
 # Arten von Reporting
 
+JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Pros                                                       Cons
+  ---------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------
+  plain csv leicht zu lesen                                  Jeder Load-Generator schreibt seine eigenen JTLs → Bei Distributed Testing müssen diese zum Controller zurückgespielt werden
+
+  einiges Web-Tools können Online-Reports aus JTL erzeugen   Können sehr groß werden (mehrere GB)
+
+  Alle "Raw"-Ergebnisse werden bei JTL-Files gespeichert     JTL muss Data-Mined werden um sinnvolle Metriken zu erhalten
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!-- section 100 -->
+
+# Artem von Reporting
+
 **Generierung von Bildern aus JTL-Files mittels:** [JMeterPluginsCMD Command Line Tool](https://jmeter-plugins.org/wiki/JMeterPluginsCMD/)
 
 Es existieren diverse Tools zur Anzeige von JTL-Reports:
@@ -1131,7 +1149,21 @@ Es existieren diverse Tools zur Anzeige von JTL-Reports:
 
 -   **JMeter-Logstash:** https://github.com/anasoid/jmeter-logstash
 
-<!-- section 100 -->
+<!-- section 101 -->
+
+# Arten von Reporting
+
+Erzeugen eines HTML-Reports:
+
+`jmeter -g <outputfile.jtl/csv> -o <path to output folder for html report>`
+
+bzw.
+
+`jmeter -n -t <test JMX file> -l <outputfile.jtl/csv> -e -o <Path to output folder>`
+
+In der jMeter-UI auch möglich: Tools → Generate HTMl report
+
+<!-- section 102 -->
 
 # Ergebnis-Analyse
 
@@ -1145,7 +1177,7 @@ Beispiel mit jeweils gleichem Durchschnitt:
 ![](assets/B15339_12_15.jpg)
 ![](assets/B15339_12_16.jpg)
 
-<!-- section 101 -->
+<!-- section 103 -->
 
 # Ergebnis-Analyse
 
@@ -1159,7 +1191,7 @@ Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:
 
 ![](assets/B15339_12_21.jpg)
 
-<!-- section 102 -->
+<!-- section 104 -->
 
 # Ergebnis-Analyse
 
@@ -1168,11 +1200,17 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 ![gute Performance](assets/B15339_12_22.jpg)
 ![schlecht Performance](assets/B15339_12_23.jpg)
 
-<!-- section 103 -->
+<!-- section 105 -->
+
+# Ergebnis-Analyse
+
+Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-jmeter-results/#interpreting-jmeter-metrics>
+
+<!-- section 106 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 104 -->
+<!-- section 107 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
@@ -1180,15 +1218,15 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
-<!-- section 105 -->
+<!-- section 108 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 106 -->
+<!-- section 109 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 107 -->
+<!-- section 110 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1201,11 +1239,11 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 108 -->
+<!-- section 111 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 109 -->
+<!-- section 112 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1217,7 +1255,7 @@ Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wi
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 110 -->
+<!-- section 113 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1231,17 +1269,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 111 -->
+<!-- section 114 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 112 -->
+<!-- section 115 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 113 -->
+<!-- section 116 -->
 
 # Master-Slave-Setup
 
@@ -1255,7 +1293,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 114 -->
+<!-- section 117 -->
 
 # Master-Slave-Setup
 
@@ -1263,11 +1301,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 115 -->
+<!-- section 118 -->
 
 # Testausführung über CLI
 
-<!-- section 116 -->
+<!-- section 119 -->
 
 # Large-Scale
 
@@ -1293,39 +1331,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 117 -->
+<!-- section 120 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 118 -->
+<!-- section 121 -->
 
 # RMI
 
-<!-- section 119 -->
+<!-- section 122 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 120 -->
+<!-- section 123 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 121 -->
+<!-- section 124 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 122 -->
+<!-- section 125 -->
 
 # Prometheus / Grafana
 
-<!-- section 123 -->
+<!-- section 126 -->
 
 # YourKit-Profiler
 
-<!-- section 124 -->
+<!-- section 127 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 125 -->
+<!-- section 128 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1336,25 +1374,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 126 -->
+<!-- section 129 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 127 -->
+<!-- section 130 -->
 
 # Docker / Docker-Compose
 
-<!-- section 128 -->
+<!-- section 131 -->
 
 # Kubernetes
 
-<!-- section 129 -->
+<!-- section 132 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 130 -->
+<!-- section 133 -->
 
 # Github Actions
 
@@ -1365,14 +1403,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 131 -->
+<!-- section 134 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 132 -->
+<!-- section 135 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 133 -->
+<!-- section 136 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
