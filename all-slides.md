@@ -470,13 +470,17 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 -   Load-Balancer überlastet?
 -   Messaging-Queue als Bottleneck?
 
+<!-- section 46 -->
+
+# Erkennen der Last-Grenzen / Server-Bedarfs
+
 > Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen
 
-<!-- section 46 -->
+<!-- section 47 -->
 
 # Elemente/Strukturierung von Testplänen {#elementestrukturierung-von-testplänen .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 47 -->
+<!-- section 48 -->
 
 # Elemente/Strukturierung von Testplänen
 
@@ -493,7 +497,7 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 -   Testfragmente & Templates
 -   Ausführungsreihenfolge
 
-<!-- section 48 -->
+<!-- section 49 -->
 
 # Thread Groups
 
@@ -501,7 +505,7 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 
 ![](assets/2.Thread_Group_User.png)
 
-<!-- section 49 -->
+<!-- section 50 -->
 
 # Thread Groups
 
@@ -513,7 +517,7 @@ Wichtigste Einstellungen:
 -   Anzahl der Wiederholungen
 -   Ramp-Up-Zeit einstellen (wichtig z.B. für Spike-Testing bei Ticketverkauf!)
 
-<!-- section 50 -->
+<!-- section 51 -->
 
 # Thread Groups
 
@@ -525,7 +529,7 @@ Wichtigste Einstellungen:
 
 -   In diesen Thread-Gruppen werden diverse Sampler (z.B. Http-Requests) hinzugefügt um die Benutzer-Requests zu simulieren
 
-<!-- section 51 -->
+<!-- section 52 -->
 
 # Thread Groups
 
@@ -539,7 +543,7 @@ Wichtigste Einstellungen:
 
 -   **Spike Testing:** testen von schnellem Anstieg/Abfall der Load -\> z.B. Ticketverkauf
 
-<!-- section 52 -->
+<!-- section 53 -->
 
 # Thread Groups
 
@@ -565,7 +569,7 @@ Wichtigste Einstellungen:
   tearDown Thread Group             Aufräumen der Testumgebung
   ----------------------------------------------------------------------------------------------------------------
 
-<!-- section 53 -->
+<!-- section 54 -->
 
 # Sampler
 
@@ -574,7 +578,7 @@ Wichtigste Einstellungen:
 > Durch Threadgruppen werden Benutzer-Anfragen an den Server simuliert.
 > Sampler legen die Art des Requests fest!
 
-<!-- section 54 -->
+<!-- section 55 -->
 
 # Sampler
 
@@ -589,7 +593,7 @@ Wichtigste Einstellungen:
 -   OS Process request
 -   TCP request
 
-<!-- section 55 -->
+<!-- section 56 -->
 
 # Sampler
 
@@ -599,7 +603,7 @@ Wichtigste Einstellungen:
 
 -   Sollte man auch bei den Plugins keinen passen Sampler finden → Es lassen sich auch eigene Sampler schreiben. Häufig findet sich auch auf Github etwas!
 
-<!-- section 56 -->
+<!-- section 57 -->
 
 # Controller
 
@@ -607,7 +611,7 @@ Wichtigste Einstellungen:
 
 ![](assets/LogicControllerClassification.png)
 
-<!-- section 57 -->
+<!-- section 58 -->
 
 # Controller
 
@@ -615,7 +619,7 @@ Wichtigste Einstellungen:
 
 ![](assets/ModuleControllerJMeter.png)
 
-<!-- section 58 -->
+<!-- section 59 -->
 
 # Controller
 
@@ -623,7 +627,7 @@ Beispiel: 100 Benutzer loggen sich ein, 30 Benutzer suchen auf google und 50 Ben
 
 ![Simple Controller ist nur ein Container für Requests](assets/TestNewPlanJMeterController.png)
 
-<!-- section 59 -->
+<!-- section 60 -->
 
 # Controller
 
@@ -631,7 +635,7 @@ Der Module-Controller kontrolliert welches Modul laufen soll
 
 ![](assets/RunLoginModuleJMeter.png)
 
-<!-- section 60 -->
+<!-- section 61 -->
 
 # Controller
 
@@ -642,7 +646,7 @@ Weiter wichtige Controller:
 -   **Transaction Controller:** Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins
 -   **Include Controller:** Hierdurch lassen sich externe Testpläne nutzen
 
-<!-- section 61 -->
+<!-- section 62 -->
 
 # Timers
 
@@ -654,7 +658,7 @@ Weiter wichtige Controller:
 
 -   Um Pause an einer bestimmten Stelle im Test Plan zu machen → Flow Control Action Sampler
 
-<!-- section 62 -->
+<!-- section 63 -->
 
 # Assertions
 
@@ -664,7 +668,7 @@ Weiter wichtige Controller:
 
 -   Um Assertion-Ergebnisse anzuzeigen muss man einen entsprechenden Listener zur Thread-Gruppe hinzufügen
 
-<!-- section 63 -->
+<!-- section 64 -->
 
 # Assertions
 
@@ -672,7 +676,7 @@ Weiter wichtige Controller:
 
 ![](assets/Screen%20Shot%202021-06-19%20at%209.06.28.png)
 
-<!-- section 64 -->
+<!-- section 65 -->
 
 # Assertions
 
@@ -698,7 +702,7 @@ Weiter wichtige Controller:
 **moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
 **hoch:** größtenteils nur für funktionales Testen oder leichte Last (\<10 concurrent Usern) passend
 
-<!-- section 65 -->
+<!-- section 66 -->
 
 # Assertions
 
@@ -715,7 +719,7 @@ AssertionResult.setFailureMessage("The expected response time is :" + expected\_
 }
 \`
 
-<!-- section 66 -->
+<!-- section 67 -->
 
 # Listener
 
@@ -723,13 +727,13 @@ AssertionResult.setFailureMessage("The expected response time is :" + expected\_
 
 > Zeigen die Ergebnisse der Testdurchführung
 
-<!-- section 67 -->
+<!-- section 68 -->
 
 # Listener
 
 ![Arten von Listenern](assets/Jmeter-Listeners-3.png)
 
-<!-- section 68 -->
+<!-- section 69 -->
 
 # Listener
 
@@ -747,7 +751,7 @@ AssertionResult.setFailureMessage("The expected response time is :" + expected\_
     -   Der Default der zu speichernden Werte kann in jmeter.properties bzw. user.properties definiert werden
     -   für mehr Details siehe: → ![](https://jmeter.apache.org/usermanual/listeners.html)
 
-<!-- section 69 -->
+<!-- section 70 -->
 
 # Listener
 
@@ -759,7 +763,7 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 ´./bin/jmeter -g JTL\_FILE -o OUTPUT\_FOLDER\`
 
-<!-- section 70 -->
+<!-- section 71 -->
 
 # Listener
 
@@ -767,13 +771,13 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
 
 **Real-Time-Results:** seit jMeter 2.13 unterstützt jMeter Real-Time-Results, z.B. für Grafana. Details: → ![](https://jmeter.apache.org/usermanual/realtime-results.html)
 
-<!-- section 71 -->
+<!-- section 72 -->
 
 # Listener
 
 ![Grafana-Beispielboard](assets/grafana_dashboard.png)
 
-<!-- section 72 -->
+<!-- section 73 -->
 
 # Pre- und Post-Prozessoren
 
@@ -789,7 +793,7 @@ Generieren eines HTML-Reports aus .jtl-Dateien:
     -   Post-Prozessor:
         -   Verarbeiten der Response Daten, z.B extrahieren von Daten (Regex, Json, ...)
 
-<!-- section 73 -->
+<!-- section 74 -->
 
 # Configuration Elements
 
@@ -812,7 +816,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!
 
-<!-- section 74 -->
+<!-- section 75 -->
 
 # Configuration Elements
 
@@ -822,7 +826,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   **Header-Manager:** Kann HTTP Request-Header überschreiben, z.B. Authorization-Header für JWTs bei Web-Apps
 
-<!-- section 75 -->
+<!-- section 76 -->
 
 # Properties / Variablen
 
@@ -836,7 +840,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   setProperty kann genutzt werden um eine jMeter-Property zu definieren → Da diese Global sind können hierdurch bei Bedarf Informationen zwischen den Threads ausgetauscht werden!
 
-<!-- section 76 -->
+<!-- section 77 -->
 
 # Properties / Variablen
 
@@ -852,7 +856,7 @@ Header Manager, Cookie Manager und Authorization Manager stellen einen weitern S
 
 -   Nützlich um Tests zu parametrisieren → Identifikation von Werten die innerhalb eines Test-Runs konstant bleiben!
 
-<!-- section 77 -->
+<!-- section 78 -->
 
 # Configuration Elements
 
@@ -876,7 +880,7 @@ Aufruf: `jmeter … -Jhost=www3.example.org -Jloops=13` (Alternativ: entsprechen
 
 Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
-<!-- section 78 -->
+<!-- section 79 -->
 
 # Testfragment
 
@@ -890,7 +894,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 -   Details: → ![](https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments)
 
-<!-- section 79 -->
+<!-- section 80 -->
 
 # Testfragment
 
@@ -915,7 +919,7 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 ![Workflow 4](assets/include-controller.png)
 
-<!-- section 80 -->
+<!-- section 81 -->
 
 # Templates
 
@@ -933,7 +937,7 @@ Erzeugung eines Templates:
 
 > Tipp: Aufbau der Beispiel-Templates studieren!
 
-<!-- section 81 -->
+<!-- section 82 -->
 
 # Ausführungsreihenfolge
 
@@ -945,7 +949,7 @@ Erzeugung eines Templates:
 -   Assertions
 -   Listeners
 
-<!-- section 82 -->
+<!-- section 83 -->
 
 # Ausführungsreihenfolge
 
@@ -983,11 +987,11 @@ Post-Processor 1
 Post-Processor 2
 Assertion 1
 
-<!-- section 83 -->
+<!-- section 84 -->
 
 # Scripting {#scripting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 84 -->
+<!-- section 85 -->
 
 # BeanShell
 
@@ -1000,7 +1004,7 @@ Assertion 1
     -   jars nach /lib/ext kopieren
     -   jars müssen am Anfang des BeanShell-Script importiert werden
 
-<!-- section 85 -->
+<!-- section 86 -->
 
 # BeanShell
 
@@ -1016,7 +1020,7 @@ Beispiel Use-Cases:
 
 -   komplexe Assertions
 
-<!-- section 86 -->
+<!-- section 87 -->
 
 # BeanShell
 
@@ -1033,7 +1037,7 @@ Vordefinierte Variablen:
 -   props: gibt Zugriff auf jMeter Properties
 -   log: ermöglicht in das jmeter.log-File zu schreiben, z.B. log.info("Test Info Message");
 
-<!-- section 87 -->
+<!-- section 88 -->
 
 # BeanShell
 
@@ -1047,19 +1051,19 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 ![](assets/beanshellgroovy3.png)
 
-<!-- section 88 -->
+<!-- section 89 -->
 
 # JSR223
 
 -   zwar etwas langsamer als der *Java Request Sampler*, allerdings entfällt: recompile → zum Classpath hinzufügen → jMeter Neustart
 
-<!-- section 89 -->
+<!-- section 90 -->
 
 # RegEx-Extractor
 
 ![](assets/regex-extractor.png)
 
-<!-- section 90 -->
+<!-- section 91 -->
 
 # Arbeiten mit JARs
 
@@ -1071,11 +1075,11 @@ Use-Cases für Jars:
 
 -   Benutzung externe Bibliotheken (z.B. Apache POI)
 
-<!-- section 91 -->
+<!-- section 92 -->
 
 # Reporting {#reporting .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 92 -->
+<!-- section 93 -->
 
 # Reporting
 
@@ -1083,19 +1087,19 @@ https://github.com/ludeknovy/jtl-reporter
 
 https://github.com/anasoid/jmeter-logstash
 
-<!-- section 93 -->
+<!-- section 94 -->
 
 # Arten von Reporting
 
-<!-- section 94 -->
+<!-- section 95 -->
 
 # Ergebnis-Analyse
 
-<!-- section 95 -->
+<!-- section 96 -->
 
 # Testdatenverwaltung {#testdatenverwaltung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 96 -->
+<!-- section 97 -->
 
 # Testdaten in .json-Datei / .csv-Datei
 
@@ -1103,15 +1107,15 @@ https://github.com/anasoid/jmeter-logstash
 
 -   Alternativ können auch ander Formate implementiert werden, z.B. Excel: <https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test>
 
-<!-- section 97 -->
+<!-- section 98 -->
 
 # jMeter-Funktionen zur Datengenerierung
 
-<!-- section 98 -->
+<!-- section 99 -->
 
 # REST-APIs {#rest-apis .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 99 -->
+<!-- section 100 -->
 
 # Nutzung des Test-Rekorders
 
@@ -1124,11 +1128,11 @@ https://github.com/anasoid/jmeter-logstash
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
-<!-- section 100 -->
+<!-- section 101 -->
 
 # Testen mit "Http-Request"
 
-<!-- section 101 -->
+<!-- section 102 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1140,7 +1144,7 @@ https://github.com/anasoid/jmeter-logstash
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 102 -->
+<!-- section 103 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1154,17 +1158,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 103 -->
+<!-- section 104 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 104 -->
+<!-- section 105 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 105 -->
+<!-- section 106 -->
 
 # Master-Slave-Setup
 
@@ -1178,7 +1182,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 106 -->
+<!-- section 107 -->
 
 # Master-Slave-Setup
 
@@ -1186,11 +1190,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 107 -->
+<!-- section 108 -->
 
 # Testausführung über CLI
 
-<!-- section 108 -->
+<!-- section 109 -->
 
 # Large-Scale
 
@@ -1216,39 +1220,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: ![](https://octoperf.com/blog/
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 109 -->
+<!-- section 110 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 110 -->
+<!-- section 111 -->
 
 # RMI
 
-<!-- section 111 -->
+<!-- section 112 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 112 -->
+<!-- section 113 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 113 -->
+<!-- section 114 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 114 -->
+<!-- section 115 -->
 
 # Prometheus / Grafana
 
-<!-- section 115 -->
+<!-- section 116 -->
 
 # YourKit-Profiler
 
-<!-- section 116 -->
+<!-- section 117 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 117 -->
+<!-- section 118 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1259,25 +1263,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: ![](https://octoperf.com/blog/
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 118 -->
+<!-- section 119 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 119 -->
+<!-- section 120 -->
 
 # Docker / Docker-Compose
 
-<!-- section 120 -->
+<!-- section 121 -->
 
 # Kubernetes
 
-<!-- section 121 -->
+<!-- section 122 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 122 -->
+<!-- section 123 -->
 
 # Github Actions
 
@@ -1288,14 +1292,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 123 -->
+<!-- section 124 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 124 -->
+<!-- section 125 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 125 -->
+<!-- section 126 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

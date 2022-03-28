@@ -385,6 +385,8 @@ Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlsch
 - Load-Balancer überlastet?
 - Messaging-Queue als Bottleneck?
 
+# Erkennen der Last-Grenzen / Server-Bedarfs
+
 > Evtl. reicht es aus dem System etwas mehr Speicher zu geben oder eine kleine Code-Anpassung anstatt es verteilen zu müssen
 
 # Elemente/Strukturierung von Testplänen {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
