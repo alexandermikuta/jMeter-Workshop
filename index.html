@@ -231,16 +231,6 @@
 </section>
 <section id="thread-groups-3" class="level1">
 <h1>Thread Groups</h1>
-<figure>
-<img src="performance-testing-types-1-300x284.png%5D" alt="" /><figcaption>Performance Test-Arten</figcaption>
-</figure>
-<p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung
-<strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten
-<strong>Soak Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
-<strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p>
-</section>
-<section id="thread-groups-4" class="level1">
-<h1>Thread Groups</h1>
 <table>
 <colgroup>
 <col style="width: 28%" />
@@ -1064,13 +1054,28 @@ Assertion 1</p>
 </section>
 <section id="erkennen-der-last-grenzen-server-bedarfs" class="level1">
 <h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<figure>
+<img src="assets/performance-testing-types-1-300x284.png%5D" alt="" /><figcaption>Performance Test-Arten</figcaption>
+</figure>
+</section>
+<section id="erkennen-der-last-grenzen-server-bedarfs-1" class="level1">
+<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
+<ul>
+<li><p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung</p></li>
+<li><p><strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten</p></li>
+<li><p><strong>Soak Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird</p></li>
+<li><p><strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p></li>
+</ul>
+</section>
+<section id="erkennen-der-last-grenzen-server-bedarfs-2" class="level1">
+<h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
 <blockquote>
 <p>Last-Grenzen können sehr gut mittels Stress-Testing ermittelt werden.</p>
 </blockquote>
 <p>Beispiel: Thread Group → HTTP Request → Response Assertion (Code 200) → View Results in Table</p>
 <p><img src="assets/stress-testing.png" /></p>
 </section>
-<section id="erkennen-der-last-grenzen-server-bedarfs-1" class="level1">
+<section id="erkennen-der-last-grenzen-server-bedarfs-3" class="level1">
 <h1>Erkennen der Last-Grenzen / Server-Bedarfs</h1>
 <p>Es ist sinnvoll zu prüfen warum der Stress-Test ab einem gewissen Punkt fehlschlägt (z.B. Daten aus JMXMon, Logs der App, …):</p>
 <ul>

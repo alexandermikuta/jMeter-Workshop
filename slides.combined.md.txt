@@ -167,15 +167,6 @@ Wichtigste Einstellungen:
 
 # Thread Groups
 
-![Performance Test-Arten](performance-testing-types-1-300x284.png])
-
-**Load Testing:** Modeliert die erwartete Benutzung
-**Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
-**Soak Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
-**Spike Testing:** testen von schnellem Anstieg/Abfall der Load -> z.B. Ticketverkauf
-
-# Thread Groups
-
 | Name                            | Use-Cases                                                                    |
 | ------------------------------- | ---------------------------------------------------------------------------- |
 | Thread Group (classic)          | Einfache Szenarios, Stress Testing, Soak Testing                             |
@@ -767,6 +758,20 @@ Komplexeres Beispiel für Variante 2:
 Variante 3: Switch Controller - Random Weighted Values
 
 ![Erzeugt mit entsprechender Wahrscheinlichkeit Werte zwischen 0 und 3](assets/switch_controller.png)
+
+# Erkennen der Last-Grenzen / Server-Bedarfs
+
+![Performance Test-Arten](assets/performance-testing-types-1-300x284.png])
+
+# Erkennen der Last-Grenzen / Server-Bedarfs
+
+- **Load Testing:** Modeliert die erwartete Benutzung
+
+- **Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
+
+- **Soak Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
+
+- **Spike Testing:** testen von schnellem Anstieg/Abfall der Load -> z.B. Ticketverkauf
 
 # Erkennen der Last-Grenzen / Server-Bedarfs
 
