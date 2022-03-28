@@ -436,13 +436,19 @@ Wichtigste Einstellungen:
 
 ![Performance Test-Arten](assets/performance-testing-types-1-300x284.png)
 
+# Thread Groups
+
 - **Load Testing:** Modeliert die erwartete Benutzung
 
 - **Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
 
-- **Soak Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
+- **Soak/Endurance Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
 
 - **Spike Testing:** testen von schnellem Anstieg/Abfall der Load -> z.B. Ticketverkauf
+
+- **Volume Testing:** Testen ob Applikation mit einem bestimmten Datenvolumen klar kommt
+
+- **Scalability Testing:** Testet die Fähigkeit einer Applikation hoch/runter zu skalieren
 
 # Thread Groups
 
