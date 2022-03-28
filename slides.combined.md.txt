@@ -167,7 +167,7 @@ Wichtigste Einstellungen:
 
 # Thread Groups
 
-![Performance Test-Arten](performance-testing-types-1-300x284.png)
+![Performance Test-Arten](assets/performance-testing-types-1-300x284.png)
 
 - **Load Testing:** Modeliert die erwartete Benutzung
 
