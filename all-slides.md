@@ -1233,9 +1233,9 @@ Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:
 -   JIT warm up
 -   Autoscaling-Mechanismus wird evtl. noch initialisiert
 
-&rarr&; Applikation sollte warm up vor dem Test machen, außer man möchte das Verhalten nach einem restart testen
+→ Applikation sollte warm up vor dem Test machen, außer man möchte das Verhalten nach einem restart testen
 
-![](assets/B15339_12_21.jpg)
+![](assets/B15339_12_21.jpg){height="50%" width="50%"}
 
 <!-- section 114 -->
 
