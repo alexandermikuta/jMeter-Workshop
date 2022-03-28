@@ -1286,18 +1286,14 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 
 -   Test Plan → Add → Non-Test Elements → HTTP(S) Test Script Recorder
 -   Einstellungen → Port festlegen
--   Thread Group → Add → Logic Controllers → Recording Controller (Alternativ: später manuell vom Skript-Rekorder kopieren)
+-   Thread Group → Add → Logic Controllers → Recording Controller
 -   Im Browser Proxy auf gleichen Port wie Skript-Rekorder stellen
--   jMeter-Zertifikat (jMeter/bin/ApacheJMeterTemporaryRootCA.crt) im Browser importieren
-    -   in Firefox: options → search for 'certificate' → view certificates
+-   Zertifikat (jMeter/bin/ApacheJMeterTemporaryRootCA.crt) im Browser importieren
+    -   Firefox: options → search for 'certificate' → view certificates
     -   Haken bei "Trust Website" setzen
 -   Test aufzeichnen
 
 <!-- section 121 -->
-
-# Testen mit "Http-Request"
-
-<!-- section 122 -->
 
 # Umgang mit Sessions/Authentification
 
@@ -1309,7 +1305,7 @@ Sehr gute Zusammenfassung: <https://octoperf.com/blog/2017/10/19/how-to-analyze-
 
 ![HTTP Header Manager-Beispiel](cookie-session.png)
 
-<!-- section 123 -->
+<!-- section 122 -->
 
 # Umgang mit dynamischen Daten
 
@@ -1323,17 +1319,17 @@ Lösung:
 -   Benutzer-ID aus Response in eine Variable extrahieren (z.B. mittels Regular Expression Extractor)
 -   Verwenden der Variable (z.B. \${benutzerId}) im HTTP-Request zum Aufruf des Benutzerprofils
 
-<!-- section 124 -->
+<!-- section 123 -->
 
 # Verteiltes Testen mit jMeter {#verteiltes-testen-mit-jmeter .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 125 -->
+<!-- section 124 -->
 
 # Master-Slave-Setup
 
 ![](distributed_jmeter.webp)
 
-<!-- section 126 -->
+<!-- section 125 -->
 
 # Master-Slave-Setup
 
@@ -1347,7 +1343,7 @@ Lösung:
         -   `jmeter -n -t script.jmx -r`
         -   `jmeter -n -t script.jmx -R server1,server2,...`
 
-<!-- section 127 -->
+<!-- section 126 -->
 
 # Master-Slave-Setup
 
@@ -1355,11 +1351,11 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 128 -->
+<!-- section 127 -->
 
 # Testausführung über CLI
 
-<!-- section 129 -->
+<!-- section 128 -->
 
 # Large-Scale
 
@@ -1385,39 +1381,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Verwende .csv-JTLs anstelle von XML
 
-<!-- section 130 -->
+<!-- section 129 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 131 -->
+<!-- section 130 -->
 
 # RMI
 
-<!-- section 132 -->
+<!-- section 131 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 133 -->
+<!-- section 132 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 134 -->
+<!-- section 133 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 135 -->
+<!-- section 134 -->
 
 # Prometheus / Grafana
 
-<!-- section 136 -->
+<!-- section 135 -->
 
 # YourKit-Profiler
 
-<!-- section 137 -->
+<!-- section 136 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 138 -->
+<!-- section 137 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1428,25 +1424,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 139 -->
+<!-- section 138 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 140 -->
+<!-- section 139 -->
 
 # Docker / Docker-Compose
 
-<!-- section 141 -->
+<!-- section 140 -->
 
 # Kubernetes
 
-<!-- section 142 -->
+<!-- section 141 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 143 -->
+<!-- section 142 -->
 
 # Github Actions
 
@@ -1457,14 +1453,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 144 -->
+<!-- section 143 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 145 -->
+<!-- section 144 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 146 -->
+<!-- section 145 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
