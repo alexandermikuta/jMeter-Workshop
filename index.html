@@ -806,14 +806,14 @@ Sampler legen die Art des Requests fest!</p>
 <section id="assertions-3" class="level1">
 <h1>Assertions</h1>
 <p>Beispiel: Eigene JSR223 Assertion um Durations zu prüfen</p>
-<p>`
-def response_time = prev.getTime().toInteger();</p>
-<p>def expected_response_time = 0;</p>
-<p>if (response_time &gt; expected_response_time) {
-AssertionResult.setFailure(true);
-AssertionResult.setFailureMessage(“The expected response time is :” + expected_response_time + “ms but it took:” + response_time + “ms”);
-}
-`</p>
+<pre><code>def response_time = prev.getTime().toInteger();
+
+def expected_response_time = 0;
+
+if (response_time &gt; expected_response_time) {
+  AssertionResult.setFailure(true);
+  AssertionResult.setFailureMessage(&quot;The expected response time is : &quot; + expected_response_time + &quot;ms but it took: &quot; + response_time + &quot;ms&quot;);
+}</code></pre>
 </section>
 <section id="listener" class="level1">
 <h1>Listener</h1>
