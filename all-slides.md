@@ -975,8 +975,9 @@ Zugriff innerhalb des Testplans auf die Werte: \${HOST}, \${THREADS}, \${LOOPS}
 
 # Templates
 
-**Skeleton Scripte die wiederverwendbar sind um mit einem Projekt zu starten**
-z.B. Github-Template zum Testen von Wordpress: <https://github.com/jmeter-templates/wordpress>
+**Wiederverwendbare Test-Vorlagen zum Projekt-Start**
+
+z.B. Github-Template für Wordpress: <https://github.com/jmeter-templates/wordpress>
 
 Erzeugung eines Templates:
 
