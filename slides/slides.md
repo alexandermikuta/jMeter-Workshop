@@ -454,14 +454,14 @@ Wichtigste Einstellungen:
 
 # Thread Groups
 
-| Thread Group       | Use-Cases                                                                    |
-| ------------------ | ---------------------------------------------------------------------------- |
-| Classic            | Einfache Szenarios, Stress/Soak Testing                                      |
-| Arrivals           | Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen |
-| Free Form Arrivals | Vergleichbar mit Arrival Thread Group                                        |
-| Concurrency        | Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf         |
-| Stepping           | Ältere Version der Threadgroup mit mehr Konfigurationsaufwand                |
-| Ultimate           | Komplexe Spike Testing Szenarios                                             |
+| Thread Group       | Use-Cases                                                            |
+| ------------------ | -------------------------------------------------------------------- |
+| Classic            | Einfache Szenarios, Stress/Soak Testing                              |
+| Arrivals           | Soak Testing: App-Verhalten wenn alle n-Minuten x-User hinzukommen   |
+| Free Form Arrivals | Vergleichbar mit Arrival Thread Group                                |
+| Concurrency        | Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf |
+| Stepping           | Ältere Version der Threadgroup mit mehr Konfigurationsaufwand        |
+| Ultimate           | Komplexe Spike Testing Szenarios                                     |
 
 # Thread Groups
 
@@ -492,9 +492,9 @@ Wichtigste Einstellungen:
 
 # Sampler
 
-- Falls man mehrere Requests des gleichen Typs versendet &rarr; Überlegen of _Defaults Configuration Element_ nützlich sein könnte
+- Falls man mehrere Requests des gleichen Typs versendet &rarr; Überlegen of **Defaults Configuration Element** nützlich sein könnte
 
-- OS Process request: Häufig nützlich in setUp/tearDown-Szenarien
+- **OS Process request:** Häufig nützlich in setUp/tearDown-Szenarien
 
 - Sollte man auch bei den Plugins keinen passen Sampler finden &rarr; Es lassen sich auch eigene Sampler schreiben. Häufig findet sich auch auf Github etwas!
 
@@ -545,7 +545,7 @@ Weitere wichtige Controller:
 
 > Über Assertions läßt sich prüfen ob sich die Applikation unter Last wie erwartet verhält
 
-- Beispiel: Response enthält bestimmten Text?
+- **Beispiel:** Response enthält bestimmten Text?
 
 - Um Assertion-Ergebnisse anzuzeigen muss man einen entsprechenden Listener zur Thread-Gruppe hinzufügen
 
@@ -559,14 +559,25 @@ Weitere wichtige Controller:
 
 > Performance beachten!
 
+**gering:** Kann ohne Probleme genutzt werden
+**moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
+**hoch:** größtenteils nur für funktionales Testen oder leichte Last (<10 concurrent Usern) passend
+
+# Assertions
+
+| Assertion           | CPU/Memory |
+| ------------------- | ---------- |
+| Response Assertion  | moderat    |
+| Duration Assertion  | gering     |
+| Size Assertion      | gering     |
+| XML Assertion       | hoch       |
+| Beanshell Assertion | Variable   |
+| MD5Hex Assertion    | gering     |
+
+# Assertions
+
 | Assertion            | CPU/Memory |
 | -------------------- | ---------- |
-| Response Assertion   | moderat    |
-| Duration Assertion   | gering     |
-| Size Assertion       | gering     |
-| XML Assertion        | hoch       |
-| Beanshell Assertion  | Variable   |
-| MD5Hex Assertion     | gering     |
 | HTML Assertion       | hoch       |
 | XPath Assertion      | hoch       |
 | XML Schema Assertion | hoch       |
@@ -574,10 +585,6 @@ Weitere wichtige Controller:
 | Compare Assertion    | hoch       |
 | SMIME Assertion      | moderat    |
 | Json Assertion       | hoch       |
-
-**gering:** Kann ohne Probleme genutzt werden
-**moderat:** Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
-**hoch:** größtenteils nur für funktionales Testen oder leichte Last (<10 concurrent Usern) passend
 
 # Assertions
 
