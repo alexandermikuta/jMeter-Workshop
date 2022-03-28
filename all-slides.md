@@ -1163,7 +1163,7 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 -   Reports innerhalb der jMeter-GUI, z.B. View Results Tree
 
--   JTL-Files
+-   JTL-Files: sind am mächtigsten um JMeter-Ergebnisse zu analysieren
 
 -   HTML-Report
 
@@ -1173,10 +1173,8 @@ Ist die BeanShell Tot? → <https://www.blazemeter.com/blog/is-beanshell-dead>
 
 # Arten von Reporting
 
-JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:
-
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Pros                                               Cons
+  Pros JTL                                           Cons JTL
   -------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------
   plain csv leicht zu lesen                          Jeder Load-Generator schreibt seine eigenen JTLs → Bei Distributed Testing müssen diese zum Controller zurückgespielt werden
 
@@ -1187,7 +1185,7 @@ JTLs sind am mächtigsten um JMeter-Ergebnisse zu analysieren:
 
 <!-- section 110 -->
 
-# Artem von Reporting
+# Arten von Reporting
 
 **Generierung von Bildern aus JTL-Files mittels:** [JMeterPluginsCMD Command Line Tool](https://jmeter-plugins.org/wiki/JMeterPluginsCMD/)
 
