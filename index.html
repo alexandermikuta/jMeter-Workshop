@@ -1114,6 +1114,9 @@ if (response_time &gt; expected_response_time) {
 <li>Logic-Controller und Sampler werden in der Reihenfolge in der sie im Baum stehen ausgeführt</li>
 <li>Andere Testelemente werden entsprechend ihres Scopes ausgeführt</li>
 </ul>
+</section>
+<section id="ausführungsreihenfolge-2" class="level1">
+<h1>Ausführungsreihenfolge</h1>
 <p>Beispiel-Testplan:</p>
 <ul>
 <li>Controller
@@ -1128,6 +1131,9 @@ if (response_time &gt; expected_response_time) {
 <li>Post-Processor 2</li>
 </ul></li>
 </ul>
+</section>
+<section id="ausführungsreihenfolge-3" class="level1">
+<h1>Ausführungsreihenfolge</h1>
 <p>Ausführungsreihenfolge:</p>
 <p>Pre-Processor 1
 Timer 1
@@ -1217,6 +1223,18 @@ Assertion 1</p>
 <li>→ besser den Code als jar bereitstellen (jmeter/lib bzw. jmeter/lib/ext) und dann im JSR223-Sampler verwenden</li>
 </ul></li>
 <li><p>Benutzung externe Bibliotheken (z.B. <a href="https://www.blazemeter.com/blog/how-to-implement-data-driven-testing-in-your-jmeter-test">Apache POI</a>)</p></li>
+</ul>
+</section>
+<section id="arbeiten-mit-jars-1" class="level1">
+<h1>Arbeiten mit JARs</h1>
+<ul>
+<li><p>Jars liegen normalerweise im Ordner <em>jmeter/lib</em> oder <em>jmeter/lib/ext</em></p></li>
+<li><p>In <em>user.properties</em> können folgende Pfade gesetzt werden:</p>
+<ul>
+<li>search_paths</li>
+<li>user.classpath</li>
+<li>plugin_dependency_paths</li>
+</ul></li>
 </ul>
 </section>
 <section id="reporting" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
