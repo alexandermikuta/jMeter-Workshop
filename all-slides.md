@@ -773,7 +773,7 @@ Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieb
 
 Generieren eines HTML-Reports aus .jtl-Dateien:
 
-´./bin/jmeter -g JTL\_FILE -o OUTPUT\_FOLDER\`
+`./bin/jmeter -g JTL_FILE -o OUTPUT_FOLDER`
 
 <!-- section 73 -->
 
