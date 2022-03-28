@@ -580,8 +580,8 @@ Weitere Möglichkeiten sind:</p>
 <h1>Thread Groups</h1>
 <table>
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 80%" />
+<col style="width: 20%" />
+<col style="width: 79%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -596,7 +596,7 @@ Weitere Möglichkeiten sind:</p>
 </tr>
 <tr class="even">
 <td>Arrivals</td>
-<td>Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen</td>
+<td>Soak Testing: App-Verhalten wenn alle n-Minuten x-User hinzukommen</td>
 </tr>
 <tr class="odd">
 <td>Free Form Arrivals</td>
@@ -668,8 +668,8 @@ Sampler legen die Art des Requests fest!</p>
 <section id="sampler-2" class="level1">
 <h1>Sampler</h1>
 <ul>
-<li><p>Falls man mehrere Requests des gleichen Typs versendet → Überlegen of <em>Defaults Configuration Element</em> nützlich sein könnte</p></li>
-<li><p>OS Process request: Häufig nützlich in setUp/tearDown-Szenarien</p></li>
+<li><p>Falls man mehrere Requests des gleichen Typs versendet → Überlegen of <strong>Defaults Configuration Element</strong> nützlich sein könnte</p></li>
+<li><p><strong>OS Process request:</strong> Häufig nützlich in setUp/tearDown-Szenarien</p></li>
 <li><p>Sollte man auch bei den Plugins keinen passen Sampler finden → Es lassen sich auch eigene Sampler schreiben. Häufig findet sich auch auf Github etwas!</p></li>
 </ul>
 </section>
@@ -726,7 +726,7 @@ Sampler legen die Art des Requests fest!</p>
 <p>Über Assertions läßt sich prüfen ob sich die Applikation unter Last wie erwartet verhält</p>
 </blockquote>
 <ul>
-<li><p>Beispiel: Response enthält bestimmten Text?</p></li>
+<li><p><strong>Beispiel:</strong> Response enthält bestimmten Text?</p></li>
 <li><p>Um Assertion-Ergebnisse anzuzeigen muss man einen entsprechenden Listener zur Thread-Gruppe hinzufügen</p></li>
 </ul>
 </section>
@@ -742,6 +742,12 @@ Sampler legen die Art des Requests fest!</p>
 <blockquote>
 <p>Performance beachten!</p>
 </blockquote>
+<p><strong>gering:</strong> Kann ohne Probleme genutzt werden
+<strong>moderat:</strong> Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
+<strong>hoch:</strong> größtenteils nur für funktionales Testen oder leichte Last (&lt;10 concurrent Usern) passend</p>
+</section>
+<section id="assertions-3" class="level1">
+<h1>Assertions</h1>
 <table>
 <thead>
 <tr class="header">
@@ -774,6 +780,19 @@ Sampler legen die Art des Requests fest!</p>
 <td>MD5Hex Assertion</td>
 <td>gering</td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="assertions-4" class="level1">
+<h1>Assertions</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Assertion</th>
+<th>CPU/Memory</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
 <td>HTML Assertion</td>
 <td>hoch</td>
@@ -804,11 +823,8 @@ Sampler legen die Art des Requests fest!</p>
 </tr>
 </tbody>
 </table>
-<p><strong>gering:</strong> Kann ohne Probleme genutzt werden
-<strong>moderat:</strong> Sparsam einsetzen, insbesondere bei größeren Serverantworten (100kbs bis mehrere MB)
-<strong>hoch:</strong> größtenteils nur für funktionales Testen oder leichte Last (&lt;10 concurrent Usern) passend</p>
 </section>
-<section id="assertions-3" class="level1">
+<section id="assertions-5" class="level1">
 <h1>Assertions</h1>
 <p>Beispiel: Eigene JSR223 Assertion um Durations zu prüfen</p>
 <pre><code>def response_time = prev.getTime().toInteger();
