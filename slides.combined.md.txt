@@ -454,15 +454,19 @@ Wichtigste Einstellungen:
 
 | Name                            | Use-Cases                                                                    |
 | ------------------------------- | ---------------------------------------------------------------------------- |
-| Thread Group (classic)          | Einfache Szenarios, Stress Testing, Soak Testing                             |
+| Thread Group classic            | Einfache Szenarios, Stress/Soak Testing                                      |
 | Arrivals Thread Group           | Soak Testing, wie verhält sich die App wenn all n-Minuten x-User hinzukommen |
-| Free Form Arrivals Thread Group | Use-Cases vergleichbar mit Arrival Thread Group                              |
+| Free Form Arrivals Thread Group | Vergleichbar mit Arrival Thread Group                                        |
 | Concurrency Thread Group        | Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf         |
 | Stepping Thread Group           | Ältere Version der Threadgroup mit mehr Konfigurationsaufwand                |
 | Ultimate Thread Group           | Komplexe Spike Testing Szenarios                                             |
-| ------------------------------- | ---------------------------------------------------------------------        |
-| setUp Thread Group              | Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen)        |
-| tearDown Thread Group           | Aufräumen der Testumgebung                                                   |
+
+# Thread Groups
+
+| Name                  | Use-Cases                                                             |
+| --------------------- | --------------------------------------------------------------------- |
+| setUp Thread Group    | Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen) |
+| tearDown Thread Group | Aufräumen der Testumgebung                                            |
 
 # Sampler
 
