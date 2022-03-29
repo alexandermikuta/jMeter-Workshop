@@ -338,7 +338,7 @@ Typische Metriken sind:
 
 Beispiel-Workload als Matrix-Mix:
 
-  From     To Page 1   To Page 2   To Page 2
+  From     To Page 1   To Page 2   To Page 3
   -------- ----------- ----------- -----------
   Page 1   0,00 %      80,00%      20,00%
   Page 2   20,00%      39,00%      41,00%
