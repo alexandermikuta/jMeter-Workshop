@@ -1075,10 +1075,10 @@ Lösung:
 
 # Master-Slave-Setup
 
-- setup multiple computers/vms/containers
-- auf jedem slave: run jmeter-server: **bin/jmeter-server.bat**
-- auf dem master:
-  - edit **bin/jmeter.properties**: füge alle IPs der slave-systeme komma-separiert unter remote_hosts hinzu (master/slaves müssen im selben Subnetz sein!)
+- mehrere Computer/VMs/Container bereitstellen
+- **auf jedem slave:** run jmeter-server: **bin/jmeter-server.bat**
+- **auf dem master:**
+  - editiere **bin/jmeter.properties**: füge alle IPs der slave-systeme komma-separiert unter remote_hosts hinzu (master/slaves müssen im selben Subnetz sein!)
 - run test
   - via GUI
   - non-GUI
@@ -1093,6 +1093,8 @@ Lösung:
 
 # Testausführung über CLI
 
+# Demo: Testdata-Partitioning
+
 # Large-Scale
 
 Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/](https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/)
@@ -1105,17 +1107,18 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 - Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
 
+# Large-Scale
+
 - lieber mehr Durchschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
 
 - Vermeide Beanshell-Skripte
 
-- Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
+- Verwende .csv-JTLs anstelle von XML
 
+- Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
   - Darüber hinaus lieber jede JMeter-Instanz einzeln starten
   - das JMX vor dem Test-Start hin senden
   - nach dem Test das JTL-File holen
-
-- Verwende .csv-JTLs anstelle von XML
 
 # RMI {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
