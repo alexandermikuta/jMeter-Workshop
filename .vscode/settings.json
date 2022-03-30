@@ -21,5 +21,6 @@
   "explorer.autoReveal": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "testExplorer.useNativeTesting": true
+  "testExplorer.useNativeTesting": true,
+  "cSpell.language": "en,de-DE"
 }

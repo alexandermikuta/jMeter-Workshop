@@ -138,9 +138,9 @@ Definition:
 
 # Performance Test-Arten
 
-- **Load Testing:** Modeliert die erwartete Benutzung
+- **Load Testing:** Modelliert die erwartete Benutzung
 
-- **Stress Testing:** Bestimmung des Limits an Concurrent Usern bis fehler auftreten
+- **Stress Testing:** Bestimmung des Limits an Concurrent Usern bis Fehler auftreten
 
 - **Soak/Endurance Testing:** Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird
 
@@ -220,7 +220,7 @@ Typische Metriken sind:
 
 - **Durchsatz:** Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden
 
-- **Anwortzeiten:** Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT &rarr; Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt
+- **Antwortzeiten:** Zeit zwischen Ende der Anfrage und Beginn der Antwort an das SUT &rarr; Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt
 
 - **Ressourcenverbrauch:** z.B. alle Ressourcen (IO, Memory, ...) sollten nicht mehr als 70% der max. Auslastung haben
 
@@ -264,14 +264,14 @@ Typische Metriken sind:
 - Flat Sequence Mix:
   - Spezifiziert ein Set von Operations-Sequenzen
   - z.B. Set1=Op1,Op2 und Set2=Op1,Op3
-  - jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt
+  - jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechend ausgewählt
 
 # Design der Load
 
 **Operation Mix:**
 
 - Matrix Mix (Transition Mix):
-  - Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell
+  - Beschreibt die Übergangswahrscheinlichkeiten in einem Markov-Modell
   - wird häufig bei Web-Apps verwendet
 
 # Design der Load
@@ -296,7 +296,7 @@ Beispiel-Workload als Matrix-Mix:
 
 - Genieren "echter" Daten kann bei großen Daten problematisch werden &rarr; Workload Entwickler müsste all Möglichen Values kennen
   - Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items
-  - Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! &rarr; Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
+  - Non-Uniform Random: im Normalfall sind Datenzugriffe nicht gleichverteilt! &rarr; Datengenerierung sollte Wahrscheinlichkeit berücksichtigen
 
 # Definieren der Skalierungsregeln
 
@@ -339,7 +339,7 @@ Nachdem die zeitliche Verteilung der Last mittels Load-Design ermittelt wurde, s
 **Beispiel:**
 
 - 40% anonyme Benutzer browsen auf der Webseite
-- 30% authentifizierte Benutzer browsen auf der Webseit
+- 30% authentifizierte Benutzer browsen auf der Webseite
 - 20% führen eine Suche durch
 - 10% bearbeiten ihren Shopping-Cart
 
@@ -360,7 +360,7 @@ Wir müssen also dafür sorgen das die einzelnen Use-Case mit den entsprechende 
 - Thread Group mit 20 Benutzern
 - Thread Group mit 10 Benutzern
 
-**Wichtig:** Checkbox "Run Thread Groups consecutevly" sollte dem gewünschten Test-Flow entsprechen
+**Wichtig:** Checkbox "Run Thread Groups consecutively" sollte dem gewünschten Test-Flow entsprechen
 
 # Praxisbeispiel
 
@@ -454,12 +454,12 @@ Wichtigste Einstellungen:
 
 # Thread Groups
 
-| Thread Group       | Use-Cases                                                            |
-| ------------------ | -------------------------------------------------------------------- |
-| Classic            | Einfache Szenarios, Stress/Soak Testing                              |
-| Arrivals           | Soak Testing: App-Verhalten wenn alle n-Minuten x-User hinzukommen   |
-| Free Form Arrivals | Vergleichbar mit Arrival Thread Group                                |
-| Concurrency        | Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf |
+| Thread Group       | Use-Cases                                                          |
+| ------------------ | ------------------------------------------------------------------ |
+| Classic            | Einfache Szenarios, Stress/Soak Testing                            |
+| Arrivals           | Soak Testing: App-Verhalten wenn alle n-Minuten x-User hinzukommen |
+| Free Form Arrivals | Vergleichbar mit Arrival Thread Group                              |
+| Concurrency        | Wie classic Threadgroup. Aber einfacher und weniger Speicherbedarf |
 
 # Thread Groups
 
@@ -527,7 +527,7 @@ Der Module-Controller kontrolliert welches Modul laufen soll
 Weitere wichtige Controller:
 
 - **Interleave Controller:** wählt Request und führt diesen einmal in jedem Loop des Threads durch
-- **Runtime Controller:** kontrolliert wie lange seine Kinder laufenn
+- **Runtime Controller:** kontrolliert wie lange seine Kinder laufen
 - **Transaction Controller:** Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins
 - **Include Controller:** Nutzung externer Testpläne
 
@@ -543,7 +543,7 @@ Weitere wichtige Controller:
 
 # Assertions
 
-> Über Assertions läßt sich prüfen ob sich die Applikation unter Last wie erwartet verhält
+> Über Assertions lässt sich prüfen ob sich die Applikation unter Last wie erwartet verhält
 
 - **Beispiel:** Response enthält bestimmten Text?
 
@@ -624,7 +624,7 @@ Listener können sehr Ressourcenintensiv sein!
   - View Results in Table
   - View Results Tree
 
-Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden
+Ergebnisse können auch in Files (csv, xml) zur Weiterverarbeitung weggeschrieben werden
 
 - Default konfigurierbar in jmeter.properties bzw. user.properties
 - mehr Details siehe: [https://jmeter.apache.org/usermanual/listeners.html](https://jmeter.apache.org/usermanual/listeners.html)
@@ -675,13 +675,13 @@ Ist ein Pre-/Post-Prozessor direkt an einen Sampler angehängt wird er direkt vo
 
 - Zugriff nur innerhalb des Zweiges in dem das Element hinzugefügt wurde
 
-- Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum vorrang haben.
+- Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum Vorrang haben.
   - **Ausnahme:** _User Defined Variables_ werden unabhängig von der Position zu Beginn des Test verarbeitet
   - **Empfehlung:** _User Defined Variables_ sollten am Start der Thread-Gruppe positioniert werden
 
 # Configuration Elements
 
-Header Manager, Cookie Manager und Authorization Manager stellen einen weitern Sonderfall dar:
+Header Manager, Cookie Manager und Authorization Manager stellen einen weiteren Sonderfall dar:
 
 - Setting werden nicht gemerged
 
@@ -751,8 +751,8 @@ Zugriff innerhalb des Testplans auf die Werte: ${HOST}, ${THREADS}, ${LOOPS}
 
 # Testfragment
 
-- wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller refereniert wird.
-  &rarr; Ermöglicht gleichzeitges Arbeiten an modulen in separaten Files
+- wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller referenziert wird.
+  &rarr; Ermöglicht gleichzeitiges Arbeiten an Modulen in separaten Files
 
 - Dient der Code-Wiederverwendung innerhalb von Testplänen und hilft sehr große Testpläne wartbar zu machen
 
@@ -1003,7 +1003,7 @@ Sei vorsichtig mit den Antwortzeiten zu Beginn eines Tests:
 
 # Ergebnis-Analyse
 
-Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wird ungefähr wie eine [Halb-Normal-Verteilung](https://en.wikipedia.org/wiki/Half-normal_distribution) aussehen.
+Schaue die Verteilung der Response-Zeiten an. Ein performante Applikation wird ungefähr wie eine [Halb-Normal-Verteilung](https://en.wikipedia.org/wiki/Half-normal_distribution) aussehen.
 
 ![gute Performance](assets/B15339_12_22.jpg)
 ![schlecht Performance](assets/B15339_12_23.jpg)
@@ -1088,7 +1088,7 @@ Lösung:
 # Master-Slave-Setup
 
 - Jedes Slave-System führt die im Master definierten Dinge aus
-  - wollen wir für 10000 Nutzer testen und haben 10 Slaves &rarr; Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!
+  - wollen wir für 10000 Nutzer testen und haben 10 Slaves &rarr; Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!
 - Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
 # Testausführung über CLI
@@ -1099,20 +1099,20 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 - von Kommandozeile starten &rarr; UI verbraucht viel Memory
 
-- Vermeide UI listener (z.B. Grahpen, Tabellen) &rarr; in ein JTL-File schreiben (z.B. mittels Simple data writer)
+- Vermeide UI listener (z.B. Graphen, Tabellen) &rarr; in ein JTL-File schreiben (z.B. mittels Simple data writer)
 
 - Genug Heap-Space bereitstellen, z.B. JVM_ARGS="-Xms1g -Xmx8g" jmeter.sh
 
 - Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
 
-- lieber mehr Durschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
+- lieber mehr Durchschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
 
 - Vermeide Beanshell-Skripte
 
 - Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
 
   - Darüber hinaus lieber jede JMeter-Instanz einzeln starten
-  - das JMX vor dem Test-Start hinsenden
+  - das JMX vor dem Test-Start hin senden
   - nach dem Test das JTL-File holen
 
 - Verwende .csv-JTLs anstelle von XML
