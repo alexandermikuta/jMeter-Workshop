@@ -1405,6 +1405,7 @@ Assertion 1</p>
 </section>
 <section id="master-slave-setup-1" class="level1">
 <h1>Master-Slave-Setup</h1>
+<p><img src="assets/RoadMapTestingJMeter.webp" /></p>
 <p><strong>Voraussetzungen:</strong></p>
 <ul>
 <li><p>Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden</p></li>
@@ -1419,9 +1420,25 @@ Assertion 1</p>
 </section>
 <section id="master-slave-setup-2" class="level1">
 <h1>Master-Slave-Setup</h1>
+<p><strong>Master-Konfiguration:</strong></p>
+<ul>
+<li><p>editiere <strong>jmeter/bin/jmeter.properties</strong> auf dem Master</p>
+<ul>
+<li>füge alle IPs der Slave-Systeme Komma-separiert unter <em>remote_hosts</em> hinzu</li>
+<li>setze <em>server_port</em></li>
+</ul></li>
+<li><p>Generiere Zertifikat mittels <em>jmeter/bin/create-rmi-keystore.bat</em></p></li>
+</ul>
+</section>
+<section id="master-slave-setup-3" class="level1">
+<h1>Master-Slave-Setup</h1>
 <p><strong>Slave-Konfiguration:</strong></p>
 <ul>
-<li>editiere <strong>jmeter/bin/jmeter-server</strong> auf jedem Slave
+<li><p>kopiere das generierte Master-Zertifikat (<em>rmi_keystore.jks</em>) auf jedem Slave nach jmeter/bin</p>
+<ul>
+<li>Alternative: Referenziere das Zertifikat in der property: <em>server.rmi.ssl.keystore.file</em></li>
+</ul></li>
+<li><p>editiere <strong>jmeter/bin/jmeter-server</strong> auf jedem Slave</p>
 <ul>
 <li>setze IP der Maschine in <em>RMI_HOST_DEF</em></li>
 <li>setzte RMI-Port direkt darunter: <em>${DIRNAME}/jmeter <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="34.436ex" height="2.843ex" style="vertical-align: -1.005ex;" viewBox="0 -791.3 14826.4 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -1485,17 +1502,6 @@ Assertion 1</p>
 </figure>
 <ul>
 <li>starte jMeter-Server auf jedem Slave: <strong>jmeter/bin/jmeter-server.bat</strong></li>
-</ul>
-</section>
-<section id="master-slave-setup-3" class="level1">
-<h1>Master-Slave-Setup</h1>
-<p><strong>Master-Konfiguration:</strong></p>
-<ul>
-<li><p>editiere <strong>jmeter/bin/jmeter.properties</strong> auf dem Master</p>
-<ul>
-<li>füge alle IPs der Slave-Systeme Komma-separiert unter <em>remote_hosts</em> hinzu</li>
-<li>setze <em>server_port</em></li>
-</ul></li>
 </ul>
 </section>
 <section id="master-slave-setup-4" class="level1">

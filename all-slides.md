@@ -1337,6 +1337,8 @@ Lösung:
 
 # Master-Slave-Setup
 
+![](assets/RoadMapTestingJMeter.webp)
+
 **Voraussetzungen:**
 
 -   Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden
@@ -1354,26 +1356,33 @@ Lösung:
 
 # Master-Slave-Setup
 
-**Slave-Konfiguration:**
-
--   editiere **jmeter/bin/jmeter-server** auf jedem Slave
-    -   setze IP der Maschine in *RMI\_HOST\_DEF*
-    -   setzte RMI-Port direkt darunter: *\${DIRNAME}/jmeter ${RMI_HOST_DEF} -Dserver_port=${SERVER\_PORT:-2010} -s -j jmeter-server.log "\$@"*
-
-![RMI-Slave: Beispiel jmeter-server-File](rmi-slave-example.jpg)
-
--   starte jMeter-Server auf jedem Slave: **jmeter/bin/jmeter-server.bat**
-
-<!-- section 128 -->
-
-# Master-Slave-Setup
-
 **Master-Konfiguration:**
 
 -   editiere **jmeter/bin/jmeter.properties** auf dem Master
 
     -   füge alle IPs der Slave-Systeme Komma-separiert unter *remote\_hosts* hinzu
     -   setze *server\_port*
+
+-   Generiere Zertifikat mittels *jmeter/bin/create-rmi-keystore.bat*
+
+<!-- section 128 -->
+
+# Master-Slave-Setup
+
+**Slave-Konfiguration:**
+
+-   kopiere das generierte Master-Zertifikat (*rmi\_keystore.jks*) auf jedem Slave nach jmeter/bin
+
+    -   Alternative: Referenziere das Zertifikat in der property: *server.rmi.ssl.keystore.file*
+
+-   editiere **jmeter/bin/jmeter-server** auf jedem Slave
+
+    -   setze IP der Maschine in *RMI\_HOST\_DEF*
+    -   setzte RMI-Port direkt darunter: *\${DIRNAME}/jmeter ${RMI_HOST_DEF} -Dserver_port=${SERVER\_PORT:-2010} -s -j jmeter-server.log "\$@"*
+
+![RMI-Slave: Beispiel jmeter-server-File](rmi-slave-example.jpg)
+
+-   starte jMeter-Server auf jedem Slave: **jmeter/bin/jmeter-server.bat**
 
 <!-- section 129 -->
 
