@@ -1409,13 +1409,14 @@ Assertion 1</p>
 <p><strong>Voraussetzungen:</strong></p>
 <ul>
 <li><p>Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden</p></li>
-<li><p>Firewall blockiert nichts</p></li>
+<li><p>Firewall/Antivirus blockiert nichts</p></li>
 <li><p>Master und Slaves sollten folgendes gemeinsam haben:</p>
 <ul>
 <li>gleiche Java-Version</li>
 <li>gleiche jMeter-Version</li>
 </ul></li>
 <li><p>Master/Slaves können als Computer/VMs/Container bereitgestellt werden</p></li>
+<li><p>Target-Anwendung ist von allen Maschinen erreichbar</p></li>
 </ul>
 </section>
 <section id="master-slave-setup-2" class="level1">
@@ -1533,12 +1534,21 @@ Assertion 1</p>
 <section id="master-slave-setup-6" class="level1">
 <h1>Master-Slave-Setup</h1>
 <ul>
-<li>Jedes Slave-System führt die im Master definierten Dinge aus
+<li><p>Jedes Slave-System führt die im Master definierten Dinge aus</p>
 <ul>
 <li>wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!</li>
 </ul></li>
-<li>Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen</li>
+<li><p>Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen</p></li>
 </ul>
+</section>
+<section id="master-slave-setup-7" class="level1">
+<h1>Master-Slave-Setup</h1>
+<p><strong>Setup mit Vagrant/Virtualbox:</strong></p>
+</section>
+<section id="master-slave-setup-8" class="level1">
+<h1>Master-Slave-Setup</h1>
+<p><strong>Setup mit Docker:</strong></p>
+<p>https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/</p>
 </section>
 <section id="testausführung-über-cli" class="level1">
 <h1>Testausführung über CLI</h1>

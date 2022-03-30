@@ -1081,7 +1081,7 @@ Lösung:
 
 - Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden
 
-- Firewall blockiert nichts
+- Firewall/Antivirus blockiert nichts
 
 - Master und Slaves sollten folgendes gemeinsam haben:
 
@@ -1089,6 +1089,8 @@ Lösung:
   - gleiche jMeter-Version
 
 - Master/Slaves können als Computer/VMs/Container bereitgestellt werden
+
+- Target-Anwendung ist von allen Maschinen erreichbar
 
 # Master-Slave-Setup
 
@@ -1151,8 +1153,20 @@ Lösung:
 # Master-Slave-Setup
 
 - Jedes Slave-System führt die im Master definierten Dinge aus
+
   - wollen wir für 10000 Nutzer testen und haben 10 Slaves &rarr; Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!
+
 - Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
+
+# Master-Slave-Setup
+
+**Setup mit Vagrant/Virtualbox:**
+
+# Master-Slave-Setup
+
+**Setup mit Docker:**
+
+https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
 # Testausführung über CLI
 

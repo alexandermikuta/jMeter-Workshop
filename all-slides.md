@@ -1343,7 +1343,7 @@ Lösung:
 
 -   Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden
 
--   Firewall blockiert nichts
+-   Firewall/Antivirus blockiert nichts
 
 -   Master und Slaves sollten folgendes gemeinsam haben:
 
@@ -1351,6 +1351,8 @@ Lösung:
     -   gleiche jMeter-Version
 
 -   Master/Slaves können als Computer/VMs/Container bereitgestellt werden
+
+-   Target-Anwendung ist von allen Maschinen erreichbar
 
 <!-- section 127 -->
 
@@ -1424,18 +1426,34 @@ Lösung:
 # Master-Slave-Setup
 
 -   Jedes Slave-System führt die im Master definierten Dinge aus
+
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!
+
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
 <!-- section 132 -->
 
-# Testausführung über CLI
+# Master-Slave-Setup
+
+**Setup mit Vagrant/Virtualbox:**
 
 <!-- section 133 -->
 
-# Demo: Testdata-Partitioning
+# Master-Slave-Setup
+
+**Setup mit Docker:**
+
+https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
 <!-- section 134 -->
+
+# Testausführung über CLI
+
+<!-- section 135 -->
+
+# Demo: Testdata-Partitioning
+
+<!-- section 136 -->
 
 # Large-Scale
 
@@ -1449,7 +1467,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
 
-<!-- section 135 -->
+<!-- section 137 -->
 
 # Large-Scale
 
@@ -1465,39 +1483,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
     -   das JMX vor dem Test-Start hin senden
     -   nach dem Test das JTL-File holen
 
-<!-- section 136 -->
+<!-- section 138 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 137 -->
+<!-- section 139 -->
 
 # RMI
 
-<!-- section 138 -->
+<!-- section 140 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 139 -->
+<!-- section 141 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 140 -->
+<!-- section 142 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 141 -->
+<!-- section 143 -->
 
 # Prometheus / Grafana
 
-<!-- section 142 -->
+<!-- section 144 -->
 
 # YourKit-Profiler
 
-<!-- section 143 -->
+<!-- section 145 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 144 -->
+<!-- section 146 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1508,25 +1526,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 145 -->
+<!-- section 147 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 146 -->
+<!-- section 148 -->
 
 # Docker / Docker-Compose
 
-<!-- section 147 -->
+<!-- section 149 -->
 
 # Kubernetes
 
-<!-- section 148 -->
+<!-- section 150 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 149 -->
+<!-- section 151 -->
 
 # Github Actions
 
@@ -1537,14 +1555,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 150 -->
+<!-- section 152 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 151 -->
+<!-- section 153 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 152 -->
+<!-- section 154 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
