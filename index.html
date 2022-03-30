@@ -203,8 +203,8 @@
 <section id="performance-test-arten-1" class="level1">
 <h1>Performance Test-Arten</h1>
 <ul>
-<li><p><strong>Load Testing:</strong> Modeliert die erwartete Benutzung</p></li>
-<li><p><strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis fehler auftreten</p></li>
+<li><p><strong>Load Testing:</strong> Modelliert die erwartete Benutzung</p></li>
+<li><p><strong>Stress Testing:</strong> Bestimmung des Limits an Concurrent Usern bis Fehler auftreten</p></li>
 <li><p><strong>Soak/Endurance Testing:</strong> Festgelegte Load die über einen definierten Zeitraum aufrecht erhalten wird</p></li>
 <li><p><strong>Spike Testing:</strong> testen von schnellem Anstieg/Abfall der Load -&gt; z.B. Ticketverkauf</p></li>
 <li><p><strong>Volume Testing:</strong> Testen ob Applikation mit einem bestimmten Datenvolumen klar kommt</p></li>
@@ -293,7 +293,7 @@
 <p>Typische Metriken sind:</p>
 <ul>
 <li><p><strong>Durchsatz:</strong> Wie viele Operation können vom SUT während einer gewissen Zeit verarbeitet werden</p></li>
-<li><p><strong>Anwortzeiten:</strong> Zeit zwischen Ende der Anfrage und Beginn der Anwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt</p></li>
+<li><p><strong>Antwortzeiten:</strong> Zeit zwischen Ende der Anfrage und Beginn der Antwort an das SUT → Macht normalerweise nur Sinn wenn es auch Anforderungen für Antwortzeiten gibt</p></li>
 <li><p><strong>Ressourcenverbrauch:</strong> z.B. alle Ressourcen (IO, Memory, …) sollten nicht mehr als 70% der max. Auslastung haben</p></li>
 <li><p><strong>Anzahl maximaler Benutzer:</strong> Wie viele Benutzer können gleichzeitig ohne Probleme auf dem SUT arbeiten</p></li>
 </ul>
@@ -341,7 +341,7 @@
 <ul>
 <li>Spezifiziert ein Set von Operations-Sequenzen</li>
 <li>z.B. Set1=Op1,Op2 und Set2=Op1,Op3</li>
-<li>jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechen ausgewählt</li>
+<li>jedem Set wird eine Wahrscheinlichkeit zugeordnet und dementsprechend ausgewählt</li>
 </ul></li>
 </ul>
 </section>
@@ -351,7 +351,7 @@
 <ul>
 <li>Matrix Mix (Transition Mix):
 <ul>
-<li>Beschreibt die Überangswahrscheinlichkeiten in einem Markov-Modell</li>
+<li>Beschreibt die Übergangswahrscheinlichkeiten in einem Markov-Modell</li>
 <li>wird häufig bei Web-Apps verwendet</li>
 </ul></li>
 </ul>
@@ -404,7 +404,7 @@
 <li><p>Genieren “echter” Daten kann bei großen Daten problematisch werden → Workload Entwickler müsste all Möglichen Values kennen</p>
 <ul>
 <li>Uniform Random: Generierung von gleichverteilten Zufallsdaten, z.B. für Anzahl gewählter Items</li>
-<li>Non-Uniform Random: in normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen</li>
+<li>Non-Uniform Random: im Normalfall sind Datenzugriffe nicht gleichverteilt! → Datengenerierung sollte Wahrscheinlichkeit berücksichtigen</li>
 </ul></li>
 </ul>
 </section>
@@ -451,7 +451,7 @@ Weitere Möglichkeiten sind:</p>
 <p><strong>Beispiel:</strong></p>
 <ul>
 <li>40% anonyme Benutzer browsen auf der Webseite</li>
-<li>30% authentifizierte Benutzer browsen auf der Webseit</li>
+<li>30% authentifizierte Benutzer browsen auf der Webseite</li>
 <li>20% führen eine Suche durch</li>
 <li>10% bearbeiten ihren Shopping-Cart</li>
 </ul>
@@ -474,7 +474,7 @@ Weitere Möglichkeiten sind:</p>
 <li>Thread Group mit 20 Benutzern</li>
 <li>Thread Group mit 10 Benutzern</li>
 </ul>
-<p><strong>Wichtig:</strong> Checkbox “Run Thread Groups consecutevly” sollte dem gewünschten Test-Flow entsprechen</p>
+<p><strong>Wichtig:</strong> Checkbox “Run Thread Groups consecutively” sollte dem gewünschten Test-Flow entsprechen</p>
 </section>
 <section id="praxisbeispiel-3" class="level1">
 <h1>Praxisbeispiel</h1>
@@ -580,8 +580,8 @@ Weitere Möglichkeiten sind:</p>
 <h1>Thread Groups</h1>
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 79%" />
+<col style="width: 21%" />
+<col style="width: 78%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -604,7 +604,7 @@ Weitere Möglichkeiten sind:</p>
 </tr>
 <tr class="even">
 <td>Concurrency</td>
-<td>Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf</td>
+<td>Wie classic Threadgroup. Aber einfacher und weniger Speicherbedarf</td>
 </tr>
 </tbody>
 </table>
@@ -704,7 +704,7 @@ Sampler legen die Art des Requests fest!</p>
 <p>Weitere wichtige Controller:</p>
 <ul>
 <li><strong>Interleave Controller:</strong> wählt Request und führt diesen einmal in jedem Loop des Threads durch</li>
-<li><strong>Runtime Controller:</strong> kontrolliert wie lange seine Kinder laufenn</li>
+<li><strong>Runtime Controller:</strong> kontrolliert wie lange seine Kinder laufen</li>
 <li><strong>Transaction Controller:</strong> Stoppt Gesamtzeit des Testdurchführung, z.B. Dauer des Logins</li>
 <li><strong>Include Controller:</strong> Nutzung externer Testpläne</li>
 </ul>
@@ -723,7 +723,7 @@ Sampler legen die Art des Requests fest!</p>
 <section id="assertions" class="level1">
 <h1>Assertions</h1>
 <blockquote>
-<p>Über Assertions läßt sich prüfen ob sich die Applikation unter Last wie erwartet verhält</p>
+<p>Über Assertions lässt sich prüfen ob sich die Applikation unter Last wie erwartet verhält</p>
 </blockquote>
 <ul>
 <li><p><strong>Beispiel:</strong> Response enthält bestimmten Text?</p></li>
@@ -861,7 +861,7 @@ if (response_time &gt; expected_response_time) {
 <li>View Results Tree</li>
 </ul></li>
 </ul>
-<p>Eregebnisse können auch in Files (csv, xml) zur weiterverarbeitung weggeschrieben werden</p>
+<p>Ergebnisse können auch in Files (csv, xml) zur Weiterverarbeitung weggeschrieben werden</p>
 <ul>
 <li>Default konfigurierbar in jmeter.properties bzw. user.properties</li>
 <li>mehr Details siehe: <a href="https://jmeter.apache.org/usermanual/listeners.html">https://jmeter.apache.org/usermanual/listeners.html</a></li>
@@ -914,7 +914,7 @@ if (response_time &gt; expected_response_time) {
 <p><strong>Beispiel:</strong> Setzen von Defaults und Variablen für Nutzung in Samplern</p>
 <ul>
 <li><p>Zugriff nur innerhalb des Zweiges in dem das Element hinzugefügt wurde</p></li>
-<li><p>Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum vorrang haben.</p>
+<li><p>Settings werden normalerweise gemerged, wobei Elemente tiefer im Baum Vorrang haben.</p>
 <ul>
 <li><strong>Ausnahme:</strong> <em>User Defined Variables</em> werden unabhängig von der Position zu Beginn des Test verarbeitet</li>
 <li><strong>Empfehlung:</strong> <em>User Defined Variables</em> sollten am Start der Thread-Gruppe positioniert werden</li>
@@ -923,7 +923,7 @@ if (response_time &gt; expected_response_time) {
 </section>
 <section id="configuration-elements-2" class="level1">
 <h1>Configuration Elements</h1>
-<p>Header Manager, Cookie Manager und Authorization Manager stellen einen weitern Sonderfall dar:</p>
+<p>Header Manager, Cookie Manager und Authorization Manager stellen einen weiteren Sonderfall dar:</p>
 <ul>
 <li><p>Setting werden nicht gemerged</p></li>
 <li><p>Gibt es mehr als einen Manager im Scope wird nur einer verwendet. Es lässt sich allerdings nicht festlegen welcher!</p></li>
@@ -1021,8 +1021,8 @@ if (response_time &gt; expected_response_time) {
 <section id="testfragment-1" class="level1">
 <h1>Testfragment</h1>
 <ul>
-<li><p>wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller refereniert wird.
-→ Ermöglicht gleichzeitges Arbeiten an modulen in separaten Files</p></li>
+<li><p>wird nicht ausgeführt solange es nicht in einem Modul-Controller oder Include-Controller referenziert wird.
+→ Ermöglicht gleichzeitiges Arbeiten an Modulen in separaten Files</p></li>
 <li><p>Dient der Code-Wiederverwendung innerhalb von Testplänen und hilft sehr große Testpläne wartbar zu machen</p></li>
 <li><p>Details: <a href="https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments">https://www.blazemeter.com/blog/how-manage-large-jmeter-scripts-jmeter-test-fragments</a></p></li>
 </ul>
@@ -1322,7 +1322,7 @@ Assertion 1</p>
 </section>
 <section id="ergebnis-analyse-2" class="level1">
 <h1>Ergebnis-Analyse</h1>
-<p>Schaue die Verteilung der Response-Zeiten an. Ein gut performente Applikation wird ungefähr wie eine <a href="https://en.wikipedia.org/wiki/Half-normal_distribution">Halb-Normal-Verteilung</a> aussehen.</p>
+<p>Schaue die Verteilung der Response-Zeiten an. Ein performante Applikation wird ungefähr wie eine <a href="https://en.wikipedia.org/wiki/Half-normal_distribution">Halb-Normal-Verteilung</a> aussehen.</p>
 <p><img src="assets/B15339_12_22.jpg" alt="gute Performance" />
 <img src="assets/B15339_12_23.jpg" alt="schlecht Performance" /></p>
 </section>
@@ -1428,7 +1428,7 @@ Assertion 1</p>
 <ul>
 <li>Jedes Slave-System führt die im Master definierten Dinge aus
 <ul>
-<li>wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf ingesamt 10000 kommen!</li>
+<li>wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!</li>
 </ul></li>
 <li>Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen</li>
 </ul>
@@ -1441,15 +1441,15 @@ Assertion 1</p>
 <p>Zu beachten bei verteilten Large-Scale-Lösungen: <a href="https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/">https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/</a></p>
 <ul>
 <li><p>von Kommandozeile starten → UI verbraucht viel Memory</p></li>
-<li><p>Vermeide UI listener (z.B. Grahpen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)</p></li>
+<li><p>Vermeide UI listener (z.B. Graphen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)</p></li>
 <li><p>Genug Heap-Space bereitstellen, z.B. JVM_ARGS=“-Xms1g -Xmx8g” jmeter.sh</p></li>
 <li><p>Vermeide mehr als 1000 Benutzer/Maschine zu simulieren</p></li>
-<li><p>lieber mehr Durschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)</p></li>
+<li><p>lieber mehr Durchschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)</p></li>
 <li><p>Vermeide Beanshell-Skripte</p></li>
 <li><p>Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist</p>
 <ul>
 <li>Darüber hinaus lieber jede JMeter-Instanz einzeln starten</li>
-<li>das JMX vor dem Test-Start hinsenden</li>
+<li>das JMX vor dem Test-Start hin senden</li>
 <li>nach dem Test das JTL-File holen</li>
 </ul></li>
 <li><p>Verwende .csv-JTLs anstelle von XML</p></li>
