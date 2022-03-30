@@ -569,10 +569,6 @@ Wichtigste Einstellungen:
   Free Form Arrivals   Vergleichbar mit Arrival Thread Group
 
   Concurrency          Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf
-
-  Stepping             Ältere Version der Threadgroup mit mehr Konfigurationsaufwand
-
-  Ultimate             Komplexe Spike Testing Szenarios
   -------------------------------------------------------------------------------------------
 
 <!-- section 56 -->
@@ -582,6 +578,10 @@ Wichtigste Einstellungen:
   -----------------------------------------------------------------------------------------------
   Name                    Use-Cases
   ----------------------- -----------------------------------------------------------------------
+  Stepping                Ältere Version der Threadgroup mit mehr Konfigurationsaufwand
+
+  Ultimate                Komplexe Spike Testing Szenarios
+
   setUp Thread Group      Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen)
 
   tearDown Thread Group   Aufräumen der Testumgebung
