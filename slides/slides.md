@@ -460,13 +460,13 @@ Wichtigste Einstellungen:
 | Arrivals           | Soak Testing: App-Verhalten wenn alle n-Minuten x-User hinzukommen   |
 | Free Form Arrivals | Vergleichbar mit Arrival Thread Group                                |
 | Concurrency        | Wie klassiche Threadgroup. Aber einfacher und weniger Speicherbedarf |
-| Stepping           | Ältere Version der Threadgroup mit mehr Konfigurationsaufwand        |
-| Ultimate           | Komplexe Spike Testing Szenarios                                     |
 
 # Thread Groups
 
 | Name                  | Use-Cases                                                             |
 | --------------------- | --------------------------------------------------------------------- |
+| Stepping              | Ältere Version der Threadgroup mit mehr Konfigurationsaufwand         |
+| Ultimate              | Komplexe Spike Testing Szenarios                                      |
 | setUp Thread Group    | Vorbereiten der Testumgebung (z.B. VM/Container starten, DB befüllen) |
 | tearDown Thread Group | Aufräumen der Testumgebung                                            |
 
