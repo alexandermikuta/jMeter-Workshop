@@ -1071,7 +1071,7 @@ Lösung:
 
 # Master-Slave-Setup
 
-![](distributed_jmeter.webp)
+![](assets/ImpactQA-JMeter-Distributed-Testing-Approach.jpg)
 
 # Master-Slave-Setup
 
