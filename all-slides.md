@@ -1339,6 +1339,10 @@ Lösung:
 
 ![](assets/RoadMapTestingJMeter.webp)
 
+<!-- section 127 -->
+
+# Master-Slave-Setup
+
 **Voraussetzungen:**
 
 -   Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden
@@ -1354,7 +1358,7 @@ Lösung:
 
 -   Target-Anwendung ist von allen Maschinen erreichbar
 
-<!-- section 127 -->
+<!-- section 128 -->
 
 # Master-Slave-Setup
 
@@ -1367,7 +1371,7 @@ Lösung:
 
 -   Generiere Zertifikat mittels *jmeter/bin/create-rmi-keystore.bat*
 
-<!-- section 128 -->
+<!-- section 129 -->
 
 # Master-Slave-Setup
 
@@ -1380,13 +1384,13 @@ Lösung:
 -   editiere **jmeter/bin/jmeter-server** auf jedem Slave
 
     -   setze IP der Maschine in *RMI\_HOST\_DEF*
-    -   setzte RMI-Port direkt darunter: *\${DIRNAME}/jmeter ${RMI_HOST_DEF} -Dserver_port=${SERVER\_PORT:-2010} -s -j jmeter-server.log "\$@"*
+    -   setzte RMI-Port direkt darunter: `${DIRNAME}/jmeter ${RMI_HOST_DEF} -Dserver_port=${SERVER_PORT:-2010} -s -j jmeter-server.log “$@”`
 
 ![RMI-Slave: Beispiel jmeter-server-File](rmi-slave-example.jpg)
 
 -   starte jMeter-Server auf jedem Slave: **jmeter/bin/jmeter-server.bat**
 
-<!-- section 129 -->
+<!-- section 130 -->
 
 # Master-Slave-Setup
 
@@ -1404,7 +1408,7 @@ Lösung:
 
 Überprüfung ob all Slave-Systeme korrekt arbeiten: jmeter.log ansehen
 
-<!-- section 130 -->
+<!-- section 131 -->
 
 # Master-Slave-Setup
 
@@ -1421,7 +1425,7 @@ Lösung:
 
 -   XML ist im Vergleich zu Binär-Protokollen um den Faktor 4-10 langsamer!
 
-<!-- section 131 -->
+<!-- section 132 -->
 
 # Master-Slave-Setup
 
@@ -1431,13 +1435,13 @@ Lösung:
 
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 132 -->
+<!-- section 133 -->
 
 # Master-Slave-Setup
 
 **Setup mit Vagrant/Virtualbox:**
 
-<!-- section 133 -->
+<!-- section 134 -->
 
 # Master-Slave-Setup
 
@@ -1445,15 +1449,15 @@ Lösung:
 
 https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
-<!-- section 134 -->
+<!-- section 135 -->
 
 # Testausführung über CLI
 
-<!-- section 135 -->
+<!-- section 136 -->
 
 # Demo: Testdata-Partitioning
 
-<!-- section 136 -->
+<!-- section 137 -->
 
 # Large-Scale
 
@@ -1467,7 +1471,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
 
-<!-- section 137 -->
+<!-- section 138 -->
 
 # Large-Scale
 
@@ -1483,39 +1487,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
     -   das JMX vor dem Test-Start hin senden
     -   nach dem Test das JTL-File holen
 
-<!-- section 138 -->
+<!-- section 139 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 139 -->
+<!-- section 140 -->
 
 # RMI
 
-<!-- section 140 -->
+<!-- section 141 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 141 -->
+<!-- section 142 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 142 -->
+<!-- section 143 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 143 -->
+<!-- section 144 -->
 
 # Prometheus / Grafana
 
-<!-- section 144 -->
+<!-- section 145 -->
 
 # YourKit-Profiler
 
-<!-- section 145 -->
+<!-- section 146 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 146 -->
+<!-- section 147 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1526,25 +1530,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 147 -->
+<!-- section 148 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 148 -->
+<!-- section 149 -->
 
 # Docker / Docker-Compose
 
-<!-- section 149 -->
+<!-- section 150 -->
 
 # Kubernetes
 
-<!-- section 150 -->
+<!-- section 151 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 151 -->
+<!-- section 152 -->
 
 # Github Actions
 
@@ -1555,14 +1559,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 152 -->
+<!-- section 153 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 153 -->
+<!-- section 154 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 154 -->
+<!-- section 155 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

@@ -1077,6 +1077,8 @@ Lösung:
 
 ![](assets/RoadMapTestingJMeter.webp)
 
+# Master-Slave-Setup
+
 **Voraussetzungen:**
 
 - Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden
@@ -1113,7 +1115,7 @@ Lösung:
 
 - editiere **jmeter/bin/jmeter-server** auf jedem Slave
   - setze IP der Maschine in _RMI_HOST_DEF_
-  - setzte RMI-Port direkt darunter: _${DIRNAME}/jmeter ${RMI_HOST_DEF} -Dserver_port=${SERVER_PORT:-2010} -s -j jmeter-server.log “$@”_
+  - setzte RMI-Port direkt darunter: `${DIRNAME}/jmeter ${RMI_HOST_DEF} -Dserver_port=${SERVER_PORT:-2010} -s -j jmeter-server.log “$@”`
 
 ![RMI-Slave: Beispiel jmeter-server-File](rmi-slave-example.jpg)
 
