@@ -1407,7 +1407,8 @@ Assertion 1</p>
 <h1>Master-Slave-Setup</h1>
 <p><strong>Voraussetzungen:</strong></p>
 <ul>
-<li><p>Alle Server sollten sich im gleichen Subnetz befinden</p></li>
+<li><p>Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden</p></li>
+<li><p>Firewall blockiert nichts</p></li>
 <li><p>Master und Slaves sollten folgendes gemeinsam haben:</p>
 <ul>
 <li>gleiche Java-Version</li>
@@ -1507,8 +1508,23 @@ Assertion 1</p>
 <li><p><code>jmeter -n -t script.jmx -r</code></p></li>
 <li><p><code>jmeter -n -t script.jmx -R server1,server2,...</code></p></li>
 </ul>
+<p>Überprüfung ob all Slave-Systeme korrekt arbeiten: jmeter.log ansehen</p>
 </section>
 <section id="master-slave-setup-5" class="level1">
+<h1>Master-Slave-Setup</h1>
+<p><strong>Limitierungen:</strong></p>
+<ul>
+<li><p>RMI kann über Subnetze hinaus nicht ohne Proxy kommunizieren. Daher gilt das gleiche auch für jMeter.</p></li>
+<li><p>jMeter sendet alle Test-Ergebnisse zur kontrollierenden Konsole</p>
+<ul>
+<li>Netzwerk kann schnell überlastet werden</li>
+<li>→ Am besten den “Simple data writer” verwenden und die Files erst später ansehen</li>
+</ul></li>
+<li><p>Ein jMeter-Client auf einer 2-3Ghz CPU kann ca. 300-600 Threads verarbeiten</p></li>
+<li><p>XML ist im Vergleich zu Binär-Protokollen um den Faktor 4-10 langsamer!</p></li>
+</ul>
+</section>
+<section id="master-slave-setup-6" class="level1">
 <h1>Master-Slave-Setup</h1>
 <ul>
 <li>Jedes Slave-System führt die im Master definierten Dinge aus

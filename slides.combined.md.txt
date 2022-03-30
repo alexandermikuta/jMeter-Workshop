@@ -1077,7 +1077,9 @@ Lösung:
 
 **Voraussetzungen:**
 
-- Alle Server sollten sich im gleichen Subnetz befinden
+- Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden
+
+- Firewall blockiert nichts
 
 - Master und Slaves sollten folgendes gemeinsam haben:
 
@@ -1120,6 +1122,23 @@ Lösung:
 - `jmeter -n -t script.jmx -r`
 
 - `jmeter -n -t script.jmx -R server1,server2,...`
+
+Überprüfung ob all Slave-Systeme korrekt arbeiten: jmeter.log ansehen
+
+# Master-Slave-Setup
+
+**Limitierungen:**
+
+- RMI kann über Subnetze hinaus nicht ohne Proxy kommunizieren. Daher gilt das gleiche auch für jMeter.
+
+- jMeter sendet alle Test-Ergebnisse zur kontrollierenden Konsole
+
+  - Netzwerk kann schnell überlastet werden
+  - &rarr; Am besten den "Simple data writer" verwenden und die Files erst später ansehen
+
+- Ein jMeter-Client auf einer 2-3Ghz CPU kann ca. 300-600 Threads verarbeiten
+
+- XML ist im Vergleich zu Binär-Protokollen um den Faktor 4-10 langsamer!
 
 # Master-Slave-Setup
 

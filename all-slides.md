@@ -1339,7 +1339,9 @@ Lösung:
 
 **Voraussetzungen:**
 
--   Alle Server sollten sich im gleichen Subnetz befinden
+-   Bei 192.x.x.x und 10.x.x.x Adressen: Alle Server sollten sich im gleichen Subnetz befinden
+
+-   Firewall blockiert nichts
 
 -   Master und Slaves sollten folgendes gemeinsam haben:
 
@@ -1389,7 +1391,26 @@ Lösung:
 
 -   `jmeter -n -t script.jmx -R server1,server2,...`
 
+Überprüfung ob all Slave-Systeme korrekt arbeiten: jmeter.log ansehen
+
 <!-- section 130 -->
+
+# Master-Slave-Setup
+
+**Limitierungen:**
+
+-   RMI kann über Subnetze hinaus nicht ohne Proxy kommunizieren. Daher gilt das gleiche auch für jMeter.
+
+-   jMeter sendet alle Test-Ergebnisse zur kontrollierenden Konsole
+
+    -   Netzwerk kann schnell überlastet werden
+    -   → Am besten den "Simple data writer" verwenden und die Files erst später ansehen
+
+-   Ein jMeter-Client auf einer 2-3Ghz CPU kann ca. 300-600 Threads verarbeiten
+
+-   XML ist im Vergleich zu Binär-Protokollen um den Faktor 4-10 langsamer!
+
+<!-- section 131 -->
 
 # Master-Slave-Setup
 
@@ -1397,15 +1418,15 @@ Lösung:
     -   wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!
 -   Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
 
-<!-- section 131 -->
+<!-- section 132 -->
 
 # Testausführung über CLI
 
-<!-- section 132 -->
+<!-- section 133 -->
 
 # Demo: Testdata-Partitioning
 
-<!-- section 133 -->
+<!-- section 134 -->
 
 # Large-Scale
 
@@ -1419,7 +1440,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
 
-<!-- section 134 -->
+<!-- section 135 -->
 
 # Large-Scale
 
@@ -1435,39 +1456,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
     -   das JMX vor dem Test-Start hin senden
     -   nach dem Test das JTL-File holen
 
-<!-- section 135 -->
+<!-- section 136 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 136 -->
+<!-- section 137 -->
 
 # RMI
 
-<!-- section 137 -->
+<!-- section 138 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 138 -->
+<!-- section 139 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 139 -->
+<!-- section 140 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 140 -->
+<!-- section 141 -->
 
 # Prometheus / Grafana
 
-<!-- section 141 -->
+<!-- section 142 -->
 
 # YourKit-Profiler
 
-<!-- section 142 -->
+<!-- section 143 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 143 -->
+<!-- section 144 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1478,25 +1499,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 144 -->
+<!-- section 145 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 145 -->
+<!-- section 146 -->
 
 # Docker / Docker-Compose
 
-<!-- section 146 -->
+<!-- section 147 -->
 
 # Kubernetes
 
-<!-- section 147 -->
+<!-- section 148 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 148 -->
+<!-- section 149 -->
 
 # Github Actions
 
@@ -1507,14 +1528,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 149 -->
+<!-- section 150 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 150 -->
+<!-- section 151 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 151 -->
+<!-- section 152 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
