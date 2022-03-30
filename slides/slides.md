@@ -1075,15 +1075,51 @@ Lösung:
 
 # Master-Slave-Setup
 
-- mehrere Computer/VMs/Container bereitstellen
-- **auf jedem slave:** run jmeter-server: **bin/jmeter-server.bat**
-- **auf dem master:**
-  - editiere **bin/jmeter.properties**: füge alle IPs der slave-systeme komma-separiert unter remote_hosts hinzu (master/slaves müssen im selben Subnetz sein!)
-- run test
-  - via GUI
-  - non-GUI
-    - `jmeter -n -t script.jmx -r`
-    - `jmeter -n -t script.jmx -R server1,server2,...`
+**Voraussetzungen:**
+
+- Alle Server sollten sich im gleichen Subnetz befinden
+
+- Master und Slaves sollten folgendes gemeinsam haben:
+
+  - gleiche Java-Version
+  - gleiche jMeter-Version
+
+- Master/Slaves können als Computer/VMs/Container bereitgestellt werden
+
+# Master-Slave-Setup
+
+**Slave-Konfiguration:**
+
+- editiere **jmeter/bin/jmeter-server** auf jedem Slave
+  - setze IP der Maschine in _RMI_HOST_DEF_
+  - setzte RMI-Port direkt darunter: _${DIRNAME}/jmeter ${RMI_HOST_DEF} -Dserver_port=${SERVER_PORT:-2010} -s -j jmeter-server.log “$@”_
+
+![RMI-Slave: Beispiel jmeter-server-File](rmi-slave-example.jpg)
+
+- starte jMeter-Server auf jedem Slave: **jmeter/bin/jmeter-server.bat**
+
+# Master-Slave-Setup
+
+**Master-Konfiguration:**
+
+- editiere **jmeter/bin/jmeter.properties** auf dem Master
+
+  - füge alle IPs der Slave-Systeme Komma-separiert unter _remote_hosts_ hinzu
+  - setze _server_port_
+
+# Master-Slave-Setup
+
+**Starten der Tests auf dem Master:**
+
+**via GUI:**
+
+`jmeter`
+
+**non-GUI:**
+
+- `jmeter -n -t script.jmx -r`
+
+- `jmeter -n -t script.jmx -R server1,server2,...`
 
 # Master-Slave-Setup
 
