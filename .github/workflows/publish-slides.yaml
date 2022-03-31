@@ -18,7 +18,11 @@ jobs:
           ./markdeck once
           cp -R assets deck/assets
           cp -R themes deck/themes
-
+      - name: PDF-Slides
+        uses: markwilson/html2pdf@v1.0
+        with:
+          htmlPath: "slides/deck/index.html"
+          pdfName: "jMeter"
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
