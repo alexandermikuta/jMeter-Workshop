@@ -64,8 +64,7 @@ code {
 }
 
 .sea-gradient .reveal {
-  //@include sea-gradient;
-  background: #00936a;
+  @include sea-gradient;
 }
 .sky-gradient-13 .reveal {
   @include sky-gradient-13;
