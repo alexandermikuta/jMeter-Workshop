@@ -1461,11 +1461,11 @@ https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
 # Slave-Server Steuerung
 
-Beim Start des Slave-Server kann ein zusätzlicher Parameter übergeben werden um diesen später gezielt ansteuern zu können, z.B.:
+Beim Start des Slave-Servers kann ein zusätzlicher Parameter übergeben werden um diesen später gezielt ansteuern zu können, z.B.:
 
 `/jmeter-server -Jparam=1`
 
-Dadurch kann man über Controller gezielt das Verhalten eines Slave Steuren, z.B. über if-controller:
+Dadurch kann man über Controller gezielt das Verhalten eines Slave steuern, z.B. über if-controller:
 
 `${__groovy(${__P(param)}==1)}`
 
