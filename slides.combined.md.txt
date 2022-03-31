@@ -1173,7 +1173,27 @@ https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
 # Testausführung über CLI
 
-# Demo: Testdata-Partitioning
+# Testdata-Partitioning
+
+# Slave-Server Steuerung
+
+Beim Start des Slave-Server kann ein zusätzlicher Parameter übergeben werden um diesen später gezielt ansteuern zu können, z.B.:
+
+`/jmeter-server -Jparam=1`
+
+Dadurch kann man über Controller gezielt das Verhalten eines Slave Steuren, z.B. über if-controller:
+
+`${__groovy(${__P(param)}==1)}`
+
+Der Block in diesem if-Controller würde nur auf diesem Slave ausgeführt
+
+# Slave-Server Steuerung
+
+Alternativ zu einem Parameter kann man auch folgende Möglichkeiten nutzen:
+
+- \_\_machineIP()
+
+- \_\_machineName()
 
 # Large-Scale
 

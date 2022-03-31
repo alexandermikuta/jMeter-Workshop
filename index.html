@@ -1503,8 +1503,24 @@ Assertion 1</p>
 <section id="testausführung-über-cli" class="level1">
 <h1>Testausführung über CLI</h1>
 </section>
-<section id="demo-testdata-partitioning" class="level1">
-<h1>Demo: Testdata-Partitioning</h1>
+<section id="testdata-partitioning" class="level1">
+<h1>Testdata-Partitioning</h1>
+</section>
+<section id="slave-server-steuerung" class="level1">
+<h1>Slave-Server Steuerung</h1>
+<p>Beim Start des Slave-Server kann ein zusätzlicher Parameter übergeben werden um diesen später gezielt ansteuern zu können, z.B.:</p>
+<p><code>/jmeter-server -Jparam=1</code></p>
+<p>Dadurch kann man über Controller gezielt das Verhalten eines Slave Steuren, z.B. über if-controller:</p>
+<p><code>${__groovy(${__P(param)}==1)}</code></p>
+<p>Der Block in diesem if-Controller würde nur auf diesem Slave ausgeführt</p>
+</section>
+<section id="slave-server-steuerung-1" class="level1">
+<h1>Slave-Server Steuerung</h1>
+<p>Alternativ zu einem Parameter kann man auch folgende Möglichkeiten nutzen:</p>
+<ul>
+<li><p>__machineIP()</p></li>
+<li><p>__machineName()</p></li>
+</ul>
 </section>
 <section id="large-scale" class="level1">
 <h1>Large-Scale</h1>

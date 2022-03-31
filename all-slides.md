@@ -1455,9 +1455,33 @@ https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
 <!-- section 136 -->
 
-# Demo: Testdata-Partitioning
+# Testdata-Partitioning
 
 <!-- section 137 -->
+
+# Slave-Server Steuerung
+
+Beim Start des Slave-Server kann ein zusätzlicher Parameter übergeben werden um diesen später gezielt ansteuern zu können, z.B.:
+
+`/jmeter-server -Jparam=1`
+
+Dadurch kann man über Controller gezielt das Verhalten eines Slave Steuren, z.B. über if-controller:
+
+`${__groovy(${__P(param)}==1)}`
+
+Der Block in diesem if-Controller würde nur auf diesem Slave ausgeführt
+
+<!-- section 138 -->
+
+# Slave-Server Steuerung
+
+Alternativ zu einem Parameter kann man auch folgende Möglichkeiten nutzen:
+
+-   \_\_machineIP()
+
+-   \_\_machineName()
+
+<!-- section 139 -->
 
 # Large-Scale
 
@@ -1471,7 +1495,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
 
-<!-- section 138 -->
+<!-- section 140 -->
 
 # Large-Scale
 
@@ -1487,39 +1511,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
     -   das JMX vor dem Test-Start hin senden
     -   nach dem Test das JTL-File holen
 
-<!-- section 139 -->
+<!-- section 141 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 140 -->
+<!-- section 142 -->
 
 # RMI
 
-<!-- section 141 -->
+<!-- section 143 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 142 -->
+<!-- section 144 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 143 -->
+<!-- section 145 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 144 -->
+<!-- section 146 -->
 
 # Prometheus / Grafana
 
-<!-- section 145 -->
+<!-- section 147 -->
 
 # YourKit-Profiler
 
-<!-- section 146 -->
+<!-- section 148 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 147 -->
+<!-- section 149 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1530,25 +1554,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 148 -->
+<!-- section 150 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 149 -->
+<!-- section 151 -->
 
 # Docker / Docker-Compose
 
-<!-- section 150 -->
+<!-- section 152 -->
 
 # Kubernetes
 
-<!-- section 151 -->
+<!-- section 153 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 152 -->
+<!-- section 154 -->
 
 # Github Actions
 
@@ -1559,14 +1583,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 153 -->
+<!-- section 155 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 154 -->
+<!-- section 156 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 155 -->
+<!-- section 157 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
