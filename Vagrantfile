@@ -1,44 +1,56 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+IMAGE_NAME = "ubuntu/bionic64"
+N_SLAVES = 3
+
 Vagrant.configure("2") do |config|
-  config.vm.box = "dajonaga/focaldesktop"
-  #config.vm.box = "emoloukanoff/ubuntu-20.04-minimal"
-  #config.vm.box = "mhc-cs/Ubuntu-20-04-Xfce"
-  #config.vm.box = "mjacobus/ubuntu-20.04-gui"
+  config.ssh.insert_key = false
 
-  # config.vm.provider :virtualbox do |vb|
-  #   vb.customize ["modifyvm", :id, "--usb", "on"]
-  #   vb.customize ["modifyvm", :id, "--usbehci", "off"]
-  #   vb.customize ["modifyvm", :id, "--usbxhci", "off"]
-  # end
-
-  # NOTE: This will enable public access to the opened port
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine and only allow access
-  # via 127.0.0.1 to disable public access
-  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
-
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
-
-  # Create a public network, which generally matched to bridged network.
-  # Bridged networks make the machine appear as another physical device on
-  # your network.
-  # config.vm.network "public_network"
-
-  config.vm.provider "virtualbox" do |vb|
-    # Display the VirtualBox GUI when booting the machine
-    vb.gui = true
-
-    # Customize the amount of memory on the VM:
-    vb.memory = "4096"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 2
   end
 
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "playbook.yml"
+  config.vm.define "jmeter-master" do |master|
+    master.vm.box = IMAGE_NAME
+    master.vm.network "private_network", ip: "192.168.50.10"
+    master.vm.hostname = "jmeter-master"
+    if Vagrant.has_plugin?("vagrant-hosts")
+      master.vm.provision :hosts, :sync_hosts => true
+    end
+    master.vm.provision "ansible_local" do |ansible|
+      ansible.playbook = "ansible/jmeter-master-playbook.yml"
+      ansible.extra_vars = {
+        ansible_python_interpreter: '/usr/bin/python3',
+        node_ip: "192.168.50.10"
+      }
+    end
+    master.vm.provider "virtualbox" do |vb|
+      vb.name = "jmeter-master"
+    end
+    master.vm.synced_folder "jmeter-files", "/home/vagrant/jmeter-files", type: "rsync"
   end
+
+  (1..N_SLAVES).each do |i|
+    config.vm.define "jmeter-node-#{i}" do |node|
+      node.vm.box = IMAGE_NAME
+      node.vm.network "private_network", ip: "192.168.50.#{i + 10}"
+      node.vm.hostname = "jmeter-node-#{i}"
+      if Vagrant.has_plugin?("vagrant-hosts")
+        node.vm.provision :hosts, :sync_hosts => true
+      end
+      node.vm.provision "ansible_local" do |ansible|
+        ansible.playbook = "ansible/jmeter-slave-playbook.yml"
+        ansible.extra_vars = {
+          ansible_python_interpreter: '/usr/bin/python3',
+          node_ip: "192.168.50.#{i + 10}"
+        }
+      end
+      node.vm.provider "virtualbox" do |vb|
+        vb.name = "jmeter-node-#{i}"
+      end
+    end
+  end
+
 end
