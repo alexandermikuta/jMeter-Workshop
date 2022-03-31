@@ -5,6 +5,7 @@ highlight_style: github-gist
 themes: mytheme
 width: 1280
 asciinema: false
+controls: true
 ---
 
 # jMeter Workshop {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
