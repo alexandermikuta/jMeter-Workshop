@@ -57,7 +57,9 @@ code {
     visibility: inherit; }
 
 .sea-gradient .reveal {
-  background: #00936a; }
+  background: #00936a;
+  -webkit-clip-path: polygon(0% 15%, 0% 85%, 100% 85%, 100% 15%);
+  clip-path: polygon(0% 15%, 0% 85%, 100% 85%, 100% 15%); }
 
 .sky-gradient-13 .reveal {
   background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%); }

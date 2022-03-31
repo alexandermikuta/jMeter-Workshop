@@ -148,7 +148,7 @@ body.impress-on-overview #impress section.step {
   opacity: 1; }
 
 .sea-gradient {
-  background: linear-gradient(to left, #4CA1AFEE, #2C3E50EE);
+  background: #00936a;
   -webkit-clip-path: polygon(0% 15%, 0% 85%, 100% 85%, 100% 15%);
   clip-path: polygon(0% 15%, 0% 85%, 100% 85%, 100% 15%); }
 
