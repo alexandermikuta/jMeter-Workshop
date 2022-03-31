@@ -1235,6 +1235,30 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # YourKit-Profiler
 
+**Download:** [https://www.yourkit.com/](https://www.yourkit.com/)
+
+Als Alternativen gibt es noch:
+
+- JProfiler
+
+- JProbe
+
+# YourKit-Profiler
+
+- YourKit starten
+
+- Java-Prozess in YourKit auswählen
+
+- jMeter starten
+
+- Performance-Tab in YourKit öffnen
+
+- Test beenden und Ergebnisse ansehen
+
+# YourKit-Profiler
+
+![](assets/yourkit.webp)
+
 # Containerisierung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
 # IaC: Infrastructure as a Code
