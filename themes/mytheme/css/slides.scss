@@ -63,6 +63,10 @@ code {
   }
 }
 
+.reveal .controls {
+  color: #000;
+}
+
 .sea-gradient .reveal {
   @include sea-gradient;
 }

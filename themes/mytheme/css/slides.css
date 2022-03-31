@@ -56,6 +56,9 @@ code {
     opacity: 1;
     visibility: inherit; }
 
+.reveal .controls {
+  color: #000; }
+
 .sea-gradient .reveal {
   background: #00936a;
   -webkit-clip-path: polygon(0% 15%, 0% 85%, 100% 85%, 100% 15%);
