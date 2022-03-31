@@ -2,6 +2,7 @@
 title: jMeter-Workshop
 variant: reveal
 highlight_style: github-gist
+pdf: jMeter.pdf
 themes: mytheme
 width: 1280
 asciinema: false
