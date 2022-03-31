@@ -71,7 +71,8 @@ code {
   display: none; }
 
 .header {
-  content: url(img/imbus.png);
+  content: url(../img/imbus.png);
   position: fixed;
-  bottom: 20px;
-  left: 20px; }
+  top: 20px;
+  left: 20px;
+  width: 10%; }
