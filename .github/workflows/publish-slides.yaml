@@ -18,12 +18,6 @@ jobs:
           ./markdeck once
           cp -R assets deck/assets
           cp -R themes deck/themes
-      - name: html to pdf
-        uses: fifsky/html-to-pdf-action@master
-        with:
-          htmlFile: "./slides/deck/index.html"
-          outputFile: "./slides/deck/jMeter.pdf"
-          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
