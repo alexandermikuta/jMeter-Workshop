@@ -1519,6 +1519,10 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 # RMI
 
+https://github.com/jmibanez/jmeter-rmi-plugin
+
+https://github.com/vezzoni/jmeter-rmi-sampler
+
 <!-- section 143 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
