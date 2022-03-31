@@ -1539,11 +1539,39 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 # YourKit-Profiler
 
+**Download:** <https://www.yourkit.com/>
+
+Als Alternativen gibt es noch:
+
+-   JProfiler
+
+-   JProbe
+
 <!-- section 148 -->
+
+# YourKit-Profiler
+
+-   YourKit starten
+
+-   Java-Prozess in YourKit auswählen
+
+-   jMeter starten
+
+-   Performance-Tab in YourKit öffnen
+
+-   Test beenden und Ergebnisse ansehen
+
+<!-- section 149 -->
+
+# YourKit-Profiler
+
+![](assets/yourkit.webp)
+
+<!-- section 150 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 149 -->
+<!-- section 151 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1554,25 +1582,25 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 150 -->
+<!-- section 152 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 151 -->
+<!-- section 153 -->
 
 # Docker / Docker-Compose
 
-<!-- section 152 -->
+<!-- section 154 -->
 
 # Kubernetes
 
-<!-- section 153 -->
+<!-- section 155 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 154 -->
+<!-- section 156 -->
 
 # Github Actions
 
@@ -1583,14 +1611,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 155 -->
+<!-- section 157 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 156 -->
+<!-- section 158 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 157 -->
+<!-- section 159 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
