@@ -18,7 +18,7 @@ jobs:
           ./markdeck once
           cp -R assets deck/assets
           cp -R themes deck/themes
-      - name:name: html to pdf
+      - name: html to pdf
         uses: fifsky/html-to-pdf-action@master
         with:
           htmlFile: "./slides/deck/index.html"
