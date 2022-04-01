@@ -1549,19 +1549,27 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-**Typischer IaC Workflow:**
+**Tooling-Beispiele:**
 
-![](assets/iac-workflow.jpg)
+![](assets/infrastructure-as-code-diagram.jpg)
 
 <!-- section 145 -->
 
 # IaC: Infrastructure as a Code
 
-**Tooling-Beispiele:**
+**Typischer IaC Workflow:**
 
-![](assets/infrastructure-as-code-diagram.jpg)
+![](assets/iac-workflow.jpg)
 
 <!-- section 146 -->
+
+# IaC: Infrastructure as a Code
+
+**Typischer IaC Workflow mit konkreten Tools:**
+
+![](assets/C003_solution1.jpg)
+
+<!-- section 147 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1569,17 +1577,17 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Bei IaC werden normalerweise deklarative Definition (z.B. als .yml-Datei) bevorzugt
 
-<!-- section 147 -->
+<!-- section 148 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 148 -->
+<!-- section 149 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 149 -->
+<!-- section 150 -->
 
 # RMI
 
@@ -1587,19 +1595,19 @@ https://github.com/jmibanez/jmeter-rmi-plugin
 
 https://github.com/vezzoni/jmeter-rmi-sampler
 
-<!-- section 150 -->
+<!-- section 151 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 151 -->
+<!-- section 152 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 152 -->
+<!-- section 153 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 153 -->
+<!-- section 154 -->
 
 # Prometheus
 
@@ -1607,13 +1615,13 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 ![Prometheus](assets/prometheus-graph.png)
 
-<!-- section 154 -->
+<!-- section 155 -->
 
 # Prometheus
 
 ![Prometheus Listener Output](assets/rt_as_sum.png)
 
-<!-- section 155 -->
+<!-- section 156 -->
 
 # Grafana
 
@@ -1623,7 +1631,7 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 > "Grafana makes that data useful again by integrating all data sources into one single organized view"
 
-<!-- section 156 -->
+<!-- section 157 -->
 
 # Grafana
 
@@ -1633,7 +1641,7 @@ Viele vorgefertigte Templates: <https://grafana.com/grafana/dashboards/>
 
 z.B. für jMeter: <https://grafana.com/grafana/dashboards/1152>
 
-<!-- section 157 -->
+<!-- section 158 -->
 
 # Grafana
 
@@ -1647,19 +1655,19 @@ Leicht über Plugins erweiterbar:
 
 -   Control Panels
 
-<!-- section 158 -->
+<!-- section 159 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/jmeter_prometheus.png)
 
-<!-- section 159 -->
+<!-- section 160 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/kubernetes_prom_diagram2.png)
 
-<!-- section 160 -->
+<!-- section 161 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1674,7 +1682,7 @@ Leicht über Plugins erweiterbar:
 Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
 `docker run -d --name=grafana -p 3000:3000 grafana/grafana`
 
-<!-- section 161 -->
+<!-- section 162 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1694,7 +1702,7 @@ prometheus.yml
 
 `prometheus.exe --config.file=prometheus.yml`
 
-<!-- section 162 -->
+<!-- section 163 -->
 
 # YourKit-Profiler
 
@@ -1706,7 +1714,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 163 -->
+<!-- section 164 -->
 
 # YourKit-Profiler
 
@@ -1720,29 +1728,29 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 164 -->
+<!-- section 165 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 165 -->
+<!-- section 166 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 166 -->
+<!-- section 167 -->
 
 # Docker / Docker-Compose
 
-<!-- section 167 -->
+<!-- section 168 -->
 
 # Kubernetes
 
-<!-- section 168 -->
+<!-- section 169 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 169 -->
+<!-- section 170 -->
 
 # Github Actions
 
@@ -1753,14 +1761,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 170 -->
+<!-- section 171 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 171 -->
+<!-- section 172 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 172 -->
+<!-- section 173 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
