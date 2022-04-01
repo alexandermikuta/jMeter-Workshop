@@ -1445,11 +1445,11 @@ Lösung:
 
 # Master-Slave-Setup
 
-**Setup mit Docker:**
+**Setup mit Docker:** <https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/>
 
-https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
+![jMeter in Docker](assets/jm-master-slave-host-docker.png)
 
-https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/
+**Mehr Details:** <https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/>
 
 <!-- section 135 -->
 
