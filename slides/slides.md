@@ -1170,6 +1170,20 @@ Lösung:
 
 **Setup mit Docker:** [https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/](https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/)
 
+**Beispiel in Ordner _docker_:**
+
+`docker-compose up -d`
+
+**JMX-File in den Container kopieren:** mit _docker ps_ kann man die Container-ID sehen
+
+`docker exec -i <container-running-on-master-node> sh -c 'cat > /jmeter/apache-jmeter-2.13/bin/jmeter-docker.jmx' < jmeter-docker.jmx`
+
+**Start des Load-Tests:**
+
+`docker exec -it <container-on-master-node> bash`
+
+# Master-Slave-Setup
+
 ![jMeter in Docker](assets/jm-master-slave-host-docker.png)
 
 **Mehr Details:** [https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/](https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/)
