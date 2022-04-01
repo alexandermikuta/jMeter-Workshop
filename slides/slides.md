@@ -1239,7 +1239,11 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Prometheus
 
-![](assets/prometheus-graph.png)
+![Prometheus](assets/prometheus-graph.png)
+
+# Prometheus
+
+![Prometheus Listener Output](assets/rt_as_sum.png)
 
 # Grafana
 
@@ -1247,7 +1251,27 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Grafana
 
-![](assets/Grafana8_Kubernetes.jpg)
+![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg)
+
+# Grafana
+
+Leicht über Plugins erweiterbar:
+
+- Etliche Data-Source Plugins (z.B. ElasticSearch)
+
+- Panel-Plugins
+
+- Application Plugins
+
+- Control Panels
+
+# jMeter + Prometheus + Grafana
+
+![](assets/jmeter_prometheus.png)
+
+# jMeter + Prometheus + Grafana
+
+![](assets/kubernetes_prom_diagram2.png)
 
 # YourKit-Profiler
 
