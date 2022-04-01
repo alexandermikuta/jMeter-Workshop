@@ -1172,6 +1172,8 @@ Lösung:
 
 https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
+https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/
+
 # Testausführung über CLI
 
 # Testdata-Partitioning
@@ -1235,7 +1237,17 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Monitoring {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
-# Prometheus / Grafana
+# Prometheus
+
+![](assets/prometheus-graph.png)
+
+# Grafana
+
+> "Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite. Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben"
+
+# Grafana
+
+![](assets/Grafana8_Kubernetes.jpg)
 
 # YourKit-Profiler
 

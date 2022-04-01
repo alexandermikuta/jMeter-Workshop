@@ -1449,6 +1449,8 @@ Lösung:
 
 https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/
 
+https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/
+
 <!-- section 135 -->
 
 # Testausführung über CLI
@@ -1537,9 +1539,23 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 <!-- section 146 -->
 
-# Prometheus / Grafana
+# Prometheus
+
+![](assets/prometheus-graph.png)
 
 <!-- section 147 -->
+
+# Grafana
+
+> "Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite. Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben"
+
+<!-- section 148 -->
+
+# Grafana
+
+![](assets/Grafana8_Kubernetes.jpg)
+
+<!-- section 149 -->
 
 # YourKit-Profiler
 
@@ -1551,7 +1567,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 148 -->
+<!-- section 150 -->
 
 # YourKit-Profiler
 
@@ -1565,17 +1581,17 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 149 -->
+<!-- section 151 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 150 -->
+<!-- section 152 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 151 -->
+<!-- section 153 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1586,25 +1602,25 @@ Als Alternativen gibt es noch:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 152 -->
+<!-- section 154 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 153 -->
+<!-- section 155 -->
 
 # Docker / Docker-Compose
 
-<!-- section 154 -->
+<!-- section 156 -->
 
 # Kubernetes
 
-<!-- section 155 -->
+<!-- section 157 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 156 -->
+<!-- section 158 -->
 
 # Github Actions
 
@@ -1615,14 +1631,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 157 -->
+<!-- section 159 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 158 -->
+<!-- section 160 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 159 -->
+<!-- section 161 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
