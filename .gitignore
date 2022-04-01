@@ -3,3 +3,4 @@ slides/export
 
 # vagrant
 .vagrant
+*.log

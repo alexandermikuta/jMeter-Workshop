@@ -1,0 +1,79 @@
+---
+- name: Install Open-JDK
+  apt:
+    name: openjdk-8-jdk
+    state: present
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Download apache-jmeter-{{ jmeter_version }}.tgz"
+  get_url:
+    url: "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-{{ jmeter_version }}.tgz"
+    dest: "{{ jmeter_tmp_folder }}/apache-jmeter-{{ jmeter_version }}.tgz"
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Install Apache Jmeter"
+  become: true
+  unarchive:
+    src: "/tmp/apache-jmeter-{{ jmeter_version }}.tgz"
+    dest: "{{ jmeter_root_path }}"
+    remote_src: true
+    owner: root
+    group: root
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Add jmeter to PATH"
+  become: true
+  copy:
+    dest: /etc/profile.d/jmeter.sh
+    owner: root
+    group: root
+    mode: 0644
+    content: 'export PATH="/opt/apache-jmeter-{{ jmeter_version }}/bin:$PATH"'
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Add Jmeter Report directory"
+  become: true
+  file:
+    path: "{{ jmeter_report_path }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0777
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Install Jmeter plugins manager"
+  become: true
+  get_url:
+    url: "http://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/{{ jmetter_plugin_manager_version }}/jmeter-plugins-manager-{{ jmetter_plugin_manager_version }}.jar"
+    dest: "{{ jmeter_path }}/lib/ext/jmeter-plugins-manager-{{ jmetter_plugin_manager_version }}.jar"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Install Jmeter cmdrunner"
+  become: true
+  get_url:
+    url: "http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/{{ jmeter_cmdrunner_version }}/cmdrunner-{{ jmeter_cmdrunner_version }}.jar"
+    dest: "{{ jmeter_path }}/lib/cmdrunner-{{ jmeter_cmdrunner_version }}.jar"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Create plugins manager cmd script"
+  become: true
+  command: java -cp {{ jmeter_path }}/lib/ext/jmeter-plugins-manager-{{ jmetter_plugin_manager_version }}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
+  args:
+    creates: "{{ jmeter_modules_installer_path }}/PluginsManagerCMD.sh"
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Create modules installer"
+  template:
+    src: install_jmeter_modules.sh.j2
+    dest: "{{ jmeter_modules_installer_file }}"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Install Jmeter modules"
+  become: true
+  command: "{{ jmeter_modules_installer_path }}/install_jmeter_modules.sh"
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - name: upgrade jmeter.properties"
+  become: true
+  copy:
+    src: jmeter.properties
+    dest: "{{ jmeter_modules_installer_path }}/jmeter.properties"

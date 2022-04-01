@@ -1,0 +1,21 @@
+---
+# JMeter version
+jmeter_version: "5.4.3"
+jmetter_plugin_manager_version: "1.7"
+jmeter_cmdrunner_version: "2.2"
+
+# JMeter path and folders
+jmeter_tmp_folder: "/tmp"
+jmeter_root_path: "/opt"
+jmeter_report_path: "{{ jmeter_root_path }}/reports"
+jmeter_path: "{{ jmeter_root_path }}/apache-jmeter-{{ jmeter_version }}"
+jmeter_modules_installer_path: "{{ jmeter_path }}/bin"
+jmeter_modules_installer_file: "{{ jmeter_modules_installer_path }}/install_jmeter_modules.sh"
+
+# JMeter modules to install
+jmeter_modules:
+  - {
+      name: "bzm-random-csv",
+      version: "0.6",
+      jar: "jmeter-plugins-random-csv-data-set",
+    }

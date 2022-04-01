@@ -1,0 +1,5 @@
+#!/bin/bash
+
+{% for modules in jmeter_modules %}
+/opt/apache-jmeter-{{ jmeter_version }}/bin/PluginsManagerCMD.sh install {{ modules.name }}={{ modules.version }} -creates "/opt/apache-jmeter-{{ jmeter_version }}/lib/ext/{{ modules.jar }}-{{ modules.version }}.jar"
+{% endfor %}

@@ -7,6 +7,9 @@ N_SLAVES = 3
 Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
 
+  config.vm.boot_timeout = 3600
+  config.ssh.insert_key = false
+
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2
@@ -20,7 +23,7 @@ Vagrant.configure("2") do |config|
       master.vm.provision :hosts, :sync_hosts => true
     end
     master.vm.provision "ansible_local" do |ansible|
-      ansible.playbook = "ansible/jmeter-master-playbook.yml"
+      ansible.playbook = "ansible/tasks/jmeter-master-playbook.yml"
       ansible.extra_vars = {
         ansible_python_interpreter: '/usr/bin/python3',
         node_ip: "192.168.50.10"
@@ -29,7 +32,6 @@ Vagrant.configure("2") do |config|
     master.vm.provider "virtualbox" do |vb|
       vb.name = "jmeter-master"
     end
-    master.vm.synced_folder "jmeter-files", "/home/vagrant/jmeter-files", type: "rsync"
   end
 
   (1..N_SLAVES).each do |i|
@@ -41,7 +43,7 @@ Vagrant.configure("2") do |config|
         node.vm.provision :hosts, :sync_hosts => true
       end
       node.vm.provision "ansible_local" do |ansible|
-        ansible.playbook = "ansible/jmeter-slave-playbook.yml"
+        ansible.playbook = "ansible/tasks/jmeter-slave-playbook.yml"
         ansible.extra_vars = {
           ansible_python_interpreter: '/usr/bin/python3',
           node_ip: "192.168.50.#{i + 10}"
