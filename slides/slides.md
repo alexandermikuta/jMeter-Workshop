@@ -1250,6 +1250,18 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
+**Typischer IaC Workflow:**
+
+![](assets/iac-workflow.jpg)
+
+# IaC: Infrastructure as a Code
+
+**Tooling-Beispiele:**
+
+![](assets/infrastructure-as-code-diagram.jpg)
+
+# IaC: Infrastructure as a Code
+
 ![](assets/infrastructureascode_600x300-3.png)
 
 > Bei IaC werden normalerweise deklarative Definition (z.B. als .yml-Datei) bevorzugt
