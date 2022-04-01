@@ -1250,15 +1250,21 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
+**Tooling-Beispiele:**
+
+![](assets/infrastructure-as-code-diagram.jpg)
+
+# IaC: Infrastructure as a Code
+
 **Typischer IaC Workflow:**
 
 ![](assets/iac-workflow.jpg)
 
 # IaC: Infrastructure as a Code
 
-**Tooling-Beispiele:**
+**Typischer IaC Workflow mit konkreten Tools:**
 
-![](assets/infrastructure-as-code-diagram.jpg)
+![](assets/C003_solution1.jpg)
 
 # IaC: Infrastructure as a Code
 
