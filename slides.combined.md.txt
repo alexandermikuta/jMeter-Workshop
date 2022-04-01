@@ -1308,6 +1308,9 @@ Leicht über Plugins erweiterbar:
 
 - Grafana: [https://grafana.com/get](https://grafana.com/get)
 
+Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
+`docker run -d --name=grafana -p 3000:3000 grafana/grafana`
+
 # jMeter + Prometheus + Grafana
 
 [https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n](https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n)
