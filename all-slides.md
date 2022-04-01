@@ -1447,19 +1447,35 @@ Lösung:
 
 **Setup mit Docker:** <https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/>
 
+**Beispiel in Ordner *docker*:**
+
+`docker-compose up -d`
+
+**JMX-File in den Container kopieren:** mit *docker ps* kann man die Container-ID sehen
+
+`docker exec -i <container-running-on-master-node> sh -c 'cat > /jmeter/apache-jmeter-2.13/bin/jmeter-docker.jmx' < jmeter-docker.jmx`
+
+**Start des Load-Tests:**
+
+`docker exec -it <container-on-master-node> bash`
+
+<!-- section 135 -->
+
+# Master-Slave-Setup
+
 ![jMeter in Docker](assets/jm-master-slave-host-docker.png)
 
 **Mehr Details:** <https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/>
 
-<!-- section 135 -->
+<!-- section 136 -->
 
 # Testausführung über CLI
 
-<!-- section 136 -->
+<!-- section 137 -->
 
 # Testdata-Partitioning
 
-<!-- section 137 -->
+<!-- section 138 -->
 
 # Slave-Server Steuerung
 
@@ -1473,7 +1489,7 @@ Dadurch kann man über Controller gezielt das Verhalten eines Slave steuern, z.B
 
 Der Block in diesem if-Controller würde nur auf diesem Slave ausgeführt
 
-<!-- section 138 -->
+<!-- section 139 -->
 
 # Slave-Server Steuerung
 
@@ -1483,7 +1499,7 @@ Alternativ zu einem Parameter kann man auch folgende Möglichkeiten nutzen:
 
 -   \_\_machineName()
 
-<!-- section 139 -->
+<!-- section 140 -->
 
 # Large-Scale
 
@@ -1497,7 +1513,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
 
-<!-- section 140 -->
+<!-- section 141 -->
 
 # Large-Scale
 
@@ -1513,11 +1529,11 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
     -   das JMX vor dem Test-Start hin senden
     -   nach dem Test das JTL-File holen
 
-<!-- section 141 -->
+<!-- section 142 -->
 
 # IaC: Infrastructure as a Code {#iac-infrastructure-as-a-code .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 142 -->
+<!-- section 143 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1528,17 +1544,17 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 143 -->
+<!-- section 144 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 144 -->
+<!-- section 145 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 145 -->
+<!-- section 146 -->
 
 # RMI
 
@@ -1546,19 +1562,19 @@ https://github.com/jmibanez/jmeter-rmi-plugin
 
 https://github.com/vezzoni/jmeter-rmi-sampler
 
-<!-- section 146 -->
+<!-- section 147 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 147 -->
+<!-- section 148 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 148 -->
+<!-- section 149 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 149 -->
+<!-- section 150 -->
 
 # Prometheus
 
@@ -1566,13 +1582,13 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 ![Prometheus](assets/prometheus-graph.png)
 
-<!-- section 150 -->
+<!-- section 151 -->
 
 # Prometheus
 
 ![Prometheus Listener Output](assets/rt_as_sum.png)
 
-<!-- section 151 -->
+<!-- section 152 -->
 
 # Grafana
 
@@ -1582,7 +1598,7 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 > "Grafana makes that data useful again by integrating all data sources into one single organized view"
 
-<!-- section 152 -->
+<!-- section 153 -->
 
 # Grafana
 
@@ -1592,7 +1608,7 @@ Viele vorgefertigte Templates: <https://grafana.com/grafana/dashboards/>
 
 z.B. für jMeter: <https://grafana.com/grafana/dashboards/1152>
 
-<!-- section 153 -->
+<!-- section 154 -->
 
 # Grafana
 
@@ -1606,19 +1622,19 @@ Leicht über Plugins erweiterbar:
 
 -   Control Panels
 
-<!-- section 154 -->
+<!-- section 155 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/jmeter_prometheus.png)
 
-<!-- section 155 -->
+<!-- section 156 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/kubernetes_prom_diagram2.png)
 
-<!-- section 156 -->
+<!-- section 157 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1633,7 +1649,7 @@ Leicht über Plugins erweiterbar:
 Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
 `docker run -d --name=grafana -p 3000:3000 grafana/grafana`
 
-<!-- section 157 -->
+<!-- section 158 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1653,7 +1669,7 @@ prometheus.yml
 
 `prometheus.exe --config.file=prometheus.yml`
 
-<!-- section 158 -->
+<!-- section 159 -->
 
 # YourKit-Profiler
 
@@ -1665,7 +1681,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 159 -->
+<!-- section 160 -->
 
 # YourKit-Profiler
 
@@ -1679,29 +1695,29 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 160 -->
+<!-- section 161 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 161 -->
+<!-- section 162 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 162 -->
+<!-- section 163 -->
 
 # Docker / Docker-Compose
 
-<!-- section 163 -->
+<!-- section 164 -->
 
 # Kubernetes
 
-<!-- section 164 -->
+<!-- section 165 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 165 -->
+<!-- section 166 -->
 
 # Github Actions
 
@@ -1712,14 +1728,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 166 -->
+<!-- section 167 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 167 -->
+<!-- section 168 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 168 -->
+<!-- section 169 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
