@@ -1371,6 +1371,8 @@ Lösung:
 
 -   Generiere Zertifikat mittels *jmeter/bin/create-rmi-keystore.bat*
 
+    -   **Alternative:** setze *server.rmi.ssl.disable=true* in *jmeter.properties*
+
 <!-- section 129 -->
 
 # Master-Slave-Setup
