@@ -1239,6 +1239,8 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Prometheus
 
+> "Prometheus ist eine freie Software zum Service-Monitoring und Alerting von IT-Infrastrukturen. Es zeichnet Echtzeitmetriken in einer Zeitreihendatenbank auf, die per HTTP von Anwendungen abgefragt werden und ermöglicht Echtzeit-Warnmeldungen"
+
 ![Prometheus](assets/prometheus-graph.png)
 
 # Prometheus
@@ -1247,11 +1249,19 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Grafana
 
-> "Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite. Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben"
+- Grafana stellt Daten aus verschiedenen Datenquellen (z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite) grafisch dar
+
+- Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben
+
+> "Grafana makes that data useful again by integrating all data sources into one single organized view"
 
 # Grafana
 
 ![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg)
+
+Viele vorgefertigte Templates: [https://grafana.com/grafana/dashboards/](https://grafana.com/grafana/dashboards/)
+
+z.B. für jMeter: [https://grafana.com/grafana/dashboards/1152](https://grafana.com/grafana/dashboards/1152)
 
 # Grafana
 
@@ -1272,6 +1282,36 @@ Leicht über Plugins erweiterbar:
 # jMeter + Prometheus + Grafana
 
 ![](assets/kubernetes_prom_diagram2.png)
+
+# jMeter + Prometheus + Grafana
+
+**Voraussetzungen:**
+
+- jMeter + jmeter-prometheus-plugin (in jmeter/lib/ext): [https://github.com/johrstrom/jmeter-prometheus-plugin/releases](https://github.com/johrstrom/jmeter-prometheus-plugin/releases)
+
+- Prometheus: [https://prometheus.io/download/](https://prometheus.io/download/)
+
+- Grafana: [https://grafana.com/get](https://grafana.com/get)
+
+# jMeter + Prometheus + Grafana
+
+[https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n](https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n)
+
+![Beispiel-Konfiguration jMeter](jmeter_prometheus_config.png)
+
+prometheus.yml
+
+```
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+  - job_name: 'jmeter'
+    static_configs:
+    - targets: ['localhost:9270']
+```
+
+`prometheus.exe --config.file=prometheus.yml`
 
 # YourKit-Profiler
 
