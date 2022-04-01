@@ -13,12 +13,12 @@ Agenda:
   Tag 1                                 Tag 2
   ------------------------------------- ------------------------------------
   \(3\) jMeter Plugin-Manager           \(3\) Verteiltes Testen mit jMeter
-  \(3\) Workload Design                 \(3\) RMI
-  \(2\) Strukturierung von Testplänen   \(2\) Monitoring
-  \(2\) Scripting                       \(1\) Containerisierung
-  \(2\) Reporting                       \(1\) CI/CD-Pipeline
-  \(1\) Testdatenverwaltung             Klärung offener Punkte
-  \(1\) REST-APIs                       
+  \(3\) Workload Design                 \(3\) IaC
+  \(2\) Strukturierung von Testplänen   \(3\) RMI
+  \(2\) Scripting                       \(2\) Monitoring
+  \(2\) Reporting                       \(1\) Containerisierung
+  \(1\) Testdatenverwaltung             \(1\) CI/CD-Pipeline
+  \(1\) REST-APIs                       Klärung offener Punkte
 
 <!-- section 2 -->
 
@@ -1515,9 +1515,30 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 <!-- section 141 -->
 
-# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# IaC: Infrastructure as a Code {#iac-infrastructure-as-a-code .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
 <!-- section 142 -->
+
+# IaC: Infrastructure as a Code
+
+> Mit IaC (Infrastructure as Code) wird die Infrastruktur durch Code -- und nicht durch manuelle Prozesse -- verwaltet und provisioniert.
+
+> Mit IaC werden Konfigurationsdateien erstellt, die Ihre gesamten Infrastrukturspezifikationen enthalten, wodurch Sie Konfigurationen einfacher bearbeiten und verteilen können.
+> Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
+
+> Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
+
+<!-- section 143 -->
+
+# Vagrant + Ansible
+
+Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
+
+<!-- section 144 -->
+
+# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 145 -->
 
 # RMI
 
@@ -1525,19 +1546,19 @@ https://github.com/jmibanez/jmeter-rmi-plugin
 
 https://github.com/vezzoni/jmeter-rmi-sampler
 
-<!-- section 143 -->
+<!-- section 146 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 144 -->
+<!-- section 147 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 145 -->
+<!-- section 148 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 146 -->
+<!-- section 149 -->
 
 # Prometheus
 
@@ -1545,13 +1566,13 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 ![Prometheus](assets/prometheus-graph.png)
 
-<!-- section 147 -->
+<!-- section 150 -->
 
 # Prometheus
 
 ![Prometheus Listener Output](assets/rt_as_sum.png)
 
-<!-- section 148 -->
+<!-- section 151 -->
 
 # Grafana
 
@@ -1561,7 +1582,7 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 > "Grafana makes that data useful again by integrating all data sources into one single organized view"
 
-<!-- section 149 -->
+<!-- section 152 -->
 
 # Grafana
 
@@ -1571,7 +1592,7 @@ Viele vorgefertigte Templates: <https://grafana.com/grafana/dashboards/>
 
 z.B. für jMeter: <https://grafana.com/grafana/dashboards/1152>
 
-<!-- section 150 -->
+<!-- section 153 -->
 
 # Grafana
 
@@ -1585,19 +1606,19 @@ Leicht über Plugins erweiterbar:
 
 -   Control Panels
 
-<!-- section 151 -->
+<!-- section 154 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/jmeter_prometheus.png)
 
-<!-- section 152 -->
+<!-- section 155 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/kubernetes_prom_diagram2.png)
 
-<!-- section 153 -->
+<!-- section 156 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1609,7 +1630,7 @@ Leicht über Plugins erweiterbar:
 
 -   Grafana: <https://grafana.com/get>
 
-<!-- section 154 -->
+<!-- section 157 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1629,7 +1650,7 @@ prometheus.yml
 
 `prometheus.exe --config.file=prometheus.yml`
 
-<!-- section 155 -->
+<!-- section 158 -->
 
 # YourKit-Profiler
 
@@ -1641,7 +1662,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 156 -->
+<!-- section 159 -->
 
 # YourKit-Profiler
 
@@ -1655,46 +1676,29 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 157 -->
+<!-- section 160 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 158 -->
+<!-- section 161 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 159 -->
-
-# IaC: Infrastructure as a Code
-
-> Mit IaC (Infrastructure as Code) wird die Infrastruktur durch Code -- und nicht durch manuelle Prozesse -- verwaltet und provisioniert.
-
-> Mit IaC werden Konfigurationsdateien erstellt, die Ihre gesamten Infrastrukturspezifikationen enthalten, wodurch Sie Konfigurationen einfacher bearbeiten und verteilen können.
-> Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
-
-> Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
-
-<!-- section 160 -->
-
-# Vagrant + Ansible
-
-Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
-
-<!-- section 161 -->
+<!-- section 162 -->
 
 # Docker / Docker-Compose
 
-<!-- section 162 -->
+<!-- section 163 -->
 
 # Kubernetes
 
-<!-- section 163 -->
+<!-- section 164 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 164 -->
+<!-- section 165 -->
 
 # Github Actions
 
@@ -1705,14 +1709,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 165 -->
+<!-- section 166 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 166 -->
+<!-- section 167 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 167 -->
+<!-- section 168 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

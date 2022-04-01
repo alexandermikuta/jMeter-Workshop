@@ -20,12 +20,12 @@ Agenda:
 | Tag 1                             | Tag 2                            |
 | --------------------------------- | -------------------------------- |
 | (3) jMeter Plugin-Manager         | (3) Verteiltes Testen mit jMeter |
-| (3) Workload Design               | (3) RMI                          |
-| (2) Strukturierung von Testplänen | (2) Monitoring                   |
-| (2) Scripting                     | (1) Containerisierung            |
-| (2) Reporting                     | (1) CI/CD-Pipeline               |
-| (1) Testdatenverwaltung           | Klärung offener Punkte           |
-| (1) REST-APIs                     |                                  |
+| (3) Workload Design               | (3) IaC                          |
+| (2) Strukturierung von Testplänen | (3) RMI                          |
+| (2) Scripting                     | (2) Monitoring                   |
+| (2) Reporting                     | (1) Containerisierung            |
+| (1) Testdatenverwaltung           | (1) CI/CD-Pipeline               |
+| (1) REST-APIs                     | Klärung offener Punkte           |
 
 # jMeter Plugin-Manager {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
@@ -1223,6 +1223,21 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
   - das JMX vor dem Test-Start hin senden
   - nach dem Test das JTL-File holen
 
+# IaC: Infrastructure as a Code {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# IaC: Infrastructure as a Code
+
+> Mit IaC (Infrastructure as Code) wird die Infrastruktur durch Code – und nicht durch manuelle Prozesse – verwaltet und provisioniert.
+
+> Mit IaC werden Konfigurationsdateien erstellt, die Ihre gesamten Infrastrukturspezifikationen enthalten, wodurch Sie Konfigurationen einfacher bearbeiten und verteilen können.
+> Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
+
+> Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
+
+# Vagrant + Ansible
+
+Ansible Playbook: [https://galaxy.ansible.com/lean_delivery/jmeter](https://galaxy.ansible.com/lean_delivery/jmeter)
+
 # RMI {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
 # RMI
@@ -1340,19 +1355,6 @@ Als Alternativen gibt es noch:
 ![](assets/yourkit.webp)
 
 # Containerisierung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
-
-# IaC: Infrastructure as a Code
-
-> Mit IaC (Infrastructure as Code) wird die Infrastruktur durch Code – und nicht durch manuelle Prozesse – verwaltet und provisioniert.
-
-> Mit IaC werden Konfigurationsdateien erstellt, die Ihre gesamten Infrastrukturspezifikationen enthalten, wodurch Sie Konfigurationen einfacher bearbeiten und verteilen können.
-> Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
-
-> Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
-
-# Vagrant + Ansible
-
-Ansible Playbook: [https://galaxy.ansible.com/lean_delivery/jmeter](https://galaxy.ansible.com/lean_delivery/jmeter)
 
 # Docker / Docker-Compose
 
