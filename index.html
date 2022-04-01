@@ -1566,6 +1566,9 @@ Assertion 1</p>
 </section>
 <section id="prometheus" class="level1">
 <h1>Prometheus</h1>
+<blockquote>
+<p>“Prometheus ist eine freie Software zum Service-Monitoring und Alerting von IT-Infrastrukturen. Es zeichnet Echtzeitmetriken in einer Zeitreihendatenbank auf, die per HTTP von Anwendungen abgefragt werden und ermöglicht Echtzeit-Warnmeldungen”</p>
+</blockquote>
 <figure>
 <img src="assets/prometheus-graph.png" alt="" /><figcaption>Prometheus</figcaption>
 </figure>
@@ -1578,8 +1581,12 @@ Assertion 1</p>
 </section>
 <section id="grafana" class="level1">
 <h1>Grafana</h1>
+<ul>
+<li><p>Grafana stellt Daten aus verschiedenen Datenquellen (z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite) grafisch dar</p></li>
+<li><p>Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben</p></li>
+</ul>
 <blockquote>
-<p>“Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite. Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben”</p>
+<p>“Grafana makes that data useful again by integrating all data sources into one single organized view”</p>
 </blockquote>
 </section>
 <section id="grafana-1" class="level1">
@@ -1587,6 +1594,8 @@ Assertion 1</p>
 <figure>
 <img src="assets/Grafana8_Kubernetes.jpg" alt="" /><figcaption>Grafana Dashboard</figcaption>
 </figure>
+<p>Viele vorgefertigte Templates: <a href="https://grafana.com/grafana/dashboards/">https://grafana.com/grafana/dashboards/</a></p>
+<p>z.B. für jMeter: <a href="https://grafana.com/grafana/dashboards/1152">https://grafana.com/grafana/dashboards/1152</a></p>
 </section>
 <section id="grafana-2" class="level1">
 <h1>Grafana</h1>
@@ -1605,6 +1614,31 @@ Assertion 1</p>
 <section id="jmeter-prometheus-grafana-1" class="level1">
 <h1>jMeter + Prometheus + Grafana</h1>
 <p><img src="assets/kubernetes_prom_diagram2.png" /></p>
+</section>
+<section id="jmeter-prometheus-grafana-2" class="level1">
+<h1>jMeter + Prometheus + Grafana</h1>
+<p><strong>Voraussetzungen:</strong></p>
+<ul>
+<li><p>jMeter + jmeter-prometheus-plugin (in jmeter/lib/ext): <a href="https://github.com/johrstrom/jmeter-prometheus-plugin/releases">https://github.com/johrstrom/jmeter-prometheus-plugin/releases</a></p></li>
+<li><p>Prometheus: <a href="https://prometheus.io/download/">https://prometheus.io/download/</a></p></li>
+<li><p>Grafana: <a href="https://grafana.com/get">https://grafana.com/get</a></p></li>
+</ul>
+</section>
+<section id="jmeter-prometheus-grafana-3" class="level1">
+<h1>jMeter + Prometheus + Grafana</h1>
+<p><a href="https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n">https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n</a></p>
+<figure>
+<img src="jmeter_prometheus_config.png" alt="" /><figcaption>Beispiel-Konfiguration jMeter</figcaption>
+</figure>
+<p>prometheus.yml</p>
+<pre><code>scrape_configs:
+  - job_name: &#39;prometheus&#39;
+    static_configs:
+    - targets: [&#39;localhost:9090&#39;]
+  - job_name: &#39;jmeter&#39;
+    static_configs:
+    - targets: [&#39;localhost:9270&#39;]</code></pre>
+<p><code>prometheus.exe --config.file=prometheus.yml</code></p>
 </section>
 <section id="yourkit-profiler" class="level1">
 <h1>YourKit-Profiler</h1>

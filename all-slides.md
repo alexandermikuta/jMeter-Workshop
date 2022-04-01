@@ -1541,6 +1541,8 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Prometheus
 
+> "Prometheus ist eine freie Software zum Service-Monitoring und Alerting von IT-Infrastrukturen. Es zeichnet Echtzeitmetriken in einer Zeitreihendatenbank auf, die per HTTP von Anwendungen abgefragt werden und ermöglicht Echtzeit-Warnmeldungen"
+
 ![Prometheus](assets/prometheus-graph.png)
 
 <!-- section 147 -->
@@ -1553,13 +1555,21 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Grafana
 
-> "Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite. Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben"
+-   Grafana stellt Daten aus verschiedenen Datenquellen (z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite) grafisch dar
+
+-   Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben
+
+> "Grafana makes that data useful again by integrating all data sources into one single organized view"
 
 <!-- section 149 -->
 
 # Grafana
 
 ![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg)
+
+Viele vorgefertigte Templates: <https://grafana.com/grafana/dashboards/>
+
+z.B. für jMeter: <https://grafana.com/grafana/dashboards/1152>
 
 <!-- section 150 -->
 
@@ -1589,6 +1599,38 @@ Leicht über Plugins erweiterbar:
 
 <!-- section 153 -->
 
+# jMeter + Prometheus + Grafana
+
+**Voraussetzungen:**
+
+-   jMeter + jmeter-prometheus-plugin (in jmeter/lib/ext): <https://github.com/johrstrom/jmeter-prometheus-plugin/releases>
+
+-   Prometheus: <https://prometheus.io/download/>
+
+-   Grafana: <https://grafana.com/get>
+
+<!-- section 154 -->
+
+# jMeter + Prometheus + Grafana
+
+<https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n>
+
+![Beispiel-Konfiguration jMeter](jmeter_prometheus_config.png)
+
+prometheus.yml
+
+    scrape_configs:
+      - job_name: 'prometheus'
+        static_configs:
+        - targets: ['localhost:9090']
+      - job_name: 'jmeter'
+        static_configs:
+        - targets: ['localhost:9270']
+
+`prometheus.exe --config.file=prometheus.yml`
+
+<!-- section 155 -->
+
 # YourKit-Profiler
 
 **Download:** <https://www.yourkit.com/>
@@ -1599,7 +1641,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 154 -->
+<!-- section 156 -->
 
 # YourKit-Profiler
 
@@ -1613,17 +1655,17 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 155 -->
+<!-- section 157 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 156 -->
+<!-- section 158 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 157 -->
+<!-- section 159 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1634,25 +1676,25 @@ Als Alternativen gibt es noch:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 158 -->
+<!-- section 160 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 159 -->
+<!-- section 161 -->
 
 # Docker / Docker-Compose
 
-<!-- section 160 -->
+<!-- section 162 -->
 
 # Kubernetes
 
-<!-- section 161 -->
+<!-- section 163 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 162 -->
+<!-- section 164 -->
 
 # Github Actions
 
@@ -1663,14 +1705,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 163 -->
+<!-- section 165 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 164 -->
+<!-- section 166 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 165 -->
+<!-- section 167 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
