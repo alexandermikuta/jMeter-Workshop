@@ -1541,21 +1541,53 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 # Prometheus
 
-![](assets/prometheus-graph.png)
+![Prometheus](assets/prometheus-graph.png)
 
 <!-- section 147 -->
 
-# Grafana
+# Prometheus
 
-> "Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite. Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben"
+![Prometheus Listener Output](assets/rt_as_sum.png)
 
 <!-- section 148 -->
 
 # Grafana
 
-![](assets/Grafana8_Kubernetes.jpg)
+> "Grafana ist eine plattformübergreifende Open-Source-Anwendung zur grafischen Darstellung von Daten aus verschiedenen Datenquellen wie z. B. InfluxDB, MySQL, PostgreSQL, Prometheus und Graphite. Die erfassten Rohdaten lassen sich anschließend in verschiedenen Anzeigeformen ausgeben"
 
 <!-- section 149 -->
+
+# Grafana
+
+![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg)
+
+<!-- section 150 -->
+
+# Grafana
+
+Leicht über Plugins erweiterbar:
+
+-   Etliche Data-Source Plugins (z.B. ElasticSearch)
+
+-   Panel-Plugins
+
+-   Application Plugins
+
+-   Control Panels
+
+<!-- section 151 -->
+
+# jMeter + Prometheus + Grafana
+
+![](assets/jmeter_prometheus.png)
+
+<!-- section 152 -->
+
+# jMeter + Prometheus + Grafana
+
+![](assets/kubernetes_prom_diagram2.png)
+
+<!-- section 153 -->
 
 # YourKit-Profiler
 
@@ -1567,7 +1599,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 150 -->
+<!-- section 154 -->
 
 # YourKit-Profiler
 
@@ -1581,17 +1613,17 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 151 -->
+<!-- section 155 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 152 -->
+<!-- section 156 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 153 -->
+<!-- section 157 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1602,25 +1634,25 @@ Als Alternativen gibt es noch:
 
 > Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten auch Ihre Konfigurationsdateien der Quellkontrolle unterliegen.
 
-<!-- section 154 -->
+<!-- section 158 -->
 
 # Vagrant + Ansible
 
 Ansible Playbook: <https://galaxy.ansible.com/lean_delivery/jmeter>
 
-<!-- section 155 -->
+<!-- section 159 -->
 
 # Docker / Docker-Compose
 
-<!-- section 156 -->
+<!-- section 160 -->
 
 # Kubernetes
 
-<!-- section 157 -->
+<!-- section 161 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 158 -->
+<!-- section 162 -->
 
 # Github Actions
 
@@ -1631,14 +1663,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 159 -->
+<!-- section 163 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 160 -->
+<!-- section 164 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 161 -->
+<!-- section 165 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
