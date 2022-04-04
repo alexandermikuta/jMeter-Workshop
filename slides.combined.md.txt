@@ -1434,8 +1434,6 @@ Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
 
 # jMeter + Prometheus + Grafana
 
-[https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n](https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n)
-
 ![Beispiel-Konfiguration jMeter](jmeter_prometheus_config.png)
 
 prometheus.yml
@@ -1455,6 +1453,8 @@ scrape_configs:
 # jMeter + Prometheus + Grafana
 
 Kubernetes Grafana-Prometheus: [https://github.com/alexandermikuta/metrics-helmfile](https://github.com/alexandermikuta/metrics-helmfile)
+
+Beschreibung der Konfiguration: [https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n](https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n)
 
 # YourKit-Profiler
 
