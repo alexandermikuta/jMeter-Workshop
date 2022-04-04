@@ -1956,7 +1956,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 # Kubernetes
 
-![Architecture](assets/taming-kubernetes-revolution-7.webp){height="80%" width="80%"}
+![Architecture](assets/taming-kubernetes-revolution-7.webp){height="40%" width="40%"}
 
 <!-- section 189 -->
 
