@@ -1575,6 +1575,30 @@ Kubernetes UI: [https://k8slens.dev/](https://k8slens.dev/)
 
 # CI/CD-Pipeline {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
+# Was ist CI/CD
+
+> "Es handelt sich um eine Methode, bei der den Kunden regelmäßig Apps bereitgestellt und alle Phasen der Anwendungsentwicklung automatisiert werden."
+
+**CI:** Continuous Integration, also der Automatisierungsprozess für Entwickler
+
+**CD:**
+
+- Continuous Delivery: App-Änderungen eines Entwicklers werden automatisch getestet und in ein Repository hochgeladen
+
+- Continuos Deployment: bezieht sich auf die automatische Freigabe von Entwickleränderungen vom Repository zur Produktivphase
+
+# Was ist CI/CD
+
+![](assets/ci-cd-flow-desktop_edited_0.png)
+
+# Was ist CI/CD
+
+![](assets/CICD_CICD.png)
+
+# Was ist CI/CD
+
+![](assets/Asset-33-1.png)
+
 # Github Actions
 
 > "GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline."
