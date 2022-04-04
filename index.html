@@ -1592,10 +1592,10 @@ Assertion 1</p>
 </section>
 <section id="iac-infrastructure-as-a-code-4" class="level1">
 <h1>IaC: Infrastructure as a Code</h1>
-<p><img src="assets/infrastructureascode_600x300-3.png" /></p>
 <blockquote>
 <p>Bei IaC werden normalerweise deklarative Definition (z.B. als .yml-Datei) bevorzugt</p>
 </blockquote>
+<p><img src="assets/Declarative-vs-Imperative-Approach.jpg.webp" /></p>
 </section>
 <section id="iac-infrastructure-as-a-code-5" class="level1">
 <h1>IaC: Infrastructure as a Code</h1>
@@ -1617,6 +1617,78 @@ Assertion 1</p>
 </section>
 <section id="iac-infrastructure-as-a-code-7" class="level1">
 <h1>IaC: Infrastructure as a Code</h1>
+<figure>
+<img src="assets/iac-idempotent.gif" alt="" /><figcaption>Terraform ist ein gutes Beispiel für Idempotenz</figcaption>
+</figure>
+</section>
+<section id="iac-infrastructure-as-a-code-8" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
+<figure>
+<img src="assets/immutable_infrastructure.gif" alt="" /><figcaption>mutable vs. immutable</figcaption>
+</figure>
+</section>
+<section id="iac-infrastructure-as-a-code-9" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
+<p><strong>Mutable Infrastructure:</strong></p>
+<table>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>PROs</th>
+<th>CONS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fehler lassen sich schneller identifizieren und beheben</td>
+<td>Configuration Drift kann das Finden der Fehlerursache erschweren</td>
+</tr>
+<tr class="even">
+<td>Updates lassen sich auch auf einzelne Server beziehen und damit schneller einspielen</td>
+<td>Versions-Tracking schwierig</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Debugging schwer</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iac-infrastructure-as-a-code-10" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
+<p><strong>Imutable Infrastructure:</strong></p>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>PROs</th>
+<th>CONS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Leichtes Tracking und Rollbacks durch Versionierung</td>
+<td>Keine Möglichkeit von In-Place Modifikationen</td>
+</tr>
+<tr class="even">
+<td>Effektives Testen durch Konsistenz</td>
+<td>Kann unpassend sein, falls die Umgebung eine Legacy-IT ist</td>
+</tr>
+<tr class="odd">
+<td>Kein Konfiguration Drift</td>
+<td>Daten-Bewegung von einer zur anderen Umgebung kann extra Overhead erzeugen</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="iac-infrastructure-as-a-code-11" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
 <p>IaC wird häufig mit GitOps kombiniert</p>
 <p><strong>GitOps:</strong></p>
 <blockquote>
@@ -1626,7 +1698,7 @@ Assertion 1</p>
 <img src="assets/gitops.png" alt="" /><figcaption>GitOps</figcaption>
 </figure>
 </section>
-<section id="iac-infrastructure-as-a-code-8" class="level1">
+<section id="iac-infrastructure-as-a-code-12" class="level1">
 <h1>IaC: Infrastructure as a Code</h1>
 <p><strong>GitOps:</strong></p>
 <p><strong>Typische GitOps-Operatoren:</strong></p>
@@ -1643,6 +1715,7 @@ Assertion 1</p>
 <h1>RMI</h1>
 <p>https://github.com/jmibanez/jmeter-rmi-plugin</p>
 <p>https://github.com/vezzoni/jmeter-rmi-sampler</p>
+<p>http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invocation-server/</p>
 </section>
 <section id="diskussion-aktueller-verwendeter-rmi-sampler" class="level1">
 <h1>Diskussion: aktueller verwendeter RMI-Sampler</h1>

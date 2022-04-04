@@ -1265,9 +1265,9 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-![](assets/infrastructureascode_600x300-3.png)
-
 > Bei IaC werden normalerweise deklarative Definition (z.B. als .yml-Datei) bevorzugt
+
+![](assets/Declarative-vs-Imperative-Approach.jpg.webp)
 
 # IaC: Infrastructure as a Code
 
@@ -1288,6 +1288,34 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 - Weniger Fehler
 
 - Keine Konfigurationsabweichungen
+
+# IaC: Infrastructure as a Code
+
+![Terraform ist ein gutes Beispiel für Idempotenz](assets/iac-idempotent.gif)
+
+# IaC: Infrastructure as a Code
+
+![mutable vs. immutable](assets/immutable_infrastructure.gif)
+
+# IaC: Infrastructure as a Code
+
+**Mutable Infrastructure:**
+
+| PROs                                                                                 | CONS                                                             |
+| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| Fehler lassen sich schneller identifizieren und beheben                              | Configuration Drift kann das Finden der Fehlerursache erschweren |
+| Updates lassen sich auch auf einzelne Server beziehen und damit schneller einspielen | Versions-Tracking schwierig                                      |
+|                                                                                      | Debugging schwer                                                 |
+
+# IaC: Infrastructure as a Code
+
+**Imutable Infrastructure:**
+
+| PROs                                                | CONS                                                                       |
+| --------------------------------------------------- | -------------------------------------------------------------------------- |
+| Leichtes Tracking und Rollbacks durch Versionierung | Keine Möglichkeit von In-Place Modifikationen                              |
+| Effektives Testen durch Konsistenz                  | Kann unpassend sein, falls die Umgebung eine Legacy-IT ist                 |
+| Kein Konfiguration Drift                            | Daten-Bewegung von einer zur anderen Umgebung kann extra Overhead erzeugen |
 
 # IaC: Infrastructure as a Code
 
@@ -1318,6 +1346,8 @@ IaC wird häufig mit GitOps kombiniert
 https://github.com/jmibanez/jmeter-rmi-plugin
 
 https://github.com/vezzoni/jmeter-rmi-sampler
+
+http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invocation-server/
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
