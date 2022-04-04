@@ -1455,8 +1455,7 @@ Lösung:
 
 **Beispiel in Ordner *docker*:**
 
-`docker-compose up -d`
-`docker-compose scale slave=15`
+`docker-compose up -d --scale slave=15`
 
 **JMX-File in den Container kopieren:** *docker-compose ps* für Container-Name
 
