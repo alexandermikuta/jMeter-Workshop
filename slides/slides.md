@@ -1408,7 +1408,29 @@ Als Alternativen gibt es noch:
 
 # Docker / Docker-Compose
 
+**Docker:**
+
+# Docker / Docker-Compose
+
+**Docker-Compose:**
+
+> Üblicherweise benötigt eine Anwendung mehr als einen Container. Diese manuell zu bauen/starten und untereinander zu verbinden wäre sehr zeitaufwändig.
+
+> hierfür bietet Docker-Compose die Möglichkeit all dies in einem YAML-File zu definieren
+
+# Docker / Docker-Compose
+
+![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
+
 # Kubernetes
+
+![Landscape][assets/cncf.jpg]
+
+# Kubernetes
+
+![Von Docker zu Kubernetes](assets/docker2kubernetes.png)
+
+**Tipp:** Mit [https://kompose.io/](https://kompose.io/) lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
 # CI/CD-Pipeline {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
