@@ -1913,9 +1913,15 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 <!-- section 183 -->
 
-# CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Kubernetes
+
+Kubernetes-Cluster lassen sich auch gut grafisch verwalten: <https://k8slens.dev/>
 
 <!-- section 184 -->
+
+# CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 185 -->
 
 # Github Actions
 
@@ -1926,12 +1932,12 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 185 -->
+<!-- section 186 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 186 -->
+<!-- section 187 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

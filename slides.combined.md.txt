@@ -1523,6 +1523,10 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** Mit [https://kompose.io/](https://kompose.io/) lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
+# Kubernetes
+
+Kubernetes-Cluster lassen sich auch gut grafisch verwalten: [https://k8slens.dev/](https://k8slens.dev/)
+
 # CI/CD-Pipeline {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
 # Github Actions
