@@ -1423,11 +1423,11 @@ Leicht über Plugins erweiterbar:
 
 **Voraussetzungen:**
 
-- jMeter + jmeter-prometheus-plugin (in jmeter/lib/ext): [https://github.com/johrstrom/jmeter-prometheus-plugin/releases](https://github.com/johrstrom/jmeter-prometheus-plugin/releases)
+- **jMeter + jmeter-prometheus-plugin** (in jmeter/lib/ext): [https://github.com/johrstrom/jmeter-prometheus-plugin/releases](https://github.com/johrstrom/jmeter-prometheus-plugin/releases)
 
-- Prometheus: [https://prometheus.io/download/](https://prometheus.io/download/)
+- **Prometheus:** [https://prometheus.io/download/](https://prometheus.io/download/)
 
-- Grafana: [https://grafana.com/get](https://grafana.com/get)
+- **Grafana:** [https://grafana.com/get](https://grafana.com/get)
 
 Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
 `docker run -d --name=grafana -p 3000:3000 grafana/grafana`
