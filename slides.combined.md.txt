@@ -1167,7 +1167,7 @@ Lösung:
 
 # Master-Slave-Setup
 
-**Setup mit Docker:**
+![Setup mit Docker](assets/docker-jmeter.webp)
 
 # Master-Slave-Setup
 
