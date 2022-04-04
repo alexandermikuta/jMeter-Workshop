@@ -1534,6 +1534,9 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 2. Notwendige Pakete installieren
 3. Eigene Files hinzufügen
 4. Definieren wer den Container nutzen soll/kann &rarr; uid/gid in Docker-Containern verstehen
+
+# Docker / Docker-Compose
+
 5. Freigegebene Ports definieren
 6. Entrypoint definieren
 7. Konfigurationsmethode definieren &rarr; siehe [https://12factor.net/config](https://12factor.net/config)
