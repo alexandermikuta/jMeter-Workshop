@@ -1550,19 +1550,19 @@ Assertion 1</p>
 <h1>Large-Scale</h1>
 <p>Zu beachten bei verteilten Large-Scale-Lösungen: <a href="https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/">https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/</a></p>
 <ul>
-<li><p>von Kommandozeile starten → UI verbraucht viel Memory</p></li>
-<li><p>Vermeide UI listener (z.B. Graphen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)</p></li>
-<li><p>Genug Heap-Space bereitstellen, z.B. JVM_ARGS=“-Xms1g -Xmx8g” jmeter.sh</p></li>
-<li><p>Vermeide mehr als 1000 Benutzer/Maschine zu simulieren</p></li>
+<li><p><strong>von Kommandozeile starten</strong> → UI verbraucht viel Memory</p></li>
+<li><p><strong>Vermeide UI listener</strong> (z.B. Graphen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)</p></li>
+<li><p><strong>Genug Heap-Space</strong> bereitstellen, z.B. JVM_ARGS=“-Xms1g -Xmx8g” jmeter.sh</p></li>
+<li><p><strong>Vermeide mehr als 1000 Benutzer/Maschine</strong> zu simulieren</p></li>
 </ul>
 </section>
 <section id="large-scale-1" class="level1">
 <h1>Large-Scale</h1>
 <ul>
-<li><p>lieber mehr Durchschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)</p></li>
-<li><p>Vermeide Beanshell-Skripte</p></li>
-<li><p>Verwende .csv-JTLs anstelle von XML</p></li>
-<li><p>Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist</p>
+<li><p><strong>lieber mehr Durchschnittshardware</strong> (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)</p></li>
+<li><p><strong>Vermeide Beanshell-Skripte</strong></p></li>
+<li><p>Verwende <strong>.csv-JTLs</strong> anstelle von XML</p></li>
+<li><p><strong>Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen</strong>, da die RMI-Kommunikation von jMeter nicht sehr effizient ist</p>
 <ul>
 <li>Darüber hinaus lieber jede JMeter-Instanz einzeln starten</li>
 <li>das JMX vor dem Test-Start hin senden</li>
@@ -1731,6 +1731,12 @@ Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
 </section>
 <section id="containerisierung" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Containerisierung</h1>
+</section>
+<section id="containerisierung-1" class="level1">
+<h1>Containerisierung</h1>
+<figure>
+<img src="assets/containers-vs-virtual-machines.jpg" alt="" /><figcaption>VM vs. Container</figcaption>
+</figure>
 </section>
 <section id="docker-docker-compose" class="level1">
 <h1>Docker / Docker-Compose</h1>

@@ -1222,23 +1222,23 @@ Alternativ zu einem Parameter kann man auch folgende Möglichkeiten nutzen:
 
 Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/](https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/)
 
-- von Kommandozeile starten &rarr; UI verbraucht viel Memory
+- **von Kommandozeile starten** &rarr; UI verbraucht viel Memory
 
-- Vermeide UI listener (z.B. Graphen, Tabellen) &rarr; in ein JTL-File schreiben (z.B. mittels Simple data writer)
+- **Vermeide UI listener** (z.B. Graphen, Tabellen) &rarr; in ein JTL-File schreiben (z.B. mittels Simple data writer)
 
-- Genug Heap-Space bereitstellen, z.B. JVM_ARGS="-Xms1g -Xmx8g" jmeter.sh
+- **Genug Heap-Space** bereitstellen, z.B. JVM_ARGS="-Xms1g -Xmx8g" jmeter.sh
 
-- Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
+- **Vermeide mehr als 1000 Benutzer/Maschine** zu simulieren
 
 # Large-Scale
 
-- lieber mehr Durchschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
+- **lieber mehr Durchschnittshardware** (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
 
-- Vermeide Beanshell-Skripte
+- **Vermeide Beanshell-Skripte**
 
-- Verwende .csv-JTLs anstelle von XML
+- Verwende **.csv-JTLs** anstelle von XML
 
-- Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
+- **Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen**, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
   - Darüber hinaus lieber jede JMeter-Instanz einzeln starten
   - das JMX vor dem Test-Start hin senden
   - nach dem Test das JTL-File holen
@@ -1403,6 +1403,10 @@ Als Alternativen gibt es noch:
 ![](assets/yourkit.webp)
 
 # Containerisierung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+
+# Containerisierung
+
+![VM vs. Container](assets/containers-vs-virtual-machines.jpg)
 
 # Docker / Docker-Compose
 

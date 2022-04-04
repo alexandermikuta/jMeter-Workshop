@@ -1514,25 +1514,25 @@ Alternativ zu einem Parameter kann man auch folgende Möglichkeiten nutzen:
 
 Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/2017/10/12/optimize-jmeter-for-large-scale-tests/>
 
--   von Kommandozeile starten → UI verbraucht viel Memory
+-   **von Kommandozeile starten** → UI verbraucht viel Memory
 
--   Vermeide UI listener (z.B. Graphen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)
+-   **Vermeide UI listener** (z.B. Graphen, Tabellen) → in ein JTL-File schreiben (z.B. mittels Simple data writer)
 
--   Genug Heap-Space bereitstellen, z.B. JVM\_ARGS="-Xms1g -Xmx8g" jmeter.sh
+-   **Genug Heap-Space** bereitstellen, z.B. JVM\_ARGS="-Xms1g -Xmx8g" jmeter.sh
 
--   Vermeide mehr als 1000 Benutzer/Maschine zu simulieren
+-   **Vermeide mehr als 1000 Benutzer/Maschine** zu simulieren
 
 <!-- section 142 -->
 
 # Large-Scale
 
--   lieber mehr Durchschnittshardware (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
+-   **lieber mehr Durchschnittshardware** (z.B. 4core, 16GB) als einige wenige Superrechner (z.B. 16core, 128GB)
 
--   Vermeide Beanshell-Skripte
+-   **Vermeide Beanshell-Skripte**
 
--   Verwende .csv-JTLs anstelle von XML
+-   Verwende **.csv-JTLs** anstelle von XML
 
--   Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
+-   **Distributed Mode funktioniert gut mit 20-30 (mit Glück 40-50) Maschinen**, da die RMI-Kommunikation von jMeter nicht sehr effizient ist
 
     -   Darüber hinaus lieber jede JMeter-Instanz einzeln starten
     -   das JMX vor dem Test-Start hin senden
@@ -1749,17 +1749,23 @@ Als Alternativen gibt es noch:
 
 <!-- section 168 -->
 
-# Docker / Docker-Compose
+# Containerisierung
+
+![VM vs. Container](assets/containers-vs-virtual-machines.jpg)
 
 <!-- section 169 -->
 
-# Kubernetes
+# Docker / Docker-Compose
 
 <!-- section 170 -->
 
-# CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Kubernetes
 
 <!-- section 171 -->
+
+# CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 172 -->
 
 # Github Actions
 
@@ -1770,14 +1776,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 172 -->
+<!-- section 173 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 173 -->
+<!-- section 174 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 174 -->
+<!-- section 175 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
