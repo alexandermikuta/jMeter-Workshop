@@ -1572,7 +1572,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 **Typischer IaC Workflow mit konkreten Tools:**
 
-![](assets/C003_solution1.jpg)
+![](assets/C003_solution1.jpg){height="70%" width="70%"}
 
 <!-- section 148 -->
 
