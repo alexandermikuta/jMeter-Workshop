@@ -1747,17 +1747,41 @@ Als Alternativen gibt es noch:
 
 <!-- section 168 -->
 
-# Containerisierung
+# VM vs. Container
 
-![VM vs. Container](assets/containers-vs-virtual-machines.jpg)
+![](assets/containers-vs-virtual-machines.jpg)
 
 <!-- section 169 -->
+
+# VM vs. Container
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------
+  VM                                                                   Docker
+  -------------------------------------------------------------------- ----------------------------------------------------------------------------------
+  Jede VM läuft auf einem eigenen OS                                   Alle Container teilen den gleichen Kernel und Host
+
+  Boot-Zeit von wenigen Minuten                                        Container instanziiert in wenigen Sekunden
+
+  VM-Snapshots werden sparsam genutzt                                  Images werden inkrementell aufeinander in Layern gebaut. Viele Images/Snapshots.
+
+  keine effektiven Diffs. Nicht Versions-kontrolliert                  Images können gedifft und Versions-kontrolliert werden. Z.B. Dockerhub
+
+  Nur wenige VMs auf einem Laptop benutzbar                            tausende Container können problemlos auf einem Laptop laufen
+
+  Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden   Mehrere Docker-Container können von einem Docker-Image gestartet werden
+  -------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!-- section 170 -->
 
 # Docker / Docker-Compose
 
 **Docker:**
 
-<!-- section 170 -->
+Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alternativen Podman und CRI-O einen Blick wert.
+
+-   <https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#>
+
+<!-- section 171 -->
 
 # Docker / Docker-Compose
 
@@ -1767,19 +1791,19 @@ Als Alternativen gibt es noch:
 
 > hierfür bietet Docker-Compose die Möglichkeit all dies in einem YAML-File zu definieren
 
-<!-- section 171 -->
+<!-- section 172 -->
 
 # Docker / Docker-Compose
 
 ![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
 
-<!-- section 172 -->
+<!-- section 173 -->
 
 # Kubernetes
 
 \[Landscape\]\[assets/cncf.jpg\]
 
-<!-- section 173 -->
+<!-- section 174 -->
 
 # Kubernetes
 
@@ -1787,11 +1811,11 @@ Als Alternativen gibt es noch:
 
 **Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
-<!-- section 174 -->
+<!-- section 175 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 175 -->
+<!-- section 176 -->
 
 # Github Actions
 
@@ -1802,14 +1826,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 176 -->
+<!-- section 177 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 177 -->
+<!-- section 178 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 178 -->
+<!-- section 179 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

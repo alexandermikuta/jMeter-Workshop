@@ -1728,15 +1728,58 @@ Assertion 1</p>
 <section id="containerisierung" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Containerisierung</h1>
 </section>
-<section id="containerisierung-1" class="level1">
-<h1>Containerisierung</h1>
-<figure>
-<img src="assets/containers-vs-virtual-machines.jpg" alt="" /><figcaption>VM vs. Container</figcaption>
-</figure>
+<section id="vm-vs.-container" class="level1">
+<h1>VM vs. Container</h1>
+<p><img src="assets/containers-vs-virtual-machines.jpg" /></p>
+</section>
+<section id="vm-vs.-container-1" class="level1">
+<h1>VM vs. Container</h1>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>VM</th>
+<th>Docker</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jede VM läuft auf einem eigenen OS</td>
+<td>Alle Container teilen den gleichen Kernel und Host</td>
+</tr>
+<tr class="even">
+<td>Boot-Zeit von wenigen Minuten</td>
+<td>Container instanziiert in wenigen Sekunden</td>
+</tr>
+<tr class="odd">
+<td>VM-Snapshots werden sparsam genutzt</td>
+<td>Images werden inkrementell aufeinander in Layern gebaut. Viele Images/Snapshots.</td>
+</tr>
+<tr class="even">
+<td>keine effektiven Diffs. Nicht Versions-kontrolliert</td>
+<td>Images können gedifft und Versions-kontrolliert werden. Z.B. Dockerhub</td>
+</tr>
+<tr class="odd">
+<td>Nur wenige VMs auf einem Laptop benutzbar</td>
+<td>tausende Container können problemlos auf einem Laptop laufen</td>
+</tr>
+<tr class="even">
+<td>Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden</td>
+<td>Mehrere Docker-Container können von einem Docker-Image gestartet werden</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="docker-docker-compose" class="level1">
 <h1>Docker / Docker-Compose</h1>
 <p><strong>Docker:</strong></p>
+<p>Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alternativen Podman und CRI-O einen Blick wert.</p>
+<ul>
+<li><a href="https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#">https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#</a></li>
+</ul>
 </section>
 <section id="docker-docker-compose-1" class="level1">
 <h1>Docker / Docker-Compose</h1>

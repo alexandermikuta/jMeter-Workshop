@@ -1402,13 +1402,28 @@ Als Alternativen gibt es noch:
 
 # Containerisierung {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
-# Containerisierung
+# VM vs. Container
 
-![VM vs. Container](assets/containers-vs-virtual-machines.jpg)
+![](assets/containers-vs-virtual-machines.jpg)
+
+# VM vs. Container
+
+| VM                                                                 | Docker                                                                           |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| Jede VM läuft auf einem eigenen OS                                 | Alle Container teilen den gleichen Kernel und Host                               |
+| Boot-Zeit von wenigen Minuten                                      | Container instanziiert in wenigen Sekunden                                       |
+| VM-Snapshots werden sparsam genutzt                                | Images werden inkrementell aufeinander in Layern gebaut. Viele Images/Snapshots. |
+| keine effektiven Diffs. Nicht Versions-kontrolliert                | Images können gedifft und Versions-kontrolliert werden. Z.B. Dockerhub           |
+| Nur wenige VMs auf einem Laptop benutzbar                          | tausende Container können problemlos auf einem Laptop laufen                     |
+| Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden | Mehrere Docker-Container können von einem Docker-Image gestartet werden          |
 
 # Docker / Docker-Compose
 
 **Docker:**
+
+Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alternativen Podman und CRI-O einen Blick wert.
+
+- [https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#](https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#)
 
 # Docker / Docker-Compose
 
