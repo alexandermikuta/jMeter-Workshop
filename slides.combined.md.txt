@@ -1543,6 +1543,12 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 8. Daten externalisieren &rarr; persistente Daten sollten nicht innerhalb des Containers liegen
 9. Logs bedenken &rarr; z.B. Rotating logs
 
+# Docker / Docker-Compose
+
+**Beispiel:** Docker mit jMeter
+
+[https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how](https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how)
+
 # Kubernetes
 
 ![Landscape](assets/cncf.jpg){ height=80% width=80% }

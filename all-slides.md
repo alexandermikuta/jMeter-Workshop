@@ -1940,11 +1940,19 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 <!-- section 186 -->
 
+# Docker / Docker-Compose
+
+**Beispiel:** Docker mit jMeter
+
+<https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how>
+
+<!-- section 187 -->
+
 # Kubernetes
 
 ![Landscape](assets/cncf.jpg){height="80%" width="80%"}
 
-<!-- section 187 -->
+<!-- section 188 -->
 
 # Kubernetes
 
@@ -1952,17 +1960,17 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
-<!-- section 188 -->
+<!-- section 189 -->
 
 # Kubernetes
 
 Kubernetes-Cluster lassen sich auch gut grafisch verwalten: <https://k8slens.dev/>
 
-<!-- section 189 -->
+<!-- section 190 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 190 -->
+<!-- section 191 -->
 
 # Github Actions
 
@@ -1973,12 +1981,12 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 191 -->
+<!-- section 192 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 192 -->
+<!-- section 193 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
