@@ -2011,27 +2011,21 @@ Kubernetes UI: <https://k8slens.dev/>
 
 # Was ist CI/CD
 
-![](assets/CICD_CICD.png)
-
-<!-- section 197 -->
-
-# Was ist CI/CD
-
 ![](assets/Asset-33-1.png)
 
-<!-- section 198 -->
+<!-- section 197 -->
 
 # Github Actions
 
 > "GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline."
 
-<!-- section 199 -->
+<!-- section 198 -->
 
 # Github Actions
 
 ![Overview Github-Actions](assets/overview-actions-simple.png)
 
-<!-- section 200 -->
+<!-- section 199 -->
 
 # Github Actions
 
@@ -2042,6 +2036,10 @@ Kubernetes UI: <https://k8slens.dev/>
 -   **Event:** Aktivitäten die einen Workflow-Run triggern, z.B. Push ins Repository
 
 -   **Runner:** Eine Maschine mit installiertem Github Actions Runner. Können auch selbstgehostet sein
+
+<!-- section 200 -->
+
+# Github Actions
 
 **Kern-Konzepte:**
 
