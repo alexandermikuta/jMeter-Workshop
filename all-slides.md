@@ -1547,10 +1547,8 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 # IaC: Infrastructure as a Code
 
 > Mit IaC (Infrastructure as Code) wird die Infrastruktur durch Code -- und nicht durch manuelle Prozesse -- verwaltet und provisioniert.
-> Mit IaC werden Konfigurationsdateien erstellt, die die gesamte Infrastrukturspezifikation enthalten
-> Es stellt außerdem sicher, dass Sie jedes Mal dieselbe Umgebung provisionieren.
-
-> Ein wichtiger Bestandteil von IaC ist die Versionskontrolle. Wie jede andere Software-Quellcodedatei sollten die Konfigurationsdateien der Quellkontrolle unterliegen.
+>
+> Mit IaC werden Konfigurationsdateien erstellt, die die gesamte Infrastrukturspezifikation enthalten wodurch immer dieselbe Umgebung provisioniert wird.
 
 <!-- section 145 -->
 
