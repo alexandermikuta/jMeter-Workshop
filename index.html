@@ -1820,8 +1820,8 @@ Assertion 1</p>
 </section>
 <section id="jmeter-prometheus-grafana-4" class="level1">
 <h1>jMeter + Prometheus + Grafana</h1>
-<p>Kubernetes Grafana-Prometheus: <a href="https://github.com/alexandermikuta/metrics-helmfile">https://github.com/alexandermikuta/metrics-helmfile</a></p>
-<p>Beschreibung der Konfiguration: <a href="https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n">https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n</a></p>
+<p><strong>Kubernetes Grafana-Prometheus:</strong> <a href="https://github.com/alexandermikuta/metrics-helmfile">https://github.com/alexandermikuta/metrics-helmfile</a></p>
+<p><strong>Beschreibung der Konfiguration:</strong> <a href="https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n">https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n</a></p>
 </section>
 <section id="yourkit-profiler" class="level1">
 <h1>YourKit-Profiler</h1>
@@ -1857,8 +1857,8 @@ Assertion 1</p>
 <h1>VM vs. Container</h1>
 <table>
 <colgroup>
-<col style="width: 45%" />
-<col style="width: 54%" />
+<col style="width: 30%" />
+<col style="width: 69%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1879,15 +1879,32 @@ Assertion 1</p>
 <td>VM-Snapshots werden sparsam genutzt</td>
 <td>Images werden inkrementell aufeinander in Layern gebaut. Viele Images/Snapshots.</td>
 </tr>
-<tr class="even">
+</tbody>
+</table>
+</section>
+<section id="vm-vs.-container-2" class="level1">
+<h1>VM vs. Container</h1>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>VM</th>
+<th>Docker</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td>keine effektiven Diffs. Nicht Versions-kontrolliert</td>
 <td>Images können gedifft und Versions-kontrolliert werden. Z.B. Dockerhub</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Nur wenige VMs auf einem Laptop benutzbar</td>
 <td>tausende Container können problemlos auf einem Laptop laufen</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden</td>
 <td>Mehrere Docker-Container können von einem Docker-Image gestartet werden</td>
 </tr>

@@ -1452,9 +1452,9 @@ scrape_configs:
 
 # jMeter + Prometheus + Grafana
 
-Kubernetes Grafana-Prometheus: [https://github.com/alexandermikuta/metrics-helmfile](https://github.com/alexandermikuta/metrics-helmfile)
+**Kubernetes Grafana-Prometheus:** [https://github.com/alexandermikuta/metrics-helmfile](https://github.com/alexandermikuta/metrics-helmfile)
 
-Beschreibung der Konfiguration: [https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n](https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n)
+**Beschreibung der Konfiguration:** [https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n](https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n)
 
 # YourKit-Profiler
 
@@ -1490,14 +1490,19 @@ Als Alternativen gibt es noch:
 
 # VM vs. Container
 
-| VM                                                                 | Docker                                                                           |
-| ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| Jede VM läuft auf einem eigenen OS                                 | Alle Container teilen den gleichen Kernel und Host                               |
-| Boot-Zeit von wenigen Minuten                                      | Container instanziiert in wenigen Sekunden                                       |
-| VM-Snapshots werden sparsam genutzt                                | Images werden inkrementell aufeinander in Layern gebaut. Viele Images/Snapshots. |
-| keine effektiven Diffs. Nicht Versions-kontrolliert                | Images können gedifft und Versions-kontrolliert werden. Z.B. Dockerhub           |
-| Nur wenige VMs auf einem Laptop benutzbar                          | tausende Container können problemlos auf einem Laptop laufen                     |
-| Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden | Mehrere Docker-Container können von einem Docker-Image gestartet werden          |
+| VM                                  | Docker                                                                           |
+| ----------------------------------- | -------------------------------------------------------------------------------- |
+| Jede VM läuft auf einem eigenen OS  | Alle Container teilen den gleichen Kernel und Host                               |
+| Boot-Zeit von wenigen Minuten       | Container instanziiert in wenigen Sekunden                                       |
+| VM-Snapshots werden sparsam genutzt | Images werden inkrementell aufeinander in Layern gebaut. Viele Images/Snapshots. |
+
+# VM vs. Container
+
+| VM                                                                 | Docker                                                                  |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| keine effektiven Diffs. Nicht Versions-kontrolliert                | Images können gedifft und Versions-kontrolliert werden. Z.B. Dockerhub  |
+| Nur wenige VMs auf einem Laptop benutzbar                          | tausende Container können problemlos auf einem Laptop laufen            |
+| Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden | Mehrere Docker-Container können von einem Docker-Image gestartet werden |
 
 # Docker / Docker-Compose
 
