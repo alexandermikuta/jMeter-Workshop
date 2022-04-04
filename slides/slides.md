@@ -1177,9 +1177,9 @@ Lösung:
 
 `docker-compose up -d`
 
-**JMX-File in den Container kopieren:** _docker ps_ für Container-ID
+**JMX-File in den Container kopieren:** _docker ps_ für Container-Name
 
-`docker exec -i <container-running-on-master-node> sh -c 'cat > /jmeter/apache-jmeter-2.13/bin/jmeter-docker.jmx' < jmeter-docker.jmx`
+`docker cp <jmx_to_copy> <container-name>:/<target-path in container>`
 
 **Start des Load-Tests:**
 
