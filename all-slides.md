@@ -1456,14 +1456,16 @@ Lösung:
 **Beispiel in Ordner *docker*:**
 
 `docker-compose up -d`
+`docker-compose scale slave=15`
 
-**JMX-File in den Container kopieren:** *docker ps* für Container-Name
+**JMX-File in den Container kopieren:** *docker-compose ps* für Container-Name
 
 `docker cp <jmx_to_copy> <container-name>:/<target-path in container>`
 
 **Start des Load-Tests:**
 
 `docker exec -it <container-on-master-node> bash`
+`jmeter -n -t /jmeter-docker.jmx -R172.19.0.16,172.19.0.15`
 
 <!-- section 136 -->
 

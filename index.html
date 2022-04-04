@@ -1505,11 +1505,13 @@ Assertion 1</p>
 <h1>Master-Slave-Setup</h1>
 <p><a href="https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/">https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/</a></p>
 <p><strong>Beispiel in Ordner <em>docker</em>:</strong></p>
-<p><code>docker-compose up -d</code></p>
-<p><strong>JMX-File in den Container kopieren:</strong> <em>docker ps</em> für Container-Name</p>
+<p><code>docker-compose up -d</code>
+<code>docker-compose scale slave=15</code></p>
+<p><strong>JMX-File in den Container kopieren:</strong> <em>docker-compose ps</em> für Container-Name</p>
 <p><code>docker cp &lt;jmx_to_copy&gt; &lt;container-name&gt;:/&lt;target-path in container&gt;</code></p>
 <p><strong>Start des Load-Tests:</strong></p>
-<p><code>docker exec -it &lt;container-on-master-node&gt; bash</code></p>
+<p><code>docker exec -it &lt;container-on-master-node&gt; bash</code>
+<code>jmeter -n -t /jmeter-docker.jmx -R172.19.0.16,172.19.0.15</code></p>
 </section>
 <section id="master-slave-setup-11" class="level1">
 <h1>Master-Slave-Setup</h1>
