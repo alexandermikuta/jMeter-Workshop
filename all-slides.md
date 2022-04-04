@@ -1774,7 +1774,7 @@ Leicht über Plugins erweiterbar:
 
 # jMeter + Prometheus + Grafana
 
-![](assets/kubernetes_prom_diagram2.png)
+![](assets/kubernetes_prom_diagram2.png){height="70%" width="70%"}
 
 <!-- section 170 -->
 
@@ -1813,6 +1813,12 @@ prometheus.yml
 
 <!-- section 172 -->
 
+# jMeter + Prometheus + Grafana
+
+Kubernetes Grafana-Prometheus: <https://github.com/alexandermikuta/metrics-helmfile>
+
+<!-- section 173 -->
+
 # YourKit-Profiler
 
 **Download:** <https://www.yourkit.com/>
@@ -1823,7 +1829,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 173 -->
+<!-- section 174 -->
 
 # YourKit-Profiler
 
@@ -1837,23 +1843,23 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 174 -->
+<!-- section 175 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 175 -->
+<!-- section 176 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 176 -->
+<!-- section 177 -->
 
 # VM vs. Container
 
 ![](assets/containers-vs-virtual-machines.jpg)
 
-<!-- section 177 -->
+<!-- section 178 -->
 
 # VM vs. Container
 
@@ -1873,7 +1879,7 @@ Als Alternativen gibt es noch:
   Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden   Mehrere Docker-Container können von einem Docker-Image gestartet werden
   -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 178 -->
+<!-- section 179 -->
 
 # Docker / Docker-Compose
 
@@ -1883,7 +1889,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 -   <https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#>
 
-<!-- section 179 -->
+<!-- section 180 -->
 
 # Docker / Docker-Compose
 
@@ -1893,19 +1899,19 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 > hierfür bietet Docker-Compose die Möglichkeit all dies in einem YAML-File zu definieren
 
-<!-- section 180 -->
+<!-- section 181 -->
 
 # Docker / Docker-Compose
 
 ![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
 
-<!-- section 181 -->
+<!-- section 182 -->
 
 # Kubernetes
 
 \[Landscape\]\[assets/cncf.jpg\]
 
-<!-- section 182 -->
+<!-- section 183 -->
 
 # Kubernetes
 
@@ -1913,17 +1919,17 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
-<!-- section 183 -->
+<!-- section 184 -->
 
 # Kubernetes
 
 Kubernetes-Cluster lassen sich auch gut grafisch verwalten: <https://k8slens.dev/>
 
-<!-- section 184 -->
+<!-- section 185 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 185 -->
+<!-- section 186 -->
 
 # Github Actions
 
@@ -1934,12 +1940,12 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 186 -->
+<!-- section 187 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 187 -->
+<!-- section 188 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}

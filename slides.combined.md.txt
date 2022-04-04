@@ -1417,7 +1417,7 @@ Leicht über Plugins erweiterbar:
 
 # jMeter + Prometheus + Grafana
 
-![](assets/kubernetes_prom_diagram2.png)
+![](assets/kubernetes_prom_diagram2.png){ height=70% width=70% }
 
 # jMeter + Prometheus + Grafana
 
@@ -1451,6 +1451,10 @@ scrape_configs:
 ```
 
 `prometheus.exe --config.file=prometheus.yml`
+
+# jMeter + Prometheus + Grafana
+
+Kubernetes Grafana-Prometheus: [https://github.com/alexandermikuta/metrics-helmfile](https://github.com/alexandermikuta/metrics-helmfile)
 
 # YourKit-Profiler
 
