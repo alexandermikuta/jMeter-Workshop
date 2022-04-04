@@ -1927,19 +1927,24 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 2.  Notwendige Pakete installieren
 3.  Eigene Files hinzufügen
 4.  Definieren wer den Container nutzen soll/kann → uid/gid in Docker-Containern verstehen
+
+<!-- section 185 -->
+
+# Docker / Docker-Compose
+
 5.  Freigegebene Ports definieren
 6.  Entrypoint definieren
 7.  Konfigurationsmethode definieren → siehe <https://12factor.net/config>
 8.  Daten externalisieren → persistente Daten sollten nicht innerhalb des Containers liegen
 9.  Logs bedenken → z.B. Rotating logs
 
-<!-- section 185 -->
+<!-- section 186 -->
 
 # Kubernetes
 
 ![Landscape](assets/cncf.jpg)
 
-<!-- section 186 -->
+<!-- section 187 -->
 
 # Kubernetes
 
@@ -1947,17 +1952,17 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
-<!-- section 187 -->
+<!-- section 188 -->
 
 # Kubernetes
 
 Kubernetes-Cluster lassen sich auch gut grafisch verwalten: <https://k8slens.dev/>
 
-<!-- section 188 -->
+<!-- section 189 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 189 -->
+<!-- section 190 -->
 
 # Github Actions
 
@@ -1968,12 +1973,12 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 190 -->
+<!-- section 191 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 191 -->
+<!-- section 192 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
