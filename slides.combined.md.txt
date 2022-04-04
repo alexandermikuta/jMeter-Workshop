@@ -1175,12 +1175,12 @@ Lösung:
 
 **Beispiel in Ordner _docker_:**
 
-`docker-compose up -d --scale server=15`
+`docker-compose up -d --scale server=15 --scale`
 
 **Start des Load-Tests:**
 
 `docker exec -it <container-on-master-node> bash`
-`jmeter -n -t /jmeter-docker.jmx -R172.19.0.16,172.19.0.15`
+`jmeter -n -t /jmeter-docker.jmx -l result.jtl -R docker-server-1,docker-server-2`
 
 # Master-Slave-Setup
 
