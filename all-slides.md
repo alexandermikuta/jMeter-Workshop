@@ -1696,6 +1696,8 @@ IaC wird häufig mit GitOps kombiniert
 
 # RMI
 
+**Existierende RMI-Samplern auf Github:**
+
 https://github.com/jmibanez/jmeter-rmi-plugin
 
 https://github.com/vezzoni/jmeter-rmi-sampler
@@ -1708,17 +1710,17 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 <!-- section 161 -->
 
-# Vergleich mit existierende RMI-Samplern auf Github
-
-<!-- section 162 -->
-
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 163 -->
+<!-- section 162 -->
 
 # Prometheus
 
 > "Prometheus ist eine freie Software zum Service-Monitoring und Alerting von IT-Infrastrukturen. Es zeichnet Echtzeitmetriken in einer Zeitreihendatenbank auf, die per HTTP von Anwendungen abgefragt werden und ermöglicht Echtzeit-Warnmeldungen"
+
+<!-- section 163 -->
+
+# Prometheus
 
 ![Prometheus](assets/prometheus-graph.png)
 
