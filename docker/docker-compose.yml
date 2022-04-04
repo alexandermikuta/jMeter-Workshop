@@ -1,20 +1,27 @@
-version: '2'
+version: '3'
 
 services:
-
   master:
-    image: vinsdocker/jmmaster
-    container_name: master
+    build: ..
+    command: master
     tty: true
-    hostname: master
+    ports:
+      - "60000"
+    volumes:
+      - "./test/:/jmeter/sample/"
     networks:
-      - vins
-  slave:
-    image: vinsdocker/jmserver
+      - jmeter-network
+  server:
+    image: pedrocesarti/jmeter-docker:latest
+    command: server
     tty: true
+    ports:
+      - "50000"
+      - "1099"
     networks:
-      - vins
+      - jmeter-network
+    depends_on:
+      - master
 
 networks:
-  vins:
-    driver: bridge
+  jmeter-network:
