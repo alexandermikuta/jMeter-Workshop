@@ -1956,7 +1956,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 # Kubernetes
 
-![Von Docker zu Kubernetes](assets/docker2kubernetes.png){height="760%" width="60%"}
+![Von Docker zu Kubernetes](assets/docker2kubernetes.png){height="60%" width="60%"}
 
 **Tipp:** <https://kompose.io/> zur Docker-Compose-Konvertierung nach Kubernetes
 
@@ -1964,7 +1964,9 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 # Kubernetes
 
-Kubernetes-Cluster lassen sich auch gut grafisch verwalten: <https://k8slens.dev/>
+Kubernetes UI: <https://k8slens.dev/>
+
+![](assets/header-lens.png){height="50%" width="50%"}
 
 <!-- section 190 -->
 
