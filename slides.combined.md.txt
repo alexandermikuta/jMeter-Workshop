@@ -1551,6 +1551,14 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 # Kubernetes
 
+> "Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation"
+
+# Kubernetes
+
+![Architecture](assets/taming-kubernetes-revolution-7.webp){ height=80% width=80% }
+
+# Kubernetes
+
 ![Landscape](assets/cncf.jpg){ height=80% width=80% }
 
 # Kubernetes

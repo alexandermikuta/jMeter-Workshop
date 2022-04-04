@@ -1950,9 +1950,21 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 # Kubernetes
 
-![Landscape](assets/cncf.jpg){height="80%" width="80%"}
+> "Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation"
 
 <!-- section 188 -->
+
+# Kubernetes
+
+![Architecture](assets/taming-kubernetes-revolution-7.webp){height="80%" width="80%"}
+
+<!-- section 189 -->
+
+# Kubernetes
+
+![Landscape](assets/cncf.jpg){height="80%" width="80%"}
+
+<!-- section 190 -->
 
 # Kubernetes
 
@@ -1960,7 +1972,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** <https://kompose.io/> zur Docker-Compose-Konvertierung nach Kubernetes
 
-<!-- section 189 -->
+<!-- section 191 -->
 
 # Kubernetes
 
@@ -1968,11 +1980,11 @@ Kubernetes UI: <https://k8slens.dev/>
 
 ![](assets/header-lens.png){height="50%" width="50%"}
 
-<!-- section 190 -->
+<!-- section 192 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 191 -->
+<!-- section 193 -->
 
 # Github Actions
 
@@ -1983,12 +1995,12 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 192 -->
+<!-- section 194 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 193 -->
+<!-- section 195 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
