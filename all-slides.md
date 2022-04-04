@@ -1606,15 +1606,15 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-Terraform verwendet den Idempotenten Ansatz im Gegensatz zu z.B. Ansible
-
-![Terraform Beispiel-Code](assets/terraform-example.png)
+![mutable vs. immutable](assets/immutable_infrastructure.gif)
 
 <!-- section 151 -->
 
 # IaC: Infrastructure as a Code
 
-![mutable vs. immutable](assets/immutable_infrastructure.gif)
+Terraform verwendet den Immutable Ansatz im Gegensatz zu z.B. Ansible
+
+![Terraform Beispiel-Code](assets/terraform-example.png)
 
 <!-- section 152 -->
 
