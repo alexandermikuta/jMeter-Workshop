@@ -1938,9 +1938,26 @@ Assertion 1</p>
 <img src="assets/life-cycle-containerized-apps-docker-cli.png" alt="" /><figcaption>Docker Workflow</figcaption>
 </figure>
 </section>
+<section id="docker-docker-compose-3" class="level1">
+<h1>Docker / Docker-Compose</h1>
+<p><strong>“Dockerisieren” beliebiger Apps:</strong> <a href="https://hackernoon.com/how-to-dockerize-any-application-b60ad00e76da">https://hackernoon.com/how-to-dockerize-any-application-b60ad00e76da</a></p>
+<ol type="1">
+<li>Basis-Image auswählen → idealerweise ein sehr kleines, z.B. Alpine-Images</li>
+<li>Notwendige Pakete installieren</li>
+<li>Eigene Files hinzufügen</li>
+<li>Definieren wer den Container nutzen soll/kann → uid/gid in Docker-Containern verstehen</li>
+<li>Freigegebene Ports definieren</li>
+<li>Entrypoint definieren</li>
+<li>Konfigurationsmethode definieren → siehe <a href="https://12factor.net/config">https://12factor.net/config</a></li>
+<li>Daten externalisieren → persistente Daten sollten nicht innerhalb des Containers liegen</li>
+<li>Logs bedenken → z.B. Rotating logs</li>
+</ol>
+</section>
 <section id="kubernetes" class="level1">
 <h1>Kubernetes</h1>
-<p>[Landscape][assets/cncf.jpg]</p>
+<figure>
+<img src="assets/cncf.jpg" alt="" /><figcaption>Landscape</figcaption>
+</figure>
 </section>
 <section id="kubernetes-1" class="level1">
 <h1>Kubernetes</h1>

@@ -1526,9 +1526,23 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 ![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
 
+# Docker / Docker-Compose
+
+**"Dockerisieren" beliebiger Apps:** [https://hackernoon.com/how-to-dockerize-any-application-b60ad00e76da](https://hackernoon.com/how-to-dockerize-any-application-b60ad00e76da)
+
+1. Basis-Image auswählen &rarr; idealerweise ein sehr kleines, z.B. Alpine-Images
+2. Notwendige Pakete installieren
+3. Eigene Files hinzufügen
+4. Definieren wer den Container nutzen soll/kann &rarr; uid/gid in Docker-Containern verstehen
+5. Freigegebene Ports definieren
+6. Entrypoint definieren
+7. Konfigurationsmethode definieren &rarr; siehe [https://12factor.net/config](https://12factor.net/config)
+8. Daten externalisieren &rarr; persistente Daten sollten nicht innerhalb des Containers liegen
+9. Logs bedenken &rarr; z.B. Rotating logs
+
 # Kubernetes
 
-![Landscape][assets/cncf.jpg]
+![Landscape](assets/cncf.jpg)
 
 # Kubernetes
 
