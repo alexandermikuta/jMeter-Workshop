@@ -1,37 +1,20 @@
-version: "3.1"
+version: '2'
+
 services:
+
   master:
-    image: ajeetraina/apache-jmeter-master
+    image: vinsdocker/jmmaster
+    container_name: master
     tty: true
-    ports:
-      - "60000"
+    hostname: master
     networks:
-      - jm-network
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
-        delay: 10s
-        max_attempts: 3
-        window: 120s
-      placement:
-          constraints: [node.role == manager]
+      - vins
   slave:
-    image: ajeetraina/apache-jmeter-server
+    image: vinsdocker/jmserver
     tty: true
     networks:
-      - jm-network
-    ports:
-      - "50000"
-      - "1099"
-    deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
-        delay: 10s
-        max_attempts: 3
-        window: 120s
-      placement:
-        constraints: [node.role == worker]
+      - vins
+
 networks:
-  jm-network:
+  vins:
+    driver: bridge
