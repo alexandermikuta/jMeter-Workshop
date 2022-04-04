@@ -1524,7 +1524,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 # Docker / Docker-Compose
 
-![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
+![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png){ height=70% width=70% }
 
 # Docker / Docker-Compose
 
