@@ -1460,7 +1460,7 @@ Lösung:
 **Start des Load-Tests:**
 
 `docker exec -it <container-on-master-node> bash`
-`jmeter -n -t /jmeter-docker.jmx -l result.jtl -R docker-server-1,docker-server-2`
+`jmeter -n -t /jmeter/test/sample.jmx -l result.jtl -R docker-server-1,docker-server-2`
 
 <!-- section 136 -->
 

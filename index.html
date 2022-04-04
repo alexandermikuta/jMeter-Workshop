@@ -1508,7 +1508,7 @@ Assertion 1</p>
 <p><code>docker-compose up -d --scale server=15 --scale</code></p>
 <p><strong>Start des Load-Tests:</strong></p>
 <p><code>docker exec -it &lt;container-on-master-node&gt; bash</code>
-<code>jmeter -n -t /jmeter-docker.jmx -l result.jtl -R docker-server-1,docker-server-2</code></p>
+<code>jmeter -n -t /jmeter/test/sample.jmx -l result.jtl -R docker-server-1,docker-server-2</code></p>
 </section>
 <section id="master-slave-setup-11" class="level1">
 <h1>Master-Slave-Setup</h1>
