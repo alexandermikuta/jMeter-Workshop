@@ -1491,7 +1491,6 @@ Assertion 1</p>
 <ul>
 <li>wollen wir für 10000 Nutzer testen und haben 10 Slaves → Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!</li>
 </ul></li>
-<li><p>Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen</p></li>
 </ul>
 </section>
 <section id="master-slave-setup-8" class="level1">
@@ -1500,15 +1499,19 @@ Assertion 1</p>
 </section>
 <section id="master-slave-setup-9" class="level1">
 <h1>Master-Slave-Setup</h1>
-<p><strong>Setup mit Docker:</strong> <a href="https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/">https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/</a></p>
+<p><strong>Setup mit Docker:</strong></p>
+</section>
+<section id="master-slave-setup-10" class="level1">
+<h1>Master-Slave-Setup</h1>
+<p><a href="https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/">https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/</a></p>
 <p><strong>Beispiel in Ordner <em>docker</em>:</strong></p>
 <p><code>docker-compose up -d</code></p>
-<p><strong>JMX-File in den Container kopieren:</strong> mit <em>docker ps</em> kann man die Container-ID sehen</p>
+<p><strong>JMX-File in den Container kopieren:</strong> <em>docker ps</em> für Container-ID</p>
 <p><code>docker exec -i &lt;container-running-on-master-node&gt; sh -c 'cat &gt; /jmeter/apache-jmeter-2.13/bin/jmeter-docker.jmx' &lt; jmeter-docker.jmx</code></p>
 <p><strong>Start des Load-Tests:</strong></p>
 <p><code>docker exec -it &lt;container-on-master-node&gt; bash</code></p>
 </section>
-<section id="master-slave-setup-10" class="level1">
+<section id="master-slave-setup-11" class="level1">
 <h1>Master-Slave-Setup</h1>
 <figure>
 <img src="assets/jm-master-slave-host-docker.png" alt="" /><figcaption>jMeter in Docker</figcaption>

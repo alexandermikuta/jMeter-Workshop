@@ -1161,21 +1161,23 @@ Lösung:
 
   - wollen wir für 10000 Nutzer testen und haben 10 Slaves &rarr; Im Testplan muss für 1000Nutzer geplant werden, damit wir am Ende auf insgesamt 10000 kommen!
 
-- Über den if-Controller lassen sich auf den einzelnen Slaves unterschiedliche Dinge ausführen
-
 # Master-Slave-Setup
 
 **Setup mit Vagrant/Virtualbox:**
 
 # Master-Slave-Setup
 
-**Setup mit Docker:** [https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/](https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/)
+**Setup mit Docker:**
+
+# Master-Slave-Setup
+
+[https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/](https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/)
 
 **Beispiel in Ordner _docker_:**
 
 `docker-compose up -d`
 
-**JMX-File in den Container kopieren:** mit _docker ps_ kann man die Container-ID sehen
+**JMX-File in den Container kopieren:** _docker ps_ für Container-ID
 
 `docker exec -i <container-running-on-master-node> sh -c 'cat > /jmeter/apache-jmeter-2.13/bin/jmeter-docker.jmx' < jmeter-docker.jmx`
 
