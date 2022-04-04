@@ -1163,10 +1163,6 @@ Lösung:
 
 # Master-Slave-Setup
 
-**Setup mit Vagrant/Virtualbox:**
-
-# Master-Slave-Setup
-
 ![Setup mit Docker](assets/docker-jmeter.webp)
 
 # Master-Slave-Setup
@@ -1187,6 +1183,16 @@ Lösung:
 ![jMeter in Docker](assets/jm-master-slave-host-docker.png)
 
 **Mehr Details:** [https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/](https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/)
+
+# Master-Slave-Setup
+
+**Setup mit Vagrant/Virtualbox:**
+
+- analog zu Docker
+
+- Beispiel im Ordner _vagrant_: Kann mit _vagrant up_ hochgefahren werden
+
+- Konfigurationen müssten dann noch analog zu Docker gemacht werden (z.B. shared Volume für jmx)
 
 # Testausführung über CLI
 
@@ -1367,6 +1373,8 @@ scrape_configs:
 ```
 
 `prometheus.exe --config.file=prometheus.yml`
+
+TODO: https://romain-billon.medium.com/jmeter-distributed-testing-with-docker-compose-7bcb38bb8d39#:~:text=Docker%2Dcompose%20is%20a%20tool,test%20monitoring%20and%20data%20persistence.
 
 # YourKit-Profiler
 
