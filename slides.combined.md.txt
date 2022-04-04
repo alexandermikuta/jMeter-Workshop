@@ -1393,7 +1393,7 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 # Grafana
 
-![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg)
+![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg){ height=60% width=60% }
 
 Viele vorgefertigte Templates: [https://grafana.com/grafana/dashboards/](https://grafana.com/grafana/dashboards/)
 
