@@ -1594,10 +1594,6 @@ Kubernetes UI: [https://k8slens.dev/](https://k8slens.dev/)
 
 # Was ist CI/CD
 
-![](assets/CICD_CICD.png)
-
-# Was ist CI/CD
-
 ![](assets/Asset-33-1.png)
 
 # Github Actions
@@ -1617,6 +1613,8 @@ Kubernetes UI: [https://k8slens.dev/](https://k8slens.dev/)
 - **Event:** Aktivitäten die einen Workflow-Run triggern, z.B. Push ins Repository
 
 - **Runner:** Eine Maschine mit installiertem Github Actions Runner. Können auch selbstgehostet sein
+
+# Github Actions
 
 **Kern-Konzepte:**
 
