@@ -1623,7 +1623,7 @@ Kubernetes UI: [https://k8slens.dev/](https://k8slens.dev/)
 - **Step:** Set von Tasks die durch einen Job ausgeführt werden. Steps können Kommandos oder Actions ausführen.
 
 - **Workflow:** Automatisierter Prozess von ein oder mehreren Jobs die durch ein Event ausgelöst werden können.
-  - &rarr; liege als YAML-File im Ordner _.github/workflows_
+  - &rarr; liegen als YAML-Files im Ordner _.github/workflows_
 
 # Github Actions
 
@@ -1648,6 +1648,11 @@ Kubernetes UI: [https://k8slens.dev/](https://k8slens.dev/)
 
 - Receive automatic updates for the self-hosted runner application only, though you may disable automatic updates of the runner. For more information about controlling runner software updates on self-hosted runners, see "Autoscaling with self-hosted runners." You are responsible for updating the operating system and all other software.
 - Can use cloud services or local machines that you already pay for.
+
+# Github Actions
+
+**Self-hosted runners:**
+
 - Are customizable to your hardware, operating system, software, and security requirements.
 - Don't need to have a clean instance for every job execution.
 - Are free to use with GitHub Actions, but you are responsible for the cost of maintaining your runner machines.

@@ -2049,7 +2049,7 @@ Kubernetes UI: <https://k8slens.dev/>
 
 -   **Workflow:** Automatisierter Prozess von ein oder mehreren Jobs die durch ein Event ausgelöst werden können.
 
-    -   → liege als YAML-File im Ordner *.github/workflows*
+    -   → liegen als YAML-Files im Ordner *.github/workflows*
 
 <!-- section 201 -->
 
@@ -2080,16 +2080,23 @@ Kubernetes UI: <https://k8slens.dev/>
 
 -   Receive automatic updates for the self-hosted runner application only, though you may disable automatic updates of the runner. For more information about controlling runner software updates on self-hosted runners, see "Autoscaling with self-hosted runners." You are responsible for updating the operating system and all other software.
 -   Can use cloud services or local machines that you already pay for.
+
+<!-- section 204 -->
+
+# Github Actions
+
+**Self-hosted runners:**
+
 -   Are customizable to your hardware, operating system, software, and security requirements.
 -   Don't need to have a clean instance for every job execution.
 -   Are free to use with GitHub Actions, but you are responsible for the cost of maintaining your runner machines.
 
-<!-- section 204 -->
+<!-- section 205 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 205 -->
+<!-- section 206 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
