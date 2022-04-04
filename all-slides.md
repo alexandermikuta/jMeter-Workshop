@@ -1755,15 +1755,43 @@ Als Alternativen gibt es noch:
 
 # Docker / Docker-Compose
 
+**Docker:**
+
 <!-- section 170 -->
 
-# Kubernetes
+# Docker / Docker-Compose
+
+**Docker-Compose:**
+
+> Üblicherweise benötigt eine Anwendung mehr als einen Container. Diese manuell zu bauen/starten und untereinander zu verbinden wäre sehr zeitaufwändig.
+
+> hierfür bietet Docker-Compose die Möglichkeit all dies in einem YAML-File zu definieren
 
 <!-- section 171 -->
 
-# CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Docker / Docker-Compose
+
+![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
 
 <!-- section 172 -->
+
+# Kubernetes
+
+\[Landscape\]\[assets/cncf.jpg\]
+
+<!-- section 173 -->
+
+# Kubernetes
+
+![Von Docker zu Kubernetes](assets/docker2kubernetes.png)
+
+**Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
+
+<!-- section 174 -->
+
+# CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 175 -->
 
 # Github Actions
 
@@ -1774,14 +1802,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 173 -->
+<!-- section 176 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 174 -->
+<!-- section 177 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 175 -->
+<!-- section 178 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
