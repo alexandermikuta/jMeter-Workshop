@@ -1506,8 +1506,8 @@ Assertion 1</p>
 <p><a href="https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/">https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/</a></p>
 <p><strong>Beispiel in Ordner <em>docker</em>:</strong></p>
 <p><code>docker-compose up -d</code></p>
-<p><strong>JMX-File in den Container kopieren:</strong> <em>docker ps</em> für Container-ID</p>
-<p><code>docker exec -i &lt;container-running-on-master-node&gt; sh -c 'cat &gt; /jmeter/apache-jmeter-2.13/bin/jmeter-docker.jmx' &lt; jmeter-docker.jmx</code></p>
+<p><strong>JMX-File in den Container kopieren:</strong> <em>docker ps</em> für Container-Name</p>
+<p><code>docker cp &lt;jmx_to_copy&gt; &lt;container-name&gt;:/&lt;target-path in container&gt;</code></p>
 <p><strong>Start des Load-Tests:</strong></p>
 <p><code>docker exec -it &lt;container-on-master-node&gt; bash</code></p>
 </section>
