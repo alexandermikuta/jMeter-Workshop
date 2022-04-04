@@ -1562,11 +1562,17 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
+![](assets/iac-zeitstrahl.png)
+
+<!-- section 147 -->
+
+# IaC: Infrastructure as a Code
+
 **Typischer IaC Workflow:**
 
 ![](assets/iac-workflow.jpg){height="70%" width="70%"}
 
-<!-- section 147 -->
+<!-- section 148 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1574,17 +1580,17 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 ![](assets/Declarative-vs-Imperative-Approach.jpg.webp)
 
-<!-- section 148 -->
+<!-- section 149 -->
 
 # IaC: Infrastructure as a Code
 
 **Typische Einsatzzwecke von IaC:**
 
--   Provisionierung der Systemlandschaft, z.B. Terraform, Ansible
+-   Deployment der Systemlandschaft, z.B. Terraform, Ansible
 
--   Provisionierung der Entwicklungsumgebung, z.B. VS-Code Remote-Containers
+-   Provisionierung der Entwicklungsumgebung, z.B. VS-Code Remote-Containers, Rechner-Setup via Ansible
 
-<!-- section 149 -->
+<!-- section 150 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1598,19 +1604,21 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 -   Keine Konfigurationsabweichungen
 
-<!-- section 150 -->
+<!-- section 151 -->
 
 # IaC: Infrastructure as a Code
 
 ![Terraform ist ein gutes Beispiel für Idempotenz](assets/iac-idempotent.gif)
 
-<!-- section 151 -->
+![Terraform Beispiel-Code](assets/terraform-example.png)
+
+<!-- section 152 -->
 
 # IaC: Infrastructure as a Code
 
 ![mutable vs. immutable](assets/immutable_infrastructure.gif)
 
-<!-- section 152 -->
+<!-- section 153 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1626,7 +1634,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
                                                                                          Debugging schwer
   ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 153 -->
+<!-- section 154 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1642,7 +1650,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
   Kein Konfiguration Drift                              Daten-Bewegung von einer zur anderen Umgebung kann extra Overhead erzeugen
   ----------------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 154 -->
+<!-- section 155 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1654,7 +1662,7 @@ IaC wird häufig mit GitOps kombiniert
 
 ![GitOps](assets/gitops.png)
 
-<!-- section 155 -->
+<!-- section 156 -->
 
 # IaC: Infrastructure as a Code
 
@@ -1668,11 +1676,11 @@ IaC wird häufig mit GitOps kombiniert
 
 **Kostenloses PDF:** <https://www.gitops.tech/#tools>
 
-<!-- section 156 -->
+<!-- section 157 -->
 
 # RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 157 -->
+<!-- section 158 -->
 
 # RMI
 
@@ -1682,19 +1690,19 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invocation-server/
 
-<!-- section 158 -->
+<!-- section 159 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 159 -->
+<!-- section 160 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 160 -->
+<!-- section 161 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 161 -->
+<!-- section 162 -->
 
 # Prometheus
 
@@ -1702,13 +1710,13 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 ![Prometheus](assets/prometheus-graph.png)
 
-<!-- section 162 -->
+<!-- section 163 -->
 
 # Prometheus
 
 ![Prometheus Listener Output](assets/rt_as_sum.png)
 
-<!-- section 163 -->
+<!-- section 164 -->
 
 # Grafana
 
@@ -1718,7 +1726,7 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 > "Grafana makes that data useful again by integrating all data sources into one single organized view"
 
-<!-- section 164 -->
+<!-- section 165 -->
 
 # Grafana
 
@@ -1728,7 +1736,7 @@ Viele vorgefertigte Templates: <https://grafana.com/grafana/dashboards/>
 
 z.B. für jMeter: <https://grafana.com/grafana/dashboards/1152>
 
-<!-- section 165 -->
+<!-- section 166 -->
 
 # Grafana
 
@@ -1742,19 +1750,19 @@ Leicht über Plugins erweiterbar:
 
 -   Control Panels
 
-<!-- section 166 -->
+<!-- section 167 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/jmeter_prometheus.png)
 
-<!-- section 167 -->
+<!-- section 168 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/kubernetes_prom_diagram2.png)
 
-<!-- section 168 -->
+<!-- section 169 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1769,7 +1777,7 @@ Leicht über Plugins erweiterbar:
 Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
 `docker run -d --name=grafana -p 3000:3000 grafana/grafana`
 
-<!-- section 169 -->
+<!-- section 170 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1791,7 +1799,7 @@ prometheus.yml
 
 TODO: https://romain-billon.medium.com/jmeter-distributed-testing-with-docker-compose-7bcb38bb8d39\#:\~:text=Docker%2Dcompose%20is%20a%20tool,test%20monitoring%20and%20data%20persistence.
 
-<!-- section 170 -->
+<!-- section 171 -->
 
 # YourKit-Profiler
 
@@ -1803,7 +1811,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 171 -->
+<!-- section 172 -->
 
 # YourKit-Profiler
 
@@ -1817,23 +1825,23 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 172 -->
+<!-- section 173 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 173 -->
+<!-- section 174 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 174 -->
+<!-- section 175 -->
 
 # VM vs. Container
 
 ![](assets/containers-vs-virtual-machines.jpg)
 
-<!-- section 175 -->
+<!-- section 176 -->
 
 # VM vs. Container
 
@@ -1853,7 +1861,7 @@ Als Alternativen gibt es noch:
   Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden   Mehrere Docker-Container können von einem Docker-Image gestartet werden
   -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 176 -->
+<!-- section 177 -->
 
 # Docker / Docker-Compose
 
@@ -1863,7 +1871,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 -   <https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#>
 
-<!-- section 177 -->
+<!-- section 178 -->
 
 # Docker / Docker-Compose
 
@@ -1873,19 +1881,19 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 > hierfür bietet Docker-Compose die Möglichkeit all dies in einem YAML-File zu definieren
 
-<!-- section 178 -->
+<!-- section 179 -->
 
 # Docker / Docker-Compose
 
 ![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
 
-<!-- section 179 -->
+<!-- section 180 -->
 
 # Kubernetes
 
 \[Landscape\]\[assets/cncf.jpg\]
 
-<!-- section 180 -->
+<!-- section 181 -->
 
 # Kubernetes
 
@@ -1893,11 +1901,11 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
-<!-- section 181 -->
+<!-- section 182 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 182 -->
+<!-- section 183 -->
 
 # Github Actions
 
@@ -1908,14 +1916,14 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 183 -->
+<!-- section 184 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 184 -->
+<!-- section 185 -->
 
 # JMeter in einer Jenkins-Pipeline
 
-<!-- section 185 -->
+<!-- section 186 -->
 
 # Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
