@@ -1510,25 +1510,12 @@ Assertion 1</p>
 </section>
 <section id="master-slave-setup-10" class="level1">
 <h1>Master-Slave-Setup</h1>
-<figure>
-<img src="assets/jm-master-slave-host-docker.png" alt="" /><figcaption>jMeter in Docker</figcaption>
-</figure>
-<p><strong>Mehr Details:</strong> <a href="https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/">https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/</a></p>
-</section>
-<section id="master-slave-setup-11" class="level1">
-<h1>Master-Slave-Setup</h1>
 <p><strong>Setup mit Vagrant/Virtualbox:</strong></p>
 <ul>
 <li><p>analog zu Docker</p></li>
 <li><p>Beispiel im Ordner <em>vagrant</em>: Kann mit <em>vagrant up</em> hochgefahren werden</p></li>
-<li><p>Konfigurationen müssten dann noch analog zu Docker gemacht werden (z.B. shared Volume für jmx)</p></li>
+<li><p>JMeter-VMs sind im Beispiel noch nicht konfiguriert (z.B. shared Volume für jmx)!</p></li>
 </ul>
-</section>
-<section id="testausführung-über-cli" class="level1">
-<h1>Testausführung über CLI</h1>
-</section>
-<section id="testdata-partitioning" class="level1">
-<h1>Testdata-Partitioning</h1>
 </section>
 <section id="slave-server-steuerung" class="level1">
 <h1>Slave-Server Steuerung</h1>
@@ -1545,6 +1532,13 @@ Assertion 1</p>
 <li><p>__machineIP()</p></li>
 <li><p>__machineName()</p></li>
 </ul>
+</section>
+<section id="testdata-partitioning" class="level1">
+<h1>Testdata-Partitioning</h1>
+<ul>
+<li>Je nach Node kann man unterschiedliche .csv-Files für den Test verwenden</li>
+</ul>
+<p><img src="assets/testdata_partitioning.png" /></p>
 </section>
 <section id="large-scale" class="level1">
 <h1>Large-Scale</h1>
@@ -1699,13 +1693,16 @@ Assertion 1</p>
 <p>IaC wird häufig mit GitOps kombiniert</p>
 <p><strong>GitOps:</strong></p>
 <blockquote>
-<p>Im Gegensatz zu klassischem Continuous Delivery übernimmt nicht der CI-Server das Deployment, sondern die Betriebsumgebung synchronisiert ihren Zustand direkt aus Git. Werden Abweichungen vom Ziel-Zustand festgestellt werden diese automatisch ausgeglichen.</p>
+<p>“Im Gegensatz zu klassischem Continuous Delivery übernimmt nicht der CI-Server das Deployment, sondern die Betriebsumgebung synchronisiert ihren Zustand direkt aus Git. Werden Abweichungen vom Ziel-Zustand festgestellt werden diese automatisch ausgeglichen.”</p>
 </blockquote>
+</section>
+<section id="iac-infrastructure-as-a-code-13" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
 <figure>
 <img src="assets/gitops.png" alt="" /><figcaption>GitOps</figcaption>
 </figure>
 </section>
-<section id="iac-infrastructure-as-a-code-13" class="level1">
+<section id="iac-infrastructure-as-a-code-14" class="level1">
 <h1>IaC: Infrastructure as a Code</h1>
 <p><strong>GitOps:</strong></p>
 <p><strong>Typische GitOps-Operatoren:</strong></p>
@@ -1715,7 +1712,7 @@ Assertion 1</p>
 </ul>
 <p><strong>Kostenloses PDF:</strong> <a href="https://www.gitops.tech/#tools">https://www.gitops.tech/#tools</a></p>
 </section>
-<section id="iac-infrastructure-as-a-code-14" class="level1">
+<section id="iac-infrastructure-as-a-code-15" class="level1">
 <h1>IaC: Infrastructure as a Code</h1>
 <p><strong>GitOps:</strong></p>
 <ul>
@@ -1818,7 +1815,6 @@ Assertion 1</p>
     static_configs:
     - targets: [&#39;localhost:9270&#39;]</code></pre>
 <p><code>prometheus.exe --config.file=prometheus.yml</code></p>
-<p>TODO: https://romain-billon.medium.com/jmeter-distributed-testing-with-docker-compose-7bcb38bb8d39#:~:text=Docker%2Dcompose%20is%20a%20tool,test%20monitoring%20and%20data%20persistence.</p>
 </section>
 <section id="yourkit-profiler" class="level1">
 <h1>YourKit-Profiler</h1>

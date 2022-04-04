@@ -1180,23 +1180,13 @@ Lösung:
 
 # Master-Slave-Setup
 
-![jMeter in Docker](assets/jm-master-slave-host-docker.png)
-
-**Mehr Details:** [https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/](https://www.vinsguru.com/jmeter-distributed-load-testing-using-docker/)
-
-# Master-Slave-Setup
-
 **Setup mit Vagrant/Virtualbox:**
 
 - analog zu Docker
 
 - Beispiel im Ordner _vagrant_: Kann mit _vagrant up_ hochgefahren werden
 
-- Konfigurationen müssten dann noch analog zu Docker gemacht werden (z.B. shared Volume für jmx)
-
-# Testausführung über CLI
-
-# Testdata-Partitioning
+- JMeter-VMs sind im Beispiel noch nicht konfiguriert (z.B. shared Volume für jmx)!
 
 # Slave-Server Steuerung
 
@@ -1217,6 +1207,12 @@ Alternativ zu einem Parameter kann man auch folgende Möglichkeiten nutzen:
 - \_\_machineIP()
 
 - \_\_machineName()
+
+# Testdata-Partitioning
+
+- Je nach Node kann man unterschiedliche .csv-Files für den Test verwenden
+
+![](assets/testdata_partitioning.png)
 
 # Large-Scale
 
@@ -1329,7 +1325,9 @@ IaC wird häufig mit GitOps kombiniert
 
 **GitOps:**
 
-> Im Gegensatz zu klassischem Continuous Delivery übernimmt nicht der CI-Server das Deployment, sondern die Betriebsumgebung synchronisiert ihren Zustand direkt aus Git. Werden Abweichungen vom Ziel-Zustand festgestellt werden diese automatisch ausgeglichen.
+> "Im Gegensatz zu klassischem Continuous Delivery übernimmt nicht der CI-Server das Deployment, sondern die Betriebsumgebung synchronisiert ihren Zustand direkt aus Git. Werden Abweichungen vom Ziel-Zustand festgestellt werden diese automatisch ausgeglichen."
+
+# IaC: Infrastructure as a Code
 
 ![GitOps](assets/gitops.png)
 
@@ -1447,8 +1445,6 @@ scrape_configs:
 ```
 
 `prometheus.exe --config.file=prometheus.yml`
-
-TODO: https://romain-billon.medium.com/jmeter-distributed-testing-with-docker-compose-7bcb38bb8d39#:~:text=Docker%2Dcompose%20is%20a%20tool,test%20monitoring%20and%20data%20persistence.
 
 # YourKit-Profiler
 
