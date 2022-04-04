@@ -1265,19 +1265,51 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-**Typischer IaC Workflow mit konkreten Tools:**
-
-![](assets/C003_solution1.jpg){ height=70% width=70% }
-
-# IaC: Infrastructure as a Code
-
 ![](assets/infrastructureascode_600x300-3.png)
 
 > Bei IaC werden normalerweise deklarative Definition (z.B. als .yml-Datei) bevorzugt
 
-# Vagrant + Ansible
+# IaC: Infrastructure as a Code
 
-Ansible Playbook: [https://galaxy.ansible.com/lean_delivery/jmeter](https://galaxy.ansible.com/lean_delivery/jmeter)
+**Typische Einsatzzwecke von IaC:**
+
+- Provisionierung der Systemlandschaft, z.B. Terraform, Ansible
+
+- Provisionierung der Entwicklungsumgebung, z.B. VS-Code Remote-Containers
+
+# IaC: Infrastructure as a Code
+
+**Vorteile von IaC:**
+
+- Geringere Kosten
+
+- Schnellere Deployments
+
+- Weniger Fehler
+
+- Keine Konfigurationsabweichungen
+
+# IaC: Infrastructure as a Code
+
+IaC wird häufig mit GitOps kombiniert
+
+**GitOps:**
+
+> Im Gegensatz zu klassischem Continuous Delivery übernimmt nicht der CI-Server das Deployment, sondern die Betriebsumgebung synchronisiert ihren Zustand direkt aus Git. Werden Abweichungen vom Ziel-Zustand festgestellt werden diese automatisch ausgeglichen.
+
+![GitOps](assets/gitops.png)
+
+# IaC: Infrastructure as a Code
+
+**GitOps:**
+
+**Typische GitOps-Operatoren:**
+
+- [ArgoCD](https://argo-cd.readthedocs.io/)
+
+- [Flux](https://fluxcd.io/)
+
+**Kostenloses PDF:** [https://www.gitops.tech/#tools](https://www.gitops.tech/#tools)
 
 # RMI {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
