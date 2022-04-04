@@ -1998,12 +1998,62 @@ Assertion 1</p>
 </section>
 <section id="github-actions" class="level1">
 <h1>Github Actions</h1>
-<p>https://github.com/marketplace/actions/setup-jmeter
-https://github.com/marketplace/actions/apache-jmeter
-https://github.com/marketplace/actions/perfaction-for-jmeter
-https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
-https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
-https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed</p>
+<blockquote>
+<p>“GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.”</p>
+</blockquote>
+</section>
+<section id="github-actions-1" class="level1">
+<h1>Github Actions</h1>
+<figure>
+<img src="assets/overview-actions-simple.png" alt="" /><figcaption>Overview Github-Actions</figcaption>
+</figure>
+</section>
+<section id="github-actions-2" class="level1">
+<h1>Github Actions</h1>
+<p><strong>Kern-Konzepte:</strong></p>
+<ul>
+<li><p><strong>Actions:</strong> Kleinster Baustein eines Workflows. Kann als Steps zu einem Job kombiniert werden.</p></li>
+<li><p><strong>Event:</strong> Aktivitäten die einen Workflow-Run triggern, z.B. Push ins Repository</p></li>
+<li><p><strong>Runner:</strong> Eine Maschine mit installiertem Github Actions Runner. Können auch selbstgehostet sein</p></li>
+</ul>
+<p><strong>Kern-Konzepte:</strong></p>
+<ul>
+<li><p><strong>Job:</strong> Besteht aus mehreren Steps und läuft in einer virtuellen Umgebung. Jobs können sequentiell oder parallel ablaufen.</p></li>
+<li><p><strong>Step:</strong> Set von Tasks die durch einen Job ausgeführt werden. Steps können Kommandos oder Actions ausführen.</p></li>
+<li><p><strong>Workflow:</strong> Automatisierter Prozess von ein oder mehreren Jobs die durch ein Event ausgelöst werden können.</p>
+<ul>
+<li>→ liege als YAML-File im Ordner <em>.github/workflows</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="github-actions-3" class="level1">
+<h1>Github Actions</h1>
+<ul>
+<li><p><strong>Multi-Container Testing:</strong> nutze docker/-compose in deinem Workflow</p></li>
+<li><p>Verwende existierende <strong>CI-Templates</strong> oder veröffentlich welche auf dem <a href="https://github.com/marketplace?type=actions">Marketplace</a></p></li>
+<li><p><strong>jMeter+Github Actions:</strong> <a href="https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/">https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/</a></p></li>
+</ul>
+</section>
+<section id="github-actions-4" class="level1">
+<h1>Github Actions</h1>
+<p><strong>GitHub-hosted runners:</strong></p>
+<ul>
+<li>Receive automatic updates for the operating system, preinstalled packages and tools, and the self-hosted runner application.</li>
+<li>Are managed and maintained by GitHub.</li>
+<li>Provide a clean instance for every job execution.</li>
+<li>Use free minutes on your GitHub plan, with per-minute rates applied after surpassing the free minutes.</li>
+</ul>
+</section>
+<section id="github-actions-5" class="level1">
+<h1>Github Actions</h1>
+<p><strong>Self-hosted runners:</strong></p>
+<ul>
+<li>Receive automatic updates for the self-hosted runner application only, though you may disable automatic updates of the runner. For more information about controlling runner software updates on self-hosted runners, see “Autoscaling with self-hosted runners.” You are responsible for updating the operating system and all other software.</li>
+<li>Can use cloud services or local machines that you already pay for.</li>
+<li>Are customizable to your hardware, operating system, software, and security requirements.</li>
+<li>Don’t need to have a clean instance for every job execution.</li>
+<li>Are free to use with GitHub Actions, but you are responsible for the cost of maintaining your runner machines.</li>
+</ul>
 </section>
 <section id="jmeter-in-einer-github-actions-pipeline" class="level1">
 <h1>jMeter in einer Github-Actions Pipeline</h1>
@@ -2011,7 +2061,6 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 </section>
 <section id="klärung-offener-punkte" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">Klärung offener Punkte</h1>
-<pre><code></code></pre>
 </section>
 
         </div>
