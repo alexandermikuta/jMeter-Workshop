@@ -1565,7 +1565,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 ![Von Docker zu Kubernetes](assets/docker2kubernetes.png){ height=60% width=60% }
 
-**Tipp:** [https://kompose.io/](https://kompose.io/) zur Docker-Compose-Konvertierung nach Kubernetes
+**Tipp:** [https://kompose.io/](https://kompose.io/) für "Docker-Compose &rarr; Kubernetes"
 
 # Kubernetes
 
