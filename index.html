@@ -1592,19 +1592,49 @@ Assertion 1</p>
 </section>
 <section id="iac-infrastructure-as-a-code-4" class="level1">
 <h1>IaC: Infrastructure as a Code</h1>
-<p><strong>Typischer IaC Workflow mit konkreten Tools:</strong></p>
-<p><img src="assets/C003_solution1.jpg" style="width:70.0%;height:70.0%" /></p>
-</section>
-<section id="iac-infrastructure-as-a-code-5" class="level1">
-<h1>IaC: Infrastructure as a Code</h1>
 <p><img src="assets/infrastructureascode_600x300-3.png" /></p>
 <blockquote>
 <p>Bei IaC werden normalerweise deklarative Definition (z.B. als .yml-Datei) bevorzugt</p>
 </blockquote>
 </section>
-<section id="vagrant-ansible" class="level1">
-<h1>Vagrant + Ansible</h1>
-<p>Ansible Playbook: <a href="https://galaxy.ansible.com/lean_delivery/jmeter">https://galaxy.ansible.com/lean_delivery/jmeter</a></p>
+<section id="iac-infrastructure-as-a-code-5" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
+<p><strong>Typische Einsatzzwecke von IaC:</strong></p>
+<ul>
+<li><p>Provisionierung der Systemlandschaft, z.B. Terraform, Ansible</p></li>
+<li><p>Provisionierung der Entwicklungsumgebung, z.B. VS-Code Remote-Containers</p></li>
+</ul>
+</section>
+<section id="iac-infrastructure-as-a-code-6" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
+<p><strong>Vorteile von IaC:</strong></p>
+<ul>
+<li><p>Geringere Kosten</p></li>
+<li><p>Schnellere Deployments</p></li>
+<li><p>Weniger Fehler</p></li>
+<li><p>Keine Konfigurationsabweichungen</p></li>
+</ul>
+</section>
+<section id="iac-infrastructure-as-a-code-7" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
+<p>IaC wird häufig mit GitOps kombiniert</p>
+<p><strong>GitOps:</strong></p>
+<blockquote>
+<p>Im Gegensatz zu klassischem Continuous Delivery übernimmt nicht der CI-Server das Deployment, sondern die Betriebsumgebung synchronisiert ihren Zustand direkt aus Git. Werden Abweichungen vom Ziel-Zustand festgestellt werden diese automatisch ausgeglichen.</p>
+</blockquote>
+<figure>
+<img src="assets/gitops.png" alt="" /><figcaption>GitOps</figcaption>
+</figure>
+</section>
+<section id="iac-infrastructure-as-a-code-8" class="level1">
+<h1>IaC: Infrastructure as a Code</h1>
+<p><strong>GitOps:</strong></p>
+<p><strong>Typische GitOps-Operatoren:</strong></p>
+<ul>
+<li><p><a href="https://argo-cd.readthedocs.io/">ArgoCD</a></p></li>
+<li><p><a href="https://fluxcd.io/">Flux</a></p></li>
+</ul>
+<p><strong>Kostenloses PDF:</strong> <a href="https://www.gitops.tech/#tools">https://www.gitops.tech/#tools</a></p>
 </section>
 <section id="rmi" class="level1 light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">
 <h1 class="light-on-dark" data-bgcss="sea-gradient" data-x="0" data-y="0" data-rz="-.1" data-state="sea-gradient">RMI</h1>
