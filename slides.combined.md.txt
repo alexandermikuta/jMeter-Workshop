@@ -1291,7 +1291,11 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-![Terraform ist ein gutes Beispiel für Idempotenz](assets/iac-idempotent.gif)
+![](assets/iac-idempotent.gif)
+
+# IaC: Infrastructure as a Code
+
+Terraform verwendet den Idempotenten Ansatz im Gegensatz zu z.B. Ansible
 
 ![Terraform Beispiel-Code](assets/terraform-example.png)
 
