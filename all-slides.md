@@ -1451,7 +1451,7 @@ Lösung:
 
 # Master-Slave-Setup
 
-<https://dockerlabs.collabnix.com/play-with-docker/jmeter-docker/>
+<https://github.com/pedrocesar-ti/distributed-jmeter-docker>
 
 **Beispiel in Ordner *docker*:**
 
