@@ -1994,7 +1994,7 @@ Kubernetes UI: <https://k8slens.dev/>
 
 # Was ist CI/CD
 
-**CI:** Continuous Integration, also der Automatisierungsprozess für Entwickler
+**CI:** Continuous Integration: der Automatisierungsprozess für Entwickler
 
 **CD:**
 
