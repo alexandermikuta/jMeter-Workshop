@@ -1545,7 +1545,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 # Kubernetes
 
-![Landscape](assets/cncf.jpg)
+![Landscape](assets/cncf.jpg){ height=80% width=80% }
 
 # Kubernetes
 
