@@ -1455,11 +1455,7 @@ Lösung:
 
 **Beispiel in Ordner *docker*:**
 
-`docker-compose up -d --scale slave=15`
-
-**JMX-File in den Container kopieren:** *docker-compose ps* für Container-Name
-
-`docker cp <jmx_to_copy> <container-name>:/<target-path in container>`
+`docker-compose up -d --scale server=15`
 
 **Start des Load-Tests:**
 
