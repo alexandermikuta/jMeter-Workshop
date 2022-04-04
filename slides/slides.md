@@ -1259,6 +1259,10 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
+![](assets/iac-zeitstrahl.png)
+
+# IaC: Infrastructure as a Code
+
 **Typischer IaC Workflow:**
 
 ![](assets/iac-workflow.jpg){ height=70% width=70% }
@@ -1273,9 +1277,9 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 **Typische Einsatzzwecke von IaC:**
 
-- Provisionierung der Systemlandschaft, z.B. Terraform, Ansible
+- Deployment der Systemlandschaft, z.B. Terraform, Ansible
 
-- Provisionierung der Entwicklungsumgebung, z.B. VS-Code Remote-Containers
+- Provisionierung der Entwicklungsumgebung, z.B. VS-Code Remote-Containers, Rechner-Setup via Ansible
 
 # IaC: Infrastructure as a Code
 
@@ -1292,6 +1296,8 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 # IaC: Infrastructure as a Code
 
 ![Terraform ist ein gutes Beispiel für Idempotenz](assets/iac-idempotent.gif)
+
+![Terraform Beispiel-Code](assets/terraform-example.png)
 
 # IaC: Infrastructure as a Code
 
