@@ -1393,7 +1393,9 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 # Grafana
 
-![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg){ height=60% width=60% }
+![Grafana Beispiel-Dashboard](assets/Grafana8_Kubernetes.jpg){ height=60% width=60% }
+
+# Grafana
 
 Viele vorgefertigte Templates: [https://grafana.com/grafana/dashboards/](https://grafana.com/grafana/dashboards/)
 
@@ -1417,7 +1419,7 @@ Leicht über Plugins erweiterbar:
 
 # jMeter + Prometheus + Grafana
 
-![](assets/kubernetes_prom_diagram2.png){ height=70% width=70% }
+![](assets/kubernetes_prom_diagram2.png){ height=60% width=60% }
 
 # jMeter + Prometheus + Grafana
 

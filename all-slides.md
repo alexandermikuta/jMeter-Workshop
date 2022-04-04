@@ -1744,13 +1744,17 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 # Grafana
 
-![Grafana Dashboard](assets/Grafana8_Kubernetes.jpg){height="60%" width="60%"}
+![Grafana Beispiel-Dashboard](assets/Grafana8_Kubernetes.jpg){height="60%" width="60%"}
+
+<!-- section 167 -->
+
+# Grafana
 
 Viele vorgefertigte Templates: <https://grafana.com/grafana/dashboards/>
 
 z.B. für jMeter: <https://grafana.com/grafana/dashboards/1152>
 
-<!-- section 167 -->
+<!-- section 168 -->
 
 # Grafana
 
@@ -1764,19 +1768,19 @@ Leicht über Plugins erweiterbar:
 
 -   Control Panels
 
-<!-- section 168 -->
+<!-- section 169 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/jmeter_prometheus.png)
 
-<!-- section 169 -->
+<!-- section 170 -->
 
 # jMeter + Prometheus + Grafana
 
-![](assets/kubernetes_prom_diagram2.png){height="70%" width="70%"}
+![](assets/kubernetes_prom_diagram2.png){height="60%" width="60%"}
 
-<!-- section 170 -->
+<!-- section 171 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1791,7 +1795,7 @@ Leicht über Plugins erweiterbar:
 Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
 `docker run -d --name=grafana -p 3000:3000 grafana/grafana`
 
-<!-- section 171 -->
+<!-- section 172 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1809,7 +1813,7 @@ prometheus.yml
 
 `prometheus.exe --config.file=prometheus.yml`
 
-<!-- section 172 -->
+<!-- section 173 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1817,7 +1821,7 @@ prometheus.yml
 
 **Beschreibung der Konfiguration:** <https://dev.to/qainsights/jmeter-prometheus-and-grafana-integration-312n>
 
-<!-- section 173 -->
+<!-- section 174 -->
 
 # YourKit-Profiler
 
@@ -1829,7 +1833,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 174 -->
+<!-- section 175 -->
 
 # YourKit-Profiler
 
@@ -1843,23 +1847,23 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 175 -->
+<!-- section 176 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 176 -->
+<!-- section 177 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 177 -->
+<!-- section 178 -->
 
 # VM vs. Container
 
 ![](assets/containers-vs-virtual-machines.jpg)
 
-<!-- section 178 -->
+<!-- section 179 -->
 
 # VM vs. Container
 
@@ -1873,7 +1877,7 @@ Als Alternativen gibt es noch:
   VM-Snapshots werden sparsam genutzt   Images werden inkrementell aufeinander in Layern gebaut. Viele Images/Snapshots.
   ------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 179 -->
+<!-- section 180 -->
 
 # VM vs. Container
 
@@ -1887,7 +1891,7 @@ Als Alternativen gibt es noch:
   Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden   Mehrere Docker-Container können von einem Docker-Image gestartet werden
   ----------------------------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 180 -->
+<!-- section 181 -->
 
 # Docker / Docker-Compose
 
@@ -1897,7 +1901,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 -   <https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#>
 
-<!-- section 181 -->
+<!-- section 182 -->
 
 # Docker / Docker-Compose
 
@@ -1907,19 +1911,19 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 > hierfür bietet Docker-Compose die Möglichkeit all dies in einem YAML-File zu definieren
 
-<!-- section 182 -->
+<!-- section 183 -->
 
 # Docker / Docker-Compose
 
 ![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
 
-<!-- section 183 -->
+<!-- section 184 -->
 
 # Kubernetes
 
 \[Landscape\]\[assets/cncf.jpg\]
 
-<!-- section 184 -->
+<!-- section 185 -->
 
 # Kubernetes
 
@@ -1927,17 +1931,17 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
-<!-- section 185 -->
+<!-- section 186 -->
 
 # Kubernetes
 
 Kubernetes-Cluster lassen sich auch gut grafisch verwalten: <https://k8slens.dev/>
 
-<!-- section 186 -->
+<!-- section 187 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 187 -->
+<!-- section 188 -->
 
 # Github Actions
 
@@ -1948,12 +1952,12 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 188 -->
+<!-- section 189 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 189 -->
+<!-- section 190 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
