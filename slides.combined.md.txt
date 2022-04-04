@@ -1579,12 +1579,13 @@ Kubernetes UI: [https://k8slens.dev/](https://k8slens.dev/)
 
 > "Es handelt sich um eine Methode, bei der den Kunden regelmäßig Apps bereitgestellt und alle Phasen der Anwendungsentwicklung automatisiert werden."
 
+# Was ist CI/CD
+
 **CI:** Continuous Integration, also der Automatisierungsprozess für Entwickler
 
 **CD:**
 
 - Continuous Delivery: App-Änderungen eines Entwicklers werden automatisch getestet und in ein Repository hochgeladen
-
 - Continuos Deployment: bezieht sich auf die automatische Freigabe von Entwickleränderungen vom Repository zur Produktivphase
 
 # Was ist CI/CD

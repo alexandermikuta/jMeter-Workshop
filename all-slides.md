@@ -1990,45 +1990,48 @@ Kubernetes UI: <https://k8slens.dev/>
 
 > "Es handelt sich um eine Methode, bei der den Kunden regelmäßig Apps bereitgestellt und alle Phasen der Anwendungsentwicklung automatisiert werden."
 
+<!-- section 194 -->
+
+# Was ist CI/CD
+
 **CI:** Continuous Integration, also der Automatisierungsprozess für Entwickler
 
 **CD:**
 
 -   Continuous Delivery: App-Änderungen eines Entwicklers werden automatisch getestet und in ein Repository hochgeladen
-
 -   Continuos Deployment: bezieht sich auf die automatische Freigabe von Entwickleränderungen vom Repository zur Produktivphase
-
-<!-- section 194 -->
-
-# Was ist CI/CD
-
-![](assets/ci-cd-flow-desktop_edited_0.png)
 
 <!-- section 195 -->
 
 # Was ist CI/CD
 
-![](assets/CICD_CICD.png)
+![](assets/ci-cd-flow-desktop_edited_0.png)
 
 <!-- section 196 -->
 
 # Was ist CI/CD
 
-![](assets/Asset-33-1.png)
+![](assets/CICD_CICD.png)
 
 <!-- section 197 -->
 
-# Github Actions
+# Was ist CI/CD
 
-> "GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline."
+![](assets/Asset-33-1.png)
 
 <!-- section 198 -->
 
 # Github Actions
 
-![Overview Github-Actions](assets/overview-actions-simple.png)
+> "GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline."
 
 <!-- section 199 -->
+
+# Github Actions
+
+![Overview Github-Actions](assets/overview-actions-simple.png)
+
+<!-- section 200 -->
 
 # Github Actions
 
@@ -2050,7 +2053,7 @@ Kubernetes UI: <https://k8slens.dev/>
 
     -   → liege als YAML-File im Ordner *.github/workflows*
 
-<!-- section 200 -->
+<!-- section 201 -->
 
 # Github Actions
 
@@ -2060,7 +2063,7 @@ Kubernetes UI: <https://k8slens.dev/>
 
 -   **jMeter+Github Actions:** <https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/>
 
-<!-- section 201 -->
+<!-- section 202 -->
 
 # Github Actions
 
@@ -2071,7 +2074,7 @@ Kubernetes UI: <https://k8slens.dev/>
 -   Provide a clean instance for every job execution.
 -   Use free minutes on your GitHub plan, with per-minute rates applied after surpassing the free minutes.
 
-<!-- section 202 -->
+<!-- section 203 -->
 
 # Github Actions
 
@@ -2083,12 +2086,12 @@ Kubernetes UI: <https://k8slens.dev/>
 -   Don't need to have a clean instance for every job execution.
 -   Are free to use with GitHub Actions, but you are responsible for the cost of maintaining your runner machines.
 
-<!-- section 203 -->
+<!-- section 204 -->
 
 # jMeter in einer Github-Actions Pipeline
 
 **Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-<!-- section 204 -->
+<!-- section 205 -->
 
 # Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
