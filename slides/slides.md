@@ -1255,7 +1255,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-![](assets/iac-zeitstrahl.png){ height=80% width=80% }
+![](assets/iac-zeitstrahl.png){ height=70% width=70% }
 
 # IaC: Infrastructure as a Code
 
