@@ -1315,7 +1315,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: [https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-**Imutable Infrastructure:**
+**Immutable Infrastructure:**
 
 | PROs                                                | CONS                                                                       |
 | --------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -1344,6 +1344,14 @@ IaC wird häufig mit GitOps kombiniert
 - [Flux](https://fluxcd.io/)
 
 **Kostenloses PDF:** [https://www.gitops.tech/#tools](https://www.gitops.tech/#tools)
+
+# IaC: Infrastructure as a Code
+
+**GitOps:**
+
+- Hierbei werden häufig Github-Actions verwendet
+
+- Github-Actions können lokal mit _act_ getestet werden: [https://github.com/nektos/act](https://github.com/nektos/act)
 
 # RMI {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
@@ -1528,9 +1536,9 @@ https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-doc
 
 # jMeter in einer Github-Actions Pipeline
 
-# JMeter in einer Jenkins-Pipeline
+**Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
-# Klärung offener Punkt {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
+# Klärung offener Punkte {bgcss=sea-gradient x=0 y=0 rz=-.1 .light-on-dark}
 
 ```
 

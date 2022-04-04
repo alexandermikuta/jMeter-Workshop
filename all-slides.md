@@ -1638,7 +1638,7 @@ Zu beachten bei verteilten Large-Scale-Lösungen: <https://octoperf.com/blog/201
 
 # IaC: Infrastructure as a Code
 
-**Imutable Infrastructure:**
+**Immutable Infrastructure:**
 
   ----------------------------------------------------------------------------------------------------------------------------------
   PROs                                                  CONS
@@ -1678,9 +1678,19 @@ IaC wird häufig mit GitOps kombiniert
 
 <!-- section 157 -->
 
-# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# IaC: Infrastructure as a Code
+
+**GitOps:**
+
+-   Hierbei werden häufig Github-Actions verwendet
+
+-   Github-Actions können lokal mit *act* getestet werden: <https://github.com/nektos/act>
 
 <!-- section 158 -->
+
+# RMI {#rmi .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+
+<!-- section 159 -->
 
 # RMI
 
@@ -1690,19 +1700,19 @@ https://github.com/vezzoni/jmeter-rmi-sampler
 
 http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invocation-server/
 
-<!-- section 159 -->
+<!-- section 160 -->
 
 # Diskussion: aktueller verwendeter RMI-Sampler
 
-<!-- section 160 -->
+<!-- section 161 -->
 
 # Vergleich mit existierende RMI-Samplern auf Github
 
-<!-- section 161 -->
+<!-- section 162 -->
 
 # Monitoring {#monitoring .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 162 -->
+<!-- section 163 -->
 
 # Prometheus
 
@@ -1710,13 +1720,13 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 ![Prometheus](assets/prometheus-graph.png)
 
-<!-- section 163 -->
+<!-- section 164 -->
 
 # Prometheus
 
 ![Prometheus Listener Output](assets/rt_as_sum.png)
 
-<!-- section 164 -->
+<!-- section 165 -->
 
 # Grafana
 
@@ -1726,7 +1736,7 @@ http://twit88.com/blog/2007/09/14/use-jmeter-to-load-test-rmi-remote-method-invo
 
 > "Grafana makes that data useful again by integrating all data sources into one single organized view"
 
-<!-- section 165 -->
+<!-- section 166 -->
 
 # Grafana
 
@@ -1736,7 +1746,7 @@ Viele vorgefertigte Templates: <https://grafana.com/grafana/dashboards/>
 
 z.B. für jMeter: <https://grafana.com/grafana/dashboards/1152>
 
-<!-- section 166 -->
+<!-- section 167 -->
 
 # Grafana
 
@@ -1750,19 +1760,19 @@ Leicht über Plugins erweiterbar:
 
 -   Control Panels
 
-<!-- section 167 -->
+<!-- section 168 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/jmeter_prometheus.png)
 
-<!-- section 168 -->
+<!-- section 169 -->
 
 # jMeter + Prometheus + Grafana
 
 ![](assets/kubernetes_prom_diagram2.png)
 
-<!-- section 169 -->
+<!-- section 170 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1777,7 +1787,7 @@ Leicht über Plugins erweiterbar:
 Für Prometheus und Grafana existieren auch Docker-Container, z.B.:
 `docker run -d --name=grafana -p 3000:3000 grafana/grafana`
 
-<!-- section 170 -->
+<!-- section 171 -->
 
 # jMeter + Prometheus + Grafana
 
@@ -1799,7 +1809,7 @@ prometheus.yml
 
 TODO: https://romain-billon.medium.com/jmeter-distributed-testing-with-docker-compose-7bcb38bb8d39\#:\~:text=Docker%2Dcompose%20is%20a%20tool,test%20monitoring%20and%20data%20persistence.
 
-<!-- section 171 -->
+<!-- section 172 -->
 
 # YourKit-Profiler
 
@@ -1811,7 +1821,7 @@ Als Alternativen gibt es noch:
 
 -   JProbe
 
-<!-- section 172 -->
+<!-- section 173 -->
 
 # YourKit-Profiler
 
@@ -1825,23 +1835,23 @@ Als Alternativen gibt es noch:
 
 -   Test beenden und Ergebnisse ansehen
 
-<!-- section 173 -->
+<!-- section 174 -->
 
 # YourKit-Profiler
 
 ![](assets/yourkit.webp)
 
-<!-- section 174 -->
+<!-- section 175 -->
 
 # Containerisierung {#containerisierung .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 175 -->
+<!-- section 176 -->
 
 # VM vs. Container
 
 ![](assets/containers-vs-virtual-machines.jpg)
 
-<!-- section 176 -->
+<!-- section 177 -->
 
 # VM vs. Container
 
@@ -1861,7 +1871,7 @@ Als Alternativen gibt es noch:
   Nur eine VM kann durch ein Set von VMX/VMDK-Files gestartet werden   Mehrere Docker-Container können von einem Docker-Image gestartet werden
   -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<!-- section 177 -->
+<!-- section 178 -->
 
 # Docker / Docker-Compose
 
@@ -1871,7 +1881,7 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 -   <https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#>
 
-<!-- section 178 -->
+<!-- section 179 -->
 
 # Docker / Docker-Compose
 
@@ -1881,19 +1891,19 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 > hierfür bietet Docker-Compose die Möglichkeit all dies in einem YAML-File zu definieren
 
-<!-- section 179 -->
+<!-- section 180 -->
 
 # Docker / Docker-Compose
 
 ![Docker Workflow](assets/life-cycle-containerized-apps-docker-cli.png)
 
-<!-- section 180 -->
+<!-- section 181 -->
 
 # Kubernetes
 
 \[Landscape\]\[assets/cncf.jpg\]
 
-<!-- section 181 -->
+<!-- section 182 -->
 
 # Kubernetes
 
@@ -1901,11 +1911,11 @@ Hinweis: Aufgrund geänderter Lizenz-Bedingungen unter Windows/Mac sind die Alte
 
 **Tipp:** Mit <https://kompose.io/> lassen sich Docker-Compose Dateien für Kubernetes konvertieren
 
-<!-- section 182 -->
+<!-- section 183 -->
 
 # CI/CD-Pipeline {#cicd-pipeline .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
 
-<!-- section 183 -->
+<!-- section 184 -->
 
 # Github Actions
 
@@ -1916,14 +1926,12 @@ https://www.redline13.com/blog/2021/10/github-actions-for-jmeter/
 https://dev.to/sebiboga/generate-jmeter-test-report-and-save-it-as-artifact-with-github-actions-4a6b
 https://stackoverflow.com/questions/68084554/fail-github-actions-pipeline-if-dockerized-jmeter-tests-failed
 
-<!-- section 184 -->
+<!-- section 185 -->
 
 # jMeter in einer Github-Actions Pipeline
 
-<!-- section 185 -->
-
-# JMeter in einer Jenkins-Pipeline
+**Beispiel:** https://github.com/alexandermikuta/jmeter-action
 
 <!-- section 186 -->
 
-# Klärung offener Punkt {#klärung-offener-punkt .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
+# Klärung offener Punkte {#klärung-offener-punkte .light-on-dark bgcss="sea-gradient" x="0" y="0" rz="-.1"}
