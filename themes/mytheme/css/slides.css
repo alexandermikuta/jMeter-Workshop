@@ -70,7 +70,7 @@ code {
 .markdeck-logo {
   display: none; }
 
-.header {
+div.header {
   content: url(../img/imbus.png);
   position: fixed;
   top: 20px;
